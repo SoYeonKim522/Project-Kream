@@ -17,4 +17,11 @@
         android:enabled="true"
         android:title="@string/main_btm_nav_my_page_title" />
 
+    <item
+        android:id="@+id/menu_main_btm_nav_test"
+        android:icon="@drawable/ic_setting_view_unselected"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:title="test page" />
+
 </menu>

@@ -1,0 +1,20 @@
+com/example/kream/kotlin/BuildConfig.java
+ com.example.kream.kotlin.BuildConfig
+com/example/kream/kotlin/databinding/FragmentTestBinding.java
+ com.example.kream.kotlin.databinding.FragmentTestBinding
+com/example/kream/kotlin/databinding/ActivitySignupBinding.java
+ com.example.kream.kotlin.databinding.ActivitySignupBinding
+com/example/kream/kotlin/databinding/DialogLoadingBinding.java
+ com.example.kream.kotlin.databinding.DialogLoadingBinding
+com/example/kream/kotlin/databinding/FragmentHomeBinding.java
+ com.example.kream.kotlin.databinding.FragmentHomeBinding
+com/example/kream/kotlin/databinding/ActivityLoginBinding.java
+ com.example.kream.kotlin.databinding.ActivityLoginBinding
+com/example/kream/kotlin/databinding/ActivityMainBinding.java
+ com.example.kream.kotlin.databinding.ActivityMainBinding
+com/example/kream/kotlin/databinding/FragmentMyPageBinding.java
+ com.example.kream.kotlin.databinding.FragmentMyPageBinding
+com/example/kream/kotlin/databinding/ActivityTestBinding.java
+ com.example.kream.kotlin.databinding.ActivityTestBinding
+com/example/kream/kotlin/databinding/ActivitySplashBinding.java
+ com.example.kream.kotlin.databinding.ActivitySplashBinding

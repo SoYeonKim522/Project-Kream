@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SoftSquared Android Kotlin Template</string>
+    <string name="app_name">KREAM</string>
 
     <!-- Naming Rules -->
     <!-- 도메인명_컴포넌트함축어_용도(=목적) -->
@@ -10,6 +10,27 @@
     <string name="main_btm_nav_home_title">홈</string>
     <string name="main_btm_nav_my_page_title">마이페이지</string>
 
+<!--    Login-->
+    <string name="login_tv_email">이메일 주소</string>
+    <string name="login_tv_password">비밀번호</string>
+    <string name="login_btn_login">로그인</string>
+    <string name="login_btn_naver_login">네이버로 로그인</string>
+    <string name="login_find_email">이메일 찾기</string>
+    <string name="login_find_password">비밀번호 찾기</string>
+    <string name="login_sign_up">아직 가입하지 않으셨나요? 이메일로 가입</string>
+
+<!--    signup-->
+    <string name="sign_up_tv_email">이메일 주소 *</string>
+    <string name="sign_up_tv_password">비밀번호 *</string>
+    <string name="sign_up_title">회원가입</string>
+    <string name="sign_up_sneakers_size">스니커스 사이즈</string>
+    <string name="sign_up_sneakers_size_placeholder">선택하세요</string>
+    <string name="sign_up_agreement">[필수] 만14세 이상이며 모두\n동의합니다.</string>
+    <string name="sign_up_agreement2">[선택] 광고성 정보 수신에 모두\n동의합니다.</string>
+    <string name="sign_up_sign_up">가입하기</string>
+
+
+
     <!-- Home -->
     <string name="home_btn_try_get_http_method">GET API 보내기</string>
     <string name="home_btn_try_post_http_method">POST API 보내기</string>
@@ -19,5 +40,7 @@
     <!-- MyPage -->
     <string name="my_page_tv_counter">%1d 번 눌렀습니다.</string>
     <string name="my_page_btn_counting_number">숫자 세기</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
