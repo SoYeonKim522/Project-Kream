@@ -5,6 +5,8 @@ import android.os.Bundle
 import com.example.kream.kotlin.config.BaseActivity
 import com.example.kream.kotlin.databinding.ActivityLoginBinding
 import com.example.kream.kotlin.databinding.ActivitySignupBinding
+import com.example.kream.kotlin.src.main.MainActivity
+import com.example.kream.kotlin.src.main.myPage.MyPageFragment
 import com.example.kream.kotlin.src.main.signUpActivity.SignUpActivity
 
 class LoginActivity : BaseActivity<ActivityLoginBinding> (ActivityLoginBinding::inflate) {
@@ -14,6 +16,10 @@ class LoginActivity : BaseActivity<ActivityLoginBinding> (ActivityLoginBinding::
         binding.loginBtnGoSignUp.setOnClickListener {
             startActivity(Intent(this, SignUpActivity::class.java))
             finish()
+        }
+
+        binding.backBtn.setOnClickListener{
+            startActivity(Intent(this, MainActivity::class.java))
         }
 
     }

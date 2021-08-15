@@ -17,9 +17,13 @@
 
 <!--    others-->
     <color name="gray_inactive_btn">#d3d3d3</color>
-    <color name="gray_search_bar_bg">#d3d3d3</color>
+    <color name="gray_search_bar_bg">#f2f2f2</color>
     <color name="gray_filter_btn_bg">#d3d3d3</color>
     <color name="naver_btn_bg">#59c450</color>
+
+    <color name="shop_filter_btn_clicked_bg">#fcf7f6</color>
+    <color name="shop_filter_btn_clicked_txt">#df614e</color>
+
 
 
 </resources>
