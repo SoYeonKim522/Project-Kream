@@ -1,15 +1,10 @@
 package com.example.kream.kotlin.src.main.home
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import com.example.kream.kotlin.R
 import com.example.kream.kotlin.config.BaseFragment
 import com.example.kream.kotlin.databinding.FragmentHomeBinding
-import com.example.kream.kotlin.src.main.home.models.PostSignUpRequest
-import com.example.kream.kotlin.src.main.home.models.SignUpResponse
-import com.example.kream.kotlin.src.main.home.models.UserResponse
-import com.example.kream.kotlin.src.main.home.models.UserSearchResponse
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind, R.layout.fragment_home)
 //        HomeFragmentView

@@ -4,13 +4,15 @@ package com.example.kream.kotlin.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.ViewFlipper;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.AppCompatButton;
 import androidx.viewbinding.ViewBinding;
 import com.example.kream.kotlin.R;
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -20,39 +22,29 @@ public final class FragmentHomeBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final AppCompatButton homeBtnSearch;
+  public final ChipGroup chipGroup;
 
   @NonNull
-  public final AppCompatButton homeBtnTest;
+  public final Chip homeChipReleasedInfo;
 
   @NonNull
-  public final AppCompatButton homeBtnTryPostHttpMethod;
+  public final Chip homeChipToday;
 
   @NonNull
-  public final AppCompatButton homeButtonTryGetJwt;
+  public final ViewFlipper homeViewFlipper;
 
   @NonNull
-  public final EditText homeEditText;
+  public final TextView textView;
 
-  @NonNull
-  public final EditText homeEtId;
-
-  @NonNull
-  public final EditText homeEtPw;
-
-  private FragmentHomeBinding(@NonNull LinearLayout rootView,
-      @NonNull AppCompatButton homeBtnSearch, @NonNull AppCompatButton homeBtnTest,
-      @NonNull AppCompatButton homeBtnTryPostHttpMethod,
-      @NonNull AppCompatButton homeButtonTryGetJwt, @NonNull EditText homeEditText,
-      @NonNull EditText homeEtId, @NonNull EditText homeEtPw) {
+  private FragmentHomeBinding(@NonNull LinearLayout rootView, @NonNull ChipGroup chipGroup,
+      @NonNull Chip homeChipReleasedInfo, @NonNull Chip homeChipToday,
+      @NonNull ViewFlipper homeViewFlipper, @NonNull TextView textView) {
     this.rootView = rootView;
-    this.homeBtnSearch = homeBtnSearch;
-    this.homeBtnTest = homeBtnTest;
-    this.homeBtnTryPostHttpMethod = homeBtnTryPostHttpMethod;
-    this.homeButtonTryGetJwt = homeButtonTryGetJwt;
-    this.homeEditText = homeEditText;
-    this.homeEtId = homeEtId;
-    this.homeEtPw = homeEtPw;
+    this.chipGroup = chipGroup;
+    this.homeChipReleasedInfo = homeChipReleasedInfo;
+    this.homeChipToday = homeChipToday;
+    this.homeViewFlipper = homeViewFlipper;
+    this.textView = textView;
   }
 
   @Override
@@ -82,50 +74,38 @@ public final class FragmentHomeBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.home_btn_search;
-      AppCompatButton homeBtnSearch = rootView.findViewById(id);
-      if (homeBtnSearch == null) {
+      id = R.id.chip_group;
+      ChipGroup chipGroup = rootView.findViewById(id);
+      if (chipGroup == null) {
         break missingId;
       }
 
-      id = R.id.home_btn_test;
-      AppCompatButton homeBtnTest = rootView.findViewById(id);
-      if (homeBtnTest == null) {
+      id = R.id.home_chip_released_info;
+      Chip homeChipReleasedInfo = rootView.findViewById(id);
+      if (homeChipReleasedInfo == null) {
         break missingId;
       }
 
-      id = R.id.home_btn_try_post_http_method;
-      AppCompatButton homeBtnTryPostHttpMethod = rootView.findViewById(id);
-      if (homeBtnTryPostHttpMethod == null) {
+      id = R.id.home_chip_today;
+      Chip homeChipToday = rootView.findViewById(id);
+      if (homeChipToday == null) {
         break missingId;
       }
 
-      id = R.id.home_button_try_get_jwt;
-      AppCompatButton homeButtonTryGetJwt = rootView.findViewById(id);
-      if (homeButtonTryGetJwt == null) {
+      id = R.id.home_view_flipper;
+      ViewFlipper homeViewFlipper = rootView.findViewById(id);
+      if (homeViewFlipper == null) {
         break missingId;
       }
 
-      id = R.id.home_edit_text;
-      EditText homeEditText = rootView.findViewById(id);
-      if (homeEditText == null) {
+      id = R.id.textView;
+      TextView textView = rootView.findViewById(id);
+      if (textView == null) {
         break missingId;
       }
 
-      id = R.id.home_et_id;
-      EditText homeEtId = rootView.findViewById(id);
-      if (homeEtId == null) {
-        break missingId;
-      }
-
-      id = R.id.home_et_pw;
-      EditText homeEtPw = rootView.findViewById(id);
-      if (homeEtPw == null) {
-        break missingId;
-      }
-
-      return new FragmentHomeBinding((LinearLayout) rootView, homeBtnSearch, homeBtnTest,
-          homeBtnTryPostHttpMethod, homeButtonTryGetJwt, homeEditText, homeEtId, homeEtPw);
+      return new FragmentHomeBinding((LinearLayout) rootView, chipGroup, homeChipReleasedInfo,
+          homeChipToday, homeViewFlipper, textView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

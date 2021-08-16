@@ -4,16 +4,42 @@ import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.ViewGroup
 import android.widget.CompoundButton
+import android.widget.FrameLayout
+import android.widget.ImageView
+import android.widget.ViewFlipper
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.kream.kotlin.R
 import com.example.kream.kotlin.config.BaseFragment
 import com.example.kream.kotlin.databinding.FragmentShopBinding
 
 class ShopFragment:BaseFragment<FragmentShopBinding> (FragmentShopBinding::bind, R.layout.fragment_shop) {
+
+    lateinit var viewFlipper:ViewFlipper
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val TAG = "log"
+
+//        viewFlipper = binding.shopSlideBanner
+//
+//        val images = intArrayOf(R.drawable.shop_banner2)
+//        for(image in images){
+//            val imageView = ImageView(requireContext())
+//            val layoutParams = FrameLayout.LayoutParams(
+//                ViewGroup.LayoutParams.MATCH_PARENT,
+//                ViewGroup.LayoutParams.WRAP_CONTENT
+//            )
+//            imageView.layoutParams = layoutParams
+//            imageView.setImageResource(image)
+//            viewFlipper.flipInterval = 1000
+//            viewFlipper.isAutoStart=true
+//
+//            viewFlipper.setInAnimation(requireContext(), android.R.anim.slide_in_left)
+//            viewFlipper.setOutAnimation(requireContext(), android.R.anim.slide_out_right)
+//
+//        }
 
 
         binding.shopFilterLuxury.setOnCheckedChangeListener(ToggleListener())

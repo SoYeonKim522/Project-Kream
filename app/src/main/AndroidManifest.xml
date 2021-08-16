@@ -14,9 +14,11 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="AllowBackup">
+        tools:ignore="AllowBackup"
+        android:usesCleartextTraffic="true">
 
-        <activity android:name=".src.main.loginActivity.LoginActivity">
+
+        <activity android:name=".src.main.login.LoginActivity">
 
         </activity>
 
@@ -33,7 +35,7 @@
 
         </activity>
 
-        <activity android:name=".src.main.signUpActivity.SignUpActivity"/>
+        <activity android:name=".src.main.signUp.SignUpActivity"/>
     </application>
 
 </manifest>

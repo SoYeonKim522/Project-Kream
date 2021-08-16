@@ -35,7 +35,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="40dp"
-        android:layout_marginBottom="8dp"
         android:fontFamily="sans-serif-medium"
         android:text="@string/sign_up_tv_email"
         android:textColor="@color/black"
@@ -48,13 +47,29 @@
     <EditText
         android:id="@+id/sign_up_et_email"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:backgroundTint="@color/gray_inactive_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
+        app:layout_constraintTop_toBottomOf="@+id/email"
+        android:singleLine="true"/>
+    <TextView
+        android:id="@+id/wrong_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="-4dp"
+        android:text="@string/login_wrong_email"
+        android:textColor="@color/red_invalid"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sign_up_et_email" />
 
     <TextView
         android:id="@+id/password"
@@ -68,21 +83,58 @@
         android:textColor="@color/black"
         android:textSize="15sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/sign_up_et_password"
+        app:layout_constraintBottom_toTopOf="@+id/password_layout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sign_up_et_email" />
 
-    <EditText
-        android:id="@+id/sign_up_et_password"
+    <FrameLayout
+        android:id="@+id/password_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="@color/gray_inactive_btn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        app:layout_constraintTop_toBottomOf="@+id/password">
+
+
+        <EditText
+            android:id="@+id/sign_up_et_password"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="@color/gray_inactive_btn"
+            android:inputType="textPassword"
+            android:singleLine="true"/>
+
+        <androidx.appcompat.widget.AppCompatToggleButton
+            android:id="@+id/login_password_toggle"
+            android:layout_width="26dp"
+            android:layout_height="23dp"
+            android:background="@drawable/login_hide_password"
+            android:textOn=""
+            android:textOff=""
+            android:layout_marginEnd="25dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="5dp"/>
+
+    </FrameLayout>
+
+
+    <TextView
+        android:id="@+id/wrong_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="-4dp"
+        android:text="@string/login_wrong_password"
+        android:textColor="@color/red_invalid"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_layout" />
 
     <TextView
         android:id="@+id/sneakers_size"
@@ -96,9 +148,9 @@
         android:textColor="@color/black"
         android:textSize="15sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/frame_layout"
+        app:layout_constraintBottom_toTopOf="@+id/sign_up_sneakers_size"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_et_password" />
+        app:layout_constraintTop_toBottomOf="@+id/password_layout" />
 
     <FrameLayout
         android:id="@+id/sign_up_sneakers_size"
@@ -213,8 +265,8 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:clickable="false"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

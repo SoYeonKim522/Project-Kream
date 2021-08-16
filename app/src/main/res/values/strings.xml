@@ -7,8 +7,11 @@
     <!-- Common -->
 
     <!-- Main -->
-    <string name="main_btm_nav_home_title">홈</string>
-    <string name="main_btm_nav_my_page_title">마이페이지</string>
+    <string name="main_btm_nav_home_title">HOME</string>
+    <string name="main_btm_nav_style_title">STYLE</string>
+    <string name="main_btm_nav_shop_title">SHOP</string>
+    <string name="main_btm_nav_watch_title">WATCH</string>
+    <string name="main_btm_nav_my_title">MY</string>
 
 <!--    Login-->
     <string name="login_tv_email">이메일 주소</string>
@@ -18,8 +21,11 @@
     <string name="login_find_email">이메일 찾기</string>
     <string name="login_find_password">비밀번호 찾기</string>
     <string name="login_sign_up">아직 가입하지 않으셨나요? 이메일로 가입</string>
+    <string name="login_wrong_email">올바른 이메일 주소를 입력하세요</string>
+    <string name="login_wrong_password">영문,숫자,특수문자를 조합해서 입력해주세요. (8~12자)</string>
 
-<!--    signup-->
+
+    <!--    signup-->
     <string name="sign_up_tv_email">이메일 주소 *</string>
     <string name="sign_up_tv_password">비밀번호 *</string>
     <string name="sign_up_title">회원가입</string>
@@ -31,16 +37,27 @@
 
 
 
+
     <!-- Home -->
-    <string name="home_btn_try_get_http_method">GET API 보내기</string>
-    <string name="home_btn_try_post_http_method">POST API 보내기</string>
-    <string name="home_et_id">아이디를 입력하세요.</string>
-    <string name="home_et_pw">비밀번호를 입력하세요.</string>
+    <string name="home_tab1">투데이</string>
+    <string name="home_tab2">발매정보</string>
+    <string name="home_notice">[공지] 택배 없는 날 및 대체 공휴일에 따른 거래 일정 안내</string>
+
+<!--    shop-->
+    <string name="shop_tv_search_bar">브랜드명, 모델명, 모델번호 등</string>
+    <string name="shop_filter_luxury">럭셔리</string>
+    <string name="shop_filter_sneakers">스니커즈</string>
+    <string name="shop_filter_clothes">의류</string>
+    <string name="shop_filter_acc">패션잡화</string>
+    <string name="shop_filter_life">라이프</string>
+    <string name="shop_filter_tech">테크</string>
+    <string name="shop_product">상품</string>
+
+
+
 
     <!-- MyPage -->
     <string name="my_page_tv_counter">%1d 번 눌렀습니다.</string>
-    <string name="my_page_btn_counting_number">숫자 세기</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 
 </resources>

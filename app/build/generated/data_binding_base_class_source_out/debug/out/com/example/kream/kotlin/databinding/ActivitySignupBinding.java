@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatCheckBox;
+import androidx.appcompat.widget.AppCompatToggleButton;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import com.example.kream.kotlin.R;
@@ -42,7 +43,13 @@ public final class ActivitySignupBinding implements ViewBinding {
   public final TextView email;
 
   @NonNull
+  public final AppCompatToggleButton loginPasswordToggle;
+
+  @NonNull
   public final TextView password;
+
+  @NonNull
+  public final FrameLayout passwordLayout;
 
   @NonNull
   public final EditText signUpEtEmail;
@@ -59,12 +66,21 @@ public final class ActivitySignupBinding implements ViewBinding {
   @NonNull
   public final TextView sneakersSize;
 
+  @NonNull
+  public final TextView wrongEmail;
+
+  @NonNull
+  public final TextView wrongPassword;
+
   private ActivitySignupBinding(@NonNull ConstraintLayout rootView, @NonNull TextView agreement1,
       @NonNull TextView agreement2, @NonNull ImageButton backBtn,
       @NonNull AppCompatCheckBox checkBox1, @NonNull AppCompatCheckBox checkBox2,
-      @NonNull TextView email, @NonNull TextView password, @NonNull EditText signUpEtEmail,
-      @NonNull EditText signUpEtPassword, @NonNull FrameLayout signUpSneakersSize,
-      @NonNull Button signupButton, @NonNull TextView sneakersSize) {
+      @NonNull TextView email, @NonNull AppCompatToggleButton loginPasswordToggle,
+      @NonNull TextView password, @NonNull FrameLayout passwordLayout,
+      @NonNull EditText signUpEtEmail, @NonNull EditText signUpEtPassword,
+      @NonNull FrameLayout signUpSneakersSize, @NonNull Button signupButton,
+      @NonNull TextView sneakersSize, @NonNull TextView wrongEmail,
+      @NonNull TextView wrongPassword) {
     this.rootView = rootView;
     this.agreement1 = agreement1;
     this.agreement2 = agreement2;
@@ -72,12 +88,16 @@ public final class ActivitySignupBinding implements ViewBinding {
     this.checkBox1 = checkBox1;
     this.checkBox2 = checkBox2;
     this.email = email;
+    this.loginPasswordToggle = loginPasswordToggle;
     this.password = password;
+    this.passwordLayout = passwordLayout;
     this.signUpEtEmail = signUpEtEmail;
     this.signUpEtPassword = signUpEtPassword;
     this.signUpSneakersSize = signUpSneakersSize;
     this.signupButton = signupButton;
     this.sneakersSize = sneakersSize;
+    this.wrongEmail = wrongEmail;
+    this.wrongPassword = wrongPassword;
   }
 
   @Override
@@ -143,9 +163,21 @@ public final class ActivitySignupBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.login_password_toggle;
+      AppCompatToggleButton loginPasswordToggle = rootView.findViewById(id);
+      if (loginPasswordToggle == null) {
+        break missingId;
+      }
+
       id = R.id.password;
       TextView password = rootView.findViewById(id);
       if (password == null) {
+        break missingId;
+      }
+
+      id = R.id.password_layout;
+      FrameLayout passwordLayout = rootView.findViewById(id);
+      if (passwordLayout == null) {
         break missingId;
       }
 
@@ -179,9 +211,22 @@ public final class ActivitySignupBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.wrong_email;
+      TextView wrongEmail = rootView.findViewById(id);
+      if (wrongEmail == null) {
+        break missingId;
+      }
+
+      id = R.id.wrong_password;
+      TextView wrongPassword = rootView.findViewById(id);
+      if (wrongPassword == null) {
+        break missingId;
+      }
+
       return new ActivitySignupBinding((ConstraintLayout) rootView, agreement1, agreement2, backBtn,
-          checkBox1, checkBox2, email, password, signUpEtEmail, signUpEtPassword,
-          signUpSneakersSize, signupButton, sneakersSize);
+          checkBox1, checkBox2, email, loginPasswordToggle, password, passwordLayout, signUpEtEmail,
+          signUpEtPassword, signUpSneakersSize, signupButton, sneakersSize, wrongEmail,
+          wrongPassword);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

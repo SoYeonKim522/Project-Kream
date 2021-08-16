@@ -1,8 +1,8 @@
 package com.example.kream.kotlin.src.main.home
 
 import com.example.kream.kotlin.config.ApplicationClass
-import com.example.kream.kotlin.src.main.home.models.PostSignUpRequest
-import com.example.kream.kotlin.src.main.home.models.SignUpResponse
+import com.example.kream.kotlin.src.main.home.models.PostSignUpRequest_home
+import com.example.kream.kotlin.src.main.home.models.SignUpResponse_home
 import com.example.kream.kotlin.src.main.home.models.UserResponse
 import com.example.kream.kotlin.src.main.home.models.UserSearchResponse
 import retrofit2.Call
@@ -24,14 +24,14 @@ class HomeService(val view: HomeFragmentView) {
         })
     }
 
-    fun tryPostSignUp(postSignUpRequest: PostSignUpRequest){
+    fun tryPostSignUp(postSignUpRequest: PostSignUpRequest_home){
         val homeRetrofitInterface = ApplicationClass.sRetrofit.create(HomeRetrofitInterface::class.java)
-        homeRetrofitInterface.postSignUp(postSignUpRequest).enqueue(object : Callback<SignUpResponse>{
-            override fun onResponse(call: Call<SignUpResponse>, response: Response<SignUpResponse>) {
-                view.onPostSignUpSuccess(response.body() as SignUpResponse)
+        homeRetrofitInterface.postSignUp(postSignUpRequest).enqueue(object : Callback<SignUpResponse_home>{
+            override fun onResponse(call: Call<SignUpResponse_home>, response: Response<SignUpResponse_home>) {
+                view.onPostSignUpSuccess(response.body() as SignUpResponse_home)
             }
 
-            override fun onFailure(call: Call<SignUpResponse>, t: Throwable) {
+            override fun onFailure(call: Call<SignUpResponse_home>, t: Throwable) {
                 view.onPostSignUpFailure(t.message ?: "통신 오류")
             }
         })

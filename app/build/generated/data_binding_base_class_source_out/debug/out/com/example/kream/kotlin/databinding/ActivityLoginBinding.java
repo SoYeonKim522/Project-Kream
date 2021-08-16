@@ -6,12 +6,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatToggleButton;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import com.example.kream.kotlin.R;
@@ -25,12 +27,6 @@ public final class ActivityLoginBinding implements ViewBinding {
 
   @NonNull
   public final ImageButton backBtn;
-
-  @NonNull
-  public final Button button;
-
-  @NonNull
-  public final Button button2;
 
   @NonNull
   public final TextView email;
@@ -48,13 +44,25 @@ public final class ActivityLoginBinding implements ViewBinding {
   public final TextView loginBtnGoSignUp;
 
   @NonNull
+  public final Button loginBtnLogin;
+
+  @NonNull
+  public final Button loginBtnNaver;
+
+  @NonNull
   public final EditText loginEtEmail;
 
   @NonNull
   public final EditText loginEtPassword;
 
   @NonNull
+  public final AppCompatToggleButton loginPasswordToggle;
+
+  @NonNull
   public final TextView password;
+
+  @NonNull
+  public final FrameLayout passwordLayout;
 
   @NonNull
   public final ScrollView scrollView;
@@ -62,26 +70,38 @@ public final class ActivityLoginBinding implements ViewBinding {
   @NonNull
   public final TextView separator;
 
+  @NonNull
+  public final TextView wrongEmail;
+
+  @NonNull
+  public final TextView wrongPassword;
+
   private ActivityLoginBinding(@NonNull ConstraintLayout rootView, @NonNull ImageButton backBtn,
-      @NonNull Button button, @NonNull Button button2, @NonNull TextView email,
-      @NonNull ImageView imageView, @NonNull TextView loginBtnFindEmail,
+      @NonNull TextView email, @NonNull ImageView imageView, @NonNull TextView loginBtnFindEmail,
       @NonNull TextView loginBtnFindPw, @NonNull TextView loginBtnGoSignUp,
-      @NonNull EditText loginEtEmail, @NonNull EditText loginEtPassword, @NonNull TextView password,
-      @NonNull ScrollView scrollView, @NonNull TextView separator) {
+      @NonNull Button loginBtnLogin, @NonNull Button loginBtnNaver, @NonNull EditText loginEtEmail,
+      @NonNull EditText loginEtPassword, @NonNull AppCompatToggleButton loginPasswordToggle,
+      @NonNull TextView password, @NonNull FrameLayout passwordLayout,
+      @NonNull ScrollView scrollView, @NonNull TextView separator, @NonNull TextView wrongEmail,
+      @NonNull TextView wrongPassword) {
     this.rootView = rootView;
     this.backBtn = backBtn;
-    this.button = button;
-    this.button2 = button2;
     this.email = email;
     this.imageView = imageView;
     this.loginBtnFindEmail = loginBtnFindEmail;
     this.loginBtnFindPw = loginBtnFindPw;
     this.loginBtnGoSignUp = loginBtnGoSignUp;
+    this.loginBtnLogin = loginBtnLogin;
+    this.loginBtnNaver = loginBtnNaver;
     this.loginEtEmail = loginEtEmail;
     this.loginEtPassword = loginEtPassword;
+    this.loginPasswordToggle = loginPasswordToggle;
     this.password = password;
+    this.passwordLayout = passwordLayout;
     this.scrollView = scrollView;
     this.separator = separator;
+    this.wrongEmail = wrongEmail;
+    this.wrongPassword = wrongPassword;
   }
 
   @Override
@@ -117,18 +137,6 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.button;
-      Button button = rootView.findViewById(id);
-      if (button == null) {
-        break missingId;
-      }
-
-      id = R.id.button2;
-      Button button2 = rootView.findViewById(id);
-      if (button2 == null) {
-        break missingId;
-      }
-
       id = R.id.email;
       TextView email = rootView.findViewById(id);
       if (email == null) {
@@ -159,6 +167,18 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.login_btn_login;
+      Button loginBtnLogin = rootView.findViewById(id);
+      if (loginBtnLogin == null) {
+        break missingId;
+      }
+
+      id = R.id.login_btn_naver;
+      Button loginBtnNaver = rootView.findViewById(id);
+      if (loginBtnNaver == null) {
+        break missingId;
+      }
+
       id = R.id.login_et_email;
       EditText loginEtEmail = rootView.findViewById(id);
       if (loginEtEmail == null) {
@@ -171,9 +191,21 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.login_password_toggle;
+      AppCompatToggleButton loginPasswordToggle = rootView.findViewById(id);
+      if (loginPasswordToggle == null) {
+        break missingId;
+      }
+
       id = R.id.password;
       TextView password = rootView.findViewById(id);
       if (password == null) {
+        break missingId;
+      }
+
+      id = R.id.password_layout;
+      FrameLayout passwordLayout = rootView.findViewById(id);
+      if (passwordLayout == null) {
         break missingId;
       }
 
@@ -189,9 +221,22 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityLoginBinding((ConstraintLayout) rootView, backBtn, button, button2, email,
-          imageView, loginBtnFindEmail, loginBtnFindPw, loginBtnGoSignUp, loginEtEmail,
-          loginEtPassword, password, scrollView, separator);
+      id = R.id.wrong_email;
+      TextView wrongEmail = rootView.findViewById(id);
+      if (wrongEmail == null) {
+        break missingId;
+      }
+
+      id = R.id.wrong_password;
+      TextView wrongPassword = rootView.findViewById(id);
+      if (wrongPassword == null) {
+        break missingId;
+      }
+
+      return new ActivityLoginBinding((ConstraintLayout) rootView, backBtn, email, imageView,
+          loginBtnFindEmail, loginBtnFindPw, loginBtnGoSignUp, loginBtnLogin, loginBtnNaver,
+          loginEtEmail, loginEtPassword, loginPasswordToggle, password, passwordLayout, scrollView,
+          separator, wrongEmail, wrongPassword);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

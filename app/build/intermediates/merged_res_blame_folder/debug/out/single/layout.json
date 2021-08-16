@@ -8,6 +8,10 @@
         "source": "D:\\Kream\\app\\src\\main\\res\\layout\\activity_login.xml"
     },
     {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_shop.xml",
+        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\fragment_shop.xml"
+    },
+    {
         "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\dialog_loading.xml",
         "source": "D:\\Kream\\app\\src\\main\\res\\layout\\dialog_loading.xml"
     },
@@ -16,23 +20,27 @@
         "source": "D:\\Kream\\app\\src\\main\\res\\layout\\fragment_home.xml"
     },
     {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_test.xml",
-        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\fragment_test.xml"
-    },
-    {
         "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_my_page.xml",
         "source": "D:\\Kream\\app\\src\\main\\res\\layout\\fragment_my_page.xml"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_style.xml",
+        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\fragment_style.xml"
     },
     {
         "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_signup.xml",
         "source": "D:\\Kream\\app\\src\\main\\res\\layout\\activity_signup.xml"
     },
     {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
-        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\activity_main.xml"
+        "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_watch.xml",
+        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\fragment_watch.xml"
     },
     {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_splash.xml",
-        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\activity_splash.xml"
+        "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\shop_recycler_item.xml",
+        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\shop_recycler_item.xml"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\activity_main.xml"
     }
 ]

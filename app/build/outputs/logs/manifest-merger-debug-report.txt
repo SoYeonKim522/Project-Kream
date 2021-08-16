@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Kream\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from D:\Kream\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from D:\Kream\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from D:\Kream\app\src\main\AndroidManifest.xml:2:1-40:12
+ADDED from D:\Kream\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from D:\Kream\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from D:\Kream\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from D:\Kream\app\src\main\AndroidManifest.xml:2:1-41:12
 MERGED from [androidx.databinding:viewbinding:4.2.2] C:\Users\kyujin\.gradle\caches\transforms-2\files-2.1\a86ea156f1c6c70da169573cb5f0d3f3\viewbinding-4.2.2\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.core:core-ktx:1.6.0] C:\Users\kyujin\.gradle\caches\transforms-2\files-2.1\a8e78915166aa0074d6b796b6207670d\core-ktx-1.6.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.material:material:1.4.0] C:\Users\kyujin\.gradle\caches\transforms-2\files-2.1\c78e2c0af5afa33232d9367e0579742a\material-1.4.0\AndroidManifest.xml:17:1-24:12
@@ -49,22 +49,22 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\kyujin\.gradle\c
 MERGED from [com.github.ybq:Android-SpinKit:1.4.0] C:\Users\kyujin\.gradle\caches\transforms-2\files-2.1\dea9b2d82276c517a651609d80697aaa\jetified-Android-SpinKit-1.4.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.makeramen:roundedimageview:2.3.0] C:\Users\kyujin\.gradle\caches\transforms-2\files-2.1\fb6c843f1dfdc5676bac8ca6faf4d13f\jetified-roundedimageview-2.3.0\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\kyujin\.gradle\caches\transforms-2\files-2.1\2309c301d9c715399ce59dfc6758a6c1\annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
-INJECTED from D:\Kream\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from D:\Kream\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from D:\Kream\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from D:\Kream\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from D:\Kream\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from D:\Kream\app\src\main\AndroidManifest.xml:2:1-41:12
 	package
 		ADDED from D:\Kream\app\src\main\AndroidManifest.xml:4:5-39
 		INJECTED from D:\Kream\app\src\main\AndroidManifest.xml
 		INJECTED from D:\Kream\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\Kream\app\src\main\AndroidManifest.xml
-		ADDED from D:\Kream\app\src\main\AndroidManifest.xml:2:1-40:12
+		ADDED from D:\Kream\app\src\main\AndroidManifest.xml:2:1-41:12
 		INJECTED from D:\Kream\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from D:\Kream\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from D:\Kream\app\src\main\AndroidManifest.xml
-		ADDED from D:\Kream\app\src\main\AndroidManifest.xml:2:1-40:12
+		ADDED from D:\Kream\app\src\main\AndroidManifest.xml:2:1-41:12
 		INJECTED from D:\Kream\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\Kream\app\src\main\AndroidManifest.xml:2:11-69
@@ -73,7 +73,7 @@ ADDED from D:\Kream\app\src\main\AndroidManifest.xml:6:5-67
 	android:name
 		ADDED from D:\Kream\app\src\main\AndroidManifest.xml:6:22-64
 application
-ADDED from D:\Kream\app\src\main\AndroidManifest.xml:8:5-38:19
+ADDED from D:\Kream\app\src\main\AndroidManifest.xml:8:5-39:19
 MERGED from [com.google.android.material:material:1.4.0] C:\Users\kyujin\.gradle\caches\transforms-2\files-2.1\c78e2c0af5afa33232d9367e0579742a\material-1.4.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.4.0] C:\Users\kyujin\.gradle\caches\transforms-2\files-2.1\c78e2c0af5afa33232d9367e0579742a\material-1.4.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.0] C:\Users\kyujin\.gradle\caches\transforms-2\files-2.1\390af1902a3526095bf35ec755ee7063\constraintlayout-2.1.0\AndroidManifest.xml:9:5-20
@@ -100,34 +100,36 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ky
 		ADDED from D:\Kream\app\src\main\AndroidManifest.xml:16:9-40
 	android:networkSecurityConfig
 		ADDED from D:\Kream\app\src\main\AndroidManifest.xml:14:9-69
+	android:usesCleartextTraffic
+		ADDED from D:\Kream\app\src\main\AndroidManifest.xml:18:9-44
 	android:name
 		ADDED from D:\Kream\app\src\main\AndroidManifest.xml:9:9-72
-activity#com.example.kream.kotlin.src.main.loginActivity.LoginActivity
-ADDED from D:\Kream\app\src\main\AndroidManifest.xml:19:9-26:20
+activity#com.example.kream.kotlin.src.main.login.LoginActivity
+ADDED from D:\Kream\app\src\main\AndroidManifest.xml:21:9-23:20
 	android:name
-		ADDED from D:\Kream\app\src\main\AndroidManifest.xml:19:19-71
-intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\Kream\app\src\main\AndroidManifest.xml:20:13-24:29
-action#android.intent.action.MAIN
-ADDED from D:\Kream\app\src\main\AndroidManifest.xml:21:17-69
-	android:name
-		ADDED from D:\Kream\app\src\main\AndroidManifest.xml:21:25-66
-category#android.intent.category.LAUNCHER
-ADDED from D:\Kream\app\src\main\AndroidManifest.xml:23:17-77
-	android:name
-		ADDED from D:\Kream\app\src\main\AndroidManifest.xml:23:27-74
+		ADDED from D:\Kream\app\src\main\AndroidManifest.xml:21:19-63
 activity#com.example.kream.kotlin.src.main.MainActivity
-ADDED from D:\Kream\app\src\main\AndroidManifest.xml:28:9-35:20
+ADDED from D:\Kream\app\src\main\AndroidManifest.xml:25:9-36:20
 	android:screenOrientation
-		ADDED from D:\Kream\app\src\main\AndroidManifest.xml:30:13-49
+		ADDED from D:\Kream\app\src\main\AndroidManifest.xml:27:13-49
 	android:theme
-		ADDED from D:\Kream\app\src\main\AndroidManifest.xml:31:13-47
+		ADDED from D:\Kream\app\src\main\AndroidManifest.xml:28:13-47
 	android:name
-		ADDED from D:\Kream\app\src\main\AndroidManifest.xml:29:13-74
-activity#com.example.kream.kotlin.src.main.signUpActivity.SignUpActivity
-ADDED from D:\Kream\app\src\main\AndroidManifest.xml:37:9-75
+		ADDED from D:\Kream\app\src\main\AndroidManifest.xml:26:13-74
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\Kream\app\src\main\AndroidManifest.xml:30:13-34:29
+action#android.intent.action.MAIN
+ADDED from D:\Kream\app\src\main\AndroidManifest.xml:31:17-69
 	android:name
-		ADDED from D:\Kream\app\src\main\AndroidManifest.xml:37:19-73
+		ADDED from D:\Kream\app\src\main\AndroidManifest.xml:31:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\Kream\app\src\main\AndroidManifest.xml:33:17-77
+	android:name
+		ADDED from D:\Kream\app\src\main\AndroidManifest.xml:33:27-74
+activity#com.example.kream.kotlin.src.main.signUp.SignUpActivity
+ADDED from D:\Kream\app\src\main\AndroidManifest.xml:38:9-67
+	android:name
+		ADDED from D:\Kream\app\src\main\AndroidManifest.xml:38:19-65
 uses-sdk
 INJECTED from D:\Kream\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\Kream\app\src\main\AndroidManifest.xml

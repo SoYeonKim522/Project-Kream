@@ -15,7 +15,7 @@
 11-->D:\Kream\app\src\main\AndroidManifest.xml:6:22-64
 12
 13    <application
-13-->D:\Kream\app\src\main\AndroidManifest.xml:8:5-38:19
+13-->D:\Kream\app\src\main\AndroidManifest.xml:8:5-39:19
 14        android:name="com.example.kream.kotlin.config.ApplicationClass"
 14-->D:\Kream\app\src\main\AndroidManifest.xml:9:9-72
 15        android:allowBackup="false"
@@ -35,34 +35,36 @@
 23        android:supportsRtl="true"
 23-->D:\Kream\app\src\main\AndroidManifest.xml:15:9-35
 24        android:testOnly="true"
-25        android:theme="@style/AppTheme" >
+25        android:theme="@style/AppTheme"
 25-->D:\Kream\app\src\main\AndroidManifest.xml:16:9-40
-26        <activity android:name="com.example.kream.kotlin.src.main.loginActivity.LoginActivity" >
-26-->D:\Kream\app\src\main\AndroidManifest.xml:19:9-26:20
-26-->D:\Kream\app\src\main\AndroidManifest.xml:19:19-71
-27            <intent-filter>
-27-->D:\Kream\app\src\main\AndroidManifest.xml:20:13-24:29
-28                <action android:name="android.intent.action.MAIN" />
-28-->D:\Kream\app\src\main\AndroidManifest.xml:21:17-69
-28-->D:\Kream\app\src\main\AndroidManifest.xml:21:25-66
-29
-30                <category android:name="android.intent.category.LAUNCHER" />
-30-->D:\Kream\app\src\main\AndroidManifest.xml:23:17-77
-30-->D:\Kream\app\src\main\AndroidManifest.xml:23:27-74
-31            </intent-filter>
-32        </activity>
-33        <activity
-33-->D:\Kream\app\src\main\AndroidManifest.xml:28:9-35:20
-34            android:name="com.example.kream.kotlin.src.main.MainActivity"
-34-->D:\Kream\app\src\main\AndroidManifest.xml:29:13-74
-35            android:screenOrientation="portrait"
-35-->D:\Kream\app\src\main\AndroidManifest.xml:30:13-49
-36            android:theme="@style/SplashTheme" >
-36-->D:\Kream\app\src\main\AndroidManifest.xml:31:13-47
-37        </activity>
-38        <activity android:name="com.example.kream.kotlin.src.main.signUpActivity.SignUpActivity" />
-38-->D:\Kream\app\src\main\AndroidManifest.xml:37:9-75
-38-->D:\Kream\app\src\main\AndroidManifest.xml:37:19-73
-39    </application>
-40
-41</manifest>
+26        android:usesCleartextTraffic="true" >
+26-->D:\Kream\app\src\main\AndroidManifest.xml:18:9-44
+27        <activity android:name="com.example.kream.kotlin.src.main.login.LoginActivity" >
+27-->D:\Kream\app\src\main\AndroidManifest.xml:21:9-23:20
+27-->D:\Kream\app\src\main\AndroidManifest.xml:21:19-63
+28        </activity>
+29        <activity
+29-->D:\Kream\app\src\main\AndroidManifest.xml:25:9-36:20
+30            android:name="com.example.kream.kotlin.src.main.MainActivity"
+30-->D:\Kream\app\src\main\AndroidManifest.xml:26:13-74
+31            android:screenOrientation="portrait"
+31-->D:\Kream\app\src\main\AndroidManifest.xml:27:13-49
+32            android:theme="@style/SplashTheme" >
+32-->D:\Kream\app\src\main\AndroidManifest.xml:28:13-47
+33            <intent-filter>
+33-->D:\Kream\app\src\main\AndroidManifest.xml:30:13-34:29
+34                <action android:name="android.intent.action.MAIN" />
+34-->D:\Kream\app\src\main\AndroidManifest.xml:31:17-69
+34-->D:\Kream\app\src\main\AndroidManifest.xml:31:25-66
+35
+36                <category android:name="android.intent.category.LAUNCHER" />
+36-->D:\Kream\app\src\main\AndroidManifest.xml:33:17-77
+36-->D:\Kream\app\src\main\AndroidManifest.xml:33:27-74
+37            </intent-filter>
+38        </activity>
+39        <activity android:name="com.example.kream.kotlin.src.main.signUp.SignUpActivity" />
+39-->D:\Kream\app\src\main\AndroidManifest.xml:38:9-67
+39-->D:\Kream\app\src\main\AndroidManifest.xml:38:19-65
+40    </application>
+41
+42</manifest>

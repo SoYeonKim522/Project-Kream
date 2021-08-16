@@ -23,4 +23,13 @@
 
     </style>
 
+<!--    <style name="ChipTextStyle">-->
+<!--        <item name="android:textSize">20sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="ChipStyleUnchecked">-->
+<!--        <item name="chipBackgroundColor">@color/white</item>-->
+<!--        <item name="color">@color/black</item>-->
+<!--    </style>-->
+
 </resources>

@@ -13,6 +13,7 @@
        android:layout_height="wrap_content"
        android:gravity="center">
 
+
       <com.google.android.material.chip.ChipGroup
           android:id="@+id/chip_group"
           android:layout_width="wrap_content"
@@ -26,10 +27,13 @@
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
              android:text="@string/home_tab1"
-             android:textSize="20sp"
              android:textStyle="bold"
+             android:textSize="20sp"
              android:textFontWeight="1000"
-             style="@style/ChipStyleChecked"
+             android:textColor="@color/white"
+             app:chipStartPadding="10dp"
+             app:chipEndPadding="10dp"
+             app:chipMinHeight="40dp"
              android:checked="true"
              />
 
@@ -38,10 +42,12 @@
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
              android:text="@string/home_tab2"
-             android:textSize="20sp"
              android:textStyle="bold"
+             android:textSize="20sp"
              android:textFontWeight="1000"
-             style="@style/ChipStyleUnchecked"/>
+             app:chipMinHeight="40dp"
+             android:clickable="false"
+             />
 
       </com.google.android.material.chip.ChipGroup>
 
