@@ -31,8 +31,8 @@
     <string name="sign_up_title">회원가입</string>
     <string name="sign_up_sneakers_size">스니커스 사이즈</string>
     <string name="sign_up_sneakers_size_placeholder">선택하세요</string>
-    <string name="sign_up_agreement">[필수] 만14세 이상이며 모두\n동의합니다.</string>
-    <string name="sign_up_agreement2">[선택] 광고성 정보 수신에 모두\n동의합니다.</string>
+    <string name="sign_up_agreement">[필수] 만14세 이상이며 모두 동의합니다.</string>
+    <string name="sign_up_agreement2">[선택] 광고성 정보 수신에 모두 동의합니다.</string>
     <string name="sign_up_sign_up">가입하기</string>
 
 

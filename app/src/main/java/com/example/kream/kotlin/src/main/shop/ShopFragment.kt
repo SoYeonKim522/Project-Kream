@@ -22,24 +22,24 @@ class ShopFragment:BaseFragment<FragmentShopBinding> (FragmentShopBinding::bind,
         super.onViewCreated(view, savedInstanceState)
         val TAG = "log"
 
-//        viewFlipper = binding.shopSlideBanner
-//
-//        val images = intArrayOf(R.drawable.shop_banner2)
-//        for(image in images){
-//            val imageView = ImageView(requireContext())
-//            val layoutParams = FrameLayout.LayoutParams(
-//                ViewGroup.LayoutParams.MATCH_PARENT,
-//                ViewGroup.LayoutParams.WRAP_CONTENT
-//            )
-//            imageView.layoutParams = layoutParams
-//            imageView.setImageResource(image)
-//            viewFlipper.flipInterval = 1000
-//            viewFlipper.isAutoStart=true
-//
-//            viewFlipper.setInAnimation(requireContext(), android.R.anim.slide_in_left)
-//            viewFlipper.setOutAnimation(requireContext(), android.R.anim.slide_out_right)
-//
-//        }
+        viewFlipper = binding.shopSlideBanner
+
+        val images = intArrayOf(R.drawable.shop_banner2)
+        for(image in images){
+            val imageView = ImageView(requireContext())
+            val layoutParams = FrameLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+            )
+            imageView.layoutParams = layoutParams
+            imageView.setImageResource(image)
+            viewFlipper.flipInterval = 1000
+            viewFlipper.isAutoStart=true
+
+            viewFlipper.setInAnimation(requireContext(), android.R.anim.slide_in_left)
+            viewFlipper.setOutAnimation(requireContext(), android.R.anim.slide_out_right)
+
+        }
 
 
         binding.shopFilterLuxury.setOnCheckedChangeListener(ToggleListener())

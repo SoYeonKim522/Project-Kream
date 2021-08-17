@@ -39,7 +39,7 @@
         android:layout_marginEnd="16dp"
         android:text="Jordan 1 x Travis Scott x Fragment..."
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="14sp"
         app:layout_constraintTop_toBottomOf="@id/brand_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,7 +53,7 @@
         android:layout_marginTop="16dp"
         android:text="1,500,000원"
         android:textColor="@color/black"
-        android:textSize="21sp"
+        android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,7 +67,7 @@
         android:layout_marginBottom="20dp"
         android:text="즉시 구매가"
         android:textColor="@color/gray_text"
-        android:textSize="15sp"
+        android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/wishlish_icon"
         app:layout_constraintEnd_toEndOf="parent"
@@ -81,10 +81,10 @@
         android:layout_marginStart="8dp"
         android:src="@drawable/wishlist_icon"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHeight="24dp"
+        app:layout_constraintHeight="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/buy_now_price_title"
-        app:layout_constraintWidth="24dp" />
+        app:layout_constraintWidth="20dp" />
 
     <TextView
         android:id="@+id/wishlish_count"
@@ -93,7 +93,7 @@
         android:layout_marginStart="4dp"
         android:text="5083"
         android:textColor="@color/gray_text"
-        android:textSize="16sp"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/wishlish_icon"
         app:layout_constraintTop_toTopOf="@+id/wishlish_icon" />
@@ -105,10 +105,10 @@
         android:layout_marginStart="90dp"
         android:src="@drawable/post_icon"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHeight="24dp"
+        app:layout_constraintHeight="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/wishlish_icon"
-        app:layout_constraintWidth="24dp" />
+        app:layout_constraintWidth="20dp" />
 
     <TextView
         android:id="@+id/posting_count"
@@ -117,7 +117,7 @@
         android:layout_marginStart="4dp"
         android:text="87"
         android:textColor="@color/gray_text"
-        android:textSize="16sp"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/posting_icon"
         app:layout_constraintTop_toTopOf="@+id/wishlish_count" />

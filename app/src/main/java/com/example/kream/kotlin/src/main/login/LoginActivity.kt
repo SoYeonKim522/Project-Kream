@@ -16,9 +16,13 @@ import com.example.kream.kotlin.config.ApplicationClass
 import com.example.kream.kotlin.config.BaseActivity
 import com.example.kream.kotlin.databinding.ActivityLoginBinding
 import com.example.kream.kotlin.src.main.MainActivity
+import com.example.kream.kotlin.src.main.home.HomeFragment
 import com.example.kream.kotlin.src.main.login.models.LoginResponse
 import com.example.kream.kotlin.src.main.login.models.PostLoginRequest
+import com.example.kream.kotlin.src.main.myPage.MyPageFragment
+import com.example.kream.kotlin.src.main.shop.ShopFragment
 import com.example.kream.kotlin.src.main.signUp.SignUpActivity
+import com.example.kream.kotlin.src.main.style.StyleFragment
 import java.util.regex.Pattern
 
 class LoginActivity : BaseActivity<ActivityLoginBinding> (ActivityLoginBinding::inflate), LoginView {
@@ -50,7 +54,9 @@ class LoginActivity : BaseActivity<ActivityLoginBinding> (ActivityLoginBinding::
                 binding.email.setTextColor(Color.parseColor("#000000"))
                 binding.loginEtEmail.backgroundTintList = ContextCompat.getColorStateList(applicationContext, R.color.black)
                 binding.wrongEmail.visibility=View.INVISIBLE
-                emailChecked = true
+                if(validate&& email.isNotEmpty()){
+                    emailChecked = true
+                }
                 activateLogin(emailChecked, pwChecked)
                 return true
             } else {
@@ -84,7 +90,9 @@ class LoginActivity : BaseActivity<ActivityLoginBinding> (ActivityLoginBinding::
                 binding.password.setTextColor(Color.parseColor("#000000"))
                 binding.loginEtPassword.backgroundTintList = ContextCompat.getColorStateList(applicationContext, R.color.black)
                 binding.wrongPassword.visibility= View.INVISIBLE
-                pwChecked = true
+                if(validate&&password.isNotEmpty()){
+                    pwChecked = true
+                }
                 activateLogin(emailChecked, pwChecked)
                 return true
             } else {
@@ -123,6 +131,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding> (ActivityLoginBinding::
             val email = binding.loginEtEmail.text.toString()
             val password = binding.loginEtPassword.text.toString()
             val postRequest = PostLoginRequest(email, password)
+            showLoadingDialog(this)
             LoginService(this).tryPostLogin(postRequest)
         }
 
@@ -132,7 +141,6 @@ class LoginActivity : BaseActivity<ActivityLoginBinding> (ActivityLoginBinding::
 
     private fun activateLogin(emailChecked: Boolean, pwChecked: Boolean) {
         if (this.emailChecked && this.pwChecked) {
-            Log.d(TAG, "onCreate: 가입하기 활성화")
             binding.loginBtnLogin.setBackgroundResource(R.drawable.login_button_clicked)
             binding.loginBtnLogin.isClickable = true
         } else{
@@ -141,16 +149,31 @@ class LoginActivity : BaseActivity<ActivityLoginBinding> (ActivityLoginBinding::
         }
     }
 
+
     override fun onPostLoginSuccess(response: LoginResponse) {
         Log.d(TAG, "onPostSignUpSuccess: ${response.result}")
-        showCustomToast("로그인 완료")
-        ApplicationClass.editor.putString(ApplicationClass.X_ACCESS_TOKEN, response.result.token)
-        ApplicationClass.editor.commit()
+        when(response.code){
+            1000 -> {showCustomToast("로그인 성공")
+                ApplicationClass.editor.putString(ApplicationClass.X_ACCESS_TOKEN, response.result.token)
+                ApplicationClass.editor.commit()
+                dismissLoadingDialog()
+                super.finish()  //이전 화면으로 돌아가기!
+                //supportFragmentManager.beginTransaction().replace(R.id.login_activity_root, StyleFragment()).commit()
+                Log.d(TAG, "onPostLoginSuccess: ${ApplicationClass.sSharedPreferences.getString(ApplicationClass.X_ACCESS_TOKEN, "none")}")
+            }
+            3014 -> {showCustomToast("없는 이메일이거나 비밀번호가 틀렸습니다")
+                    dismissLoadingDialog()}
+            else -> {showCustomToast("로그인 실패")
+                    dismissLoadingDialog()}
+        }
+
+
 //        startActivity(Intent(this, MainActivity::class.java))
 //        finish()
     }
 
     override fun onPostLoginFailure(message: String) {
+        dismissLoadingDialog()
         showCustomToast("오류 : $message")
     }
 

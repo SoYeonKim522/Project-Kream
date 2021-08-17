@@ -44,7 +44,9 @@ class SignUpActivity : BaseActivity<ActivitySignupBinding> (ActivitySignupBindin
                 binding.signUpEtEmail.backgroundTintList =
                     ContextCompat.getColorStateList(applicationContext, R.color.black)
                 binding.wrongEmail.visibility= View.INVISIBLE
-                emailChecked = true
+                if(validate && email.isNotEmpty()){
+                    emailChecked = true
+                }
                 activateSignUp(emailChecked, pwChecked, boxChecked)
                 return true
             } else {
@@ -82,7 +84,9 @@ class SignUpActivity : BaseActivity<ActivitySignupBinding> (ActivitySignupBindin
                 binding.signUpEtPassword.backgroundTintList =
                     ContextCompat.getColorStateList(applicationContext, R.color.black)
                 binding.wrongPassword.visibility= View.INVISIBLE
-                pwChecked = true
+                if(validate&&password.isNotEmpty()){
+                    pwChecked = true
+                }
                 activateSignUp(emailChecked, pwChecked, boxChecked)
                 return true
             } else {
@@ -141,9 +145,9 @@ class SignUpActivity : BaseActivity<ActivitySignupBinding> (ActivitySignupBindin
                 val password = binding.signUpEtPassword.text.toString()
                 val postRequest = PostSignUpRequest(
                     email = email, password = password,
-                    name = "김모모", phone = "010-0000-0000"
+                    name = "테스트5", phone = "010-0817-0005"
                 )
-
+                showLoadingDialog(this)
                 SignUpService(this).tryPostSignUp(postRequest)
             }
 
@@ -169,7 +173,7 @@ class SignUpActivity : BaseActivity<ActivitySignupBinding> (ActivitySignupBindin
 
     private fun activateSignUp(emailChecked: Boolean, pwChecked: Boolean, boxChecked: Boolean) {
         if (this.emailChecked && this.pwChecked && this.boxChecked) {
-            Log.d(TAG, "onCreate: 가입하기 활성화")
+            //Log.d(TAG, "onCreate: 가입하기 활성화")
             binding.signupButton.setBackgroundResource(R.color.black_text)
             binding.signupButton.isClickable = true
         } else {
@@ -180,13 +184,23 @@ class SignUpActivity : BaseActivity<ActivitySignupBinding> (ActivitySignupBindin
 
 
     override fun onPostSignUpSuccess(signUpResponse: SignUpResponse) {
-        Log.d(TAG, "onPostSignUpSuccess: ${signUpResponse.result}")
-        showCustomToast("가입 완료")
-//        startActivity(Intent(this, MainActivity::class.java))
-//        finish()
+        Log.d(TAG, "onPostSignUpSuccess: ${signUpResponse.code}")
+        when(signUpResponse.code){
+            1000->{showCustomToast("가입이 완료되었습니다")
+                super.finish()  //이전 화면으로 돌아가기!
+                dismissLoadingDialog()
+            }
+            3013->{showCustomToast("이미 등록된 이메일입니다")
+                dismissLoadingDialog()}
+            3015->{showCustomToast("이미 등록된 휴대폰 번호입니다")
+                dismissLoadingDialog()}
+            else->{showCustomToast("회원가입 실패")
+                dismissLoadingDialog()}
+        }
     }
 
     override fun onPostSignUpFailure(s: String) {
+        dismissLoadingDialog()
         showCustomToast("오류 : $s")
     }
 }

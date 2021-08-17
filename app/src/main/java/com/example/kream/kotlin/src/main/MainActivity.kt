@@ -2,6 +2,7 @@ package com.example.kream.kotlin.src.main
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.core.graphics.drawable.toDrawable
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.example.kream.kotlin.R
 import com.example.kream.kotlin.config.BaseActivity
@@ -65,5 +66,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
                 }
                 false
             })
+
+
+        binding.mainBtmNav
     }
 }

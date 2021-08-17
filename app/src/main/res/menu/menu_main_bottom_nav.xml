@@ -4,34 +4,32 @@
 
     <item
         android:id="@+id/menu_main_btm_nav_home"
-        android:icon="@drawable/home_icon"
+        android:icon="@drawable/home_icon_onclick"
         app:showAsAction="always"
         android:enabled="true"
         android:checkable="true"
         android:title="@string/main_btm_nav_home_title" />
-
     <item
         android:id="@+id/menu_main_btm_nav_style"
-        android:icon="@drawable/style_icon"
+        android:icon="@drawable/style_icon_onclick"
         app:showAsAction="always"
         android:enabled="true"
         android:title="@string/main_btm_nav_style_title" />
     <item
         android:id="@+id/menu_main_btm_nav_shop"
-        android:icon="@drawable/shop_icon"
+        android:icon="@drawable/shop_icon_onclick"
         app:showAsAction="always"
         android:enabled="true"
         android:title="@string/main_btm_nav_shop_title" />
     <item
         android:id="@+id/menu_main_btm_nav_watch"
-        android:icon="@drawable/watch_icon"
+        android:icon="@drawable/watch_icon_onclick"
         app:showAsAction="always"
         android:enabled="true"
         android:title="@string/main_btm_nav_watch_title" />
-
     <item
         android:id="@+id/menu_main_btm_nav_my"
-        android:icon="@drawable/my_page_icon"
+        android:icon="@drawable/my_page_icon_onclick"
         app:showAsAction="always"
         android:enabled="true"
         android:title="@string/main_btm_nav_my_title" />

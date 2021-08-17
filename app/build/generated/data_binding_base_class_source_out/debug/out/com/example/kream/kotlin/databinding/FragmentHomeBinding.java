@@ -6,10 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.ViewFlipper;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewpager2.widget.ViewPager2;
 import com.example.kream.kotlin.R;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
@@ -31,20 +31,20 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final Chip homeChipToday;
 
   @NonNull
-  public final ViewFlipper homeViewFlipper;
+  public final TextView homeTvNotice;
 
   @NonNull
-  public final TextView textView;
+  public final ViewPager2 viewpager;
 
   private FragmentHomeBinding(@NonNull LinearLayout rootView, @NonNull ChipGroup chipGroup,
       @NonNull Chip homeChipReleasedInfo, @NonNull Chip homeChipToday,
-      @NonNull ViewFlipper homeViewFlipper, @NonNull TextView textView) {
+      @NonNull TextView homeTvNotice, @NonNull ViewPager2 viewpager) {
     this.rootView = rootView;
     this.chipGroup = chipGroup;
     this.homeChipReleasedInfo = homeChipReleasedInfo;
     this.homeChipToday = homeChipToday;
-    this.homeViewFlipper = homeViewFlipper;
-    this.textView = textView;
+    this.homeTvNotice = homeTvNotice;
+    this.viewpager = viewpager;
   }
 
   @Override
@@ -92,20 +92,20 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.home_view_flipper;
-      ViewFlipper homeViewFlipper = rootView.findViewById(id);
-      if (homeViewFlipper == null) {
+      id = R.id.home_tv_notice;
+      TextView homeTvNotice = rootView.findViewById(id);
+      if (homeTvNotice == null) {
         break missingId;
       }
 
-      id = R.id.textView;
-      TextView textView = rootView.findViewById(id);
-      if (textView == null) {
+      id = R.id.viewpager;
+      ViewPager2 viewpager = rootView.findViewById(id);
+      if (viewpager == null) {
         break missingId;
       }
 
       return new FragmentHomeBinding((LinearLayout) rootView, chipGroup, homeChipReleasedInfo,
-          homeChipToday, homeViewFlipper, textView);
+          homeChipToday, homeTvNotice, viewpager);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

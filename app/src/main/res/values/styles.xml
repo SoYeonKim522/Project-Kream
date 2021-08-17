@@ -23,6 +23,11 @@
 
     </style>
 
+    <style name="BottomNavigationView">
+        <item name="android:textSize">5sp</item>
+    </style>
+
+
 <!--    <style name="ChipTextStyle">-->
 <!--        <item name="android:textSize">20sp</item>-->
 <!--    </style>-->
@@ -31,5 +36,7 @@
 <!--        <item name="chipBackgroundColor">@color/white</item>-->
 <!--        <item name="color">@color/black</item>-->
 <!--    </style>-->
+
+
 
 </resources>
