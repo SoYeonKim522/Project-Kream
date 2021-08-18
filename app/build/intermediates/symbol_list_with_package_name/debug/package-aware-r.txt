@@ -1813,6 +1813,10 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable cat_dunk
+drawable cat_jordan
+drawable cat_scott
+drawable cat_thom_browne
 drawable checkbox
 drawable checkbox_checked
 drawable checkbox_checked_xml
@@ -1824,11 +1828,15 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable dropdown_button
+drawable home_ad_1
 drawable home_banner1
 drawable home_banner2
+drawable home_bell_icon
+drawable home_bell_icon_xml
 drawable home_icon
 drawable home_icon_clicked
 drawable home_icon_onclick
+drawable home_style_1
 drawable ic_baseline_add_24
 drawable ic_baseline_arrow_back_24
 drawable ic_baseline_notifications_none_24
@@ -2153,7 +2161,10 @@ id home
 id homeAsUp
 id home_chip_released_info
 id home_chip_today
+id home_image_slide
 id home_iv_image
+id home_just_dropped_recycler
+id home_style_picks_recycler
 id home_tv_notice
 id honorRequest
 id horizontal_only
@@ -2164,6 +2175,7 @@ id ignore
 id ignoreRequest
 id image
 id imageView
+id image_container
 id immediateStop
 id included
 id info
@@ -2173,6 +2185,8 @@ id italic
 id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
+id just_dropped
+id just_dropped_kor
 id labeled
 id layout
 id left
@@ -2322,6 +2336,7 @@ id scroll
 id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
+id scrollView2
 id scrollable
 id search_badge
 id search_bar
@@ -2339,6 +2354,8 @@ id selection_type
 id separator
 id sharedValueSet
 id sharedValueUnset
+id shop_cat_img
+id shop_cat_name
 id shop_filter_acc
 id shop_filter_clothes
 id shop_filter_icon
@@ -2347,7 +2364,8 @@ id shop_filter_luxury
 id shop_filter_sneakers
 id shop_filter_tech
 id shop_product_cnt
-id shop_recycler_view
+id shop_recycler_category
+id shop_recycler_product
 id shop_search_bar
 id shop_slide_banner
 id shortcut
@@ -2389,6 +2407,7 @@ id staticPostLayout
 id status_bar_latest_event_content
 id stop
 id stretch
+id style_picks
 id submenuarrow
 id submit_area
 id supportScrollUp
@@ -2564,6 +2583,8 @@ layout fragment_my_page
 layout fragment_shop
 layout fragment_style
 layout fragment_watch
+layout home_just_dropped_item
+layout home_style_picks_item
 layout home_viewpager
 layout material_chip_input_combo
 layout material_clock_display
@@ -2626,6 +2647,7 @@ layout notification_template_part_time
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout shop_recycler_cat_item
 layout shop_recycler_item
 layout support_simple_spinner_dropdown_item
 layout test_action_chip
@@ -2688,7 +2710,10 @@ string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string hide_bottom_view_on_scroll_behavior
+string home_just_dropped
+string home_just_dropped_kor
 string home_notice
+string home_style_picks
 string home_tab1
 string home_tab2
 string icon_content_description

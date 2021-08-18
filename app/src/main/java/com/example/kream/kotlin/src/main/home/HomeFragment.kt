@@ -5,10 +5,12 @@ import android.os.Handler
 import android.os.Looper
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.kream.kotlin.R
 import com.example.kream.kotlin.config.BaseFragment
 import com.example.kream.kotlin.databinding.FragmentHomeBinding
+import com.example.kream.kotlin.src.main.shop.ShopCategoryAdapter
 
 ///////////////(val image) 뺌
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind, R.layout.fragment_home)
@@ -56,7 +58,26 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind
 //        }
 //    }
 //
+        //JUST DROPPED
+        val justDroppedList:List<JdData> = listOf(
+            JdData(R.drawable.jordan_test, R.drawable.logo_jordan, "Jordan 1 x Travis Scott x Fragment", 2000000),
+            JdData(R.drawable.jordan_test, R.drawable.logo_jordan, "Jordan 1 x Travis Scott x Fragment", 2000000),
+            JdData(R.drawable.jordan_test, R.drawable.logo_jordan, "Jordan 1 x Travis Scott x Fragment", 2000000),
+            )
 
+        binding.homeJustDroppedRecycler.layoutManager = LinearLayoutManager(requireContext()).also { it.orientation = LinearLayoutManager.HORIZONTAL }
+        binding.homeJustDroppedRecycler.adapter = HomeJustDroppedAdapter(justDroppedList)
+        binding.homeJustDroppedRecycler.setHasFixedSize(true)
+
+        //STYLE PICKS
+        val stylePicksList:List<SpData> = listOf(
+            SpData(R.drawable.home_style_1),
+            SpData(R.drawable.home_style_1),
+            SpData(R.drawable.home_style_1),
+        )
+        binding.homeStylePicksRecycler.layoutManager = LinearLayoutManager(requireContext()).also { it.orientation = LinearLayoutManager.HORIZONTAL }
+        binding.homeStylePicksRecycler.adapter = HomeStylePicksAdapter(stylePicksList)
+        binding.homeStylePicksRecycler.setHasFixedSize(true)
 
     }
 

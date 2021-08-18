@@ -3,6 +3,7 @@ package com.example.kream.kotlin.src.main.shop
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CompoundButton
@@ -10,18 +11,23 @@ import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.ViewFlipper
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kream.kotlin.R
 import com.example.kream.kotlin.config.BaseFragment
 import com.example.kream.kotlin.databinding.FragmentShopBinding
+import com.example.kream.kotlin.src.main.shop.models.*
 
-class ShopFragment:BaseFragment<FragmentShopBinding> (FragmentShopBinding::bind, R.layout.fragment_shop) {
+class ShopFragment:BaseFragment<FragmentShopBinding> (FragmentShopBinding::bind, R.layout.fragment_shop), ShopView {
 
+    private val TAG = "log"
     lateinit var viewFlipper:ViewFlipper
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val TAG = "log"
 
+
+//        이미지 배너 슬라이드
         viewFlipper = binding.shopSlideBanner
 
         val images = intArrayOf(R.drawable.shop_banner2)
@@ -41,7 +47,7 @@ class ShopFragment:BaseFragment<FragmentShopBinding> (FragmentShopBinding::bind,
 
         }
 
-
+        //필터 버튼 토글 효과
         binding.shopFilterLuxury.setOnCheckedChangeListener(ToggleListener())
         binding.shopFilterSneakers.setOnCheckedChangeListener(ToggleListener())
         binding.shopFilterClothes.setOnCheckedChangeListener(ToggleListener())
@@ -50,23 +56,33 @@ class ShopFragment:BaseFragment<FragmentShopBinding> (FragmentShopBinding::bind,
         binding.shopFilterTech.setOnCheckedChangeListener(ToggleListener())
 
 
-        val productList:ArrayList<ShopProductData> = arrayListOf(
-            ShopProductData(R.drawable.jordan_test, R.drawable.logo_jordan, "Jordan 1 x Travis Scott x Fragment...", "2,000,000", "7,777", "123"),
-            ShopProductData(R.drawable.jordan_test, R.drawable.logo_jordan, "Jordan 1 x Travis Scott x Fragment...", "2,000,000", "7,777", "123"),
-            ShopProductData(R.drawable.jordan_test, R.drawable.logo_jordan, "Jordan 1 x Travis Scott x Fragment...", "2,000,000", "7,777", "123"),
-            ShopProductData(R.drawable.jordan_test, R.drawable.logo_jordan, "Jordan 1 x Travis Scott x Fragment...", "2,000,000", "7,777", "123"),
-            ShopProductData(R.drawable.jordan_test, R.drawable.logo_jordan, "Jordan 1 x Travis Scott x Fragment...", "2,000,000", "7,777", "123"),
-            ShopProductData(R.drawable.jordan_test, R.drawable.logo_jordan, "Jordan 1 x Travis Scott x Fragment...", "2,000,000", "7,777", "123"),
-            ShopProductData(R.drawable.jordan_test, R.drawable.logo_jordan, "Jordan 1 x Travis Scott x Fragment...", "2,000,000", "7,777", "123"),
-            ShopProductData(R.drawable.jordan_test, R.drawable.logo_jordan, "Jordan 1 x Travis Scott x Fragment...", "2,000,000", "7,777", "123"),
+        //카테고리 필터링 버튼 클릭 시 리사이클러뷰 변경
+        binding.shopFilterSneakers.setOnClickListener{ ShopService(this).tryGetProductCategory("true", 0) }
+        binding.shopFilterClothes.setOnClickListener { ShopService(this).tryGetProductCategory("true", 1) }
+        binding.shopFilterAcc.setOnClickListener { ShopService(this).tryGetProductCategory("true", 2) }
+        binding.shopFilterLife.setOnClickListener { ShopService(this).tryGetProductCategory("true", 3) }
+        binding.shopFilterTech.setOnClickListener { ShopService(this).tryGetProductCategory("true", 4) }
 
-            )
 
-        binding.shopRecyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
-        binding.shopRecyclerView.adapter = ShopProductAdapter(productList)
-        binding.shopRecyclerView.setHasFixedSize(true)
+
+        //상품 카테고리
+//        val productList:ArrayList<ShopProductData> = arrayListOf(
+//            ShopProductData(R.drawable.jordan_test, R.drawable.logo_jordan, "Jordan 1 x Travis Scott dsfdsfsfsd", "2,000,000", "1,000", "50"),
+//            ShopProductData(R.drawable.jordan_test, R.drawable.logo_jordan, "Jordan 1 x Travis Scott x Fragment", "2,000,000", "7,777", "123"),
+//            ShopProductData(R.drawable.jordan_test, R.drawable.logo_jordan, "Jordan 1 x Travis Scott x Fragment...", "2,000,000", "7,777", "123"),
+//            ShopProductData(R.drawable.jordan_test, R.drawable.logo_jordan, "Jordan 1 x Travis Scott x Fragment...", "2,000,000", "7,777", "123"),
+//            ShopProductData(R.drawable.jordan_test, R.drawable.logo_jordan, "Jordan 1 x Travis Scott x Fragment...", "2,000,000", "7,777", "123"),
+//            ShopProductData(R.drawable.jordan_test, R.drawable.logo_jordan, "Jordan 1 x Travis Scott x Fragment...", "2,000,000", "7,777", "123"),
+//            ShopProductData(R.drawable.jordan_test, R.drawable.logo_jordan, "Jordan 1 x Travis Scott x Fragment...", "2,000,000", "7,777", "123"),
+//            ShopProductData(R.drawable.jordan_test, R.drawable.logo_jordan, "Jordan 1 x Travis Scott x Fragment...", "2,000,000", "7,777", "123"),
+//
+//            )
+
+        ShopService(this).tryGetProducts()
+
 
     }
+
 
     inner class ToggleListener: CompoundButton.OnCheckedChangeListener{
         override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
@@ -86,7 +102,36 @@ class ShopFragment:BaseFragment<FragmentShopBinding> (FragmentShopBinding::bind,
     }
 
 
+    //세부카테고리 API
+    override fun onGetProdCategorySuccess(response: CategoryResponse, index:Int) {
+        showCategoryData(response.result.categoryList[index].detailCategoryList)
+    }
 
+        private fun showCategoryData(result: List<DetailCategory>){
+            binding.shopRecyclerCategory.layoutManager = LinearLayoutManager(requireContext()).also { it.orientation = LinearLayoutManager.HORIZONTAL }
+            val catAdapter = ShopCategoryAdapter(result, context)
+            binding.shopRecyclerCategory.adapter = catAdapter
+            binding.shopRecyclerCategory.setHasFixedSize(true)
+            catAdapter.notifyDataSetChanged()
+        }
+
+    override fun onGetProdCategoryFailure(message: String) {
+        showCustomToast("오류 : $message")
+    }
+
+    //전체 상품 가져오기 API
+    override fun onGetProductSuccess(response: ProductResponse) {
+        val result = response.result.productList
+        binding.shopRecyclerProduct.layoutManager = GridLayoutManager(requireContext(), 2)
+        val prodAdapter = ShopProductAdapter(result, context)
+        binding.shopRecyclerProduct.adapter = prodAdapter
+        binding.shopRecyclerProduct.setHasFixedSize(true)
+        prodAdapter.notifyDataSetChanged()
+    }
+
+    override fun onGetProductFailure(message: String) {
+        showCustomToast("오류 : $message")
+    }
 
 
 }

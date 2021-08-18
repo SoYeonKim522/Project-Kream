@@ -64,9 +64,10 @@
 
 
    <ScrollView
+       android:id="@+id/scrollView2"
        android:layout_width="match_parent"
        android:layout_height="wrap_content">
-      
+
       <androidx.constraintlayout.widget.ConstraintLayout
           android:layout_width="match_parent"
           android:layout_height="match_parent">
@@ -84,7 +85,7 @@
              app:layout_constraintEnd_toEndOf="parent"
              app:layout_constraintStart_toStartOf="parent"
              app:layout_constraintTop_toTopOf="parent" />
-         
+
          <LinearLayout
              android:layout_width="match_parent"
              android:layout_height="350dp"
@@ -95,28 +96,106 @@
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/viewpager"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                />
+                android:layout_height="match_parent" />
 
          </LinearLayout>
 
 
+         <ImageView
+             android:id="@+id/home_image_slide"
+             android:layout_width="match_parent"
+             android:layout_height="350dp"
+             android:scaleType="centerCrop"
+             android:src="@drawable/home_banner1"
+             app:layout_constraintTop_toBottomOf="@+id/home_tv_notice" />
 
-<!--         <ImageView-->
-<!--             android:id="@+id/home_image_slide"-->
-<!--             android:layout_width="match_parent"-->
-<!--             android:layout_height="350dp"-->
-<!--             android:src="@drawable/home_banner1"-->
-<!--             android:scaleType="centerCrop"-->
-<!--             app:layout_constraintTop_toBottomOf="@+id/home_tv_notice"-->
-<!--             />-->
+         <TextView
+             android:id="@+id/just_dropped"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginStart="16dp"
+             android:layout_marginTop="24dp"
+             android:layout_marginEnd="16dp"
+             android:text="@string/home_just_dropped"
+             android:textColor="@color/black"
+             android:textSize="18sp"
+             android:textStyle="bold"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/home_image_slide" />
 
+         <TextView
+             android:id="@+id/just_dropped_kor"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginStart="16dp"
+             android:layout_marginTop="3dp"
+             android:layout_marginEnd="16dp"
+             android:text="@string/home_just_dropped_kor"
+             android:textColor="@color/gray_text"
+             android:textSize="14sp"
+             android:textStyle="bold"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@id/just_dropped" />
 
+         <androidx.recyclerview.widget.RecyclerView
+             android:id="@+id/home_just_dropped_recycler"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginStart="16dp"
+             android:layout_marginTop="16dp"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@id/just_dropped_kor" />
+
+         <View
+             android:id="@+id/separator"
+             android:layout_width="match_parent"
+             android:layout_height="0.5dp"
+             android:layout_marginTop="24dp"
+             android:background="@color/gray_filter_btn_bg"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@id/home_just_dropped_recycler" />
+
+         <TextView
+             android:id="@+id/style_picks"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginStart="16dp"
+             android:layout_marginTop="32dp"
+             android:layout_marginEnd="16dp"
+             android:text="@string/home_style_picks"
+             android:textColor="@color/black"
+             android:textSize="18sp"
+             android:textStyle="bold"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@id/separator" />
+
+         <androidx.recyclerview.widget.RecyclerView
+             android:id="@+id/home_style_picks_recycler"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginStart="16dp"
+             android:layout_marginTop="16dp"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@id/style_picks" />
+
+         <ImageView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:src="@drawable/home_ad_1"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@id/home_style_picks_recycler"/>
 
 
 
       </androidx.constraintlayout.widget.ConstraintLayout>
-      
-      
+
+
    </ScrollView>
 </LinearLayout>

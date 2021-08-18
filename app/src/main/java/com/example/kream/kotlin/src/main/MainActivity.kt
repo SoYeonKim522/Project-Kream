@@ -2,6 +2,7 @@ package com.example.kream.kotlin.src.main
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.core.graphics.drawable.toDrawable
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.example.kream.kotlin.R
@@ -10,6 +11,8 @@ import com.example.kream.kotlin.databinding.ActivityMainBinding
 import com.example.kream.kotlin.src.main.home.HomeFragment
 import com.example.kream.kotlin.src.main.login.LoginActivity
 import com.example.kream.kotlin.src.main.shop.ShopFragment
+import com.example.kream.kotlin.src.main.shop.ShopService
+import com.example.kream.kotlin.src.main.shop.ShopView
 import com.example.kream.kotlin.src.main.style.StyleFragment
 import com.example.kream.kotlin.src.main.watch.WatchFragment
 
@@ -70,4 +73,5 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
 
         binding.mainBtmNav
     }
+
 }

@@ -4,10 +4,13 @@ package com.example.kream.kotlin.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewpager2.widget.ViewPager2;
 import com.example.kream.kotlin.R;
@@ -31,19 +34,55 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final Chip homeChipToday;
 
   @NonNull
+  public final ImageView homeImageSlide;
+
+  @NonNull
+  public final RecyclerView homeJustDroppedRecycler;
+
+  @NonNull
+  public final RecyclerView homeStylePicksRecycler;
+
+  @NonNull
   public final TextView homeTvNotice;
+
+  @NonNull
+  public final TextView justDropped;
+
+  @NonNull
+  public final TextView justDroppedKor;
+
+  @NonNull
+  public final ScrollView scrollView2;
+
+  @NonNull
+  public final View separator;
+
+  @NonNull
+  public final TextView stylePicks;
 
   @NonNull
   public final ViewPager2 viewpager;
 
   private FragmentHomeBinding(@NonNull LinearLayout rootView, @NonNull ChipGroup chipGroup,
       @NonNull Chip homeChipReleasedInfo, @NonNull Chip homeChipToday,
-      @NonNull TextView homeTvNotice, @NonNull ViewPager2 viewpager) {
+      @NonNull ImageView homeImageSlide, @NonNull RecyclerView homeJustDroppedRecycler,
+      @NonNull RecyclerView homeStylePicksRecycler, @NonNull TextView homeTvNotice,
+      @NonNull TextView justDropped, @NonNull TextView justDroppedKor,
+      @NonNull ScrollView scrollView2, @NonNull View separator, @NonNull TextView stylePicks,
+      @NonNull ViewPager2 viewpager) {
     this.rootView = rootView;
     this.chipGroup = chipGroup;
     this.homeChipReleasedInfo = homeChipReleasedInfo;
     this.homeChipToday = homeChipToday;
+    this.homeImageSlide = homeImageSlide;
+    this.homeJustDroppedRecycler = homeJustDroppedRecycler;
+    this.homeStylePicksRecycler = homeStylePicksRecycler;
     this.homeTvNotice = homeTvNotice;
+    this.justDropped = justDropped;
+    this.justDroppedKor = justDroppedKor;
+    this.scrollView2 = scrollView2;
+    this.separator = separator;
+    this.stylePicks = stylePicks;
     this.viewpager = viewpager;
   }
 
@@ -92,9 +131,57 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.home_image_slide;
+      ImageView homeImageSlide = rootView.findViewById(id);
+      if (homeImageSlide == null) {
+        break missingId;
+      }
+
+      id = R.id.home_just_dropped_recycler;
+      RecyclerView homeJustDroppedRecycler = rootView.findViewById(id);
+      if (homeJustDroppedRecycler == null) {
+        break missingId;
+      }
+
+      id = R.id.home_style_picks_recycler;
+      RecyclerView homeStylePicksRecycler = rootView.findViewById(id);
+      if (homeStylePicksRecycler == null) {
+        break missingId;
+      }
+
       id = R.id.home_tv_notice;
       TextView homeTvNotice = rootView.findViewById(id);
       if (homeTvNotice == null) {
+        break missingId;
+      }
+
+      id = R.id.just_dropped;
+      TextView justDropped = rootView.findViewById(id);
+      if (justDropped == null) {
+        break missingId;
+      }
+
+      id = R.id.just_dropped_kor;
+      TextView justDroppedKor = rootView.findViewById(id);
+      if (justDroppedKor == null) {
+        break missingId;
+      }
+
+      id = R.id.scrollView2;
+      ScrollView scrollView2 = rootView.findViewById(id);
+      if (scrollView2 == null) {
+        break missingId;
+      }
+
+      id = R.id.separator;
+      View separator = rootView.findViewById(id);
+      if (separator == null) {
+        break missingId;
+      }
+
+      id = R.id.style_picks;
+      TextView stylePicks = rootView.findViewById(id);
+      if (stylePicks == null) {
         break missingId;
       }
 
@@ -105,7 +192,8 @@ public final class FragmentHomeBinding implements ViewBinding {
       }
 
       return new FragmentHomeBinding((LinearLayout) rootView, chipGroup, homeChipReleasedInfo,
-          homeChipToday, homeTvNotice, viewpager);
+          homeChipToday, homeImageSlide, homeJustDroppedRecycler, homeStylePicksRecycler,
+          homeTvNotice, justDropped, justDroppedKor, scrollView2, separator, stylePicks, viewpager);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

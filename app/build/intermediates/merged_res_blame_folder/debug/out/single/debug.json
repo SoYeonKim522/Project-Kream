@@ -1,9 +1,5 @@
 [
     {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bottom_nav_click.xml.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\bottom_nav_click.xml"
-    },
-    {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_post_icon.png.flat",
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\post_icon.png"
     },
@@ -12,12 +8,12 @@
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\shop_banner2.png"
     },
     {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_style_icon_clicked.png.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\style_icon_clicked.png"
-    },
-    {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_setting_view_unselected.png.flat",
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable-mdpi\\ic_setting_view_unselected.png"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_cat_scott.png.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\cat_scott.png"
     },
     {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_app_logo_white.png.flat",
@@ -36,52 +32,20 @@
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\home_banner1.png"
     },
     {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_watch_icon.png.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\watch_icon.png"
-    },
-    {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_setting_view_unselected.png.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\drawable-xxhdpi\\ic_setting_view_unselected.png"
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_cat_thom_browne.png.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\cat_thom_browne.png"
     },
     {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_login_hide_password.png.flat",
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\login_hide_password.png"
     },
     {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_arrow_back_24.xml.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\ic_baseline_arrow_back_24.xml"
-    },
-    {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shop_banner5.png.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\shop_banner5.png"
-    },
-    {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_total_view_unselected.png.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\drawable-mdpi\\ic_total_view_unselected.png"
-    },
-    {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_home.xml.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\fragment_home.xml"
-    },
-    {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_my_page.xml.flat",
         "source": "D:\\Kream\\app\\src\\main\\res\\layout\\fragment_my_page.xml"
     },
     {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_style.xml.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\fragment_style.xml"
-    },
-    {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_main_btm_nav_item_color.xml.flat",
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\main_btm_nav_item_color.xml"
-    },
-    {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_total_view_unselected.png.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\drawable-xhdpi\\ic_total_view_unselected.png"
-    },
-    {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_setting_view_unselected.png.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\drawable-xhdpi\\ic_setting_view_unselected.png"
     },
     {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shop_banner3.png.flat",
@@ -90,10 +54,6 @@
     {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_test.xml.flat",
         "source": "D:\\Kream\\app\\src\\main\\res\\layout\\activity_test.xml"
-    },
-    {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\font_nanum_gothic_extra_bold.ttf.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\font\\nanum_gothic_extra_bold.ttf"
     },
     {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_setting_view_unselected.png.flat",
@@ -112,24 +72,12 @@
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\my_page_icon_clicked.png"
     },
     {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
-    },
-    {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shop_icon.png.flat",
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\shop_icon.png"
     },
     {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_notifications_none_24.xml.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\ic_baseline_notifications_none_24.xml"
-    },
-    {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_add_24.xml.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\ic_baseline_add_24.xml"
-    },
-    {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shop_banner6.png.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\shop_banner6.png"
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
     },
     {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_style_icon.png.flat",
@@ -140,20 +88,12 @@
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\style_icon_onclick.xml"
     },
     {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
-    },
-    {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
         "source": "D:\\Kream\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_home_banner2.png.flat",
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\home_banner2.png"
-    },
-    {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_naver_logo_xml.xml.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\naver_logo_xml.xml"
     },
     {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shop_filter_icon_unclicked.png.flat",
@@ -176,6 +116,174 @@
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\checkbox_unchecked.png"
     },
     {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_watch_icon_onclick.xml.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\watch_icon_onclick.xml"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\font_app_font.xml.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\font\\app_font.xml"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\layout_home_style_picks_item.xml.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\home_style_picks_item.xml"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_cat_dunk.png.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\cat_dunk.png"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_watch_icon_clicked.png.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\watch_icon_clicked.png"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_total_view_unselected.png.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_total_view_unselected.png"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_total_view_unselected.png.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable-hdpi\\ic_total_view_unselected.png"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_login_button.xml.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\login_button.xml"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_splash_screen.xml.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\splash_screen.xml"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\layout_shop_recycler_cat_item.xml.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\shop_recycler_cat_item.xml"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_loading.xml.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\dialog_loading.xml"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shop_filter_button_clicked.xml.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\shop_filter_button_clicked.xml"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_home_ad_1.png.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\home_ad_1.png"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_watch.xml.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\fragment_watch.xml"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shop_banner1.png.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\shop_banner1.png"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_setting_view_unselected.png.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_setting_view_unselected.png"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_app_logo.png.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\app_logo.png"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_naver_logo.png.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\naver_logo.png"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shop_banner4.png.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\shop_banner4.png"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\menu_menu_main_bottom_nav.xml.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\menu\\menu_main_bottom_nav.xml"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bottom_nav_click.xml.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\bottom_nav_click.xml"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_style_icon_clicked.png.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\style_icon_clicked.png"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_watch_icon.png.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\watch_icon.png"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_setting_view_unselected.png.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable-xxhdpi\\ic_setting_view_unselected.png"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_arrow_back_24.xml.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\ic_baseline_arrow_back_24.xml"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shop_banner5.png.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\shop_banner5.png"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_total_view_unselected.png.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable-mdpi\\ic_total_view_unselected.png"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_home.xml.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_style.xml.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\fragment_style.xml"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_total_view_unselected.png.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable-xhdpi\\ic_total_view_unselected.png"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_setting_view_unselected.png.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable-xhdpi\\ic_setting_view_unselected.png"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\font_nanum_gothic_extra_bold.ttf.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\font\\nanum_gothic_extra_bold.ttf"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_notifications_none_24.xml.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\ic_baseline_notifications_none_24.xml"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_add_24.xml.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\ic_baseline_add_24.xml"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shop_banner6.png.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\shop_banner6.png"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_home_bell_icon_xml.xml.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\home_bell_icon_xml.xml"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_home_style_1.png.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\home_style_1.png"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\layout_home_just_dropped_item.xml.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\home_just_dropped_item.xml"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_naver_logo_xml.xml.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\naver_logo_xml.xml"
+    },
+    {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_checkbox_checked_xml.xml.flat",
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\checkbox_checked_xml.xml"
     },
@@ -184,16 +292,8 @@
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\splash_logo.png"
     },
     {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_watch_icon_onclick.xml.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\watch_icon_onclick.xml"
-    },
-    {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\layout_shop_recycler_item.xml.flat",
         "source": "D:\\Kream\\app\\src\\main\\res\\layout\\shop_recycler_item.xml"
-    },
-    {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\font_app_font.xml.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\font\\app_font.xml"
     },
     {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_home_icon_onclick.xml.flat",
@@ -212,10 +312,6 @@
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\wishlist_icon.png"
     },
     {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_watch_icon_clicked.png.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\watch_icon_clicked.png"
-    },
-    {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_jordan_test.png.flat",
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\jordan_test.png"
     },
@@ -228,20 +324,8 @@
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\checkbox_checked.png"
     },
     {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_total_view_unselected.png.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_total_view_unselected.png"
-    },
-    {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_shop.xml.flat",
         "source": "D:\\Kream\\app\\src\\main\\res\\layout\\fragment_shop.xml"
-    },
-    {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_total_view_unselected.png.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\drawable-hdpi\\ic_total_view_unselected.png"
     },
     {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_login_button_clicked.xml.flat",
@@ -252,18 +336,6 @@
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\shop_icon_clicked.png"
     },
     {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_login_button.xml.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\login_button.xml"
-    },
-    {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_splash_screen.xml.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\splash_screen.xml"
-    },
-    {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_loading.xml.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\dialog_loading.xml"
-    },
-    {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_login_show_password.png.flat",
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\login_show_password.png"
     },
@@ -272,8 +344,8 @@
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\my_page_icon_onclick.xml"
     },
     {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shop_filter_button_clicked.xml.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\shop_filter_button_clicked.xml"
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_home_bell_icon.png.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\home_bell_icon.png"
     },
     {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_checkbox.xml.flat",
@@ -288,32 +360,16 @@
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\shop_filter_icon_clicked.png"
     },
     {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shop_banner1.png.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\shop_banner1.png"
-    },
-    {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_watch.xml.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\fragment_watch.xml"
-    },
-    {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_setting_view_unselected.png.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_setting_view_unselected.png"
-    },
-    {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_app_logo.png.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\app_logo.png"
-    },
-    {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_total_view_unselected.png.flat",
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable-xxhdpi\\ic_total_view_unselected.png"
     },
     {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_naver_logo.png.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\naver_logo.png"
-    },
-    {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_home_icon_clicked.png.flat",
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\home_icon_clicked.png"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_cat_jordan.png.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\cat_jordan.png"
     },
     {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
@@ -324,24 +380,12 @@
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\logo_jordan.png"
     },
     {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shop_banner4.png.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\shop_banner4.png"
-    },
-    {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_my_page_icon.png.flat",
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\my_page_icon.png"
     },
     {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\menu_menu_main_bottom_nav.xml.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\menu\\menu_main_bottom_nav.xml"
-    },
-    {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
         "source": "D:\\Kream\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_softsquared_logo.png.flat",

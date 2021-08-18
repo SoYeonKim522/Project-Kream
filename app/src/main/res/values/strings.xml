@@ -42,6 +42,9 @@
     <string name="home_tab1">투데이</string>
     <string name="home_tab2">발매정보</string>
     <string name="home_notice">[공지] 택배 없는 날 및 대체 공휴일에 따른 거래 일정 안내</string>
+    <string name="home_just_dropped">Just Dropped</string>
+    <string name="home_just_dropped_kor">발매 상품</string>
+    <string name="home_style_picks">Style Picks!</string>
 
 <!--    shop-->
     <string name="shop_tv_search_bar">브랜드명, 모델명, 모델번호 등</string>
