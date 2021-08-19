@@ -4,6 +4,10 @@
         "source": "D:\\Kream\\app\\src\\main\\res\\layout\\dialog_loading.xml"
     },
     {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\shop_product.xml",
+        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\shop_product.xml"
+    },
+    {
         "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_home.xml",
         "source": "D:\\Kream\\app\\src\\main\\res\\layout\\fragment_home.xml"
     },
@@ -40,6 +44,10 @@
         "source": "D:\\Kream\\app\\src\\main\\res\\layout\\home_just_dropped_item.xml"
     },
     {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\shop_product_viewpager.xml",
+        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\shop_product_viewpager.xml"
+    },
+    {
         "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\home_style_picks_item.xml",
         "source": "D:\\Kream\\app\\src\\main\\res\\layout\\home_style_picks_item.xml"
     },
@@ -50,6 +58,10 @@
     {
         "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_watch.xml",
         "source": "D:\\Kream\\app\\src\\main\\res\\layout\\fragment_watch.xml"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\prod_info_recycler_item.xml",
+        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\prod_info_recycler_item.xml"
     },
     {
         "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\shop_recycler_cat_item.xml",

@@ -16,6 +16,9 @@
     <color name="gray_search_bar_text">#a9a9a9</color>
     <color name="red_invalid">#df6250</color>
 
+    <color name="prod_price_up">#dc634e</color>
+    <color name="prod_price_down">#44aa73</color>
+
 <!--    others-->
     <color name="gray_inactive_btn">#d3d3d3</color>
     <color name="gray_search_bar_bg">#f2f2f2</color>
@@ -24,6 +27,14 @@
 
     <color name="shop_filter_btn_clicked_bg">#fcf7f6</color>
     <color name="shop_filter_btn_clicked_txt">#df614e</color>
+
+    <color name="shop_prod_buy_btn">#e76d56</color>
+    <color name="shop_prod_buy_btn_separator">#d9624c</color>
+    <color name="shop_prod_buy_btn_text">#7c3729</color>
+
+
+    <color name="shop_prod_sell_btn">#48b07a</color>
+    <color name="shop_prod_sell_btn_separator">#46ab76</color>
 
 
 

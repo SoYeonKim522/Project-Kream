@@ -15,7 +15,7 @@
 11-->D:\Kream\app\src\main\AndroidManifest.xml:6:22-64
 12
 13    <application
-13-->D:\Kream\app\src\main\AndroidManifest.xml:8:5-39:19
+13-->D:\Kream\app\src\main\AndroidManifest.xml:8:5-41:19
 14        android:name="com.example.kream.kotlin.config.ApplicationClass"
 14-->D:\Kream\app\src\main\AndroidManifest.xml:9:9-72
 15        android:allowBackup="false"
@@ -65,6 +65,9 @@
 39        <activity android:name="com.example.kream.kotlin.src.main.signUp.SignUpActivity" />
 39-->D:\Kream\app\src\main\AndroidManifest.xml:38:9-67
 39-->D:\Kream\app\src\main\AndroidManifest.xml:38:19-65
-40    </application>
-41
-42</manifest>
+40        <activity android:name="com.example.kream.kotlin.src.main.shop_product.ShopProductActivity" />
+40-->D:\Kream\app\src\main\AndroidManifest.xml:40:9-78
+40-->D:\Kream\app\src\main\AndroidManifest.xml:40:19-76
+41    </application>
+42
+43</manifest>

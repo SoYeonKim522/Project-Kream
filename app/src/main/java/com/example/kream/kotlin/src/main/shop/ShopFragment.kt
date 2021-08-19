@@ -1,9 +1,9 @@
 package com.example.kream.kotlin.src.main.shop
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CompoundButton
@@ -16,6 +16,7 @@ import com.example.kream.kotlin.R
 import com.example.kream.kotlin.config.BaseFragment
 import com.example.kream.kotlin.databinding.FragmentShopBinding
 import com.example.kream.kotlin.src.main.shop.models.*
+import com.example.kream.kotlin.src.main.shop_product.ShopProductActivity
 
 class ShopFragment:BaseFragment<FragmentShopBinding> (FragmentShopBinding::bind, R.layout.fragment_shop), ShopView {
 
@@ -57,11 +58,11 @@ class ShopFragment:BaseFragment<FragmentShopBinding> (FragmentShopBinding::bind,
 
 
         //카테고리 필터링 버튼 클릭 시 리사이클러뷰 변경
-        binding.shopFilterSneakers.setOnClickListener{ ShopService(this).tryGetProductCategory("true", 0) }
-        binding.shopFilterClothes.setOnClickListener { ShopService(this).tryGetProductCategory("true", 1) }
-        binding.shopFilterAcc.setOnClickListener { ShopService(this).tryGetProductCategory("true", 2) }
-        binding.shopFilterLife.setOnClickListener { ShopService(this).tryGetProductCategory("true", 3) }
-        binding.shopFilterTech.setOnClickListener { ShopService(this).tryGetProductCategory("true", 4) }
+        binding.shopFilterSneakers.setOnClickListener{ ShopService(this).tryGetProductCategory("true", 1) }
+        binding.shopFilterClothes.setOnClickListener { ShopService(this).tryGetProductCategory("true", 2) }
+        binding.shopFilterAcc.setOnClickListener { ShopService(this).tryGetProductCategory("true", 3) }
+        binding.shopFilterLife.setOnClickListener { ShopService(this).tryGetProductCategory("true", 4) }
+        binding.shopFilterTech.setOnClickListener { ShopService(this).tryGetProductCategory("true", 5) }
 
 
 
@@ -71,15 +72,17 @@ class ShopFragment:BaseFragment<FragmentShopBinding> (FragmentShopBinding::bind,
 //            ShopProductData(R.drawable.jordan_test, R.drawable.logo_jordan, "Jordan 1 x Travis Scott x Fragment", "2,000,000", "7,777", "123"),
 //            ShopProductData(R.drawable.jordan_test, R.drawable.logo_jordan, "Jordan 1 x Travis Scott x Fragment...", "2,000,000", "7,777", "123"),
 //            ShopProductData(R.drawable.jordan_test, R.drawable.logo_jordan, "Jordan 1 x Travis Scott x Fragment...", "2,000,000", "7,777", "123"),
-//            ShopProductData(R.drawable.jordan_test, R.drawable.logo_jordan, "Jordan 1 x Travis Scott x Fragment...", "2,000,000", "7,777", "123"),
-//            ShopProductData(R.drawable.jordan_test, R.drawable.logo_jordan, "Jordan 1 x Travis Scott x Fragment...", "2,000,000", "7,777", "123"),
-//            ShopProductData(R.drawable.jordan_test, R.drawable.logo_jordan, "Jordan 1 x Travis Scott x Fragment...", "2,000,000", "7,777", "123"),
-//            ShopProductData(R.drawable.jordan_test, R.drawable.logo_jordan, "Jordan 1 x Travis Scott x Fragment...", "2,000,000", "7,777", "123"),
-//
 //            )
 
+        //초기화면 세부 카테고리 불러오기
+        ShopService(this).tryGetProductCategory("true", 0)
+        //초기화면 전체 상품 리스트 불러오기
         ShopService(this).tryGetProducts()
 
+        binding.shopFilterIcon.setOnClickListener {
+            val intent = Intent(requireContext(), ShopProductActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 
@@ -122,8 +125,8 @@ class ShopFragment:BaseFragment<FragmentShopBinding> (FragmentShopBinding::bind,
     //전체 상품 가져오기 API
     override fun onGetProductSuccess(response: ProductResponse) {
         val result = response.result.productList
-        binding.shopRecyclerProduct.layoutManager = GridLayoutManager(requireContext(), 2)
         val prodAdapter = ShopProductAdapter(result, context)
+        binding.shopRecyclerProduct.layoutManager = GridLayoutManager(requireContext(), 2)
         binding.shopRecyclerProduct.adapter = prodAdapter
         binding.shopRecyclerProduct.setHasFixedSize(true)
         prodAdapter.notifyDataSetChanged()

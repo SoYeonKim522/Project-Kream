@@ -56,6 +56,20 @@
     <string name="shop_filter_tech">테크</string>
     <string name="shop_product">상품</string>
 
+    <string name="shop_prod_tv_all_size">모든 사이즈</string>
+    <string name="shop_tv_latest_price">최근 거래가</string>
+    <string name="shop_tv_prod_description">상품 정보</string>
+    <string name="shop_tv_prod_model">모델번호</string>
+    <string name="shop_tv_prod_release_date">출시일</string>
+    <string name="shop_tv_prod_color">대표색상</string>
+    <string name="shop_tv_prod_retail_price">발매가</string>
+
+    <string name="shop_prod_tv_market_price">시세</string>
+    <string name="shop_prod_buy">구매</string>
+    <string name="shop_prod_buy_price">즉시 구매가</string>
+    <string name="shop_prod_sell">판매</string>
+    <string name="shop_prod_sell_price">즉시 판매가</string>
+
 
 
 
