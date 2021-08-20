@@ -1,5 +1,3 @@
-com/example/kream/kotlin/BuildConfig.java
- com.example.kream.kotlin.BuildConfig
 com/example/kream/kotlin/databinding/ActivitySignupBinding.java
  com.example.kream.kotlin.databinding.ActivitySignupBinding
 com/example/kream/kotlin/databinding/DialogLoadingBinding.java
@@ -8,6 +6,8 @@ com/example/kream/kotlin/databinding/HomeStylePicksItemBinding.java
  com.example.kream.kotlin.databinding.HomeStylePicksItemBinding
 com/example/kream/kotlin/databinding/ActivityLoginBinding.java
  com.example.kream.kotlin.databinding.ActivityLoginBinding
+com/example/kream/kotlin/databinding/ProdSizeSheetBinding.java
+ com.example.kream.kotlin.databinding.ProdSizeSheetBinding
 com/example/kream/kotlin/databinding/ActivityMainBinding.java
  com.example.kream.kotlin.databinding.ActivityMainBinding
 com/example/kream/kotlin/databinding/FragmentShopBinding.java
@@ -26,12 +26,20 @@ com/example/kream/kotlin/databinding/ActivityTestBinding.java
  com.example.kream.kotlin.databinding.ActivityTestBinding
 com/example/kream/kotlin/databinding/HomeViewpagerBinding.java
  com.example.kream.kotlin.databinding.HomeViewpagerBinding
+com/example/kream/kotlin/databinding/ProdRecRecyclerItemBinding.java
+ com.example.kream.kotlin.databinding.ProdRecRecyclerItemBinding
 com/example/kream/kotlin/databinding/FragmentHomeBinding.java
  com.example.kream.kotlin.databinding.FragmentHomeBinding
+com/example/kream/kotlin/BuildConfig.java
+ com.example.kream.kotlin.BuildConfig
 com/example/kream/kotlin/databinding/FragmentStyleBinding.java
  com.example.kream.kotlin.databinding.FragmentStyleBinding
 com/example/kream/kotlin/databinding/ProdInfoRecyclerItemBinding.java
  com.example.kream.kotlin.databinding.ProdInfoRecyclerItemBinding
+com/example/kream/kotlin/databinding/ProdSizeRecyclerItemBinding.java
+ com.example.kream.kotlin.databinding.ProdSizeRecyclerItemBinding
+com/example/kream/kotlin/databinding/ProdSalesRecyclerItemBinding.java
+ com.example.kream.kotlin.databinding.ProdSalesRecyclerItemBinding
 com/example/kream/kotlin/databinding/FragmentWatchBinding.java
  com.example.kream.kotlin.databinding.FragmentWatchBinding
 com/example/kream/kotlin/databinding/HomeJustDroppedItemBinding.java

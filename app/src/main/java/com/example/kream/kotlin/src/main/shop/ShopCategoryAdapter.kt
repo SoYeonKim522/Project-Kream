@@ -23,7 +23,6 @@ class ShopCategoryAdapter(private val catList:List<DetailCategory>, val context:
     class ViewHolder(itemView:View):RecyclerView.ViewHolder(itemView) {
         val image = itemView.findViewById<ImageView>(R.id.shop_cat_img)
         val name = itemView.findViewById<TextView>(R.id.shop_cat_name)
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -37,8 +36,10 @@ class ShopCategoryAdapter(private val catList:List<DetailCategory>, val context:
         val imgUrl:String = catList[position].imageUrl
 
 
-        if(imgUrl.isNotEmpty()){
+        if(imgUrl!=null){
             Glide.with(holder.itemView).load(imgUrl).error(R.drawable.login_button).into(holder.image)
+        } else{
+            holder.image.setImageResource(R.drawable.login_button)
         }
         //holder.name.text = catList[position].result.categoryList[0].detailCategoryList[0].name
         holder.name.text = catList[position].name

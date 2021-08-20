@@ -6,10 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CompoundButton
-import android.widget.FrameLayout
-import android.widget.ImageView
-import android.widget.ViewFlipper
+import android.widget.*
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kream.kotlin.R
@@ -18,11 +15,17 @@ import com.example.kream.kotlin.databinding.FragmentShopBinding
 import com.example.kream.kotlin.src.main.shop.models.*
 import com.example.kream.kotlin.src.main.shop_product.ShopProductActivity
 
+// 일단 토글버튼 -> 버튼으로 바꾸려고 함. 토글버튼에서 oncheckedlistener 랑 onclick리스너랑 같이 동작이 안되어서
+// 럭셔리, 스니커즈, 의류만 일단 일반버튼으로 바꿈
+// 이 버튼들에 대해 하나의 함수를 적용하는 방법을 모르겠음. 할수있는지도..
+
 class ShopFragment:BaseFragment<FragmentShopBinding> (FragmentShopBinding::bind, R.layout.fragment_shop), ShopView {
 
     private val TAG = "log"
     lateinit var viewFlipper:ViewFlipper
 
+//    private val catBtnList:ArrayList<ToggleButton> = arrayListOf(binding.shopFilterSneakers, binding.shopFilterClothes, binding.shopFilterAcc, binding.shopFilterLife, binding.shopFilterTech)
+private var catBtnList: ArrayList<Button> = arrayListOf()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -47,22 +50,58 @@ class ShopFragment:BaseFragment<FragmentShopBinding> (FragmentShopBinding::bind,
             viewFlipper.setOutAnimation(requireContext(), android.R.anim.slide_out_right)
 
         }
+//        catBtnList= arrayListOf(binding.shopFilterSneakers, binding.shopFilterClothes, binding.shopFilterAcc, binding.shopFilterLife, binding.shopFilterTech)
+        catBtnList= arrayListOf(binding.shopFilterSneakers, binding.shopFilterClothes)
+
 
         //필터 버튼 토글 효과
-        binding.shopFilterLuxury.setOnCheckedChangeListener(ToggleListener())
-        binding.shopFilterSneakers.setOnCheckedChangeListener(ToggleListener())
-        binding.shopFilterClothes.setOnCheckedChangeListener(ToggleListener())
-        binding.shopFilterAcc.setOnCheckedChangeListener(ToggleListener())
-        binding.shopFilterLife.setOnCheckedChangeListener(ToggleListener())
-        binding.shopFilterTech.setOnCheckedChangeListener(ToggleListener())
+
+//        for(btn in catBtnList){
+//            btn.setOnClickListener { filterBtnListener(btn) }
+//        }
+        binding.shopFilterSneakers.setOnClickListener {
+            for(btn in catBtnList){
+                btn.isSelected=false
+            }
+            binding.shopFilterSneakers.isSelected=true
+            binding.shopFilterSneakers.setBackgroundResource(R.drawable.shop_filter_button_clicked)
+            binding.shopFilterSneakers.setTextColor(Color.parseColor("#df614e"))
+            ShopService(this).tryGetProductCategory("true", 1)
+        }
+        binding.shopFilterClothes.setOnClickListener {
+            for(btn in catBtnList){
+                btn.isSelected=false
+            }
+            binding.shopFilterClothes.isSelected=true
+            binding.shopFilterClothes.setBackgroundResource(R.drawable.shop_filter_button_clicked)
+            binding.shopFilterClothes.setTextColor(Color.parseColor("#df614e"))
+            ShopService(this).tryGetProductCategory("true", 2)
+        }
+
+
+//        binding.shopFilterLuxury.setOnCheckedChangeListener(ToggleListener())
+//        for(btn in catBtnList){
+//            btn.setOnCheckedChangeListener(ToggleListener())
+//        }
+
+            //위에껄로 간단히 변경
+            //        binding.shopFilterLuxury.setOnCheckedChangeListener(ToggleListener())
+            //        binding.shopFilterSneakers.setOnCheckedChangeListener(ToggleListener())
+            //        binding.shopFilterClothes.setOnCheckedChangeListener(ToggleListener())
+            //        binding.shopFilterAcc.setOnCheckedChangeListener(ToggleListener())
+            //        binding.shopFilterLife.setOnCheckedChangeListener(ToggleListener())
+            //        binding.shopFilterTech.setOnCheckedChangeListener(ToggleListener())
 
 
         //카테고리 필터링 버튼 클릭 시 리사이클러뷰 변경
-        binding.shopFilterSneakers.setOnClickListener{ ShopService(this).tryGetProductCategory("true", 1) }
-        binding.shopFilterClothes.setOnClickListener { ShopService(this).tryGetProductCategory("true", 2) }
-        binding.shopFilterAcc.setOnClickListener { ShopService(this).tryGetProductCategory("true", 3) }
-        binding.shopFilterLife.setOnClickListener { ShopService(this).tryGetProductCategory("true", 4) }
-        binding.shopFilterTech.setOnClickListener { ShopService(this).tryGetProductCategory("true", 5) }
+//        binding.shopFilterSneakers.setOnClickListener{
+//            ShopService(this).tryGetProductCategory("true", 2)
+//            //다 없애주는 포문 여기서 click 리스너에서!!
+//        }
+//        binding.shopFilterClothes.setOnClickListener { ShopService(this).tryGetProductCategory("true", 3) }
+//        binding.shopFilterAcc.setOnClickListener { ShopService(this).tryGetProductCategory("true", 4) }
+//        binding.shopFilterLife.setOnClickListener { ShopService(this).tryGetProductCategory("true", 5) }
+//        binding.shopFilterTech.setOnClickListener { ShopService(this).tryGetProductCategory("true", 6) }
 
 
 
@@ -86,9 +125,33 @@ class ShopFragment:BaseFragment<FragmentShopBinding> (FragmentShopBinding::bind,
 
     }
 
+//    private fun filterBtnListener():CompoundButton.OnCheckedChangeListener {
+//        catBtnList= arrayListOf(binding.shopFilterSneakers, binding.shopFilterClothes)
+//        for(btn in catBtnList){
+//            btn.isSelected=false
+//        }
+//        Log.d(TAG, "FilterBtnListener: 스니커즈 클릭")
+
+//        when(view.id){
+//            R.id.shop_filter_sneakers -> {
+//
+//                ShopService(this).tryGetProductCategory("true", 2)
+//
+//            }
+//            R.id.shop_filter_clothes -> ShopService(this).tryGetProductCategory("true", 3)
+//        }
+//    }
+
 
     inner class ToggleListener: CompoundButton.OnCheckedChangeListener{
         override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
+            //catBtnList= arrayListOf(binding.shopFilterSneakers, binding.shopFilterClothes, binding.shopFilterAcc, binding.shopFilterLife, binding.shopFilterTech)
+            catBtnList= arrayListOf(binding.shopFilterSneakers, binding.shopFilterClothes)
+
+            //아래껄 하면 토글이 안됨. 선택만 되고 안꺼짐
+//            for(btn in catBtnList){
+//                btn.isChecked=false
+//            }
             if(isChecked){
                 buttonView?.setBackgroundResource(R.drawable.shop_filter_button_clicked)
                 buttonView?.setTextColor(Color.parseColor("#df614e"))

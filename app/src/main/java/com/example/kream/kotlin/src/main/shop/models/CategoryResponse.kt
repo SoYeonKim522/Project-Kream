@@ -6,3 +6,10 @@ import com.google.gson.annotations.SerializedName
 data class CategoryResponse(
     @SerializedName("result") val result: CategoryResult
 ) : BaseResponse()
+
+
+//data class CategoryResult(
+//    @SerializedName("categoryList") val categorylist: List<Categorylist>
+//)
+
+//CategortResult -> Categorylist

@@ -15,7 +15,7 @@
 11-->D:\Kream\app\src\main\AndroidManifest.xml:6:22-64
 12
 13    <application
-13-->D:\Kream\app\src\main\AndroidManifest.xml:8:5-41:19
+13-->D:\Kream\app\src\main\AndroidManifest.xml:8:5-44:19
 14        android:name="com.example.kream.kotlin.config.ApplicationClass"
 14-->D:\Kream\app\src\main\AndroidManifest.xml:9:9-72
 15        android:allowBackup="false"
@@ -52,22 +52,23 @@
 32            android:theme="@style/SplashTheme" >
 32-->D:\Kream\app\src\main\AndroidManifest.xml:28:13-47
 33            <intent-filter>
-33-->D:\Kream\app\src\main\AndroidManifest.xml:30:13-34:29
+33-->D:\Kream\app\src\main\AndroidManifest.xml:29:13-33:29
 34                <action android:name="android.intent.action.MAIN" />
-34-->D:\Kream\app\src\main\AndroidManifest.xml:31:17-69
-34-->D:\Kream\app\src\main\AndroidManifest.xml:31:25-66
+34-->D:\Kream\app\src\main\AndroidManifest.xml:30:17-69
+34-->D:\Kream\app\src\main\AndroidManifest.xml:30:25-66
 35
 36                <category android:name="android.intent.category.LAUNCHER" />
-36-->D:\Kream\app\src\main\AndroidManifest.xml:33:17-77
-36-->D:\Kream\app\src\main\AndroidManifest.xml:33:27-74
+36-->D:\Kream\app\src\main\AndroidManifest.xml:32:17-77
+36-->D:\Kream\app\src\main\AndroidManifest.xml:32:27-74
 37            </intent-filter>
 38        </activity>
 39        <activity android:name="com.example.kream.kotlin.src.main.signUp.SignUpActivity" />
 39-->D:\Kream\app\src\main\AndroidManifest.xml:38:9-67
 39-->D:\Kream\app\src\main\AndroidManifest.xml:38:19-65
-40        <activity android:name="com.example.kream.kotlin.src.main.shop_product.ShopProductActivity" />
-40-->D:\Kream\app\src\main\AndroidManifest.xml:40:9-78
+40        <activity android:name="com.example.kream.kotlin.src.main.shop_product.ShopProductActivity" >
+40-->D:\Kream\app\src\main\AndroidManifest.xml:40:9-43:20
 40-->D:\Kream\app\src\main\AndroidManifest.xml:40:19-76
-41    </application>
-42
-43</manifest>
+41        </activity>
+42    </application>
+43
+44</manifest>

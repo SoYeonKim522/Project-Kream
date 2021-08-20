@@ -42,7 +42,7 @@
                     android:layout_width="32dp"
                     android:layout_height="32dp"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="16dp"
+                    android:layout_marginEnd="8dp"
                     android:background="@drawable/ic_baseline_add_24" />
             </RelativeLayout>
 
@@ -196,7 +196,9 @@
                     android:id="@+id/separator"
                     android:layout_width="match_parent"
                     android:layout_height="0.5dp"
+                    android:layout_marginStart="16dp"
                     android:layout_marginTop="24dp"
+                    android:layout_marginEnd="16dp"
                     android:background="@color/gray_filter_btn_bg"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -226,6 +228,7 @@
                     android:layout_marginTop="10dp"
                     android:src="@drawable/jordan_test"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/prod_description" />
 
@@ -256,20 +259,218 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/ad_banner" />
 
-                <com.google.android.material.tabs.TabLayout
+<!--                <com.google.android.material.tabs.TabLayout-->
+<!--                    android:id="@+id/tab_layout"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="30dp"-->
+<!--                    android:layout_marginStart="16dp"-->
+<!--                    android:layout_marginTop="16dp"-->
+<!--                    android:layout_marginEnd="16dp"-->
+<!--                    app:tabGravity="center"-->
+<!--                    app:tabIndicatorGravity="stretch"-->
+<!--                    app:tabIndicator="@drawable/product_price_tab_clicked"-->
+<!--                    app:tabIndicatorAnimationMode="elastic"-->
+<!--                    android:background="@drawable/product_price_tab"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/tv_market_price"/>-->
+
+                <FrameLayout
+                    android:id="@+id/tab"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="33dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
                     android:background="@drawable/product_price_tab"
-                    app:tabBackground="@drawable/product_tab_selector"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_market_price"/>
+                    app:layout_constraintTop_toBottomOf="@id/tv_market_price">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_gravity="center_vertical">
+                        <Button
+                            android:id="@+id/sales_btn"
+                            style="?android:attr/borderlessButtonStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="26dp"
+                            android:layout_weight="1"
+                            android:text="@string/shop_prod_sales"
+                            android:textColor="@color/black_text"
+                            android:textSize="13sp"
+                            android:textAlignment="center"
+                            android:layout_gravity="center"
+                            android:background="@drawable/product_tab_selector"
+                            android:padding="0dp"
+                            android:onClick="tabClick"
+                            android:layout_marginHorizontal="2dp"
+                            />
+                        <Button
+                            android:id="@+id/asks_btn"
+                            style="?android:attr/borderlessButtonStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/shop_prod_asks"
+                            android:textColor="@color/black_text"
+                            android:textSize="13sp"
+                            android:textAlignment="center"
+                            android:background="@drawable/product_tab_selector"
+                            android:padding="0dp"
+                            android:onClick="tabClick"
+                            android:layout_marginHorizontal="2dp"
+                            />
+                        <Button
+                            android:id="@+id/bids_btn"
+                            style="?android:attr/borderlessButtonStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/shop_prod_bids"
+                            android:textColor="@color/black_text"
+                            android:textSize="13sp"
+                            android:textAlignment="center"
+                            android:background="@drawable/product_tab_selector"
+                            android:padding="0dp"
+                            android:onClick="tabClick"
+                            android:layout_marginHorizontal="2dp"
+                            />
+                    </LinearLayout>
+
+                </FrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/table_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toTopOf="@id/table_separator"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tab">
+
+                    <TextView
+                        android:id="@+id/sales_first_column_header"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="@string/shop_prod_size"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gray_text"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/sales_second_column_header"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.8"
+                        android:text="@string/shop_prod_sales_price"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gray_text"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/sales_third_column_header"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.8"
+                        android:text="@string/shop_prod_sales_date"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gray_text"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/table_separator"
+                    android:layout_width="match_parent"
+                    android:layout_height="1.5dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@color/gray_filter_btn_bg"
+                    app:layout_constraintBottom_toTopOf="@+id/table_recycler"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+               <androidx.recyclerview.widget.RecyclerView
+                   android:id="@+id/table_recycler"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginStart="16dp"
+                   android:layout_marginTop="4dp"
+                   android:layout_marginEnd="16dp"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@id/table_separator"/>
+
+                <Button
+                    android:id="@+id/sales_more_button"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/shop_size_button"
+                    android:text="@string/shop_prod_more_sales"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/table_recycler" />
+
+                <View
+                    android:id="@+id/separator_below_table"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@color/gray_filter_btn_bg"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/sales_more_button"/>
+
+                <TextView
+                    android:id="@+id/recommend_section"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="Jordan의 다른 상품"
+                    android:textColor="@color/black_text"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separator_below_table" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/product_rec_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/recommend_section" />
 
 
-
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/prod_bottom_small_print"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/product_rec_recycler_view" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

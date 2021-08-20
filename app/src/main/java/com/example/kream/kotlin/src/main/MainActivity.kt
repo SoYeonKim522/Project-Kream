@@ -74,4 +74,5 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
         binding.mainBtmNav
     }
 
+
 }

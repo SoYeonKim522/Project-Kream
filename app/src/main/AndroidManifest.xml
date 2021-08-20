@@ -26,18 +26,21 @@
             android:name="com.example.kream.kotlin.src.main.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
+
         </activity>
 
         <activity android:name=".src.main.signUp.SignUpActivity"/>
 
-        <activity android:name=".src.main.shop_product.ShopProductActivity"/>
+        <activity android:name=".src.main.shop_product.ShopProductActivity">
+
+
+        </activity>
     </application>
 
 </manifest>

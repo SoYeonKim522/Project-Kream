@@ -4,9 +4,9 @@ import com.example.kream.kotlin.config.BaseResponse
 import com.google.gson.annotations.SerializedName
 
 data class ProductResponse(
-    @SerializedName("result") val result: Result
+    @SerializedName("result") val result: ProdResult
 ):BaseResponse()
 
-data class Result(
+data class ProdResult(
     @SerializedName("productList") val productList: List<ProductResult>
 )

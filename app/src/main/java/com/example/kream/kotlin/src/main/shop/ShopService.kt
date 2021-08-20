@@ -23,9 +23,6 @@ class ShopService (val view: ShopView){
                 response: Response<CategoryResponse>
             ) {
                 view.onGetProdCategorySuccess(response.body() as CategoryResponse, index)
-                val res = response.body()
-
-                //catAdapter = ShopCategoryAdapter(it.res)
             }
 
             override fun onFailure(call: Call<CategoryResponse>, t: Throwable) {

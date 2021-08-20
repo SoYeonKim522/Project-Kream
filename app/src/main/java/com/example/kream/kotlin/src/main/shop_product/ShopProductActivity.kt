@@ -1,12 +1,18 @@
 package com.example.kream.kotlin.src.main.shop_product
 
+import android.graphics.Typeface
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kream.kotlin.R
 import com.example.kream.kotlin.config.BaseActivity
 import com.example.kream.kotlin.databinding.ShopProductBinding
+import com.example.kream.kotlin.src.main.shop_product.models.AsksResponse
+import com.example.kream.kotlin.src.main.shop_product.models.BidsResponse
 import com.example.kream.kotlin.src.main.shop_product.models.ProductDescriptionResponse
+import com.example.kream.kotlin.src.main.shop_product.models.SalesResponse
 
 
 class ShopProductActivity : BaseActivity<ShopProductBinding> (ShopProductBinding::inflate), ProductView {
@@ -19,11 +25,18 @@ class ShopProductActivity : BaseActivity<ShopProductBinding> (ShopProductBinding
         //1번 상품 상세 불러오기
         ProductService(this).tryGetProductDescription(1)
 
+        //체결거래 탭 기본으로 설정된
+        binding.salesBtn.isSelected=true
+        ProductService(this).tryGetProductSales(1)
+
+
+
     }
 
 //    private fun getImageList(): List<Int> {
 //        return listOf(R.drawable.jordan_test, R.drawable.home_banner2, R.drawable.home_banner1)
 //    }
+
 
     override fun onGetProdDescriptionSuccess(response: ProductDescriptionResponse) {
         //상품 이미지 뷰페이저에 넘겨주기
@@ -66,6 +79,67 @@ class ShopProductActivity : BaseActivity<ShopProductBinding> (ShopProductBinding
         showCustomToast("오류 : $message")
         Log.d(TAG, "onGetProdDescriptionFailure: $message")
     }
+
+    override fun onGetSalesSuccess(response: SalesResponse) {
+        val result = response.result.transactionList
+        binding.tableRecycler.layoutManager = LinearLayoutManager(this).also { it.orientation = LinearLayoutManager.VERTICAL }
+        binding.tableRecycler.adapter = SalesTableAdapter(result, this)
+        binding.tableRecycler.setHasFixedSize(true)
+    }
+
+    override fun onGetSalesFailure(message: String) {
+        Log.d(TAG, "onGetSalesFailure: $message")
+    }
+
+    override fun onGetAsksSuccess(response: AsksResponse) {
+        val result = response.result.bidSaleList
+        binding.tableRecycler.layoutManager = LinearLayoutManager(this).also { it.orientation = LinearLayoutManager.VERTICAL }
+        binding.tableRecycler.adapter = AsksTableAdapter(result, this)
+        binding.tableRecycler.setHasFixedSize(true)
+    }
+
+    override fun onGetAsksFailure(message: String) {
+        Log.d(TAG, "onGetAsksFailure: $message")
+    }
+
+    override fun onGetBidsSuccess(response: BidsResponse) {
+        val result = response.result.bidPurchaseList
+        binding.tableRecycler.layoutManager = LinearLayoutManager(this).also { it.orientation = LinearLayoutManager.VERTICAL }
+        binding.tableRecycler.adapter = BidsTableAdapter(result, this)
+        binding.tableRecycler.setHasFixedSize(true)
+    }
+
+    override fun onGetBidsFailure(message: String) {
+        Log.d(TAG, "onGetBidsFailure: $message")
+    }
+
+    fun tabClick(view: View) {
+        val tabBtnList:List<Button> = listOf(binding.salesBtn, binding.asksBtn, binding.bidsBtn)
+        for(btn in tabBtnList){
+            btn.isSelected=false
+            btn.setTypeface(null, Typeface.NORMAL)
+        }
+        view.isSelected=true
+        when(view.id){
+            R.id.sales_btn ->  {
+                binding.salesSecondColumnHeader.text = "거래가"
+                binding.salesThirdColumnHeader.text = "거래일"
+                ProductService(this).tryGetProductSales(1)
+            }
+            R.id.asks_btn -> {
+                binding.salesSecondColumnHeader.text = "판매 희망가"
+                binding.salesThirdColumnHeader.text = "수량"
+                ProductService(this).tryGetProductAsks(1)
+            }
+            R.id.bids_btn -> {
+                binding.salesSecondColumnHeader.text = "구매 희망가"
+                binding.salesThirdColumnHeader.text = "수량"
+                ProductService(this).tryGetProductBids(1)
+            }
+        }
+    }
+
+
 
 
 }

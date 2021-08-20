@@ -37,7 +37,8 @@
             </intent-filter>
         </activity>
         <activity android:name="com.example.kream.kotlin.src.main.signUp.SignUpActivity" />
-        <activity android:name="com.example.kream.kotlin.src.main.shop_product.ShopProductActivity" />
+        <activity android:name="com.example.kream.kotlin.src.main.shop_product.ShopProductActivity" >
+        </activity>
     </application>
 
 </manifest>

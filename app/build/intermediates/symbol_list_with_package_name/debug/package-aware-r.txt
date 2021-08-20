@@ -1812,6 +1812,7 @@ drawable app_logo_white
 drawable avd_hide_password
 drawable avd_show_password
 drawable bottom_nav_click
+drawable bottom_sheet_bg
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -1847,6 +1848,7 @@ drawable home_icon_onclick
 drawable home_style_1
 drawable ic_baseline_add_24
 drawable ic_baseline_arrow_back_24
+drawable ic_baseline_close_24
 drawable ic_baseline_notifications_none_24
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
@@ -1904,6 +1906,7 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable post_icon
 drawable prod_ad_banner
+drawable prod_bottom_small_print
 drawable prod_price_down_icon
 drawable prod_price_up_icon
 drawable product_price_tab
@@ -1915,6 +1918,8 @@ drawable shop_banner3
 drawable shop_banner4
 drawable shop_banner5
 drawable shop_banner6
+drawable shop_cat_filter_selector
+drawable shop_cat_filter_txt_selector
 drawable shop_filter_button_clicked
 drawable shop_filter_button_unclicked
 drawable shop_filter_icon_clicked
@@ -2043,6 +2048,7 @@ id anticipate
 id appBarLayout
 id arc
 id asConfigured
+id asks_btn
 id async
 id auto
 id autoComplete
@@ -2054,6 +2060,7 @@ id baseline
 id beginOnFirstDraw
 id beginning
 id bestChoice
+id bids_btn
 id blocking
 id bottom
 id bottom_bar
@@ -2347,11 +2354,13 @@ id product_img
 id product_img_view_pager
 id product_name
 id product_name_kor
+id product_rec_recycler_view
 id progressBar
 id progress_circular
 id progress_horizontal
 id radio
 id ratio
+id recommend_section
 id rectangles
 id repeat
 id reverseSawtooth
@@ -2361,6 +2370,14 @@ id right_icon
 id right_side
 id rounded
 id row_index_key
+id sales_btn
+id sales_first_column
+id sales_first_column_header
+id sales_more_button
+id sales_second_column
+id sales_second_column_header
+id sales_third_column
+id sales_third_column_header
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -2389,6 +2406,7 @@ id sell_button
 id sell_price
 id sell_separator
 id separator
+id separator_below_table
 id sharedValueSet
 id sharedValueUnset
 id shop_cat_img
@@ -2449,7 +2467,12 @@ id style_picks
 id submenuarrow
 id submit_area
 id supportScrollUp
+id tab
 id tabMode
+id tableLayout
+id table_recycler
+id table_separator
+id table_title
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
 id tag_accessibility_heading
@@ -2504,8 +2527,10 @@ id tv_buy
 id tv_buy_price
 id tv_latest_price
 id tv_market_price
+id tv_price
 id tv_sell
 id tv_sell_price
+id tv_size
 id unchecked
 id uniform
 id unlabeled
@@ -2690,6 +2715,10 @@ layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
 layout prod_info_recycler_item
+layout prod_rec_recycler_item
+layout prod_sales_recycler_item
+layout prod_size_recycler_item
+layout prod_size_sheet
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
@@ -2850,6 +2879,7 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string prod_tv_buy_price
 string search_menu_title
 string shop_filter_acc
 string shop_filter_clothes
@@ -2857,10 +2887,21 @@ string shop_filter_life
 string shop_filter_luxury
 string shop_filter_sneakers
 string shop_filter_tech
+string shop_prod_asks
+string shop_prod_bids
 string shop_prod_buy
 string shop_prod_buy_price
+string shop_prod_more_bids
+string shop_prod_more_sales
+string shop_prod_sales
+string shop_prod_sales_ask_price
+string shop_prod_sales_bid_price
+string shop_prod_sales_date
+string shop_prod_sales_price
+string shop_prod_sales_quantity
 string shop_prod_sell
 string shop_prod_sell_price
+string shop_prod_size
 string shop_prod_tv_all_size
 string shop_prod_tv_market_price
 string shop_product
@@ -3657,6 +3698,7 @@ style Widget_MaterialComponents_Toolbar_PrimarySurface
 style Widget_MaterialComponents_Toolbar_Surface
 style Widget_MaterialComponents_Tooltip
 style Widget_Support_CoordinatorLayout
+style productSalesTab
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth

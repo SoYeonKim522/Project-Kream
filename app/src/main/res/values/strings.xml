@@ -56,6 +56,7 @@
     <string name="shop_filter_tech">테크</string>
     <string name="shop_product">상품</string>
 
+<!--    product description-->
     <string name="shop_prod_tv_all_size">모든 사이즈</string>
     <string name="shop_tv_latest_price">최근 거래가</string>
     <string name="shop_tv_prod_description">상품 정보</string>
@@ -69,6 +70,21 @@
     <string name="shop_prod_buy_price">즉시 구매가</string>
     <string name="shop_prod_sell">판매</string>
     <string name="shop_prod_sell_price">즉시 판매가</string>
+
+    <string name="shop_prod_sales">채결 거래</string>
+    <string name="shop_prod_asks">판매 입찰</string>
+    <string name="shop_prod_bids">구매 입찰</string>
+    <string name="shop_prod_size">사이즈</string>
+    <string name="shop_prod_sales_price">거래가</string>
+    <string name="shop_prod_sales_date">거래일</string>
+    <string name="shop_prod_sales_ask_price">판매 희망가</string>
+    <string name="shop_prod_sales_bid_price">구매 희망가</string>
+    <string name="shop_prod_sales_quantity">수량</string>
+    <string name="shop_prod_more_sales">체결 내역 더보기</string>
+    <string name="shop_prod_more_bids">입찰 내역 더보기</string>
+
+    <string name="prod_tv_buy_price">즉시 구매가(원)</string>
+
 
 
 

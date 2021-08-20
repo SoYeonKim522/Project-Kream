@@ -37,8 +37,10 @@ class ShopProductAdapter (private val productList:List<ProductResult>, val conte
         }
 
         val brandLogoUrl : String = productList[position].brandLogo
-        if(brandLogoUrl.isNotEmpty()){
+        if(brandLogoUrl!=null){
             Glide.with(holder.itemView).load(brandLogoUrl).error(R.drawable.login_button).into(holder.brandLogo)
+        } else {
+            holder.brandLogo.setImageResource(R.drawable.login_button)
         }
 
         holder.productName.text = productList[position].description
