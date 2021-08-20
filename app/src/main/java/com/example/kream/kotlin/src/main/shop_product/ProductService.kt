@@ -1,10 +1,7 @@
 package com.example.kream.kotlin.src.main.shop_product
 
 import com.example.kream.kotlin.config.ApplicationClass
-import com.example.kream.kotlin.src.main.shop_product.models.AsksResponse
-import com.example.kream.kotlin.src.main.shop_product.models.BidsResponse
-import com.example.kream.kotlin.src.main.shop_product.models.ProductDescriptionResponse
-import com.example.kream.kotlin.src.main.shop_product.models.SalesResponse
+import com.example.kream.kotlin.src.main.shop_product.models.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -51,7 +48,7 @@ class ProductService (val view: ProductView) {
         })
     }
 
-
+    //구매입찰 내역
     fun tryGetProductBids(productIdx: Int){
         productInterface.getProductBidsRecord(productIdx).enqueue(object :Callback<BidsResponse>{
             override fun onResponse(call: Call<BidsResponse>, response: Response<BidsResponse>) {
@@ -60,6 +57,20 @@ class ProductService (val view: ProductView) {
 
             override fun onFailure(call: Call<BidsResponse>, t: Throwable) {
                 view.onGetBidsFailure(t.message ?: "통신 오류")
+            }
+        })
+    }
+
+
+    //추천 상품
+    fun tryGetRecommendation(productIdx: Int){
+        productInterface.getProductRecommend(productIdx).enqueue(object :Callback<RecommendResponse>{
+            override fun onResponse(call: Call<RecommendResponse>, response: Response<RecommendResponse>) {
+                view.onGetRecSuccess(response.body() as RecommendResponse)
+            }
+
+            override fun onFailure(call: Call<RecommendResponse>, t: Throwable) {
+                view.onGetRecFailure(t.message ?: "통신 오류")
             }
         })
     }

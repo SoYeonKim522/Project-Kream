@@ -1,10 +1,7 @@
 package com.example.kream.kotlin.src.main.shop_product
 
 //import com.example.kream.kotlin.src.main.shop_product.models.ProdDescriptionList
-import com.example.kream.kotlin.src.main.shop_product.models.AsksResponse
-import com.example.kream.kotlin.src.main.shop_product.models.BidsResponse
-import com.example.kream.kotlin.src.main.shop_product.models.ProductDescriptionResponse
-import com.example.kream.kotlin.src.main.shop_product.models.SalesResponse
+import com.example.kream.kotlin.src.main.shop_product.models.*
 
 interface ProductView {
 
@@ -19,6 +16,9 @@ interface ProductView {
 
     fun onGetBidsSuccess(response: BidsResponse)
     fun onGetBidsFailure(message: String)
+
+    fun onGetRecSuccess(response: RecommendResponse)
+    fun onGetRecFailure(message: String)
 
 
 }

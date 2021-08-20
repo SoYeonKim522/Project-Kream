@@ -1,19 +1,25 @@
 package com.example.kream.kotlin.src.main.shop
 
 import android.content.Context
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.kream.kotlin.R
 import com.example.kream.kotlin.src.main.shop.models.ProductResult
+import com.example.kream.kotlin.src.main.shop_product.ShopProductActivity
 
 
 class ShopProductAdapter (private val productList:List<ProductResult>, val context: Context?)
     : RecyclerView.Adapter<ShopProductAdapter.ViewHolder>(){
+
+    private val TAG ="log"
 
     class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
         val productImg = itemView.findViewById<ImageView>(R.id.product_img)
@@ -47,6 +53,14 @@ class ShopProductAdapter (private val productList:List<ProductResult>, val conte
         holder.price.text = productList[position].buyPrice.toString()
         holder.wishlistCnt.text = productList[position].liked.toString()
         holder.postingCnt.text = productList[position].tagged.toString()
+
+        //상품클릭 -> 상품상세페이지 이동
+        val productIdx = productList[position].idx
+        holder.itemView.setOnClickListener {
+            val intent = Intent(holder.itemView.context, ShopProductActivity::class.java)
+            intent.putExtra("productIdx", productIdx)
+            ContextCompat.startActivity(holder.itemView.context, intent, null)
+        }
     }
 
     override fun getItemCount(): Int = productList.size

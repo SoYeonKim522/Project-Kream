@@ -27,5 +27,9 @@ class AsksTableAdapter(private var asksList:List<AsksList>, val context: Context
         holder.quantity.text = asksList[position].count.toString()
     }
 
-    override fun getItemCount(): Int = 5
+    override fun getItemCount(): Int {
+        return if(asksList.size>5){
+            5
+        } else asksList.size
+    }
 }

@@ -9,26 +9,30 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kream.kotlin.R
 import com.example.kream.kotlin.config.BaseActivity
 import com.example.kream.kotlin.databinding.ShopProductBinding
-import com.example.kream.kotlin.src.main.shop_product.models.AsksResponse
-import com.example.kream.kotlin.src.main.shop_product.models.BidsResponse
-import com.example.kream.kotlin.src.main.shop_product.models.ProductDescriptionResponse
-import com.example.kream.kotlin.src.main.shop_product.models.SalesResponse
+import com.example.kream.kotlin.src.main.shop_product.models.*
 
 
 class ShopProductActivity : BaseActivity<ShopProductBinding> (ShopProductBinding::inflate), ProductView {
 
     private val TAG = "log"
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        val productIdx = intent.getIntExtra("productIdx", 0)
+
+
+        Log.d(TAG, "onCreate: 아이디 $productIdx")
         //1번 상품 상세 불러오기
-        ProductService(this).tryGetProductDescription(1)
+        ProductService(this).tryGetProductDescription(productIdx)
 
-        //체결거래 탭 기본으로 설정된
+        //체결거래 탭 기본으로 선택 설정
         binding.salesBtn.isSelected=true
-        ProductService(this).tryGetProductSales(1)
+        ProductService(this).tryGetProductSales(productIdx)
 
+        //추천상품 불러오기
+        ProductService(this).tryGetRecommendation(productIdx)
 
 
     }
@@ -41,7 +45,7 @@ class ShopProductActivity : BaseActivity<ShopProductBinding> (ShopProductBinding
     override fun onGetProdDescriptionSuccess(response: ProductDescriptionResponse) {
         //상품 이미지 뷰페이저에 넘겨주기
         val imgResult = response.result.productImages
-        binding.productImgViewPager.adapter = ProductImageViewpagerAdapter(imgResult, this)
+        binding.productImgViewPager.adapter = ProductImageAdapter(imgResult, this)
 
         val result = response.result
         binding.brandName.text = result.brandName
@@ -113,7 +117,22 @@ class ShopProductActivity : BaseActivity<ShopProductBinding> (ShopProductBinding
         Log.d(TAG, "onGetBidsFailure: $message")
     }
 
+    override fun onGetRecSuccess(response: RecommendResponse) {
+        binding.recommendTitle.text = response.result.brandName+"의 다른상품"
+        val result = response.result.otherList
+        binding.productRecRecyclerView.layoutManager = LinearLayoutManager(this).also { it.orientation = LinearLayoutManager.HORIZONTAL }
+        binding.productRecRecyclerView.adapter = RecommendAdapter(result, this)
+        binding.productRecRecyclerView.setHasFixedSize(true)
+    }
+
+    override fun onGetRecFailure(message: String) {
+        Log.d(TAG, "onGetRecFailure: $message")
+    }
+
+    //xml 에서 정의한 버튼 클릭 리스너
     fun tabClick(view: View) {
+        val productIdx = intent.getIntExtra("productIdx", 0)
+        Log.d(TAG, "tabClick: 아이디이이 $productIdx")
         val tabBtnList:List<Button> = listOf(binding.salesBtn, binding.asksBtn, binding.bidsBtn)
         for(btn in tabBtnList){
             btn.isSelected=false
@@ -124,17 +143,17 @@ class ShopProductActivity : BaseActivity<ShopProductBinding> (ShopProductBinding
             R.id.sales_btn ->  {
                 binding.salesSecondColumnHeader.text = "거래가"
                 binding.salesThirdColumnHeader.text = "거래일"
-                ProductService(this).tryGetProductSales(1)
+                ProductService(this).tryGetProductSales(productIdx)
             }
             R.id.asks_btn -> {
                 binding.salesSecondColumnHeader.text = "판매 희망가"
                 binding.salesThirdColumnHeader.text = "수량"
-                ProductService(this).tryGetProductAsks(1)
+                ProductService(this).tryGetProductAsks(productIdx)
             }
             R.id.bids_btn -> {
                 binding.salesSecondColumnHeader.text = "구매 희망가"
                 binding.salesThirdColumnHeader.text = "수량"
-                ProductService(this).tryGetProductBids(1)
+                ProductService(this).tryGetProductBids(productIdx)
             }
         }
     }

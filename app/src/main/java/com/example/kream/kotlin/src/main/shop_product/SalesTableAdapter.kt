@@ -28,6 +28,10 @@ class SalesTableAdapter(private var salesList:List<SalesTransaction>, val contex
         holder.date.text = salesList[position].transactedAt
     }
 
-    override fun getItemCount(): Int = 5
+    override fun getItemCount(): Int {
+        return if(salesList.size>5){
+            5
+        } else salesList.size
+    }
 }
 

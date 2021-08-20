@@ -1,9 +1,6 @@
 package com.example.kream.kotlin.src.main.shop_product
 
-import com.example.kream.kotlin.src.main.shop_product.models.AsksResponse
-import com.example.kream.kotlin.src.main.shop_product.models.BidsResponse
-import com.example.kream.kotlin.src.main.shop_product.models.ProductDescriptionResponse
-import com.example.kream.kotlin.src.main.shop_product.models.SalesResponse
+import com.example.kream.kotlin.src.main.shop_product.models.*
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -23,4 +20,6 @@ interface ProductRetrofitInterface {
     @GET("/api/bids/purchase/{productIdx}")
     fun getProductBidsRecord(@Path("productIdx") productIdx:Int) : Call<BidsResponse>
 
+    @GET("/api/products/{productIdx}/others")
+    fun getProductRecommend(@Path("productIdx") productIdx: Int) : Call<RecommendResponse>
 }

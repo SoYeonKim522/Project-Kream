@@ -27,5 +27,9 @@ class BidsTableAdapter(private var bidsList: List<BidsList>, val context:Context
         holder.quantity.text = bidsList[position].count.toString()
     }
 
-    override fun getItemCount(): Int = 5
+    override fun getItemCount(): Int {
+        return if(bidsList.size>5){
+            5
+        } else bidsList.size
+    }
 }
