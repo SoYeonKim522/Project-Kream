@@ -54,7 +54,7 @@ class ShopProductAdapter (private val productList:List<ProductResult>, val conte
         holder.wishlistCnt.text = productList[position].liked.toString()
         holder.postingCnt.text = productList[position].tagged.toString()
 
-        //상품클릭 -> 상품상세페이지 이동
+        //상품클릭 -> 상품상세페이지 이동 w/ 상품인덱스
         val productIdx = productList[position].idx
         holder.itemView.setOnClickListener {
             val intent = Intent(holder.itemView.context, ShopProductActivity::class.java)

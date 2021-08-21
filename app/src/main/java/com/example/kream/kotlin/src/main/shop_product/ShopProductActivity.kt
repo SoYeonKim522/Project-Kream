@@ -8,13 +8,15 @@ import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kream.kotlin.R
 import com.example.kream.kotlin.config.BaseActivity
-import com.example.kream.kotlin.databinding.ShopProductBinding
+import com.example.kream.kotlin.databinding.ActivityShopProductBinding
 import com.example.kream.kotlin.src.main.shop_product.models.*
+import com.example.kream.kotlin.src.main.shop_product_by_size.ProdSizeFragment
 
 
-class ShopProductActivity : BaseActivity<ShopProductBinding> (ShopProductBinding::inflate), ProductView {
+class ShopProductActivity : BaseActivity<ActivityShopProductBinding> (ActivityShopProductBinding::inflate), ProductView {
 
     private val TAG = "log"
+    private val bottomSizeFrag = ProdSizeFragment()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,6 +36,33 @@ class ShopProductActivity : BaseActivity<ShopProductBinding> (ShopProductBinding
         //추천상품 불러오기
         ProductService(this).tryGetRecommendation(productIdx)
 
+        //사이즈 버튼 클릭
+        binding.sizeButton.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putInt("productIdx", productIdx)
+//            Log.d(TAG, "onCreate: 넘겨준 아이디 $productIdx")
+            bottomSizeFrag.arguments = bundle
+            bottomSizeFrag.show(supportFragmentManager, bottomSizeFrag.tag)
+        }
+
+        //사이즈 선택 후
+        val selectedSize = intent.getStringExtra("size")
+        val buyPriceBySize = intent.getStringExtra("buyPrice")
+
+        if (selectedSize!=null && buyPriceBySize!=null){
+            Log.d(TAG, "onCreate 사이즈 선택후: $selectedSize  $buyPriceBySize")
+            binding.sizeButton.text = selectedSize
+            binding.buyPrice.text = buyPriceBySize
+        }
+
+        //사이즈 선택 안했을 경우 구매 버튼 눌렀을 때
+        binding.buyButton.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putInt("productIdx", productIdx)
+//            Log.d(TAG, "onCreate: 넘겨준 아이디 $productIdx")
+            bottomSizeFrag.arguments = bundle
+            bottomSizeFrag.show(supportFragmentManager, bottomSizeFrag.tag)
+        }
 
     }
 

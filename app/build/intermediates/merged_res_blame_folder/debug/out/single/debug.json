@@ -44,10 +44,6 @@
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\login_hide_password.png"
     },
     {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\layout_shop_product.xml.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\shop_product.xml"
-    },
-    {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_my_page.xml.flat",
         "source": "D:\\Kream\\app\\src\\main\\res\\layout\\fragment_my_page.xml"
     },
@@ -88,12 +84,12 @@
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\layout_prod_size_sheet.xml.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\prod_size_sheet.xml"
-    },
-    {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shop_icon.png.flat",
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\shop_icon.png"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_prod_size_button.xml.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\prod_size_button.xml"
     },
     {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_product_tab_selector.xml.flat",
@@ -180,12 +176,12 @@
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\splash_screen.xml"
     },
     {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\layout_prod_rec_recycler_item.xml.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\prod_rec_recycler_item.xml"
-    },
-    {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\layout_prod_sales_recycler_item.xml.flat",
         "source": "D:\\Kream\\app\\src\\main\\res\\layout\\prod_sales_recycler_item.xml"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\layout_prod_rec_recycler_item.xml.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\prod_rec_recycler_item.xml"
     },
     {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_loading.xml.flat",
@@ -360,10 +356,6 @@
         "source": "D:\\Kream\\app\\src\\main\\res\\layout\\shop_recycler_item.xml"
     },
     {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shop_size_button.xml.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\shop_size_button.xml"
-    },
-    {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_home_icon_onclick.xml.flat",
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\home_icon_onclick.xml"
     },
@@ -400,8 +392,16 @@
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\checkbox_checked.png"
     },
     {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_prod_size.xml.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\fragment_prod_size.xml"
+    },
+    {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_shop.xml.flat",
         "source": "D:\\Kream\\app\\src\\main\\res\\layout\\fragment_shop.xml"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\anim_slide_down.xml.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\anim\\slide_down.xml"
     },
     {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_login_button_clicked.xml.flat",
@@ -456,8 +456,16 @@
         "source": "D:\\Kream\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_prod_size_button_clicked.xml.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\prod_size_button_clicked.xml"
+    },
+    {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logo_jordan.png.flat",
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\logo_jordan.png"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_shop_product.xml.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\activity_shop_product.xml"
     },
     {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_my_page_icon.png.flat",
@@ -466,6 +474,10 @@
     {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
         "source": "D:\\Kream\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\anim_slide_up.xml.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\anim\\slide_up.xml"
     },
     {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_prod_price_down_icon.png.flat",

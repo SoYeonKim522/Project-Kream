@@ -4,18 +4,16 @@ com/example/kream/kotlin/databinding/DialogLoadingBinding.java
  com.example.kream.kotlin.databinding.DialogLoadingBinding
 com/example/kream/kotlin/databinding/HomeStylePicksItemBinding.java
  com.example.kream.kotlin.databinding.HomeStylePicksItemBinding
+com/example/kream/kotlin/databinding/FragmentProdSizeBinding.java
+ com.example.kream.kotlin.databinding.FragmentProdSizeBinding
 com/example/kream/kotlin/databinding/ActivityLoginBinding.java
  com.example.kream.kotlin.databinding.ActivityLoginBinding
-com/example/kream/kotlin/databinding/ProdSizeSheetBinding.java
- com.example.kream.kotlin.databinding.ProdSizeSheetBinding
 com/example/kream/kotlin/databinding/ActivityMainBinding.java
  com.example.kream.kotlin.databinding.ActivityMainBinding
 com/example/kream/kotlin/databinding/FragmentShopBinding.java
  com.example.kream.kotlin.databinding.FragmentShopBinding
 com/example/kream/kotlin/databinding/ShopProductViewpagerBinding.java
  com.example.kream.kotlin.databinding.ShopProductViewpagerBinding
-com/example/kream/kotlin/databinding/ShopProductBinding.java
- com.example.kream.kotlin.databinding.ShopProductBinding
 com/example/kream/kotlin/databinding/ShopRecyclerCatItemBinding.java
  com.example.kream.kotlin.databinding.ShopRecyclerCatItemBinding
 com/example/kream/kotlin/databinding/FragmentMyPageBinding.java
@@ -28,6 +26,8 @@ com/example/kream/kotlin/databinding/HomeViewpagerBinding.java
  com.example.kream.kotlin.databinding.HomeViewpagerBinding
 com/example/kream/kotlin/databinding/ProdRecRecyclerItemBinding.java
  com.example.kream.kotlin.databinding.ProdRecRecyclerItemBinding
+com/example/kream/kotlin/databinding/ActivityShopProductBinding.java
+ com.example.kream.kotlin.databinding.ActivityShopProductBinding
 com/example/kream/kotlin/databinding/FragmentHomeBinding.java
  com.example.kream.kotlin.databinding.FragmentHomeBinding
 com/example/kream/kotlin/BuildConfig.java

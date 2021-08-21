@@ -35,7 +35,6 @@ class ShopCategoryAdapter(private val catList:List<DetailCategory>, val context:
         //val imgUrl:String = catList!![position].result.categoryList[0].detailCategoryList[0].imageUrl
         val imgUrl:String = catList[position].imageUrl
 
-
         if(imgUrl!=null){
             Glide.with(holder.itemView).load(imgUrl).error(R.drawable.login_button).into(holder.image)
         } else{
@@ -57,13 +56,13 @@ class ShopCategoryAdapter(private val catList:List<DetailCategory>, val context:
 //        holder.name.text = data.catName
     }
 
-    override fun getItemCount(): Int = catList.size
-//    {
-//        var size: Int = 0
-//        if(catList != null){
-//            size = catList.size
-//        }
-//        return size
-//    }
+    override fun getItemCount(): Int
+    {
+        var size: Int = 0
+        if(catList != null){
+            size = catList.size
+        }
+        return size
+    }
 
 }
