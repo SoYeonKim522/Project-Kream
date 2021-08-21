@@ -10,6 +10,7 @@ import com.example.kream.kotlin.R
 import com.example.kream.kotlin.config.BaseActivity
 import com.example.kream.kotlin.databinding.ActivityShopProductBinding
 import com.example.kream.kotlin.src.main.shop_product.models.*
+import com.example.kream.kotlin.src.main.shop_product_by_size.ProdBySizeService
 import com.example.kream.kotlin.src.main.shop_product_by_size.ProdSizeFragment
 
 
@@ -18,15 +19,13 @@ class ShopProductActivity : BaseActivity<ActivityShopProductBinding> (ActivitySh
     private val TAG = "log"
     private val bottomSizeFrag = ProdSizeFragment()
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        //data from ShopProductAdapter
         val productIdx = intent.getIntExtra("productIdx", 0)
 
-
-        Log.d(TAG, "onCreate: 아이디 $productIdx")
-        //1번 상품 상세 불러오기
+        //상품 상세 불러오기
         ProductService(this).tryGetProductDescription(productIdx)
 
         //체결거래 탭 기본으로 선택 설정
@@ -36,14 +35,6 @@ class ShopProductActivity : BaseActivity<ActivityShopProductBinding> (ActivitySh
         //추천상품 불러오기
         ProductService(this).tryGetRecommendation(productIdx)
 
-        //사이즈 버튼 클릭
-        binding.sizeButton.setOnClickListener {
-            val bundle = Bundle()
-            bundle.putInt("productIdx", productIdx)
-//            Log.d(TAG, "onCreate: 넘겨준 아이디 $productIdx")
-            bottomSizeFrag.arguments = bundle
-            bottomSizeFrag.show(supportFragmentManager, bottomSizeFrag.tag)
-        }
 
         //사이즈 선택 후
         val selectedSize = intent.getStringExtra("size")
@@ -55,14 +46,6 @@ class ShopProductActivity : BaseActivity<ActivityShopProductBinding> (ActivitySh
             binding.buyPrice.text = buyPriceBySize
         }
 
-        //사이즈 선택 안했을 경우 구매 버튼 눌렀을 때
-        binding.buyButton.setOnClickListener {
-            val bundle = Bundle()
-            bundle.putInt("productIdx", productIdx)
-//            Log.d(TAG, "onCreate: 넘겨준 아이디 $productIdx")
-            bottomSizeFrag.arguments = bundle
-            bottomSizeFrag.show(supportFragmentManager, bottomSizeFrag.tag)
-        }
 
     }
 
@@ -84,8 +67,12 @@ class ShopProductActivity : BaseActivity<ActivityShopProductBinding> (ActivitySh
         binding.priceChangeAmount.text = result.priceIncreaseAmount.toString()
         binding.priceChangeRate.text = "("+result.priceIncreaseRate.toString()+"%)"
         binding.wishlishCount.text = result.liked.toString()
-        binding.sellPrice.text = result.sellPrice.toString()+"원"
-        binding.buyPrice.text = result.buyPrice.toString()+"원"
+        if(result.sellPrice==null || result.sellPrice==0){
+            binding.sellPrice.text = "-"
+        } else binding.sellPrice.text = result.sellPrice.toString()+"원"
+        if(result.buyPrice==null || result.buyPrice==0){
+            binding.buyPrice.text = "-"
+        } else binding.buyPrice.text = result.buyPrice.toString()+"원"
 
             //가격 증가 감소에 따른 글자색, 아이콘 변경
             if(result.priceIncreaseAmount>0){
@@ -161,7 +148,7 @@ class ShopProductActivity : BaseActivity<ActivityShopProductBinding> (ActivitySh
     //xml 에서 정의한 버튼 클릭 리스너
     fun tabClick(view: View) {
         val productIdx = intent.getIntExtra("productIdx", 0)
-        Log.d(TAG, "tabClick: 아이디이이 $productIdx")
+        Log.d(TAG, "tabClick: 아이디 $productIdx")
         val tabBtnList:List<Button> = listOf(binding.salesBtn, binding.asksBtn, binding.bidsBtn)
         for(btn in tabBtnList){
             btn.isSelected=false
@@ -187,7 +174,15 @@ class ShopProductActivity : BaseActivity<ActivityShopProductBinding> (ActivitySh
         }
     }
 
-
+    //xml 에서 정의. 사이즈별 구매/판매 가격 보여주는 버튼들
+    fun showPriceBySizeButtonClick(view: View) {
+        val productIdx = intent.getIntExtra("productIdx", 0)
+        val bundle = Bundle()
+        bundle.putInt("productIdx", productIdx)
+        bundle.putInt("viewId", view.id)
+        bottomSizeFrag.arguments = bundle
+        bottomSizeFrag.show(supportFragmentManager, bottomSizeFrag.tag)
+    }
 
 
 }

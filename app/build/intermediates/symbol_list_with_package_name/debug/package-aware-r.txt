@@ -1272,9 +1272,10 @@ color primary_text_default_material_dark
 color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
+color prod_buy_price_by_size
 color prod_price_down
 color prod_price_up
-color prod_size_price
+color prod_sell_price_by_size
 color radiobutton_themeable_attribute_color
 color red_invalid
 color ripple_material_dark

@@ -48,9 +48,12 @@ class ShopProductAdapter (private val productList:List<ProductResult>, val conte
         } else {
             holder.brandLogo.setImageResource(R.drawable.login_button)
         }
+        val priceData = productList[position].buyPrice
+        if(priceData==null || priceData==0){
+            holder.price.text = "-"
+        } else holder.price.text = priceData.toString()
 
         holder.productName.text = productList[position].description
-        holder.price.text = productList[position].buyPrice.toString()
         holder.wishlistCnt.text = productList[position].liked.toString()
         holder.postingCnt.text = productList[position].tagged.toString()
 

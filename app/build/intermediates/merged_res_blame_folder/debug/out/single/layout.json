@@ -12,6 +12,10 @@
         "source": "D:\\Kream\\app\\src\\main\\res\\layout\\prod_sales_recycler_item.xml"
     },
     {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_test.xml",
+        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\fragment_test.xml"
+    },
+    {
         "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\home_viewpager.xml",
         "source": "D:\\Kream\\app\\src\\main\\res\\layout\\home_viewpager.xml"
     },
@@ -22,10 +26,6 @@
     {
         "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\prod_rec_recycler_item.xml",
         "source": "D:\\Kream\\app\\src\\main\\res\\layout\\prod_rec_recycler_item.xml"
-    },
-    {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\prod_size_sheet.xml",
-        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\prod_size_sheet.xml"
     },
     {
         "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_test.xml",
@@ -56,12 +56,12 @@
         "source": "D:\\Kream\\app\\src\\main\\res\\layout\\prod_size_recycler_item.xml"
     },
     {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\dialog_loading.xml",
-        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\dialog_loading.xml"
+        "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\test.xml",
+        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\test.xml"
     },
     {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\shop_product.xml",
-        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\shop_product.xml"
+        "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\dialog_loading.xml",
+        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\dialog_loading.xml"
     },
     {
         "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_my_page.xml",

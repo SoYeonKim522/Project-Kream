@@ -131,7 +131,8 @@
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/product_name_kor" />
+                    app:layout_constraintTop_toBottomOf="@id/product_name_kor"
+                    android:onClick="showPriceBySizeButtonClick"/>
 
                 <TextView
                     android:id="@+id/tv_latest_price"
@@ -520,7 +521,8 @@
             android:backgroundTint="@color/shop_prod_buy_btn"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/sell_button"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            android:onClick="showPriceBySizeButtonClick">
 
             <TextView
                 android:id="@+id/tv_buy"
@@ -582,7 +584,8 @@
             android:backgroundTint="@color/shop_prod_sell_btn"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            android:onClick="showPriceBySizeButtonClick">
 
             <TextView
                 android:id="@+id/tv_sell"

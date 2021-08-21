@@ -20,13 +20,13 @@ class BuyPriceAdapter(private var sizeList:List<BuyPriceResult>, val context: Co
     private val TAG = "log"
 
     //인터페이스
-    interface OnSizeClickListener{
-        fun onSizeClick(view:View)
-    }
-    private var listener : OnSizeClickListener?=null
-    fun setOnSizeClickListener(listener : OnSizeClickListener){
-        this.listener = listener
-    }
+//    interface OnSizeClickListener{
+//        fun onSizeClick(view:View)
+//    }
+//    private var listener : OnSizeClickListener?=null
+//    fun setOnSizeClickListener(listener : OnSizeClickListener){
+//        this.listener = listener
+//    }
 
     class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
         val size = itemView.findViewById<TextView>(R.id.size)
@@ -39,8 +39,6 @@ class BuyPriceAdapter(private var sizeList:List<BuyPriceResult>, val context: Co
         return ViewHolder(view)
     }
 
-
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val sizetxt = sizeList[position].productSize
         if(sizetxt=="모든 사이즈"){
@@ -49,7 +47,7 @@ class BuyPriceAdapter(private var sizeList:List<BuyPriceResult>, val context: Co
         } else holder.size.text = sizetxt
 
         val priceBySize = sizeList[position].buyPrice
-        if(priceBySize==0){
+        if(priceBySize==0 || priceBySize==null){
             holder.price.text = "구매 입찰"
             holder.price.setTextColor(R.color.black.toInt())
             holder.price.setTypeface(null, Typeface.BOLD)
@@ -66,7 +64,7 @@ class BuyPriceAdapter(private var sizeList:List<BuyPriceResult>, val context: Co
             val intent = Intent(holder.itemView.context, ShopProductActivity::class.java)
             intent.putExtra("size", sizetxt)
             intent.putExtra("buyPrice", priceBySize.toString()+"원")
-            Log.d(TAG, "onBindViewHolder: $sizetxt, $priceBySize")
+            Log.d(TAG, "onBindViewHolder:데이터 전달이요 $sizetxt, $priceBySize")
             val prodSizeFragment = ProdSizeFragment()
 //            listener.onItemClick(holder.itemView)
 
