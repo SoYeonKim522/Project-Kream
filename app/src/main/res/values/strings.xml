@@ -45,8 +45,36 @@
     <string name="home_just_dropped">Just Dropped</string>
     <string name="home_just_dropped_kor">발매 상품</string>
     <string name="home_style_picks">Style Picks!</string>
+    <string name="home_most_pop">Most Popular</string>
+    <string name="home_most_pop_kor">인기 상품</string>
+    <string name="home_off_white">Off-White Collabs</string>
+    <string name="home_rec_product">추천 상품</string>
+    <string name="home_new_in">New In: Bearbrick</string>
+    <string name="home_new_product">신규 상품</string>
+    <string name="home_street_wear">Streetwear</string>
+    <string name="home_small_leathers">Small Leathers</string>
+    <string name="home_contemporary">Contemporary</string>
+    <string name="home_luxury_sneakers">Luxury Sneakers</string>
+    <string name="home_new_lowest_asks">New Lowest Asks</string>
+    <string name="home_new_lowest_asks_kor">새로운 즉시 구매가</string>
+    <string name="home_new_highest_bids">New Highest Bids</string>
+    <string name="home_new_highest_bids_kor">새로운 즉시 판매가</string>
+    <string name="home_upcoming_release">Upcoming Release</string>
+    <string name="home_upcoming_release_kor">발매 예정</string>
+    <string name="home_lego">Lego</string>
+    <string name="home_korean_collection">Korean Collection</string>
+    <string name="home_orca_alt">Orca Alternatives</string>
+    <string name="home_grey_collection">Grey Collection</string>
 
-<!--    shop-->
+
+
+
+
+
+
+
+
+    <!--    shop-->
     <string name="shop_tv_search_bar">브랜드명, 모델명, 모델번호 등</string>
     <string name="shop_filter_luxury">럭셔리</string>
     <string name="shop_filter_sneakers">스니커즈</string>

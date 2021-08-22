@@ -8,13 +8,16 @@ import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.example.kream.kotlin.R
 import com.example.kream.kotlin.config.BaseFragment
 import com.example.kream.kotlin.databinding.FragmentHomeBinding
 import com.example.kream.kotlin.src.main.home.models.MainBannerResponse
+import com.example.kream.kotlin.src.main.home.models.ThemeProductList
 import com.example.kream.kotlin.src.main.home.models.ThemeProductResponse
+import com.example.kream.kotlin.src.main.home.models.ThemeProductResult
 import com.example.kream.kotlin.src.main.shop.ShopCategoryAdapter
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind, R.layout.fragment_home) , HomeFragmentView {
@@ -52,15 +55,23 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind
 
 
 
-    //just dropped
+    //테마별 상품
     override fun onGetThemeProductSuccess(response: ThemeProductResponse) {
-        val result = response.result[0].productList  //0대신 1을 넣으면 다음 섹션 내용,,
+        val recyclerList = arrayListOf<RecyclerView>(binding.homeJustDroppedRecycler, binding.homeMostPopRecycler, binding.homeOffWhiteRecycler, binding.homeNewInRecycler, binding.homeStreetWearRecycler, binding.homeSmallLeathersRecycler, binding.homeContemporaryRecycler, binding.homeLuxurySneakersRecycler, binding.homeLowestAsksRecycler, binding.homeHighestBidsRecycler, binding.homeUpcomingReleaseRecycler, binding.homeLegoRecycler, binding.homeKorCollectionRecycler, binding.homeOrcaAltRecycler, binding.homeGreyCollectRecycler)
 
-//        val resultAllsize = resultAll.size
-//        val result = resultAll.subList(0,1)
-        binding.homeJustDroppedRecycler.layoutManager = LinearLayoutManager(requireContext()).also { it.orientation = LinearLayoutManager.HORIZONTAL }
-        binding.homeJustDroppedRecycler.adapter = HomeJustDroppedAdapter(result)
-        binding.homeJustDroppedRecycler.setHasFixedSize(true)
+        var i = 0
+        for (recycler in recyclerList) {
+            for (i in i..i) {
+                recycler.layoutManager = LinearLayoutManager(requireContext()).also {
+                    it.orientation = LinearLayoutManager.HORIZONTAL
+                }
+                recycler.adapter = HomeJustDroppedAdapter(response.result[i].productList)
+                recycler.setHasFixedSize(true)
+            }
+            i++
+            Log.d(TAG, "onGetThemeProductSuccess: $i")
+        }
+
     }
 
     override fun onGetThemeProductFailure(message: String) {

@@ -1,3 +1,5 @@
+com/example/kream/kotlin/BuildConfig.java
+ com.example.kream.kotlin.BuildConfig
 com/example/kream/kotlin/databinding/ActivitySignupBinding.java
  com.example.kream.kotlin.databinding.ActivitySignupBinding
 com/example/kream/kotlin/databinding/DialogLoadingBinding.java
@@ -30,8 +32,6 @@ com/example/kream/kotlin/databinding/ActivityShopProductBinding.java
  com.example.kream.kotlin.databinding.ActivityShopProductBinding
 com/example/kream/kotlin/databinding/FragmentHomeBinding.java
  com.example.kream.kotlin.databinding.FragmentHomeBinding
-com/example/kream/kotlin/BuildConfig.java
- com.example.kream.kotlin.BuildConfig
 com/example/kream/kotlin/databinding/FragmentStyleBinding.java
  com.example.kream.kotlin.databinding.FragmentStyleBinding
 com/example/kream/kotlin/databinding/ProdInfoRecyclerItemBinding.java

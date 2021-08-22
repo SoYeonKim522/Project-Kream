@@ -96,12 +96,12 @@
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\product_tab_selector.xml"
     },
     {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_style_icon_onclick.xml.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\style_icon_onclick.xml"
-    },
-    {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_style_icon.png.flat",
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\style_icon.png"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_style_icon_onclick.xml.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\style_icon_onclick.xml"
     },
     {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",

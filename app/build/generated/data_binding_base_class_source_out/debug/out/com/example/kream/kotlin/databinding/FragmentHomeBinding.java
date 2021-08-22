@@ -25,7 +25,64 @@ public final class FragmentHomeBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final ImageView adImage1;
+
+  @NonNull
+  public final ImageView adImage10;
+
+  @NonNull
+  public final ImageView adImage11;
+
+  @NonNull
+  public final ImageView adImage12;
+
+  @NonNull
+  public final ImageView adImage13;
+
+  @NonNull
+  public final ImageView adImage2;
+
+  @NonNull
+  public final ImageView adImage3;
+
+  @NonNull
+  public final ImageView adImage4;
+
+  @NonNull
+  public final ImageView adImage5;
+
+  @NonNull
+  public final ImageView adImage6;
+
+  @NonNull
+  public final ImageView adImage7;
+
+  @NonNull
+  public final ImageView adImage8;
+
+  @NonNull
+  public final ImageView adImage9;
+
+  @NonNull
   public final ChipGroup chipGroup;
+
+  @NonNull
+  public final TextView contemporary;
+
+  @NonNull
+  public final TextView contemporaryKor;
+
+  @NonNull
+  public final TextView greyCollect;
+
+  @NonNull
+  public final TextView greyCollectKor;
+
+  @NonNull
+  public final TextView highestBids;
+
+  @NonNull
+  public final TextView highestBidsKor;
 
   @NonNull
   public final Chip homeChipReleasedInfo;
@@ -34,16 +91,52 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final Chip homeChipToday;
 
   @NonNull
-  public final ImageView homeImageSlide;
+  public final RecyclerView homeContemporaryRecycler;
+
+  @NonNull
+  public final RecyclerView homeGreyCollectRecycler;
+
+  @NonNull
+  public final RecyclerView homeHighestBidsRecycler;
 
   @NonNull
   public final RecyclerView homeJustDroppedRecycler;
 
   @NonNull
+  public final RecyclerView homeKorCollectionRecycler;
+
+  @NonNull
+  public final RecyclerView homeLegoRecycler;
+
+  @NonNull
+  public final RecyclerView homeLowestAsksRecycler;
+
+  @NonNull
+  public final RecyclerView homeLuxurySneakersRecycler;
+
+  @NonNull
+  public final RecyclerView homeMostPopRecycler;
+
+  @NonNull
+  public final RecyclerView homeNewInRecycler;
+
+  @NonNull
+  public final RecyclerView homeOffWhiteRecycler;
+
+  @NonNull
+  public final RecyclerView homeOrcaAltRecycler;
+
+  @NonNull
+  public final RecyclerView homeSmallLeathersRecycler;
+
+  @NonNull
+  public final RecyclerView homeStreetWearRecycler;
+
+  @NonNull
   public final RecyclerView homeStylePicksRecycler;
 
   @NonNull
-  public final TextView homeTvNotice;
+  public final RecyclerView homeUpcomingReleaseRecycler;
 
   @NonNull
   public final TextView justDropped;
@@ -52,38 +145,189 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final TextView justDroppedKor;
 
   @NonNull
+  public final TextView korCollection;
+
+  @NonNull
+  public final TextView korCollectionKor;
+
+  @NonNull
+  public final TextView lego;
+
+  @NonNull
+  public final TextView legoKor;
+
+  @NonNull
+  public final TextView lowestAsks;
+
+  @NonNull
+  public final TextView lowestAsksKor;
+
+  @NonNull
+  public final TextView luxurySneakers;
+
+  @NonNull
+  public final TextView luxurySneakersKor;
+
+  @NonNull
+  public final ViewPager2 mainBannerViewpager;
+
+  @NonNull
+  public final TextView mostPop;
+
+  @NonNull
+  public final TextView mostPopKor;
+
+  @NonNull
+  public final TextView newIn;
+
+  @NonNull
+  public final TextView newInKor;
+
+  @NonNull
+  public final TextView offWhite;
+
+  @NonNull
+  public final TextView offWhiteKor;
+
+  @NonNull
+  public final TextView orcaAlt;
+
+  @NonNull
+  public final TextView orcaAltKor;
+
+  @NonNull
   public final ScrollView scrollView2;
 
   @NonNull
   public final View separator;
 
   @NonNull
+  public final View separator2;
+
+  @NonNull
+  public final View separatorBelowLowestAsks;
+
+  @NonNull
+  public final TextView smallLeathers;
+
+  @NonNull
+  public final TextView smallLeathersKor;
+
+  @NonNull
+  public final TextView streetWear;
+
+  @NonNull
+  public final TextView streetWearKor;
+
+  @NonNull
   public final TextView stylePicks;
 
   @NonNull
-  public final ViewPager2 viewpager;
+  public final TextView upcomingRelease;
 
-  private FragmentHomeBinding(@NonNull LinearLayout rootView, @NonNull ChipGroup chipGroup,
-      @NonNull Chip homeChipReleasedInfo, @NonNull Chip homeChipToday,
-      @NonNull ImageView homeImageSlide, @NonNull RecyclerView homeJustDroppedRecycler,
-      @NonNull RecyclerView homeStylePicksRecycler, @NonNull TextView homeTvNotice,
-      @NonNull TextView justDropped, @NonNull TextView justDroppedKor,
-      @NonNull ScrollView scrollView2, @NonNull View separator, @NonNull TextView stylePicks,
-      @NonNull ViewPager2 viewpager) {
+  @NonNull
+  public final TextView upcomingReleaseKor;
+
+  private FragmentHomeBinding(@NonNull LinearLayout rootView, @NonNull ImageView adImage1,
+      @NonNull ImageView adImage10, @NonNull ImageView adImage11, @NonNull ImageView adImage12,
+      @NonNull ImageView adImage13, @NonNull ImageView adImage2, @NonNull ImageView adImage3,
+      @NonNull ImageView adImage4, @NonNull ImageView adImage5, @NonNull ImageView adImage6,
+      @NonNull ImageView adImage7, @NonNull ImageView adImage8, @NonNull ImageView adImage9,
+      @NonNull ChipGroup chipGroup, @NonNull TextView contemporary,
+      @NonNull TextView contemporaryKor, @NonNull TextView greyCollect,
+      @NonNull TextView greyCollectKor, @NonNull TextView highestBids,
+      @NonNull TextView highestBidsKor, @NonNull Chip homeChipReleasedInfo,
+      @NonNull Chip homeChipToday, @NonNull RecyclerView homeContemporaryRecycler,
+      @NonNull RecyclerView homeGreyCollectRecycler, @NonNull RecyclerView homeHighestBidsRecycler,
+      @NonNull RecyclerView homeJustDroppedRecycler,
+      @NonNull RecyclerView homeKorCollectionRecycler, @NonNull RecyclerView homeLegoRecycler,
+      @NonNull RecyclerView homeLowestAsksRecycler,
+      @NonNull RecyclerView homeLuxurySneakersRecycler, @NonNull RecyclerView homeMostPopRecycler,
+      @NonNull RecyclerView homeNewInRecycler, @NonNull RecyclerView homeOffWhiteRecycler,
+      @NonNull RecyclerView homeOrcaAltRecycler, @NonNull RecyclerView homeSmallLeathersRecycler,
+      @NonNull RecyclerView homeStreetWearRecycler, @NonNull RecyclerView homeStylePicksRecycler,
+      @NonNull RecyclerView homeUpcomingReleaseRecycler, @NonNull TextView justDropped,
+      @NonNull TextView justDroppedKor, @NonNull TextView korCollection,
+      @NonNull TextView korCollectionKor, @NonNull TextView lego, @NonNull TextView legoKor,
+      @NonNull TextView lowestAsks, @NonNull TextView lowestAsksKor,
+      @NonNull TextView luxurySneakers, @NonNull TextView luxurySneakersKor,
+      @NonNull ViewPager2 mainBannerViewpager, @NonNull TextView mostPop,
+      @NonNull TextView mostPopKor, @NonNull TextView newIn, @NonNull TextView newInKor,
+      @NonNull TextView offWhite, @NonNull TextView offWhiteKor, @NonNull TextView orcaAlt,
+      @NonNull TextView orcaAltKor, @NonNull ScrollView scrollView2, @NonNull View separator,
+      @NonNull View separator2, @NonNull View separatorBelowLowestAsks,
+      @NonNull TextView smallLeathers, @NonNull TextView smallLeathersKor,
+      @NonNull TextView streetWear, @NonNull TextView streetWearKor, @NonNull TextView stylePicks,
+      @NonNull TextView upcomingRelease, @NonNull TextView upcomingReleaseKor) {
     this.rootView = rootView;
+    this.adImage1 = adImage1;
+    this.adImage10 = adImage10;
+    this.adImage11 = adImage11;
+    this.adImage12 = adImage12;
+    this.adImage13 = adImage13;
+    this.adImage2 = adImage2;
+    this.adImage3 = adImage3;
+    this.adImage4 = adImage4;
+    this.adImage5 = adImage5;
+    this.adImage6 = adImage6;
+    this.adImage7 = adImage7;
+    this.adImage8 = adImage8;
+    this.adImage9 = adImage9;
     this.chipGroup = chipGroup;
+    this.contemporary = contemporary;
+    this.contemporaryKor = contemporaryKor;
+    this.greyCollect = greyCollect;
+    this.greyCollectKor = greyCollectKor;
+    this.highestBids = highestBids;
+    this.highestBidsKor = highestBidsKor;
     this.homeChipReleasedInfo = homeChipReleasedInfo;
     this.homeChipToday = homeChipToday;
-    this.homeImageSlide = homeImageSlide;
+    this.homeContemporaryRecycler = homeContemporaryRecycler;
+    this.homeGreyCollectRecycler = homeGreyCollectRecycler;
+    this.homeHighestBidsRecycler = homeHighestBidsRecycler;
     this.homeJustDroppedRecycler = homeJustDroppedRecycler;
+    this.homeKorCollectionRecycler = homeKorCollectionRecycler;
+    this.homeLegoRecycler = homeLegoRecycler;
+    this.homeLowestAsksRecycler = homeLowestAsksRecycler;
+    this.homeLuxurySneakersRecycler = homeLuxurySneakersRecycler;
+    this.homeMostPopRecycler = homeMostPopRecycler;
+    this.homeNewInRecycler = homeNewInRecycler;
+    this.homeOffWhiteRecycler = homeOffWhiteRecycler;
+    this.homeOrcaAltRecycler = homeOrcaAltRecycler;
+    this.homeSmallLeathersRecycler = homeSmallLeathersRecycler;
+    this.homeStreetWearRecycler = homeStreetWearRecycler;
     this.homeStylePicksRecycler = homeStylePicksRecycler;
-    this.homeTvNotice = homeTvNotice;
+    this.homeUpcomingReleaseRecycler = homeUpcomingReleaseRecycler;
     this.justDropped = justDropped;
     this.justDroppedKor = justDroppedKor;
+    this.korCollection = korCollection;
+    this.korCollectionKor = korCollectionKor;
+    this.lego = lego;
+    this.legoKor = legoKor;
+    this.lowestAsks = lowestAsks;
+    this.lowestAsksKor = lowestAsksKor;
+    this.luxurySneakers = luxurySneakers;
+    this.luxurySneakersKor = luxurySneakersKor;
+    this.mainBannerViewpager = mainBannerViewpager;
+    this.mostPop = mostPop;
+    this.mostPopKor = mostPopKor;
+    this.newIn = newIn;
+    this.newInKor = newInKor;
+    this.offWhite = offWhite;
+    this.offWhiteKor = offWhiteKor;
+    this.orcaAlt = orcaAlt;
+    this.orcaAltKor = orcaAltKor;
     this.scrollView2 = scrollView2;
     this.separator = separator;
+    this.separator2 = separator2;
+    this.separatorBelowLowestAsks = separatorBelowLowestAsks;
+    this.smallLeathers = smallLeathers;
+    this.smallLeathersKor = smallLeathersKor;
+    this.streetWear = streetWear;
+    this.streetWearKor = streetWearKor;
     this.stylePicks = stylePicks;
-    this.viewpager = viewpager;
+    this.upcomingRelease = upcomingRelease;
+    this.upcomingReleaseKor = upcomingReleaseKor;
   }
 
   @Override
@@ -113,9 +357,123 @@ public final class FragmentHomeBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.ad_image_1;
+      ImageView adImage1 = rootView.findViewById(id);
+      if (adImage1 == null) {
+        break missingId;
+      }
+
+      id = R.id.ad_image_10;
+      ImageView adImage10 = rootView.findViewById(id);
+      if (adImage10 == null) {
+        break missingId;
+      }
+
+      id = R.id.ad_image_11;
+      ImageView adImage11 = rootView.findViewById(id);
+      if (adImage11 == null) {
+        break missingId;
+      }
+
+      id = R.id.ad_image_12;
+      ImageView adImage12 = rootView.findViewById(id);
+      if (adImage12 == null) {
+        break missingId;
+      }
+
+      id = R.id.ad_image_13;
+      ImageView adImage13 = rootView.findViewById(id);
+      if (adImage13 == null) {
+        break missingId;
+      }
+
+      id = R.id.ad_image_2;
+      ImageView adImage2 = rootView.findViewById(id);
+      if (adImage2 == null) {
+        break missingId;
+      }
+
+      id = R.id.ad_image_3;
+      ImageView adImage3 = rootView.findViewById(id);
+      if (adImage3 == null) {
+        break missingId;
+      }
+
+      id = R.id.ad_image_4;
+      ImageView adImage4 = rootView.findViewById(id);
+      if (adImage4 == null) {
+        break missingId;
+      }
+
+      id = R.id.ad_image_5;
+      ImageView adImage5 = rootView.findViewById(id);
+      if (adImage5 == null) {
+        break missingId;
+      }
+
+      id = R.id.ad_image_6;
+      ImageView adImage6 = rootView.findViewById(id);
+      if (adImage6 == null) {
+        break missingId;
+      }
+
+      id = R.id.ad_image_7;
+      ImageView adImage7 = rootView.findViewById(id);
+      if (adImage7 == null) {
+        break missingId;
+      }
+
+      id = R.id.ad_image_8;
+      ImageView adImage8 = rootView.findViewById(id);
+      if (adImage8 == null) {
+        break missingId;
+      }
+
+      id = R.id.ad_image_9;
+      ImageView adImage9 = rootView.findViewById(id);
+      if (adImage9 == null) {
+        break missingId;
+      }
+
       id = R.id.chip_group;
       ChipGroup chipGroup = rootView.findViewById(id);
       if (chipGroup == null) {
+        break missingId;
+      }
+
+      id = R.id.contemporary;
+      TextView contemporary = rootView.findViewById(id);
+      if (contemporary == null) {
+        break missingId;
+      }
+
+      id = R.id.contemporary_kor;
+      TextView contemporaryKor = rootView.findViewById(id);
+      if (contemporaryKor == null) {
+        break missingId;
+      }
+
+      id = R.id.grey_collect;
+      TextView greyCollect = rootView.findViewById(id);
+      if (greyCollect == null) {
+        break missingId;
+      }
+
+      id = R.id.grey_collect_kor;
+      TextView greyCollectKor = rootView.findViewById(id);
+      if (greyCollectKor == null) {
+        break missingId;
+      }
+
+      id = R.id.highest_bids;
+      TextView highestBids = rootView.findViewById(id);
+      if (highestBids == null) {
+        break missingId;
+      }
+
+      id = R.id.highest_bids_kor;
+      TextView highestBidsKor = rootView.findViewById(id);
+      if (highestBidsKor == null) {
         break missingId;
       }
 
@@ -131,9 +489,21 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.home_image_slide;
-      ImageView homeImageSlide = rootView.findViewById(id);
-      if (homeImageSlide == null) {
+      id = R.id.home_contemporary_recycler;
+      RecyclerView homeContemporaryRecycler = rootView.findViewById(id);
+      if (homeContemporaryRecycler == null) {
+        break missingId;
+      }
+
+      id = R.id.home_grey_collect_recycler;
+      RecyclerView homeGreyCollectRecycler = rootView.findViewById(id);
+      if (homeGreyCollectRecycler == null) {
+        break missingId;
+      }
+
+      id = R.id.home_highest_bids_recycler;
+      RecyclerView homeHighestBidsRecycler = rootView.findViewById(id);
+      if (homeHighestBidsRecycler == null) {
         break missingId;
       }
 
@@ -143,15 +513,75 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.home_kor_collection_recycler;
+      RecyclerView homeKorCollectionRecycler = rootView.findViewById(id);
+      if (homeKorCollectionRecycler == null) {
+        break missingId;
+      }
+
+      id = R.id.home_lego_recycler;
+      RecyclerView homeLegoRecycler = rootView.findViewById(id);
+      if (homeLegoRecycler == null) {
+        break missingId;
+      }
+
+      id = R.id.home_lowest_asks_recycler;
+      RecyclerView homeLowestAsksRecycler = rootView.findViewById(id);
+      if (homeLowestAsksRecycler == null) {
+        break missingId;
+      }
+
+      id = R.id.home_luxury_sneakers_recycler;
+      RecyclerView homeLuxurySneakersRecycler = rootView.findViewById(id);
+      if (homeLuxurySneakersRecycler == null) {
+        break missingId;
+      }
+
+      id = R.id.home_most_pop_recycler;
+      RecyclerView homeMostPopRecycler = rootView.findViewById(id);
+      if (homeMostPopRecycler == null) {
+        break missingId;
+      }
+
+      id = R.id.home_new_in_recycler;
+      RecyclerView homeNewInRecycler = rootView.findViewById(id);
+      if (homeNewInRecycler == null) {
+        break missingId;
+      }
+
+      id = R.id.home_off_white_recycler;
+      RecyclerView homeOffWhiteRecycler = rootView.findViewById(id);
+      if (homeOffWhiteRecycler == null) {
+        break missingId;
+      }
+
+      id = R.id.home_orca_alt_recycler;
+      RecyclerView homeOrcaAltRecycler = rootView.findViewById(id);
+      if (homeOrcaAltRecycler == null) {
+        break missingId;
+      }
+
+      id = R.id.home_small_leathers_recycler;
+      RecyclerView homeSmallLeathersRecycler = rootView.findViewById(id);
+      if (homeSmallLeathersRecycler == null) {
+        break missingId;
+      }
+
+      id = R.id.home_street_wear_recycler;
+      RecyclerView homeStreetWearRecycler = rootView.findViewById(id);
+      if (homeStreetWearRecycler == null) {
+        break missingId;
+      }
+
       id = R.id.home_style_picks_recycler;
       RecyclerView homeStylePicksRecycler = rootView.findViewById(id);
       if (homeStylePicksRecycler == null) {
         break missingId;
       }
 
-      id = R.id.home_tv_notice;
-      TextView homeTvNotice = rootView.findViewById(id);
-      if (homeTvNotice == null) {
+      id = R.id.home_upcoming_release_recycler;
+      RecyclerView homeUpcomingReleaseRecycler = rootView.findViewById(id);
+      if (homeUpcomingReleaseRecycler == null) {
         break missingId;
       }
 
@@ -167,6 +597,108 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.kor_collection;
+      TextView korCollection = rootView.findViewById(id);
+      if (korCollection == null) {
+        break missingId;
+      }
+
+      id = R.id.kor_collection_kor;
+      TextView korCollectionKor = rootView.findViewById(id);
+      if (korCollectionKor == null) {
+        break missingId;
+      }
+
+      id = R.id.lego;
+      TextView lego = rootView.findViewById(id);
+      if (lego == null) {
+        break missingId;
+      }
+
+      id = R.id.lego_kor;
+      TextView legoKor = rootView.findViewById(id);
+      if (legoKor == null) {
+        break missingId;
+      }
+
+      id = R.id.lowest_asks;
+      TextView lowestAsks = rootView.findViewById(id);
+      if (lowestAsks == null) {
+        break missingId;
+      }
+
+      id = R.id.lowest_asks_kor;
+      TextView lowestAsksKor = rootView.findViewById(id);
+      if (lowestAsksKor == null) {
+        break missingId;
+      }
+
+      id = R.id.luxury_sneakers;
+      TextView luxurySneakers = rootView.findViewById(id);
+      if (luxurySneakers == null) {
+        break missingId;
+      }
+
+      id = R.id.luxury_sneakers_kor;
+      TextView luxurySneakersKor = rootView.findViewById(id);
+      if (luxurySneakersKor == null) {
+        break missingId;
+      }
+
+      id = R.id.main_banner_viewpager;
+      ViewPager2 mainBannerViewpager = rootView.findViewById(id);
+      if (mainBannerViewpager == null) {
+        break missingId;
+      }
+
+      id = R.id.most_pop;
+      TextView mostPop = rootView.findViewById(id);
+      if (mostPop == null) {
+        break missingId;
+      }
+
+      id = R.id.most_pop_kor;
+      TextView mostPopKor = rootView.findViewById(id);
+      if (mostPopKor == null) {
+        break missingId;
+      }
+
+      id = R.id.new_in;
+      TextView newIn = rootView.findViewById(id);
+      if (newIn == null) {
+        break missingId;
+      }
+
+      id = R.id.new_in_kor;
+      TextView newInKor = rootView.findViewById(id);
+      if (newInKor == null) {
+        break missingId;
+      }
+
+      id = R.id.off_white;
+      TextView offWhite = rootView.findViewById(id);
+      if (offWhite == null) {
+        break missingId;
+      }
+
+      id = R.id.off_white_kor;
+      TextView offWhiteKor = rootView.findViewById(id);
+      if (offWhiteKor == null) {
+        break missingId;
+      }
+
+      id = R.id.orca_alt;
+      TextView orcaAlt = rootView.findViewById(id);
+      if (orcaAlt == null) {
+        break missingId;
+      }
+
+      id = R.id.orca_alt_kor;
+      TextView orcaAltKor = rootView.findViewById(id);
+      if (orcaAltKor == null) {
+        break missingId;
+      }
+
       id = R.id.scrollView2;
       ScrollView scrollView2 = rootView.findViewById(id);
       if (scrollView2 == null) {
@@ -179,21 +711,74 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.separator2;
+      View separator2 = rootView.findViewById(id);
+      if (separator2 == null) {
+        break missingId;
+      }
+
+      id = R.id.separator_below_lowest_asks;
+      View separatorBelowLowestAsks = rootView.findViewById(id);
+      if (separatorBelowLowestAsks == null) {
+        break missingId;
+      }
+
+      id = R.id.small_leathers;
+      TextView smallLeathers = rootView.findViewById(id);
+      if (smallLeathers == null) {
+        break missingId;
+      }
+
+      id = R.id.small_leathers_kor;
+      TextView smallLeathersKor = rootView.findViewById(id);
+      if (smallLeathersKor == null) {
+        break missingId;
+      }
+
+      id = R.id.street_wear;
+      TextView streetWear = rootView.findViewById(id);
+      if (streetWear == null) {
+        break missingId;
+      }
+
+      id = R.id.street_wear_kor;
+      TextView streetWearKor = rootView.findViewById(id);
+      if (streetWearKor == null) {
+        break missingId;
+      }
+
       id = R.id.style_picks;
       TextView stylePicks = rootView.findViewById(id);
       if (stylePicks == null) {
         break missingId;
       }
 
-      id = R.id.viewpager;
-      ViewPager2 viewpager = rootView.findViewById(id);
-      if (viewpager == null) {
+      id = R.id.upcoming_release;
+      TextView upcomingRelease = rootView.findViewById(id);
+      if (upcomingRelease == null) {
         break missingId;
       }
 
-      return new FragmentHomeBinding((LinearLayout) rootView, chipGroup, homeChipReleasedInfo,
-          homeChipToday, homeImageSlide, homeJustDroppedRecycler, homeStylePicksRecycler,
-          homeTvNotice, justDropped, justDroppedKor, scrollView2, separator, stylePicks, viewpager);
+      id = R.id.upcoming_release_kor;
+      TextView upcomingReleaseKor = rootView.findViewById(id);
+      if (upcomingReleaseKor == null) {
+        break missingId;
+      }
+
+      return new FragmentHomeBinding((LinearLayout) rootView, adImage1, adImage10, adImage11,
+          adImage12, adImage13, adImage2, adImage3, adImage4, adImage5, adImage6, adImage7,
+          adImage8, adImage9, chipGroup, contemporary, contemporaryKor, greyCollect, greyCollectKor,
+          highestBids, highestBidsKor, homeChipReleasedInfo, homeChipToday,
+          homeContemporaryRecycler, homeGreyCollectRecycler, homeHighestBidsRecycler,
+          homeJustDroppedRecycler, homeKorCollectionRecycler, homeLegoRecycler,
+          homeLowestAsksRecycler, homeLuxurySneakersRecycler, homeMostPopRecycler,
+          homeNewInRecycler, homeOffWhiteRecycler, homeOrcaAltRecycler, homeSmallLeathersRecycler,
+          homeStreetWearRecycler, homeStylePicksRecycler, homeUpcomingReleaseRecycler, justDropped,
+          justDroppedKor, korCollection, korCollectionKor, lego, legoKor, lowestAsks, lowestAsksKor,
+          luxurySneakers, luxurySneakersKor, mainBannerViewpager, mostPop, mostPopKor, newIn,
+          newInKor, offWhite, offWhiteKor, orcaAlt, orcaAltKor, scrollView2, separator, separator2,
+          separatorBelowLowestAsks, smallLeathers, smallLeathersKor, streetWear, streetWearKor,
+          stylePicks, upcomingRelease, upcomingReleaseKor);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

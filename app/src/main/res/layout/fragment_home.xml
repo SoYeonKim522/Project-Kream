@@ -100,7 +100,6 @@
              android:id="@+id/just_dropped"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
-             android:layout_marginTop="24dp"
              android:text="@string/home_just_dropped"
              style="@style/home_section_title"
              app:layout_constraintTop_toBottomOf="@+id/main_banner_viewpager" />
@@ -154,9 +153,9 @@
 
          <ImageView
              android:id="@+id/ad_image_1"
-             android:layout_width="match_parent"
+             android:layout_width="0dp"
              android:layout_height="wrap_content"
-             android:src="@drawable/home_ad_1"
+             android:adjustViewBounds="true"
              app:layout_constraintEnd_toEndOf="parent"
              app:layout_constraintStart_toStartOf="parent"
              app:layout_constraintTop_toBottomOf="@id/home_style_picks_recycler"/>
@@ -165,8 +164,7 @@
              android:id="@+id/most_pop"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
-             android:layout_marginTop="24dp"
-             android:text="@string/home_just_dropped"
+             android:text="@string/home_most_pop"
              style="@style/home_section_title"
              app:layout_constraintTop_toBottomOf="@+id/ad_image_1" />
 
@@ -175,7 +173,7 @@
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:layout_marginTop="3dp"
-             android:text="@string/home_just_dropped_kor"
+             android:text="@string/home_most_pop_kor"
              style="@style/home_section_subtitle"
              app:layout_constraintTop_toBottomOf="@id/most_pop" />
 
@@ -189,6 +187,462 @@
              app:layout_constraintStart_toStartOf="parent"
              app:layout_constraintTop_toBottomOf="@id/most_pop_kor" />
 
+
+         <ImageView
+             android:id="@+id/ad_image_2"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:adjustViewBounds="true"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@id/home_most_pop_recycler"/>
+
+
+         <TextView
+              android:id="@+id/off_white"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="24dp"
+              android:text="@string/home_off_white"
+              style="@style/home_section_title"
+              app:layout_constraintTop_toBottomOf="@+id/ad_image_2" />
+         <TextView
+             android:id="@+id/off_white_kor"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="3dp"
+             android:text="@string/home_rec_product"
+             style="@style/home_section_subtitle"
+             app:layout_constraintTop_toBottomOf="@id/off_white" />
+
+         <androidx.recyclerview.widget.RecyclerView
+             android:id="@+id/home_off_white_recycler"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginStart="16dp"
+             android:layout_marginTop="16dp"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@id/off_white_kor" />
+
+         <ImageView
+             android:id="@+id/ad_image_3"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:adjustViewBounds="true"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@id/home_off_white_recycler"/>
+
+        <TextView
+             android:id="@+id/new_in"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="@string/home_new_in"
+             style="@style/home_section_title"
+             app:layout_constraintTop_toBottomOf="@+id/ad_image_3" />
+        <TextView
+            android:id="@+id/new_in_kor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/home_rec_product"
+            style="@style/home_section_subtitle"
+            app:layout_constraintTop_toBottomOf="@id/new_in" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/home_new_in_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/new_in_kor" />
+
+        <ImageView
+             android:id="@+id/ad_image_4"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:adjustViewBounds="true"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@id/home_new_in_recycler"/>
+
+            <TextView
+                 android:id="@+id/street_wear"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:text="@string/home_street_wear"
+                 style="@style/home_section_title"
+                 app:layout_constraintTop_toBottomOf="@+id/ad_image_4" />
+            <TextView
+                android:id="@+id/street_wear_kor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home_rec_product"
+                style="@style/home_section_subtitle"
+                app:layout_constraintTop_toBottomOf="@id/street_wear" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/home_street_wear_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/street_wear_kor" />
+
+        <ImageView
+             android:id="@+id/ad_image_5"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:adjustViewBounds="true"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@id/home_street_wear_recycler"/>
+
+            <TextView
+                 android:id="@+id/small_leathers"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:text="@string/home_street_wear"
+                 style="@style/home_section_title"
+                 app:layout_constraintTop_toBottomOf="@+id/ad_image_4" />
+            <TextView
+                android:id="@+id/small_leathers_kor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home_rec_product"
+                style="@style/home_section_subtitle"
+                app:layout_constraintTop_toBottomOf="@id/small_leathers" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/home_small_leathers_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/small_leathers_kor" />
+
+         <View
+             android:id="@+id/separator2"
+             android:layout_width="match_parent"
+             android:layout_height="0.5dp"
+             android:layout_marginTop="24dp"
+             android:background="@color/gray_filter_btn_bg"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@id/home_small_leathers_recycler" />
+
+            <TextView
+                 android:id="@+id/contemporary"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:text="@string/home_contemporary"
+                 style="@style/home_section_title"
+                 app:layout_constraintTop_toBottomOf="@+id/separator2" />
+            <TextView
+                android:id="@+id/contemporary_kor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home_rec_product"
+                style="@style/home_section_subtitle"
+                app:layout_constraintTop_toBottomOf="@id/contemporary" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/home_contemporary_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/contemporary_kor" />
+
+        <ImageView
+             android:id="@+id/ad_image_6"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:adjustViewBounds="true"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@id/home_contemporary_recycler"/>
+
+            <TextView
+                 android:id="@+id/luxury_sneakers"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:text="@string/home_luxury_sneakers"
+                 style="@style/home_section_title"
+                 app:layout_constraintTop_toBottomOf="@+id/ad_image_6" />
+            <TextView
+                android:id="@+id/luxury_sneakers_kor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home_rec_product"
+                style="@style/home_section_subtitle"
+                app:layout_constraintTop_toBottomOf="@id/luxury_sneakers" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/home_luxury_sneakers_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/luxury_sneakers_kor" />
+
+        <ImageView
+             android:id="@+id/ad_image_7"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:adjustViewBounds="true"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@id/home_luxury_sneakers_recycler"/>
+
+            <TextView
+                 android:id="@+id/lowest_asks"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:text="@string/home_new_lowest_asks"
+                 style="@style/home_section_title"
+                 app:layout_constraintTop_toBottomOf="@+id/ad_image_7" />
+            <TextView
+                android:id="@+id/lowest_asks_kor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home_new_lowest_asks_kor"
+                style="@style/home_section_subtitle"
+                app:layout_constraintTop_toBottomOf="@id/lowest_asks" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/home_lowest_asks_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lowest_asks_kor" />
+
+         <View
+             android:id="@+id/separator_below_lowest_asks"
+             android:layout_width="match_parent"
+             android:layout_height="0.5dp"
+             android:layout_marginTop="24dp"
+             android:background="@color/gray_filter_btn_bg"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@id/home_lowest_asks_recycler" />
+
+            <TextView
+                 android:id="@+id/highest_bids"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:text="@string/home_new_highest_bids"
+                 style="@style/home_section_title"
+                 app:layout_constraintTop_toBottomOf="@+id/separator_below_lowest_asks" />
+            <TextView
+                android:id="@+id/highest_bids_kor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home_new_highest_bids_kor"
+                style="@style/home_section_subtitle"
+                app:layout_constraintTop_toBottomOf="@id/highest_bids" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/home_highest_bids_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/highest_bids_kor" />
+
+        <ImageView
+             android:id="@+id/ad_image_8"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:adjustViewBounds="true"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@id/home_highest_bids_recycler"/>
+
+            <TextView
+                 android:id="@+id/upcoming_release"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:text="@string/home_upcoming_release"
+                 style="@style/home_section_title"
+                 app:layout_constraintTop_toBottomOf="@+id/ad_image_8" />
+            <TextView
+                android:id="@+id/upcoming_release_kor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home_upcoming_release_kor"
+                style="@style/home_section_subtitle"
+                app:layout_constraintTop_toBottomOf="@id/upcoming_release" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/home_upcoming_release_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/upcoming_release_kor" />
+
+        <ImageView
+             android:id="@+id/ad_image_9"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:adjustViewBounds="true"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@id/home_upcoming_release_recycler"/>
+
+            <TextView
+                 android:id="@+id/lego"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:text="@string/home_lego"
+                 style="@style/home_section_title"
+                 app:layout_constraintTop_toBottomOf="@+id/ad_image_9" />
+            <TextView
+                android:id="@+id/lego_kor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home_rec_product"
+                style="@style/home_section_subtitle"
+                app:layout_constraintTop_toBottomOf="@id/lego" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/home_lego_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lego_kor" />
+
+        <ImageView
+             android:id="@+id/ad_image_10"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:adjustViewBounds="true"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@id/home_lego_recycler"/>
+
+            <TextView
+                 android:id="@+id/kor_collection"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:text="@string/home_korean_collection"
+                 style="@style/home_section_title"
+                 app:layout_constraintTop_toBottomOf="@+id/ad_image_10" />
+            <TextView
+                android:id="@+id/kor_collection_kor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home_rec_product"
+                style="@style/home_section_subtitle"
+                app:layout_constraintTop_toBottomOf="@id/kor_collection" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/home_kor_collection_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/kor_collection_kor" />
+
+        <ImageView
+             android:id="@+id/ad_image_11"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:adjustViewBounds="true"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@id/home_kor_collection_recycler"/>
+
+            <TextView
+                 android:id="@+id/orca_alt"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:text="@string/home_orca_alt"
+                 style="@style/home_section_title"
+                 app:layout_constraintTop_toBottomOf="@+id/ad_image_11" />
+            <TextView
+                android:id="@+id/orca_alt_kor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home_rec_product"
+                style="@style/home_section_subtitle"
+                app:layout_constraintTop_toBottomOf="@id/orca_alt" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/home_orca_alt_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/orca_alt_kor" />
+
+        <ImageView
+             android:id="@+id/ad_image_12"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:adjustViewBounds="true"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@id/home_orca_alt_recycler"/>
+
+            <TextView
+                 android:id="@+id/grey_collect"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:text="@string/home_grey_collection"
+                 style="@style/home_section_title"
+                 app:layout_constraintTop_toBottomOf="@+id/ad_image_12" />
+            <TextView
+                android:id="@+id/grey_collect_kor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home_rec_product"
+                style="@style/home_section_subtitle"
+                app:layout_constraintTop_toBottomOf="@id/grey_collect" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/home_grey_collect_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/grey_collect_kor" />
+
+        <ImageView
+             android:id="@+id/ad_image_13"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:adjustViewBounds="true"                                               
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@id/home_grey_collect_recycler"/>
 
 
       </androidx.constraintlayout.widget.ConstraintLayout>
