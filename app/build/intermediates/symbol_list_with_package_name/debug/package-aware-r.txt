@@ -1846,6 +1846,7 @@ drawable home_banner1
 drawable home_banner2
 drawable home_bell_icon
 drawable home_bell_icon_xml
+drawable home_bottom_small_print
 drawable home_icon
 drawable home_icon_clicked
 drawable home_icon_onclick

@@ -5,6 +5,7 @@
     android:layout_width="220dp"
     android:layout_height="wrap_content"
     android:layout_marginEnd="12dp"
+    android:layout_marginBottom="15dp"
     >
 
     <com.makeramen.roundedimageview.RoundedImageView
@@ -65,7 +66,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="13dp"
         android:text="1,500,000원"
         android:textColor="@color/black"
         android:textSize="16sp"

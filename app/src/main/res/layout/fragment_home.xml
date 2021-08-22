@@ -245,7 +245,7 @@
             android:id="@+id/new_in_kor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/home_rec_product"
+            android:text="@string/home_new_product"
             style="@style/home_section_subtitle"
             app:layout_constraintTop_toBottomOf="@id/new_in" />
 
@@ -639,10 +639,21 @@
              android:id="@+id/ad_image_13"
              android:layout_width="0dp"
              android:layout_height="wrap_content"
-             android:adjustViewBounds="true"                                               
+             android:adjustViewBounds="true"
              app:layout_constraintEnd_toEndOf="parent"
              app:layout_constraintStart_toStartOf="parent"
              app:layout_constraintTop_toBottomOf="@id/home_grey_collect_recycler"/>
+
+          <ImageView
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:adjustViewBounds="true"
+              android:src="@drawable/home_bottom_small_print"
+              android:layout_marginTop="20dp"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toBottomOf="@id/ad_image_13"/>
+
 
 
       </androidx.constraintlayout.widget.ConstraintLayout>

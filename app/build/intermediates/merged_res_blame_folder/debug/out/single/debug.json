@@ -332,6 +332,10 @@
         "source": "D:\\Kream\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     },
     {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_home_bottom_small_print.png.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\home_bottom_small_print.png"
+    },
+    {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_naver_logo_xml.xml.flat",
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\naver_logo_xml.xml"
     },

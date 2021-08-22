@@ -1,24 +1,23 @@
 package com.example.kream.kotlin.src.main.home
 
+import android.content.Context
 import android.os.Bundle
 import android.os.Handler
-import android.os.Looper
 import android.os.Message
 import android.util.Log
 import android.view.View
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
+import com.bumptech.glide.Glide
+import com.bumptech.glide.Registry
+import com.bumptech.glide.module.AppGlideModule
 import com.example.kream.kotlin.R
 import com.example.kream.kotlin.config.BaseFragment
 import com.example.kream.kotlin.databinding.FragmentHomeBinding
-import com.example.kream.kotlin.src.main.home.models.MainBannerResponse
-import com.example.kream.kotlin.src.main.home.models.ThemeProductList
-import com.example.kream.kotlin.src.main.home.models.ThemeProductResponse
-import com.example.kream.kotlin.src.main.home.models.ThemeProductResult
-import com.example.kream.kotlin.src.main.shop.ShopCategoryAdapter
+import com.example.kream.kotlin.src.main.home.models.*
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind, R.layout.fragment_home) , HomeFragmentView {
 
@@ -37,9 +36,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind
         binding.homeChipReleasedInfo.setChipBackgroundColorResource(R.color.white)
 
         //자동 슬라이드 배너
-        HomeService(this).tryMainBanner()
+        HomeService(this).tryGetMainBanner()
 
+        //테마별 상품 추천
         HomeService(this).tryGetThemeProduct()
+
+        //특정 상품 광고 이미지
+        HomeService(this).tryGetAdImage()
 
 
         //STYLE PICKS
@@ -69,7 +72,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind
                 recycler.setHasFixedSize(true)
             }
             i++
-            Log.d(TAG, "onGetThemeProductSuccess: $i")
         }
 
     }
@@ -116,6 +118,23 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind
         Log.d(TAG, "onGetMainBannerFailure: $message")
     }
 
+
+    //광고 상품 이미지
+    override fun onGetAdImageSuccess(response: AdImageResponse) {
+
+        val imageViewList = arrayListOf<ImageView>(binding.adImage1, binding.adImage2, binding.adImage3, binding.adImage4, binding.adImage5, binding.adImage6, binding.adImage7, binding.adImage8, binding.adImage9, binding.adImage10, binding.adImage11, binding.adImage12, binding.adImage13)
+
+        for ((i, iv) in imageViewList.withIndex()){
+            for(i in i..i){
+                Glide.with(this).load(response.result[i].image).error(R.drawable.login_button).into(iv)
+            }
+            Log.d(TAG, "onGetAdImageSuccess: $i")
+        }
+    }
+
+    override fun onGetAdImageFailure(message: String) {
+        Log.d(TAG, "onGetAdImageFailure: $message")
+    }
 
 
     override fun onResume() {

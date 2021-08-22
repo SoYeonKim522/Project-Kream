@@ -1,6 +1,8 @@
 package com.example.kream.kotlin.src.main.home
 
+import android.util.Log
 import com.example.kream.kotlin.config.ApplicationClass
+import com.example.kream.kotlin.src.main.home.models.AdImageResponse
 import com.example.kream.kotlin.src.main.home.models.MainBannerResponse
 import com.example.kream.kotlin.src.main.home.models.ThemeProductResponse
 import retrofit2.Call
@@ -22,7 +24,7 @@ private val homeRetrofitInterface = ApplicationClass.sRetrofit.create(HomeRetrof
         })
     }
 
-    fun tryMainBanner(){
+    fun tryGetMainBanner(){
         homeRetrofitInterface.getMainBanner().enqueue(object :Callback<MainBannerResponse>{
             override fun onResponse(call: Call<MainBannerResponse>, response: Response<MainBannerResponse>) {
                 view.onGetMainBannerSuccess(response.body() as MainBannerResponse)
@@ -34,6 +36,22 @@ private val homeRetrofitInterface = ApplicationClass.sRetrofit.create(HomeRetrof
         })
     }
 
+    fun tryGetAdImage(){
+        homeRetrofitInterface.getAdImage().enqueue(object :Callback<AdImageResponse>{
+            override fun onResponse(
+                call: Call<AdImageResponse>,
+                response: Response<AdImageResponse>
+            ) {
+                view.onGetAdImageSuccess(response.body() as AdImageResponse)
+                Log.d("log", "onResponse: {${response.body() as AdImageResponse}")
+            }
+
+            override fun onFailure(call: Call<AdImageResponse>, t: Throwable) {
+                view.onGetAdImageFailure(t.message ?: "통신 오류")
+
+            }
+        })
+    }
     //실습
 //    fun tryGetUserSearch(word : String){
 //        val homeRetrofitInterface = ApplicationClass.sRetrofit.create(HomeRetrofitInterface::class.java)

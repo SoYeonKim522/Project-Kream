@@ -1845,6 +1845,7 @@ int drawable home_banner1 0x7f070074
 int drawable home_banner2 0x7f070075
 int drawable home_bell_icon 0x7f070076
 int drawable home_bell_icon_xml 0x7f070077
+int drawable home_bottom_small_print 0x7f0700df
 int drawable home_icon 0x7f070078
 int drawable home_icon_clicked 0x7f070079
 int drawable home_icon_onclick 0x7f07007a
