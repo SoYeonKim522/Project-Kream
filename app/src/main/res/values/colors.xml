@@ -39,6 +39,9 @@
     <color name="shop_prod_sell_btn">#48b07a</color>
     <color name="shop_prod_sell_btn_separator">#46ab76</color>
 
+    <color name="my_page_gray_bg">#fafafa</color>
+    <color name="my_page_separator">#f4f4f4</color>
+
 
 
 </resources>

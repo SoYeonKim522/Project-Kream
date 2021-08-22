@@ -46,6 +46,9 @@ class ShopProductActivity : BaseActivity<ActivityShopProductBinding> (ActivitySh
             binding.buyPrice.text = buyPriceBySize
         }
 
+//        binding.backBtn.setOnClickListener {
+//            super.finish()  -> 에러(?)
+//        }
 
     }
 

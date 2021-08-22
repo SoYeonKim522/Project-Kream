@@ -124,10 +124,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind
 
         val imageViewList = arrayListOf<ImageView>(binding.adImage1, binding.adImage2, binding.adImage3, binding.adImage4, binding.adImage5, binding.adImage6, binding.adImage7, binding.adImage8, binding.adImage9, binding.adImage10, binding.adImage11, binding.adImage12, binding.adImage13)
 
-        for ((i, iv) in imageViewList.withIndex()){
+        var i = 0
+        for (iv in imageViewList){
             for(i in i..i){
                 Glide.with(this).load(response.result[i].image).error(R.drawable.login_button).into(iv)
             }
+            i++
             Log.d(TAG, "onGetAdImageSuccess: $i")
         }
     }

@@ -67,13 +67,6 @@
     <string name="home_grey_collection">Grey Collection</string>
 
 
-
-
-
-
-
-
-
     <!--    shop-->
     <string name="shop_tv_search_bar">브랜드명, 모델명, 모델번호 등</string>
     <string name="shop_filter_luxury">럭셔리</string>
@@ -118,7 +111,27 @@
 
 
     <!-- MyPage -->
-    <string name="my_page_tv_counter">%1d 번 눌렀습니다.</string>
+    <string name="my_my_shopping">내 쇼핑</string>
+    <string name="my_my_profile">내 프로필</string>
 
+    <string name="my_edit_profile">프로필 편집</string>
+    <string name="my_member">일반</string>
+    <string name="my_membership_lev">회원 등급</string>
+    <string name="my_points">포인트</string>
+    <string name="my_wishlist">관심 상품</string>
+    <string name="my_buying">구매 내역</string>
+    <string name="my_selling">판매 내역</string>
+    <string name="my_total">전체</string>
+    <string name="my_current">입찰 중</string>
+    <string name="my_pending">진행 중</string>
+    <string name="my_history">종료</string>
+    <string name="my_more">더보기</string>
+
+    <string name="my_portfolio">보유 상품</string>
+    <string name="my_total_value">총 평가금액</string>
+    <string name="my_items_cnt">보유 수량</string>
+    <string name="my_total_purchase">총 구매가</string>
+    <string name="my_total_earn_rate">총 수익률</string>
+    <string name="my_gain_loss">평가손익</string>
 
 </resources>

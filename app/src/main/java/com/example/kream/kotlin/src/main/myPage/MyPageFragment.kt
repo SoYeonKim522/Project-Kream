@@ -8,13 +8,15 @@ import com.example.kream.kotlin.databinding.FragmentMyPageBinding
 
 class MyPageFragment :
     BaseFragment<FragmentMyPageBinding>(FragmentMyPageBinding::bind, R.layout.fragment_my_page) {
-    private var mCount = 0
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonChangeCounterText.setOnClickListener {
-            binding.textViewCounter.text =
-                resources.getString(R.string.my_page_tv_counter, ++mCount)
-        }
+        //최상단 칩
+        binding.myShoppingChip.isChecked=true
+        binding.myShoppingChip.setChipBackgroundColorResource(R.color.black_text)
+        binding.myProfileChip.setChipBackgroundColorResource(R.color.white)
+
+
     }
 }
