@@ -6,12 +6,14 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.kream.kotlin.R
+import com.example.kream.kotlin.src.main.home.models.ThemeProductList
 import com.example.kream.kotlin.src.main.shop.ShopProductAdapter
 
 data class JdData (var productImg:Int, var brandLogo:Int, var productName:String, var price:Int)
 
-class HomeJustDroppedAdapter (private val jdList: List<JdData>): RecyclerView.Adapter<HomeJustDroppedAdapter.ViewHolder>(){
+class HomeJustDroppedAdapter (private val jdList: List<ThemeProductList>): RecyclerView.Adapter<HomeJustDroppedAdapter.ViewHolder>(){
 
     class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
         val productImg = itemView.findViewById<ImageView>(R.id.product_img)
@@ -26,10 +28,17 @@ class HomeJustDroppedAdapter (private val jdList: List<JdData>): RecyclerView.Ad
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.productImg.setImageResource(R.drawable.jordan_test)
-        holder.brandLogo.setImageResource(R.drawable.logo_jordan)
+        val imgUrl : String = jdList[position].productImage
+        val brandLogoUrl : String = jdList[position].brandLogo
+        if (imgUrl!=null){
+            Glide.with(holder.itemView).load(imgUrl).error(R.drawable.login_button).into(holder.productImg)
+        }
+        if (brandLogoUrl!=null){
+            Glide.with(holder.itemView).load(brandLogoUrl).error(R.drawable.login_button).into(holder.brandLogo)
+        }
+
         holder.productName.text = jdList[position].productName
-        holder.price.text = jdList[position].price.toString()
+        holder.price.text = jdList[position].buyPrice.toString()
     }
 
     override fun getItemCount(): Int = jdList.size

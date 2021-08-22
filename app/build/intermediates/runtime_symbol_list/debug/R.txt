@@ -2037,6 +2037,7 @@ int id action_text 0x7f090053
 int id actions 0x7f090054
 int id activity_chooser_view_content 0x7f090055
 int id ad_banner 0x7f090056
+int id ad_image_1 0x7f09026b
 int id add 0x7f090057
 int id agreement1 0x7f090058
 int id agreement2 0x7f090059
@@ -2196,11 +2197,10 @@ int id home 0x7f0900f2
 int id homeAsUp 0x7f0900f3
 int id home_chip_released_info 0x7f0900f4
 int id home_chip_today 0x7f0900f5
-int id home_image_slide 0x7f0900f6
 int id home_iv_image 0x7f0900f7
 int id home_just_dropped_recycler 0x7f0900f8
+int id home_most_pop_recycler 0x7f09026c
 int id home_style_picks_recycler 0x7f0900f9
-int id home_tv_notice 0x7f0900fa
 int id honorRequest 0x7f0900fb
 int id horizontal_only 0x7f0900fc
 int id icon 0x7f0900fd
@@ -2242,6 +2242,7 @@ int id login_btn_naver 0x7f090120
 int id login_et_email 0x7f090121
 int id login_et_password 0x7f090122
 int id login_password_toggle 0x7f090123
+int id main_banner_viewpager 0x7f09026f
 int id main_btm_nav 0x7f090124
 int id main_frm 0x7f090125
 int id masked 0x7f090126
@@ -2282,6 +2283,8 @@ int id month_navigation_fragment_toggle 0x7f090148
 int id month_navigation_next 0x7f090149
 int id month_navigation_previous 0x7f09014a
 int id month_title 0x7f09014b
+int id most_pop 0x7f09026d
+int id most_pop_kor 0x7f09026e
 int id motion_base 0x7f09014c
 int id mtrl_anchor_parent 0x7f09014d
 int id mtrl_calendar_day_selector_frame 0x7f09014e
@@ -2551,7 +2554,6 @@ int id view_transition 0x7f090255
 int id view_tree_lifecycle_owner 0x7f090256
 int id view_tree_saved_state_registry_owner 0x7f090257
 int id view_tree_view_model_store_owner 0x7f090258
-int id viewpager 0x7f090259
 int id visible 0x7f09025a
 int id visible_removing_fragment_view_tag 0x7f09025b
 int id west 0x7f09025c
@@ -3708,6 +3710,8 @@ int style Widget_MaterialComponents_Toolbar_Surface 0x7f110306
 int style Widget_MaterialComponents_Tooltip 0x7f110307
 int style Widget_Support_CoordinatorLayout 0x7f110308
 int style bottomFragAnimation 0x7f110309
+int style home_section_subtitle 0x7f11030b
+int style home_section_title 0x7f11030c
 int style productSalesTab 0x7f11030a
 int[] styleable ActionBar { 0x7f030044, 0x7f03004b, 0x7f03004c, 0x7f0300ee, 0x7f0300ef, 0x7f0300f0, 0x7f0300f1, 0x7f0300f2, 0x7f0300f3, 0x7f030119, 0x7f03012a, 0x7f03012b, 0x7f030143, 0x7f03019a, 0x7f0301a1, 0x7f0301a7, 0x7f0301a8, 0x7f0301ab, 0x7f0301bc, 0x7f0301ce, 0x7f030242, 0x7f030299, 0x7f0302c9, 0x7f0302d0, 0x7f0302d1, 0x7f03033b, 0x7f03033f, 0x7f0303a7, 0x7f0303b3 }
 int styleable ActionBar_background 0

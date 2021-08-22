@@ -3,24 +3,27 @@ package com.example.kream.kotlin.src.main.home
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.os.Message
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import androidx.viewpager2.widget.ViewPager2
 import com.example.kream.kotlin.R
 import com.example.kream.kotlin.config.BaseFragment
 import com.example.kream.kotlin.databinding.FragmentHomeBinding
+import com.example.kream.kotlin.src.main.home.models.MainBannerResponse
+import com.example.kream.kotlin.src.main.home.models.ThemeProductResponse
 import com.example.kream.kotlin.src.main.shop.ShopCategoryAdapter
 
-///////////////(val image) 뺌
-class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind, R.layout.fragment_home)
-//        HomeFragmentView
-{
-//    private var currentPosition=0
-//    val handler=Handler(Looper.getMainLooper()){
-//        setPage()
-//        true
-//    }
+class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind, R.layout.fragment_home) , HomeFragmentView {
+
+    private val TAG = "log"
+    private var currentPosition = 0
+    private var viewPagerHandler = ViewPagerHandler()
+    private val intervalTime = 2000.toLong()
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -30,44 +33,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind
         binding.homeChipToday.setChipBackgroundColorResource(R.color.black_text)
         binding.homeChipReleasedInfo.setChipBackgroundColorResource(R.color.white)
 
+        //자동 슬라이드 배너
+        HomeService(this).tryMainBanner()
 
-        //슬라이딩 배너
-        binding.viewpager.adapter = ViewPagerAdapter(getImageList())
-//        val thread=Thread(PagerRunnable())
-//        thread.start()
+        HomeService(this).tryGetThemeProduct()
 
-
-//
-//        binding.homeBtnTryPostHttpMethod.setOnClickListener {
-//            val email = binding.homeEtId.text.toString()
-//            val password = binding.homeEtPw.text.toString()
-//            val postRequest = PostSignUpRequest(email = email, password = password,
-//                    confirmPassword = password, nickname = "test", phoneNumber = "010-0000-0000")
-//            showLoadingDialog(requireContext())
-//            HomeService(this).tryPostSignUp(postRequest)
-//        }
-//
-//        binding.homeBtnTest.setOnClickListener {
-//            showCustomToast("test button click!")
-//        }
-//
-//        binding.homeBtnSearch.setOnClickListener {
-//            val word = binding.homeEditText.text.toString()
-//            showLoadingDialog(requireContext())
-//            HomeService(this).tryGetUserSearch(word)
-//        }
-//    }
-//
-        //JUST DROPPED
-        val justDroppedList:List<JdData> = listOf(
-            JdData(R.drawable.jordan_test, R.drawable.logo_jordan, "Jordan 1 x Travis Scott x Fragment", 2000000),
-            JdData(R.drawable.jordan_test, R.drawable.logo_jordan, "Jordan 1 x Travis Scott x Fragment", 2000000),
-            JdData(R.drawable.jordan_test, R.drawable.logo_jordan, "Jordan 1 x Travis Scott x Fragment", 2000000),
-            )
-
-        binding.homeJustDroppedRecycler.layoutManager = LinearLayoutManager(requireContext()).also { it.orientation = LinearLayoutManager.HORIZONTAL }
-        binding.homeJustDroppedRecycler.adapter = HomeJustDroppedAdapter(justDroppedList)
-        binding.homeJustDroppedRecycler.setHasFixedSize(true)
 
         //STYLE PICKS
         val stylePicksList:List<SpData> = listOf(
@@ -78,44 +48,72 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind
         binding.homeStylePicksRecycler.layoutManager = LinearLayoutManager(requireContext()).also { it.orientation = LinearLayoutManager.HORIZONTAL }
         binding.homeStylePicksRecycler.adapter = HomeStylePicksAdapter(stylePicksList)
         binding.homeStylePicksRecycler.setHasFixedSize(true)
-
     }
 
-    //view pager 이미지 가져오기
-    private fun getImageList(): ArrayList<Int> {
-        return arrayListOf<Int>(R.drawable.home_banner1, R.drawable.home_banner2)
+
+
+    //just dropped
+    override fun onGetThemeProductSuccess(response: ThemeProductResponse) {
+        val result = response.result[0].productList  //0대신 1을 넣으면 다음 섹션 내용,,
+
+//        val resultAllsize = resultAll.size
+//        val result = resultAll.subList(0,1)
+        binding.homeJustDroppedRecycler.layoutManager = LinearLayoutManager(requireContext()).also { it.orientation = LinearLayoutManager.HORIZONTAL }
+        binding.homeJustDroppedRecycler.adapter = HomeJustDroppedAdapter(result)
+        binding.homeJustDroppedRecycler.setHasFixedSize(true)
     }
 
-    //view pager 페이지 변경
-//    private fun setPage() {
-//        if(currentPosition==5) currentPosition=0
-//        binding.viewpager.setCurrentItem(currentPosition,true)
-//        currentPosition+=1
-//    }
-//    inner class PagerRunnable:Runnable{
-//        override fun run() {
-//            while (true){
-//                Thread.sleep(2000)
-//                handler.sendEmptyMessage(0)
-//            }
-//        }
-//    }
+    override fun onGetThemeProductFailure(message: String) {
+        Log.d(TAG, "onGetThemeProductFailure: $message")
+    }
+
+    override fun onGetMainBannerSuccess(response: MainBannerResponse) {
+        val result = response.result
+        binding.mainBannerViewpager.adapter = ViewPagerAdapter(result, context)  //리스트 뷰페이저 어댑터에 넘기기
+
+        //자동 슬라이드
+        binding.mainBannerViewpager.setCurrentItem(currentPosition, false)
+        binding.mainBannerViewpager.apply {
+            registerOnPageChangeCallback(object :ViewPager2.OnPageChangeCallback(){
+                override fun onPageScrollStateChanged(state: Int) {
+                    super.onPageScrollStateChanged(state)
+                    when (state){
+                        ViewPager2.SCROLL_STATE_IDLE -> autoSlideStart(intervalTime)
+                    }
+                }
+            })
+        }
+    }
+
+    private fun autoSlideStart(intervalTime: Long) {
+        viewPagerHandler.removeMessages(0)
+        viewPagerHandler.sendEmptyMessageDelayed(0, intervalTime)
+    }
+
+    private inner class ViewPagerHandler : Handler(){
+        override fun handleMessage(msg: Message) {
+            super.handleMessage(msg)
+
+            if (msg.what == 0){
+                binding.mainBannerViewpager.setCurrentItem(++currentPosition, true)
+                autoSlideStart(intervalTime)
+            }
+        }
+    }
+
+    override fun onGetMainBannerFailure(message: String) {
+        Log.d(TAG, "onGetMainBannerFailure: $message")
+    }
 
 
 
-//    private inner class SlideViewPagerAdapter(frag: FragmentHomeBinding): SlideViewPagerAdapter(frag){
-//        override fun getItemCount(): Int {
-//        }
-//
-//        override fun createFragment(position: Int): Fragment {
-//            return when(position){
-//                0 -> HomeFragment(R.drawable.home_banner1)
-//                1 -> HomeFragment(R.drawable.home_banner2)
-//                else ->
-//            }
-//        }
-//
-//    }
+    override fun onResume() {
+        super.onResume()
+        autoSlideStart(intervalTime)
+    }
 
-
+    override fun onPause() {
+        super.onPause()
+        viewPagerHandler.removeMessages(0)  //핸들러 중지
+    }
 }

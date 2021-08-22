@@ -2,8 +2,6 @@ package com.example.kream.kotlin.src.main.signUp
 
 import android.util.Log
 import com.example.kream.kotlin.config.ApplicationClass
-import com.example.kream.kotlin.src.main.home.HomeRetrofitInterface
-import com.example.kream.kotlin.src.main.home.models.SignUpResponse_home
 import com.example.kream.kotlin.src.main.signUp.models.PostSignUpRequest
 import com.example.kream.kotlin.src.main.signUp.models.SignUpResponse
 import retrofit2.Call

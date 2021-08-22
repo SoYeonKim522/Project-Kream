@@ -2038,6 +2038,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id ad_banner
+id ad_image_1
 id add
 id agreement1
 id agreement2
@@ -2197,11 +2198,10 @@ id home
 id homeAsUp
 id home_chip_released_info
 id home_chip_today
-id home_image_slide
 id home_iv_image
 id home_just_dropped_recycler
+id home_most_pop_recycler
 id home_style_picks_recycler
-id home_tv_notice
 id honorRequest
 id horizontal_only
 id icon
@@ -2243,6 +2243,7 @@ id login_btn_naver
 id login_et_email
 id login_et_password
 id login_password_toggle
+id main_banner_viewpager
 id main_btm_nav
 id main_frm
 id masked
@@ -2283,6 +2284,8 @@ id month_navigation_fragment_toggle
 id month_navigation_next
 id month_navigation_previous
 id month_title
+id most_pop
+id most_pop_kor
 id motion_base
 id mtrl_anchor_parent
 id mtrl_calendar_day_selector_frame
@@ -2552,7 +2555,6 @@ id view_transition
 id view_tree_lifecycle_owner
 id view_tree_saved_state_registry_owner
 id view_tree_view_model_store_owner
-id viewpager
 id visible
 id visible_removing_fragment_view_tag
 id west
@@ -3709,6 +3711,8 @@ style Widget_MaterialComponents_Toolbar_Surface
 style Widget_MaterialComponents_Tooltip
 style Widget_Support_CoordinatorLayout
 style bottomFragAnimation
+style home_section_subtitle
+style home_section_title
 style productSalesTab
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
