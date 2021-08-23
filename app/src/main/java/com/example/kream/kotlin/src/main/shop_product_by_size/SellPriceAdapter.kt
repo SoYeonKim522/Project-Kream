@@ -18,6 +18,15 @@ class SellPriceAdapter(private var sizeList:List<SellPriceResult>, val context: 
 
     private val TAG = "log"
 
+    //인터페이스 만들기
+    interface OnSizeClickListenerS{
+        fun onSizeClickS(view:View)
+    }
+    private var listener : OnSizeClickListenerS?=null
+    fun setOnSizeClickListenerS(listener : OnSizeClickListenerS){
+        this.listener = listener
+    }
+
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val size = itemView.findViewById<TextView>(R.id.size)
         val price = itemView.findViewById<TextView>(R.id.size_price)
@@ -53,6 +62,8 @@ class SellPriceAdapter(private var sizeList:List<SellPriceResult>, val context: 
             intent.putExtra("size", sizetxt)
             intent.putExtra("sellPrice", priceBySize.toString() + "원")
             Log.d(TAG, "onBindViewHolder: $sizetxt, $priceBySize")
+
+            listener?.onSizeClickS(holder.itemView)
         }
 
     }

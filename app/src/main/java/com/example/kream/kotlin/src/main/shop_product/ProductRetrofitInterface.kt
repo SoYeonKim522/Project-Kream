@@ -11,15 +11,16 @@ interface ProductRetrofitInterface {
     @GET("/api/products/{productIdx}")
     fun getProductDescription(@Path("productIdx") productIdx:Int) : Call<ProductDescriptionResponse>
 
-    @GET("/api/transactions/{productIdx}")
+    @GET("/api/products/{productIdx}/transactions")
     fun getProductSalesRecord(@Path("productIdx") productIdx:Int) : Call<SalesResponse>
 
-    @GET("/api/bids/sale/{productIdx}")
+    @GET("/api/products/{productIdx}/sales")
     fun getProductAsksRecord(@Path("productIdx") productIdx:Int) : Call<AsksResponse>
 
-    @GET("/api/bids/purchase/{productIdx}")
+    @GET("/api/products/{productIdx}/purchases")
     fun getProductBidsRecord(@Path("productIdx") productIdx:Int) : Call<BidsResponse>
 
     @GET("/api/products/{productIdx}/others")
     fun getProductRecommend(@Path("productIdx") productIdx: Int) : Call<RecommendResponse>
+
 }

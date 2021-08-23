@@ -1,23 +1,32 @@
 package com.example.kream.kotlin.src.main.shop_product
 
+import android.content.Intent
 import android.graphics.Typeface
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kream.kotlin.R
+import com.example.kream.kotlin.config.ApplicationClass
 import com.example.kream.kotlin.config.BaseActivity
 import com.example.kream.kotlin.databinding.ActivityShopProductBinding
+import com.example.kream.kotlin.src.main.login.LoginActivity
 import com.example.kream.kotlin.src.main.shop_product.models.*
 import com.example.kream.kotlin.src.main.shop_product_by_size.ProdBySizeService
 import com.example.kream.kotlin.src.main.shop_product_by_size.ProdSizeFragment
+import com.example.kream.kotlin.src.main.shop_product_wishlist.ProdWishlistFragment
 
 
 class ShopProductActivity : BaseActivity<ActivityShopProductBinding> (ActivityShopProductBinding::inflate), ProductView {
 
     private val TAG = "log"
     private val bottomSizeFrag = ProdSizeFragment()
+    private val bottomWishlistFrag = ProdWishlistFragment()
+    val jwt = ApplicationClass.sSharedPreferences.getString(ApplicationClass.X_ACCESS_TOKEN, null)
+
+//    private val isWishlistAdded = intent.getBooleanExtra("isWishlistAdded", false)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,30 +34,65 @@ class ShopProductActivity : BaseActivity<ActivityShopProductBinding> (ActivitySh
         //data from ShopProductAdapter
         val productIdx = intent.getIntExtra("productIdx", 0)
 
-        //상품 상세 불러오기
-        ProductService(this).tryGetProductDescription(productIdx)
+        if(jwt==null){
+            binding.loginLayout.isVisible = true
+            binding.loginLayout.bringToFront()
+        }
 
         //체결거래 탭 기본으로 선택 설정
         binding.salesBtn.isSelected=true
-        ProductService(this).tryGetProductSales(productIdx)
-
-        //추천상품 불러오기
-        ProductService(this).tryGetRecommendation(productIdx)
-
-
-        //사이즈 선택 후
-        val selectedSize = intent.getStringExtra("size")
-        val buyPriceBySize = intent.getStringExtra("buyPrice")
-
-        if (selectedSize!=null && buyPriceBySize!=null){
-            Log.d(TAG, "onCreate 사이즈 선택후: $selectedSize  $buyPriceBySize")
-            binding.sizeButton.text = selectedSize
-            binding.buyPrice.text = buyPriceBySize
+        if(productIdx!=0){
+            //상품 상세 불러오기
+            ProductService(this).tryGetProductDescription(productIdx)
+            
+            //체결 내역 보여주기
+            ProductService(this).tryGetProductSales(productIdx)
+            
+            //추천상품 불러오기
+            ProductService(this).tryGetRecommendation(productIdx)
         }
 
-//        binding.backBtn.setOnClickListener {
-//            super.finish()  -> 에러(?)
+
+
+        //사이즈 선택 후 -
+//        val selectedSize = intent.getStringExtra("size")
+//        val buyPriceBySize = intent.getStringExtra("buyPrice")
+//
+//        if (selectedSize!=null && buyPriceBySize!=null){
+//            Log.d(TAG, "onCreate 사이즈 선택후: $selectedSize  $buyPriceBySize")
+//            binding.sizeButton.text = selectedSize
+//            binding.buyPrice.text = buyPriceBySize
 //        }
+
+        //구매 사이즈 선택 후
+        supportFragmentManager.setFragmentResultListener("requestKey", this){requestKey, bundle ->
+            val sizePassed = bundle.getString("chosenSize")
+            val pricePassed = bundle.getInt("chosenPrice")
+            binding.sizeButton.text = sizePassed.toString()
+            if(pricePassed!=0){
+                binding.buyPrice.text = pricePassed.toString()
+            } else {  //가격이 없을경우
+                binding.buyPrice.text = "-"
+                binding.sellPrice.text = "-"
+                binding.latestPrice.text = "-"
+                binding.priceChangeAmount.text = "-"
+                binding.priceChangeRate.text ="-"
+            }
+
+            Log.d(TAG, "onCreate: 액티비티에서 받은정보 $sizePassed  $pricePassed")
+            
+        }
+
+        //관심상품 추가 후
+//        if(isWishlistAdded){
+//            binding.wishlistIcon.setImageResource(R.drawable.wishlist_icon_clicked)
+//        } else binding.wishlistIcon.setImageResource(R.drawable.wishlist_icon_black)
+
+
+        //뒤로가기
+        binding.backBtn.setOnClickListener {
+            super.finish()
+        }
 
     }
 
@@ -167,12 +211,20 @@ class ShopProductActivity : BaseActivity<ActivityShopProductBinding> (ActivitySh
             R.id.asks_btn -> {
                 binding.salesSecondColumnHeader.text = "판매 희망가"
                 binding.salesThirdColumnHeader.text = "수량"
-                ProductService(this).tryGetProductAsks(productIdx)
+                if(jwt!=null) {
+                    ProductService(this).tryGetProductAsks(productIdx)
+                } else {
+                    binding.asksBtn.isEnabled = false
+                    Log.d(TAG, "tabClick: 중간 탭 클릭 불가능")
+                }
+                
             }
             R.id.bids_btn -> {
                 binding.salesSecondColumnHeader.text = "구매 희망가"
                 binding.salesThirdColumnHeader.text = "수량"
-                ProductService(this).tryGetProductBids(productIdx)
+                if(jwt!=null) {
+                    ProductService(this).tryGetProductBids(productIdx)
+                } else binding.bidsBtn.isEnabled = false
             }
         }
     }
@@ -185,6 +237,20 @@ class ShopProductActivity : BaseActivity<ActivityShopProductBinding> (ActivitySh
         bundle.putInt("viewId", view.id)
         bottomSizeFrag.arguments = bundle
         bottomSizeFrag.show(supportFragmentManager, bottomSizeFrag.tag)
+    }
+
+    fun onWishlistClick(view: View) {
+        val productIdx = intent.getIntExtra("productIdx", 0)
+        val bundle = Bundle()
+        bundle.putInt("productIdx", productIdx)
+        bottomWishlistFrag.arguments = bundle
+        bottomWishlistFrag.show(supportFragmentManager, bottomWishlistFrag.tag)
+
+
+    }
+
+    fun loginBtnClick(view: View) {
+        startActivity(Intent(this, LoginActivity::class.java))
     }
 
 

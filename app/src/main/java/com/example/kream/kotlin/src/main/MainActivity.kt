@@ -20,14 +20,67 @@ import com.example.kream.kotlin.src.main.style.StyleFragment
 import com.example.kream.kotlin.src.main.watch.WatchFragment
 
 class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
+    val TAG ="log"
+    val jwt = ApplicationClass.sSharedPreferences.getString(ApplicationClass.X_ACCESS_TOKEN, null)
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
 
+        Log.d("log", "onCreate: $jwt")
+
 
         supportFragmentManager.beginTransaction().replace(R.id.main_frm, HomeFragment()).commitAllowingStateLoss()
 
+//        binding.mainBtmNav.setOnNavigationItemSelectedListener(
+//            BottomNavigationView.OnNavigationItemSelectedListener { item ->
+//                when (item.itemId) {
+//                    R.id.menu_main_btm_nav_home -> {
+//                        supportFragmentManager.beginTransaction()
+//                            .replace(R.id.main_frm, HomeFragment())
+//                            .commitAllowingStateLoss()
+//                        return@OnNavigationItemSelectedListener true
+//                    }
+//                    R.id.menu_main_btm_nav_style -> {
+//                        supportFragmentManager.beginTransaction()
+//                            .replace(R.id.main_frm, StyleFragment())
+//                            .commitAllowingStateLoss()
+//                        return@OnNavigationItemSelectedListener true
+//                    }
+//                    R.id.menu_main_btm_nav_shop -> {
+//                        supportFragmentManager.beginTransaction()
+//                            .replace(R.id.main_frm, ShopFragment())
+//                            .commitAllowingStateLoss()
+//                        return@OnNavigationItemSelectedListener true
+//                    }
+//                    R.id.menu_main_btm_nav_watch -> {
+//                        supportFragmentManager.beginTransaction()
+//                            .replace(R.id.main_frm, WatchFragment())
+//                            .commitAllowingStateLoss()
+//                        return@OnNavigationItemSelectedListener true
+//                    }
+//                    R.id.menu_main_btm_nav_my -> {
+//                       if(jwt!=null){
+//                           supportFragmentManager.beginTransaction()
+//                               .replace(R.id.main_frm, MyPageFragment())
+//                               .commitAllowingStateLoss()
+//                       } else {
+//                           startActivity(Intent(this, LoginActivity::class.java))
+//                       }
+//                        return@OnNavigationItemSelectedListener true
+//                    }
+//
+//
+//                }
+//                false
+//            })
+
+
+    }
+
+    override fun onResume() {
+        super.onResume()
         binding.mainBtmNav.setOnNavigationItemSelectedListener(
             BottomNavigationView.OnNavigationItemSelectedListener { item ->
                 when (item.itemId) {
@@ -56,29 +109,22 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
                         return@OnNavigationItemSelectedListener true
                     }
                     R.id.menu_main_btm_nav_my -> {
-                        //이 안에서 로그인 if 문
-                        supportFragmentManager.beginTransaction()
-                            .replace(R.id.main_frm, MyPageFragment())
-                            .commitAllowingStateLoss()
-//                        startActivity(Intent(this, LoginActivity::class.java))
+                        if (jwt != null) {
+                            supportFragmentManager.beginTransaction()
+                                .replace(R.id.main_frm, MyPageFragment())
+                                .commitAllowingStateLoss()
+                        } else {
+                            startActivity(Intent(this, LoginActivity::class.java))
+                        }
                         return@OnNavigationItemSelectedListener true
                     }
-
-                    //로그인 되어 있을 때
-//                    R.id.menu_main_btm_nav_my -> {
-//                        supportFragmentManager.beginTransaction()
-//                            .replace(R.id.main_frm, MyPageFragment())
-//                            .commitAllowingStateLoss()
-//                        return@OnNavigationItemSelectedListener true
-//                    }
-
                 }
                 false
             })
 
-        val jwt = ApplicationClass.sSharedPreferences.getString(ApplicationClass.X_ACCESS_TOKEN, "none")
-        Log.d("log", "onCreate: $jwt")
     }
+
+
 
 
 }

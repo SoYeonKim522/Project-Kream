@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -260,21 +261,42 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/ad_banner" />
 
-<!--                <com.google.android.material.tabs.TabLayout-->
-<!--                    android:id="@+id/tab_layout"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="30dp"-->
-<!--                    android:layout_marginStart="16dp"-->
-<!--                    android:layout_marginTop="16dp"-->
-<!--                    android:layout_marginEnd="16dp"-->
-<!--                    app:tabGravity="center"-->
-<!--                    app:tabIndicatorGravity="stretch"-->
-<!--                    app:tabIndicator="@drawable/product_price_tab_clicked"-->
-<!--                    app:tabIndicatorAnimationMode="elastic"-->
-<!--                    android:background="@drawable/product_price_tab"-->
-<!--                    app:layout_constraintEnd_toEndOf="parent"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toBottomOf="@id/tv_market_price"/>-->
+                <LinearLayout
+                    android:id="@+id/login_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="8dp"
+                    android:background="#D9FFFFFF"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_market_price"
+                    app:layout_constraintBottom_toBottomOf="@id/sales_more_button">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/check_after_login"
+                        android:textAlignment="center"
+                        android:textColor="@color/black_text"
+                        android:textSize="13sp" />
+
+                    <Button
+                        android:id="@+id/prod_btn_login"
+                        android:layout_width="65dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/prod_login_btn"
+                        android:onClick="loginBtnClick"
+                        android:padding="0dp"
+                        android:paddingVertical="20dp"
+                        android:text="@string/login_btn_login"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
 
                 <FrameLayout
                     android:id="@+id/tab"
@@ -350,8 +372,6 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="8dp"
-                    app:layout_constraintBottom_toTopOf="@id/table_separator"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tab">
@@ -392,11 +412,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="1.5dp"
                     android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginEnd="16dp"
                     android:background="@color/gray_filter_btn_bg"
-                    app:layout_constraintBottom_toTopOf="@+id/table_recycler"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/table_title" />
 
                <androidx.recyclerview.widget.RecyclerView
                    android:id="@+id/table_recycler"
@@ -499,7 +520,8 @@
             android:src="@drawable/wishlist_icon_black"
             app:layout_constraintEnd_toStartOf="@+id/buy_button"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:onClick="onWishlistClick"/>
 
         <TextView
             android:id="@+id/wishlish_count"

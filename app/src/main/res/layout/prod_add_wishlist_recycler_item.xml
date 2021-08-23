@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="6dp"
+    android:layout_marginBottom="6dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/wishlist_size_container"
+        android:layout_width="185dp"
+        android:layout_height="55dp"
+        android:background="@drawable/prod_size_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="230"
+        android:textColor="@color/black_text"
+        app:layout_constraintBottom_toTopOf="@id/recycler_wishlish_icon"
+        app:layout_constraintEnd_toEndOf="@id/wishlist_size_container"
+        app:layout_constraintStart_toStartOf="@id/wishlist_size_container"
+        app:layout_constraintTop_toTopOf="@id/wishlist_size_container" />
+
+    <ImageView
+        android:id="@+id/recycler_wishlish_icon"
+        android:layout_width="15dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/wishlist_icon_black"
+        android:textColor="@color/prod_buy_price_by_size"
+        app:layout_constraintEnd_toEndOf="@+id/size"
+        app:layout_constraintStart_toStartOf="@id/size"
+        app:layout_constraintTop_toBottomOf="@id/size" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

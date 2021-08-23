@@ -5,10 +5,14 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.setFragmentResult
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.kream.kotlin.R
 import com.example.kream.kotlin.databinding.FragmentProdSizeBinding
 import com.example.kream.kotlin.src.main.shop_product_by_size.models.BuyPriceBySizeResponse
+import com.example.kream.kotlin.src.main.shop_product_by_size.models.BuyPriceResult
 import com.example.kream.kotlin.src.main.shop_product_by_size.models.SellPriceBySizeResponse
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
@@ -24,7 +28,6 @@ class ProdSizeFragment: BottomSheetDialogFragment(), ProdBySizeView{
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         getDialog()?.getWindow()?.getAttributes()?.windowAnimations = R.style.bottomFragAnimation
-
     }
 
     override fun onCreateView(
@@ -41,24 +44,25 @@ class ProdSizeFragment: BottomSheetDialogFragment(), ProdBySizeView{
         Log.d(TAG, "onCreateView: 버튼 아이디 $buttonId")
 
         //사이즈 선택 버튼 눌렀을 때
-        if(buttonId==2131296745){
-            if (productIdx!=null || productIdx==0){
-                ProdBySizeService(this).tryGetBuyPriceBySize(productIdx)
+        if(buttonId==2131296833){
+            if (productIdx!=null || productIdx!=0){
+                ProdBySizeService(this).tryGetBuyPriceBySize(productIdx!!)
+                Log.d(TAG, "onCreateView:프래그먼트에서 아이디 $productIdx")
             } else Log.d(TAG, "PRODUCT SIZE BOTTOM FRAG: ERROR - productIdx값 null")
         }
 
         //구매 버튼 눌렀을 때
-        if(buttonId==2131296382){
+        if(buttonId==2131296395){
             isSizeButton=false
-            if (productIdx!=null || productIdx==0){
-                ProdBySizeService(this).tryGetBuyPriceBySize(productIdx)
+            if (productIdx!=null || productIdx!=0){
+                ProdBySizeService(this).tryGetBuyPriceBySize(productIdx!!)
             } else Log.d(TAG, "PRODUCT SIZE BOTTOM FRAG: ERROR - productIdx값 null")
         }
 
         //판매 버튼 눌렀을 때
-        if (buttonId==2131296714){
-            if (productIdx!=null || productIdx==0){
-                ProdBySizeService(this).tryGetSellPriceBySize(productIdx)
+        if (buttonId==2131296794){
+            if (productIdx!=null || productIdx!=0){
+                ProdBySizeService(this).tryGetSellPriceBySize(productIdx!!)
                 binding.tvPrice.text="즉시 판매가(원)"
             } else Log.d(TAG,"PRODUCT SIZE BOTTOM FRAG: ERROR - productIdx_sell값 null")
         }
@@ -67,17 +71,6 @@ class ProdSizeFragment: BottomSheetDialogFragment(), ProdBySizeView{
         binding.closeBtn.setOnClickListener {
             dialog?.dismiss()
         }
-
-        //ProdSizeAdapter 의 인터페이스 호출!!!
-//        val sizeList= listOf<SizeResult>()
-//        val prodSizeAdapter = ProdSizeAdapter(sizeList, context)
-//        prodSizeAdapter.setOnSizeClickListener(object : ProdSizeAdapter.OnSizeClickListener{
-//            override fun onSizeClick(view: View) {
-//                Log.d(TAG, "onItemClick: 사이즈 버튼 클릭")
-//                dialog?.dismiss()
-//            }
-//        })
-
 
         return binding.root
     }
@@ -88,18 +81,29 @@ class ProdSizeFragment: BottomSheetDialogFragment(), ProdBySizeView{
     override fun onGetBuyPriceBySizeSuccess(response: BuyPriceBySizeResponse) {
         var result = response.result
 
+        Log.d(TAG, "onGetBuyPriceBySizeSuccess 함수: $result")
         val listSize = result.size
         val newResult = result.subList(1,listSize)  //구매버튼 눌렀을 때 전달할 데이터 리스트
 
         if(!isSizeButton){
            result=newResult
         }
-        val sizeAdapter = BuyPriceAdapter(result, context)
+        val buySizeAdapter = BuyPriceAdapter(result, context)
         binding.priceBySizeRecycler.layoutManager = GridLayoutManager(requireContext(), 3)
-        binding.priceBySizeRecycler.adapter = sizeAdapter
+        binding.priceBySizeRecycler.adapter = buySizeAdapter
         binding.priceBySizeRecycler.setHasFixedSize(true)
-        sizeAdapter.notifyDataSetChanged()
+        buySizeAdapter.notifyDataSetChanged()
         isSizeButton=true
+
+        //여기에서 ProdSizeAdapter 의 인터페이스 호출!!
+        buySizeAdapter.setOnSizeClickListener(object : BuyPriceAdapter.OnSizeClickListener{
+            override fun onSizeClick(view: View, size:String, price:Int) {
+                val bundle = bundleOf("chosenSize" to size, "chosenPrice" to price)
+                setFragmentResult("requestKey", bundle)
+                Log.d(TAG, "onSizeClick: 인터페이스!! $size $price")
+                dialog?.dismiss()
+            }
+        })
     }
 
     override fun onGetBuyPriceBySizeFailure(message: String) {
@@ -118,17 +122,17 @@ class ProdSizeFragment: BottomSheetDialogFragment(), ProdBySizeView{
         binding.priceBySizeRecycler.adapter = sellPriceAdapter
         binding.priceBySizeRecycler.setHasFixedSize(true)
         sellPriceAdapter.notifyDataSetChanged()
+
+        sellPriceAdapter.setOnSizeClickListenerS(object : SellPriceAdapter.OnSizeClickListenerS {
+            override fun onSizeClickS(view: View) {
+                dialog?.dismiss()
+            }
+        })
     }
 
     override fun onGetSellPriceBySizeFailure(message: String) {
         Log.d(TAG, "onGetSellPriceBySizeFailure: $message")
     }
-
-
-//    override fun onItemClick(view: View) {
-//        Log.d(TAG, "onItemClick: 사이즈 버튼 클릭")
-//        dialog?.dismiss()
-//    }
 
 
 }

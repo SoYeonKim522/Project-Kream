@@ -1918,6 +1918,7 @@ drawable notify_panel_notification_icon_bg
 drawable post_icon
 drawable prod_ad_banner
 drawable prod_bottom_small_print
+drawable prod_login_btn
 drawable prod_price_down_icon
 drawable prod_price_up_icon
 drawable prod_size_button
@@ -1956,6 +1957,7 @@ drawable watch_icon_clicked
 drawable watch_icon_onclick
 drawable wishlist_icon
 drawable wishlist_icon_black
+drawable wishlist_icon_clicked
 font app_font
 font nanum_gothic_extra_bold
 id ALT
@@ -2059,6 +2061,7 @@ id ad_image_7
 id ad_image_8
 id ad_image_9
 id add
+id add_wishlist_recycler
 id agreement1
 id agreement2
 id alertTitle
@@ -2285,7 +2288,9 @@ id login_btn_login
 id login_btn_naver
 id login_et_email
 id login_et_password
+id login_layout
 id login_password_toggle
+id logout_btn
 id lowest_asks
 id lowest_asks_kor
 id luxury_sneakers
@@ -2434,6 +2439,7 @@ id price_change_amount
 id price_change_container
 id price_change_icon
 id price_change_rate
+id prod_btn_login
 id prod_description
 id prod_description_content
 id prod_description_recycler
@@ -2451,6 +2457,7 @@ id radio
 id ratio
 id recommend_title
 id rectangles
+id recycler_wishlish_icon
 id repeat
 id reverseSawtooth
 id right
@@ -2627,6 +2634,7 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tv_add_wishlist
 id tv_buy
 id tv_buy_price
 id tv_buying
@@ -2665,6 +2673,7 @@ id west
 id wishlish_count
 id wishlish_icon
 id wishlist_icon
+id wishlist_size_container
 id withText
 id withinBounds
 id wrap
@@ -2767,6 +2776,7 @@ layout design_text_input_start_icon
 layout dialog_loading
 layout fragment_home
 layout fragment_my_page
+layout fragment_prod_add_wishlist
 layout fragment_prod_size
 layout fragment_shop
 layout fragment_style
@@ -2832,6 +2842,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout prod_add_wishlist_recycler_item
 layout prod_info_recycler_item
 layout prod_rec_recycler_item
 layout prod_sales_recycler_item
@@ -2895,6 +2906,7 @@ string bottomsheet_action_expand_halfway
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
+string check_after_login
 string chip_text
 string clear_text_end_icon_content_description
 string define_roundedimageview
@@ -3034,6 +3046,7 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string prod_add_wishlist
 string prod_tv_buy_price
 string search_menu_title
 string shop_filter_acc

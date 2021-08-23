@@ -1,5 +1,6 @@
 package com.example.kream.kotlin.src.main.shop_product
 
+import android.util.Log
 import com.example.kream.kotlin.config.ApplicationClass
 import com.example.kream.kotlin.src.main.shop_product.models.*
 import retrofit2.Call
@@ -26,6 +27,8 @@ class ProductService (val view: ProductView) {
     fun tryGetProductSales(productIdx: Int){
         productInterface.getProductSalesRecord(productIdx).enqueue(object : Callback<SalesResponse>{
             override fun onResponse(call: Call<SalesResponse>, response: Response<SalesResponse>) {
+                Log.d("log", "onResponse: $productIdx")   //1
+                Log.d("log", "onResponse: ${response.body()}")   //SalesResponse(result=null)
                 view.onGetSalesSuccess(response.body() as SalesResponse)
             }
 

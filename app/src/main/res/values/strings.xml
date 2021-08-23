@@ -105,7 +105,9 @@
     <string name="shop_prod_more_bids">입찰 내역 더보기</string>
 
     <string name="prod_tv_buy_price">즉시 구매가(원)</string>
+    <string name="check_after_login">모든 시세는 로그인 후 확인 가능합니다.</string>
 
+    <string name="prod_add_wishlist">관심 상품 추가</string>
 
 
 

@@ -155,11 +155,13 @@ class LoginActivity : BaseActivity<ActivityLoginBinding> (ActivityLoginBinding::
         when(response.code){
             1000 -> {showCustomToast("로그인 성공")
                 ApplicationClass.editor.putString(ApplicationClass.X_ACCESS_TOKEN, response.result.token)
+                ApplicationClass.editor.putString(ApplicationClass.USER_IDX, response.result.userIdx) //유저 아이디도 저장
                 ApplicationClass.editor.commit()
                 dismissLoadingDialog()
                 super.finish()  //이전 화면으로 돌아가기!
+
                 //supportFragmentManager.beginTransaction().replace(R.id.login_activity_root, StyleFragment()).commit()
-                Log.d(TAG, "onPostLoginSuccess: ${ApplicationClass.sSharedPreferences.getString(ApplicationClass.X_ACCESS_TOKEN, "none")}")
+                Log.d(TAG, "onPostLoginSuccess: ${ApplicationClass.sSharedPreferences.getString(ApplicationClass.X_ACCESS_TOKEN, null)}")
             }
             3014 -> {showCustomToast("없는 이메일이거나 비밀번호가 틀렸습니다")
                     dismissLoadingDialog()}
@@ -168,8 +170,6 @@ class LoginActivity : BaseActivity<ActivityLoginBinding> (ActivityLoginBinding::
         }
 
 
-//        startActivity(Intent(this, MainActivity::class.java))
-//        finish()
     }
 
     override fun onPostLoginFailure(message: String) {

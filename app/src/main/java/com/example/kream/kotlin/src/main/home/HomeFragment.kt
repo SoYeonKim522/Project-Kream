@@ -26,6 +26,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind
     private var viewPagerHandler = ViewPagerHandler()
     private val intervalTime = 2000.toLong()
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        Log.d(TAG, "onCreate: 홈 시작")
+    }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -130,7 +135,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind
                 Glide.with(this).load(response.result[i].image).error(R.drawable.login_button).into(iv)
             }
             i++
-            Log.d(TAG, "onGetAdImageSuccess: $i")
+//            Log.d(TAG, "onGetAdImageSuccess: $i")
         }
     }
 
