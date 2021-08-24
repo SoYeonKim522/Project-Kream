@@ -153,12 +153,14 @@ class LoginActivity : BaseActivity<ActivityLoginBinding> (ActivityLoginBinding::
     override fun onPostLoginSuccess(response: LoginResponse) {
         Log.d(TAG, "onPostSignUpSuccess: ${response.result}")
         when(response.code){
-            1000 -> {showCustomToast("로그인 성공")
+            1000 -> {
                 ApplicationClass.editor.putString(ApplicationClass.X_ACCESS_TOKEN, response.result.token)
                 ApplicationClass.editor.putString(ApplicationClass.USER_IDX, response.result.userIdx) //유저 아이디도 저장
                 ApplicationClass.editor.commit()
                 dismissLoadingDialog()
-                super.finish()  //이전 화면으로 돌아가기!
+                val intent = Intent(this, MainActivity::class.java)  //메인액티비티로 이동
+                this.startActivity(intent)
+//                super.finish()  //이전 화면으로 돌아가기!
 
                 //supportFragmentManager.beginTransaction().replace(R.id.login_activity_root, StyleFragment()).commit()
                 Log.d(TAG, "onPostLoginSuccess: ${ApplicationClass.sSharedPreferences.getString(ApplicationClass.X_ACCESS_TOKEN, null)}")

@@ -12,11 +12,13 @@ import com.example.kream.kotlin.R
 import com.example.kream.kotlin.config.ApplicationClass
 import com.example.kream.kotlin.config.BaseActivity
 import com.example.kream.kotlin.databinding.ActivityShopProductBinding
+import com.example.kream.kotlin.src.main.BuyCheckActivity
 import com.example.kream.kotlin.src.main.login.LoginActivity
 import com.example.kream.kotlin.src.main.shop_product.models.*
 import com.example.kream.kotlin.src.main.shop_product_by_size.ProdBySizeService
 import com.example.kream.kotlin.src.main.shop_product_by_size.ProdSizeFragment
 import com.example.kream.kotlin.src.main.shop_product_wishlist.ProdWishlistFragment
+import kotlin.properties.Delegates
 
 
 class ShopProductActivity : BaseActivity<ActivityShopProductBinding> (ActivityShopProductBinding::inflate), ProductView {
@@ -25,6 +27,10 @@ class ShopProductActivity : BaseActivity<ActivityShopProductBinding> (ActivitySh
     private val bottomSizeFrag = ProdSizeFragment()
     private val bottomWishlistFrag = ProdWishlistFragment()
     val jwt = ApplicationClass.sSharedPreferences.getString(ApplicationClass.X_ACCESS_TOKEN, null)
+    lateinit var modelNo : String
+    lateinit var prodName : String
+    lateinit var imageURl : String
+    lateinit var sellPrice : String
 
 //    private val isWishlistAdded = intent.getBooleanExtra("isWishlistAdded", false)
 
@@ -53,18 +59,7 @@ class ShopProductActivity : BaseActivity<ActivityShopProductBinding> (ActivitySh
         }
 
 
-
-        //사이즈 선택 후 -
-//        val selectedSize = intent.getStringExtra("size")
-//        val buyPriceBySize = intent.getStringExtra("buyPrice")
-//
-//        if (selectedSize!=null && buyPriceBySize!=null){
-//            Log.d(TAG, "onCreate 사이즈 선택후: $selectedSize  $buyPriceBySize")
-//            binding.sizeButton.text = selectedSize
-//            binding.buyPrice.text = buyPriceBySize
-//        }
-
-        //구매 사이즈 선택 후
+        //구매 사이즈 선택 시
         supportFragmentManager.setFragmentResultListener("requestKey", this){requestKey, bundle ->
             val sizePassed = bundle.getString("chosenSize")
             val pricePassed = bundle.getInt("chosenPrice")
@@ -78,9 +73,32 @@ class ShopProductActivity : BaseActivity<ActivityShopProductBinding> (ActivitySh
                 binding.priceChangeAmount.text = "-"
                 binding.priceChangeRate.text ="-"
             }
+            Log.d(TAG, "onCreate: 프래그먼트에서 받은 정보 $sizePassed  $pricePassed")
 
-            Log.d(TAG, "onCreate: 액티비티에서 받은정보 $sizePassed  $pricePassed")
-            
+
+            if(sizePassed!=null){ //사이즈 선택된 경우
+                Log.d(TAG, "onCreate: 사이즈 선택됨")
+                binding.buyButton.setOnClickListener {
+                    val intent = Intent(this, BuyCheckActivity::class.java)
+                    intent.putExtra("size", sizePassed)
+                    intent.putExtra("price", pricePassed)
+                    intent.putExtra("prodName", prodName)
+                    intent.putExtra("modelNo", modelNo)
+                    intent.putExtra("imageUrl", imageURl)
+                    intent.putExtra("sellPrice", sellPrice)
+                    Log.d(TAG, "onCreate: 인텐트에 넣을 때 $sellPrice")
+//                    Log.d(TAG, "onCreate: 데이터 패스 $sizePassed, $pricePassed, $prodName, $modelNo")
+                    startActivity(intent)
+                }
+            }
+        }
+
+        //관심상품 추가 시
+        supportFragmentManager.setFragmentResultListener("wishKey", this){requestKey, bundle ->
+            val isWishAdded = bundle.getString("isWishAdded")
+            if(isWishAdded=="added"){
+                binding.wishlistIcon.setImageResource(R.drawable.wishlist_icon_clicked)
+            }
         }
 
         //관심상품 추가 후
@@ -94,11 +112,8 @@ class ShopProductActivity : BaseActivity<ActivityShopProductBinding> (ActivitySh
             super.finish()
         }
 
-    }
 
-//    private fun getImageList(): List<Int> {
-//        return listOf(R.drawable.jordan_test, R.drawable.home_banner2, R.drawable.home_banner1)
-//    }
+    }
 
 
     override fun onGetProdDescriptionSuccess(response: ProductDescriptionResponse) {
@@ -109,6 +124,11 @@ class ShopProductActivity : BaseActivity<ActivityShopProductBinding> (ActivitySh
         val result = response.result
         binding.brandName.text = result.brandName
         binding.productName.text = result.name
+        prodName = result.name
+        modelNo = result.modelNo
+        sellPrice = result.sellPrice.toString()
+        Log.d(TAG, "onGetProdDescriptionSuccess:맨처음에 $sellPrice")
+        imageURl = response.result.productImages[0].imageUrl
         binding.productNameKor.text = result.description
         binding.latestPrice.text = result.latestTransactedPrice.toString()+"원"
         binding.priceChangeAmount.text = result.priceIncreaseAmount.toString()
@@ -116,6 +136,8 @@ class ShopProductActivity : BaseActivity<ActivityShopProductBinding> (ActivitySh
         binding.wishlishCount.text = result.liked.toString()
         if(result.sellPrice==null || result.sellPrice==0){
             binding.sellPrice.text = "-"
+            sellPrice = result.sellPrice.toString()
+            Log.d(TAG, "onGetProdDescriptionSuccess:맨처음에 $sellPrice")
         } else binding.sellPrice.text = result.sellPrice.toString()+"원"
         if(result.buyPrice==null || result.buyPrice==0){
             binding.buyPrice.text = "-"
@@ -126,6 +148,10 @@ class ShopProductActivity : BaseActivity<ActivityShopProductBinding> (ActivitySh
                 binding.priceChangeIcon.setImageResource(R.drawable.prod_price_down_icon)
                 binding.priceChangeAmount.setTextColor(R.color.prod_price_down.toInt())
                 binding.priceChangeRate.setTextColor(R.color.prod_price_down.toInt())
+            } else if(result.priceIncreaseAmount==0){
+                binding.priceChangeIcon.visibility=View.INVISIBLE
+                binding.priceChangeAmount.setTextColor(R.color.black.toInt())
+                binding.priceChangeRate.setTextColor(R.color.black.toInt())
             }
 
         //리사이클러뷰에 넘겨줄 상품정보 리스트 따로 만들기

@@ -4,6 +4,10 @@
         "source": "D:\\Kream\\app\\src\\main\\res\\layout\\activity_shop_product.xml"
     },
     {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_setting.xml",
+        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\activity_setting.xml"
+    },
+    {
         "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_home.xml",
         "source": "D:\\Kream\\app\\src\\main\\res\\layout\\fragment_home.xml"
     },
@@ -24,8 +28,16 @@
         "source": "D:\\Kream\\app\\src\\main\\res\\layout\\prod_rec_recycler_item.xml"
     },
     {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\my_logout_dialog.xml",
+        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\my_logout_dialog.xml"
+    },
+    {
         "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_test.xml",
         "source": "D:\\Kream\\app\\src\\main\\res\\layout\\activity_test.xml"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_add_address.xml",
+        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\activity_add_address.xml"
     },
     {
         "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\home_just_dropped_item.xml",
@@ -56,6 +68,10 @@
         "source": "D:\\Kream\\app\\src\\main\\res\\layout\\prod_add_wishlist_recycler_item.xml"
     },
     {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_buy_check.xml",
+        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\activity_buy_check.xml"
+    },
+    {
         "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\dialog_loading.xml",
         "source": "D:\\Kream\\app\\src\\main\\res\\layout\\dialog_loading.xml"
     },
@@ -66,6 +82,14 @@
     {
         "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_style.xml",
         "source": "D:\\Kream\\app\\src\\main\\res\\layout\\fragment_style.xml"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_buy_now.xml",
+        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\activity_buy_now.xml"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activitiy_checkout.xml",
+        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\activitiy_checkout.xml"
     },
     {
         "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_login.xml",

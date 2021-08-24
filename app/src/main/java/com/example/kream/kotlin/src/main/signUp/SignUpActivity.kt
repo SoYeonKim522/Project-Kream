@@ -127,13 +127,9 @@ class SignUpActivity : BaseActivity<ActivitySignupBinding> (ActivitySignupBindin
         // 필수 체크항목 체크여부
         binding.checkBox1.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
-//                binding.signupButton.setBackgroundResource(R.color.black_text)
-//                binding.signupButton.isClickable = true
                 boxChecked=true
                 activateSignUp(emailChecked, pwChecked, boxChecked)
             } else {
-//                binding.signupButton.setBackgroundResource(R.drawable.login_button)
-//                binding.signupButton.isClickable = false
                 boxChecked=false
                 activateSignUp(emailChecked, pwChecked, boxChecked)
             }

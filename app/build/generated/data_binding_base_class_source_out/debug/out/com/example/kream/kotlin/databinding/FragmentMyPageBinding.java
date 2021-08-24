@@ -36,9 +36,6 @@ public final class FragmentMyPageBinding implements ViewBinding {
   public final ChipGroup chipGroup;
 
   @NonNull
-  public final TextView logoutBtn;
-
-  @NonNull
   public final TextView myBio;
 
   @NonNull
@@ -175,13 +172,13 @@ public final class FragmentMyPageBinding implements ViewBinding {
 
   private FragmentMyPageBinding(@NonNull ConstraintLayout rootView,
       @NonNull AppBarLayout appBarLayout, @NonNull TextView buyingMore,
-      @NonNull View buyingSeparator, @NonNull ChipGroup chipGroup, @NonNull TextView logoutBtn,
-      @NonNull TextView myBio, @NonNull ConstraintLayout myBuyingCard,
-      @NonNull TextView myBuyingCurrentCnt, @NonNull TextView myBuyingHistoryCnt,
-      @NonNull TextView myBuyingPendingCnt, @NonNull TextView myBuyingTotalCnt,
-      @NonNull ImageView myCameraIcon, @NonNull ImageView myEditProfileBtn,
-      @NonNull TextView myMembershipLevel, @NonNull TextView myName, @NonNull TextView myNickname,
-      @NonNull TextView myPoints, @NonNull Chip myProfileChip, @NonNull ImageView myProfilePic,
+      @NonNull View buyingSeparator, @NonNull ChipGroup chipGroup, @NonNull TextView myBio,
+      @NonNull ConstraintLayout myBuyingCard, @NonNull TextView myBuyingCurrentCnt,
+      @NonNull TextView myBuyingHistoryCnt, @NonNull TextView myBuyingPendingCnt,
+      @NonNull TextView myBuyingTotalCnt, @NonNull ImageView myCameraIcon,
+      @NonNull ImageView myEditProfileBtn, @NonNull TextView myMembershipLevel,
+      @NonNull TextView myName, @NonNull TextView myNickname, @NonNull TextView myPoints,
+      @NonNull Chip myProfileChip, @NonNull ImageView myProfilePic,
       @NonNull ConstraintLayout mySellingCard, @NonNull TextView mySellingCurrentCnt,
       @NonNull TextView mySellingHistoryCnt, @NonNull TextView mySellingPendingCnt,
       @NonNull TextView mySellingTotalCnt, @NonNull ImageView mySettingIcon,
@@ -202,7 +199,6 @@ public final class FragmentMyPageBinding implements ViewBinding {
     this.buyingMore = buyingMore;
     this.buyingSeparator = buyingSeparator;
     this.chipGroup = chipGroup;
-    this.logoutBtn = logoutBtn;
     this.myBio = myBio;
     this.myBuyingCard = myBuyingCard;
     this.myBuyingCurrentCnt = myBuyingCurrentCnt;
@@ -298,12 +294,6 @@ public final class FragmentMyPageBinding implements ViewBinding {
       id = R.id.chip_group;
       ChipGroup chipGroup = rootView.findViewById(id);
       if (chipGroup == null) {
-        break missingId;
-      }
-
-      id = R.id.logout_btn;
-      TextView logoutBtn = rootView.findViewById(id);
-      if (logoutBtn == null) {
         break missingId;
       }
 
@@ -578,16 +568,15 @@ public final class FragmentMyPageBinding implements ViewBinding {
       }
 
       return new FragmentMyPageBinding((ConstraintLayout) rootView, appBarLayout, buyingMore,
-          buyingSeparator, chipGroup, logoutBtn, myBio, myBuyingCard, myBuyingCurrentCnt,
-          myBuyingHistoryCnt, myBuyingPendingCnt, myBuyingTotalCnt, myCameraIcon, myEditProfileBtn,
-          myMembershipLevel, myName, myNickname, myPoints, myProfileChip, myProfilePic,
-          mySellingCard, mySellingCurrentCnt, mySellingHistoryCnt, mySellingPendingCnt,
-          mySellingTotalCnt, mySettingIcon, myShoppingChip, myTvMembershipLevel, myTvPoints,
-          myTvWishlist, myWishlistCnt, portfolioMore, sellingMore, sellingSeparator,
-          separatorBelowName, separatorBelowPinBar, separatorBelowSellingCard,
-          separatorBelowTvPortfolio, topBar, tvBuying, tvBuyingCurrent, tvBuyingHistory,
-          tvBuyingPending, tvBuyingTotal, tvPortfolio, tvSelling, tvSellingCurrent,
-          tvSellingHistory, tvSellingPending, tvSellingTotal, wrapper);
+          buyingSeparator, chipGroup, myBio, myBuyingCard, myBuyingCurrentCnt, myBuyingHistoryCnt,
+          myBuyingPendingCnt, myBuyingTotalCnt, myCameraIcon, myEditProfileBtn, myMembershipLevel,
+          myName, myNickname, myPoints, myProfileChip, myProfilePic, mySellingCard,
+          mySellingCurrentCnt, mySellingHistoryCnt, mySellingPendingCnt, mySellingTotalCnt,
+          mySettingIcon, myShoppingChip, myTvMembershipLevel, myTvPoints, myTvWishlist,
+          myWishlistCnt, portfolioMore, sellingMore, sellingSeparator, separatorBelowName,
+          separatorBelowPinBar, separatorBelowSellingCard, separatorBelowTvPortfolio, topBar,
+          tvBuying, tvBuyingCurrent, tvBuyingHistory, tvBuyingPending, tvBuyingTotal, tvPortfolio,
+          tvSelling, tvSellingCurrent, tvSellingHistory, tvSellingPending, tvSellingTotal, wrapper);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -1,11 +1,19 @@
+com/example/kream/kotlin/BuildConfig.java
+ com.example.kream.kotlin.BuildConfig
+com/example/kream/kotlin/databinding/MyLogoutDialogBinding.java
+ com.example.kream.kotlin.databinding.MyLogoutDialogBinding
 com/example/kream/kotlin/databinding/HomeStylePicksItemBinding.java
  com.example.kream.kotlin.databinding.HomeStylePicksItemBinding
 com/example/kream/kotlin/databinding/FragmentProdSizeBinding.java
  com.example.kream.kotlin.databinding.FragmentProdSizeBinding
 com/example/kream/kotlin/databinding/ActivityLoginBinding.java
  com.example.kream.kotlin.databinding.ActivityLoginBinding
+com/example/kream/kotlin/databinding/ActivityBuyNowBinding.java
+ com.example.kream.kotlin.databinding.ActivityBuyNowBinding
 com/example/kream/kotlin/databinding/ActivityMainBinding.java
  com.example.kream.kotlin.databinding.ActivityMainBinding
+com/example/kream/kotlin/databinding/ActivitiyCheckoutBinding.java
+ com.example.kream.kotlin.databinding.ActivitiyCheckoutBinding
 com/example/kream/kotlin/databinding/FragmentProdAddWishlistBinding.java
  com.example.kream.kotlin.databinding.FragmentProdAddWishlistBinding
 com/example/kream/kotlin/databinding/ShopRecyclerItemBinding.java
@@ -22,6 +30,10 @@ com/example/kream/kotlin/databinding/ProdInfoRecyclerItemBinding.java
  com.example.kream.kotlin.databinding.ProdInfoRecyclerItemBinding
 com/example/kream/kotlin/databinding/ProdSizeRecyclerItemBinding.java
  com.example.kream.kotlin.databinding.ProdSizeRecyclerItemBinding
+com/example/kream/kotlin/databinding/ActivityAddAddressBinding.java
+ com.example.kream.kotlin.databinding.ActivityAddAddressBinding
+com/example/kream/kotlin/databinding/ActivityBuyCheckBinding.java
+ com.example.kream.kotlin.databinding.ActivityBuyCheckBinding
 com/example/kream/kotlin/databinding/ActivitySignupBinding.java
  com.example.kream.kotlin.databinding.ActivitySignupBinding
 com/example/kream/kotlin/databinding/DialogLoadingBinding.java
@@ -38,8 +50,8 @@ com/example/kream/kotlin/databinding/HomeViewpagerBinding.java
  com.example.kream.kotlin.databinding.HomeViewpagerBinding
 com/example/kream/kotlin/databinding/ProdRecRecyclerItemBinding.java
  com.example.kream.kotlin.databinding.ProdRecRecyclerItemBinding
-com/example/kream/kotlin/BuildConfig.java
- com.example.kream.kotlin.BuildConfig
+com/example/kream/kotlin/databinding/ActivitySettingBinding.java
+ com.example.kream.kotlin.databinding.ActivitySettingBinding
 com/example/kream/kotlin/databinding/ProdAddWishlistRecyclerItemBinding.java
  com.example.kream.kotlin.databinding.ProdAddWishlistRecyclerItemBinding
 com/example/kream/kotlin/databinding/ProdSalesRecyclerItemBinding.java

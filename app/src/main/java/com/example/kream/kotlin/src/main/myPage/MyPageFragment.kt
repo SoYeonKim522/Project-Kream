@@ -8,6 +8,7 @@ import com.example.kream.kotlin.R
 import com.example.kream.kotlin.config.ApplicationClass
 import com.example.kream.kotlin.config.BaseFragment
 import com.example.kream.kotlin.databinding.FragmentMyPageBinding
+import com.example.kream.kotlin.src.main.SettingActivity
 import com.example.kream.kotlin.src.main.login.LoginActivity
 import com.example.kream.kotlin.src.main.shop_product.ShopProductActivity
 
@@ -31,32 +32,40 @@ class MyPageFragment :
             Log.d(TAG, "onCreate: 로그인이 되어 있는 경우")
         }
 
+
     }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-            Log.d("log", "마이페이지 지우기 전: $jwt")
+            Log.d("log", "마이페이지 jwt 지우기 전: $jwt")
         
         //최상단 칩
         binding.myShoppingChip.isChecked=true
         binding.myShoppingChip.setChipBackgroundColorResource(R.color.black_text)
         binding.myProfileChip.setChipBackgroundColorResource(R.color.white)
 
-
-        binding.logoutBtn.setOnClickListener {
-
-            ApplicationClass.editor.remove(ApplicationClass.X_ACCESS_TOKEN)
-            ApplicationClass.editor.commit()
-            Log.d("log", "마이페이지 로그아웃 후: $jwt")
-            showCustomToast("로그아웃 완료")
-
-            binding.myNickname.text = ""
-            binding.myName.text = ""
-            binding.myBio.text = ""
-
-
+        //설정 창 띄우기
+        binding.mySettingIcon.setOnClickListener {
+            val intentS = Intent(requireContext(), SettingActivity::class.java)
+            startActivity(intentS)
         }
+
+//        binding.logoutBtn.setOnClickListener {
+//
+//            ApplicationClass.editor.remove(ApplicationClass.X_ACCESS_TOKEN)
+//            ApplicationClass.editor.commit()
+//            Log.d("log", "마이페이지 로그아웃 후: $jwt")
+//            showCustomToast("로그아웃 완료")
+//
+//            binding.myNickname.text = ""
+//            binding.myName.text = ""
+//            binding.myBio.text = ""
+//        }
+
+
+
+
     }
 }

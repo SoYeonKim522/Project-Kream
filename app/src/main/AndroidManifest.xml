@@ -37,10 +37,18 @@
 
         <activity android:name=".src.main.signUp.SignUpActivity"/>
 
-        <activity android:name=".src.main.shop_product.ShopProductActivity">
+        <activity android:name=".src.main.shop_product.ShopProductActivity"/>
 
+        <activity android:name=".src.main.SettingActivity"/>
+        
+        <activity android:name=".src.main.BuyCheckActivity"/>
 
-        </activity>
+        <activity android:name=".src.main.BuyNowActivity"/>
+
+        <activity android:name=".src.main.CheckoutActivity"/>
+
+        <activity android:name=".src.main.AddAddressActivity"/>
+
     </application>
 
 </manifest>

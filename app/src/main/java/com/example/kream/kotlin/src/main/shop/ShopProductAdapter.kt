@@ -39,11 +39,11 @@ class ShopProductAdapter (private val productList:List<ProductResult>, val conte
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val imgUrl :String = productList[position].thumbnail
         if (imgUrl.isNotEmpty()){
-            Glide.with(holder.itemView).load(imgUrl).placeholder(R.drawable.login_button).error(R.drawable.login_button).into(holder.productImg)
+            Glide.with(holder.itemView).load(imgUrl).error(R.drawable.login_button).into(holder.productImg)
         }
 
         val brandLogoUrl : String = productList[position].brandLogo
-        Glide.with(holder.itemView).load(brandLogoUrl).placeholder(R.drawable.login_button).error(R.drawable.login_button).into(holder.brandLogo)
+        Glide.with(holder.itemView).load(brandLogoUrl).error(R.drawable.login_button).into(holder.brandLogo)
 
         val priceData = productList[position].buyPrice
         if(priceData==null || priceData==0){

@@ -22,6 +22,9 @@
     <color name="prod_buy_price_by_size">#c46e5e</color>
     <color name="prod_sell_price_by_size">#83ba9d</color>
 
+    <color name="my_setting_logout">#d98376</color>
+    <color name="light_gray_text">#c6c6c6</color>
+
 <!--    others-->
     <color name="gray_inactive_btn">#d3d3d3</color>
     <color name="gray_search_bar_bg">#f2f2f2</color>

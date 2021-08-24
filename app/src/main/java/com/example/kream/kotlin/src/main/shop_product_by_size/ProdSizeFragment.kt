@@ -44,7 +44,7 @@ class ProdSizeFragment: BottomSheetDialogFragment(), ProdBySizeView{
         Log.d(TAG, "onCreateView: 버튼 아이디 $buttonId")
 
         //사이즈 선택 버튼 눌렀을 때
-        if(buttonId==2131296833){
+        if(buttonId==2131296834){
             if (productIdx!=null || productIdx!=0){
                 ProdBySizeService(this).tryGetBuyPriceBySize(productIdx!!)
                 Log.d(TAG, "onCreateView:프래그먼트에서 아이디 $productIdx")
@@ -60,7 +60,7 @@ class ProdSizeFragment: BottomSheetDialogFragment(), ProdBySizeView{
         }
 
         //판매 버튼 눌렀을 때
-        if (buttonId==2131296794){
+        if (buttonId==2131296795){
             if (productIdx!=null || productIdx!=0){
                 ProdBySizeService(this).tryGetSellPriceBySize(productIdx!!)
                 binding.tvPrice.text="즉시 판매가(원)"
@@ -98,6 +98,7 @@ class ProdSizeFragment: BottomSheetDialogFragment(), ProdBySizeView{
         //여기에서 ProdSizeAdapter 의 인터페이스 호출!!
         buySizeAdapter.setOnSizeClickListener(object : BuyPriceAdapter.OnSizeClickListener{
             override fun onSizeClick(view: View, size:String, price:Int) {
+                //bundle - 상품상세 activity로 변경할 정보 전달
                 val bundle = bundleOf("chosenSize" to size, "chosenPrice" to price)
                 setFragmentResult("requestKey", bundle)
                 Log.d(TAG, "onSizeClick: 인터페이스!! $size $price")

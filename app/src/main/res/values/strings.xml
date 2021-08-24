@@ -106,10 +106,41 @@
 
     <string name="prod_tv_buy_price">즉시 구매가(원)</string>
     <string name="check_after_login">모든 시세는 로그인 후 확인 가능합니다.</string>
-
     <string name="prod_add_wishlist">관심 상품 추가</string>
 
 
+<!--    product purchase-->
+    <string name="check_before_purchase">구매하시기 전에 \n꼭 확인하세요.</string>
+    <string name="continue_purchase">구매 계속</string>
+    <string name="purchase_now">즉시 구매하기</string>
+    <string name="continue_purchase_now">즉시 구매 계속</string>
+    <string name="buy_now_price">즉시 구매가</string>
+    <string name="sell_now_price">즉시 판매가</string>
+    <string name="address">배송 주소</string>
+    <string name="total_pay">총 결제금액</string>
+    <string name="add_address_request">배송지를 등록하세요</string>
+    
+    <string name="checkout_title">배송/결제</string>
+    <string name="shipping_method">배송 방법</string>
+    <string name="final_order_info">최종 주문 정보</string>
+    <string name="payment_method">결제 방법</string>
+    <string name="easy_pay">간편 결제</string>
+    <string name="pay_at_once">일시불</string>
+    <string name="check_out">결제하기</string>
+
+    <string name="add_address">주소 추가하기</string>
+    <string name="name">이름</string>
+    <string name="name_ph">수령인의 이름</string>
+    <string name="phone_no">휴대폰 번호</string>
+    <string name="phone_no_ph">- 없이 입력</string>
+    <string name="post_code">우편번호</string>
+    <string name="post_code_ph">우편번호를 입력하세요</string>
+    <string name="address_1">주소</string>
+    <string name="address_1_ph">주소를 입력하세요</string>
+    <string name="address_2">상세주소</string>
+    <string name="address_2_ph">건물, 아파트 동/호수 입력</string>
+    <string name="set_primary_address">기본 배송지 설정</string>
+    <string name="save">저장하기</string>
 
 
     <!-- MyPage -->
@@ -135,5 +166,12 @@
     <string name="my_total_purchase">총 구매가</string>
     <string name="my_total_earn_rate">총 수익률</string>
     <string name="my_gain_loss">평가손익</string>
+
+    <string name="my_setting">설정</string>
+    <string name="my_setting_logout">로그아웃</string>
+
+    <string name="my_setting_logout_check">로그아웃 하시겠습니까?</string>
+    <string name="my_logout_no">아니오</string>
+    <string name="my_logout_yes">네</string>
 
 </resources>

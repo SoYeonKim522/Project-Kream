@@ -81,7 +81,7 @@ class BuyPriceAdapter(private var sizeList:List<BuyPriceResult>, val context: Co
             val intent = Intent(holder.itemView.context, ShopProductActivity::class.java)
             intent.putExtra("size", sizetxt)
             intent.putExtra("buyPrice", priceBySize.toString()+"원")
-
+            //인터페이스
             listener?.onSizeClick(holder.itemView, sizetxt, priceBySize)
         }
     }

@@ -19,6 +19,24 @@ class AddWishlistAdapter(private var sizeList:List<SizeList>, val context: Conte
     val TAG = "log"
     var addedToWishlist:Boolean = false
 
+    //인터페이스 만들기 - 관심상품 추가
+    interface OnWishClickListener{
+        fun onWishClick(view:View, productSizeIdx:Int)
+    }
+    private var listener : OnWishClickListener?=null
+    fun setOnWishClickListener(listener : OnWishClickListener){
+        this.listener = listener
+    }
+
+    //인터페이스 만들기 - 관심상품 삭제
+    interface OnWishClickListenerD{
+        fun onWishClickD(view:View, productSizeIdx:Int)
+    }
+    private var listenerD : OnWishClickListenerD?=null
+    fun setOnWishClickListenerD(listener : OnWishClickListenerD){
+        this.listenerD = listener
+    }
+
     class ViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView){
         val size = itemView.findViewById<TextView>(R.id.size)
         val icon = itemView.findViewById<ImageView>(R.id.recycler_wishlish_icon)
@@ -31,23 +49,28 @@ class AddWishlistAdapter(private var sizeList:List<SizeList>, val context: Conte
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val sizeIdx = sizeList[position].productSizeIdx
         holder.size.text = sizeList[position].size
 
         val clickedItem=ArrayList<Int>()
         //클릭 시 토글 효과 & 관심상품 추가 api
         holder.itemView.setOnClickListener {
             if(clickedItem.contains(position)){
+                //관심 상품 제거
                 holder.size.setTypeface(null, Typeface.NORMAL)
                 holder.icon.setImageResource(R.drawable.wishlist_icon_black)
                 holder.container.setImageResource(R.drawable.prod_size_button)
                 clickedItem.remove(position)
+                //인터페이스
+                listenerD?.onWishClickD(holder.itemView, sizeIdx)
             } else {
                 //관심 상품 추가
                 holder.size.setTypeface(null, Typeface.BOLD)
                 holder.icon.setImageResource(R.drawable.wishlist_icon_clicked)
                 holder.container.setImageResource(R.drawable.prod_size_button_clicked)
                 clickedItem.add(position)
-//                ProdWishlistService(~~).tryPostWishlist()
+                //인터페이스
+                listener?.onWishClick(holder.itemView, sizeIdx)
             }
         }
 

@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
+import androidx.fragment.app.setFragmentResult
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.kream.kotlin.databinding.FragmentProdAddWishlistBinding
 import com.example.kream.kotlin.databinding.FragmentProdSizeBinding
@@ -37,6 +39,7 @@ class ProdWishlistFragment : BottomSheetDialogFragment(), ProdWishlistView {
             dialog?.dismiss()
         }
 
+
         //관심상품 추가 api 호출
 //        val productSizeIdx = intent 에서 불러오기 from addwishlist adapter
 //        val addWishRequest = AddWishRequest(productSizeIdx)
@@ -54,6 +57,18 @@ class ProdWishlistFragment : BottomSheetDialogFragment(), ProdWishlistView {
         binding.addWishlistRecycler.adapter = wishlistAdapter
         binding.addWishlistRecycler.setHasFixedSize(true)
         wishlistAdapter.notifyDataSetChanged()
+
+        //AddWishlistAdapter 인터페이스 호출
+        wishlistAdapter.setOnWishClickListener(object :AddWishlistAdapter.OnWishClickListener{
+            override fun onWishClick(view: View, productSizeIdx: Int) {
+                //관심상품 추가되었는지 여부 상품상세에 전달
+                val bundle = bundleOf("isWishAdded" to "added")
+                setFragmentResult("wishKey", bundle)
+                val request = AddWishRequest(productSizeIdx)
+                ProdWishlistService(this@ProdWishlistFragment).tryPostWishlist(productSizeIdx, request)
+            }
+        })
+
     }
 
     override fun onGetAllSizeListFailure(message: String) {

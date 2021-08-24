@@ -9,6 +9,7 @@
         android:targetSdkVersion="30" />
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.REORDER_TASKS" />
 
     <application
         android:name="com.example.kream.kotlin.config.ApplicationClass"
@@ -37,7 +38,42 @@
             </intent-filter>
         </activity>
         <activity android:name="com.example.kream.kotlin.src.main.signUp.SignUpActivity" />
-        <activity android:name="com.example.kream.kotlin.src.main.shop_product.ShopProductActivity" >
+        <activity android:name="com.example.kream.kotlin.src.main.shop_product.ShopProductActivity" />
+        <activity android:name="com.example.kream.kotlin.src.main.SettingActivity" />
+        <activity android:name="com.example.kream.kotlin.src.main.BuyCheckActivity" />
+        <activity android:name="com.example.kream.kotlin.src.main.BuyNowActivity" />
+        <activity android:name="com.example.kream.kotlin.src.main.CheckoutActivity" />
+        <activity android:name="com.example.kream.kotlin.src.main.AddAddressActivity" />
+        <activity
+            android:name="androidx.fragment.app.testing.FragmentScenario$EmptyFragmentActivity"
+            android:exported="true"
+            android:multiprocess="true"
+            android:taskAffinity=""
+            android:theme="@style/FragmentScenarioEmptyFragmentActivityTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="androidx.test.core.app.InstrumentationActivityInvoker$BootstrapActivity"
+            android:theme="@android:style/Theme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity"
+            android:theme="@android:style/Theme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyFloatingActivity"
+            android:theme="@android:style/Theme.Dialog" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
         </activity>
     </application>
 
