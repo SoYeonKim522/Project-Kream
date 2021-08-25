@@ -97,9 +97,9 @@ class ProdSizeFragment: BottomSheetDialogFragment(), ProdBySizeView{
 
         //여기에서 ProdSizeAdapter 의 인터페이스 호출!!
         buySizeAdapter.setOnSizeClickListener(object : BuyPriceAdapter.OnSizeClickListener{
-            override fun onSizeClick(view: View, size:String, price:Int) {
+            override fun onSizeClick(view: View, size:String, price:Int, bidSaleIdx:Any) {
                 //bundle - 상품상세 activity로 변경할 정보 전달
-                val bundle = bundleOf("chosenSize" to size, "chosenPrice" to price)
+                val bundle = bundleOf("chosenSize" to size, "chosenPrice" to price, "bidSaleIdx" to bidSaleIdx)
                 setFragmentResult("requestKey", bundle)
                 Log.d(TAG, "onSizeClick: 인터페이스!! $size $price")
                 dialog?.dismiss()

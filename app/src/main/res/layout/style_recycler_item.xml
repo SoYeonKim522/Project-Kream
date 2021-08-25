@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="191dp"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="22dp"
+    android:layout_marginEnd="8dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/login_button"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:riv_corner_radius="10dp" />
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/profile_pic"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/style_test_image"
+        app:layout_constraintBottom_toTopOf="@+id/content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image"
+        app:riv_corner_radius="30dp" />
+
+    <TextView
+        android:id="@+id/user_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:text="yooooon"
+        android:textColor="@color/black_text"
+        app:layout_constraintBottom_toBottomOf="@id/profile_pic"
+        app:layout_constraintStart_toEndOf="@id/profile_pic"
+        app:layout_constraintTop_toTopOf="@id/profile_pic" />
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="#크림 스타일"
+        android:textColor="@color/black_text"
+        android:textSize="13sp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_pic" />
+
+    <ImageView
+        android:id="@+id/liked_icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/style_like_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/content" />
+
+    <TextView
+        android:id="@+id/liked_cnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:text="58"
+        android:textColor="@color/gray_text"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@id/liked_icon"
+        app:layout_constraintStart_toEndOf="@id/liked_icon" />
+
+    <ImageView
+        android:id="@+id/comment_icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="12dp"
+        android:src="@drawable/style_comment_icon"
+        app:layout_constraintBottom_toBottomOf="@id/liked_icon"
+        app:layout_constraintStart_toEndOf="@id/liked_cnt"
+        app:layout_constraintTop_toTopOf="@id/liked_icon" />
+
+    <TextView
+        android:id="@+id/comment_cnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:text="3"
+        app:layout_constraintBottom_toBottomOf="@id/comment_icon"
+        app:layout_constraintStart_toEndOf="@id/comment_icon"
+        app:layout_constraintTop_toTopOf="@id/liked_cnt" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

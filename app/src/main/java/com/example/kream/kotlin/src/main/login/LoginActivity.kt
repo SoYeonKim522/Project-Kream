@@ -165,7 +165,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding> (ActivityLoginBinding::
                 //supportFragmentManager.beginTransaction().replace(R.id.login_activity_root, StyleFragment()).commit()
                 Log.d(TAG, "onPostLoginSuccess: ${ApplicationClass.sSharedPreferences.getString(ApplicationClass.X_ACCESS_TOKEN, null)}")
             }
-            3014 -> {showCustomToast("없는 이메일이거나 비밀번호가 틀렸습니다")
+            3014 -> {showCustomToast("이메일 또는 비밀번호를 확인해 주세요.")
                     dismissLoadingDialog()}
             else -> {showCustomToast("로그인 실패")
                     dismissLoadingDialog()}

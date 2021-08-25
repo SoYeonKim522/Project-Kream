@@ -28,6 +28,8 @@ class BuyCheckActivity : BaseActivity<ActivityBuyCheckBinding>(ActivityBuyCheckB
         val price= intent.getIntExtra("price", 0)
         val imageUrl = intent.getStringExtra("imageUrl")
         val sellPrice = intent.getStringExtra("sellPrice")
+        val bidSaleIdx = intent.getIntExtra("bidSaleIdx", 0)
+        val productIdx = intent.getIntExtra("productIdx", 0)
 
         Log.d(TAG, "데이터 받기 $size, $price, $prodName, $modelNo")
 
@@ -60,7 +62,9 @@ class BuyCheckActivity : BaseActivity<ActivityBuyCheckBinding>(ActivityBuyCheckB
                          intent.putExtra("modelNo", modelNo)
                          intent.putExtra("imageUrl", imageUrl)
                          intent.putExtra("sellPrice", sellPrice)
-//                         Log.d(TAG, "onCreate: buy check에서 데이터 패스 $size, $price, $prodName, $modelNo")
+                         intent.putExtra("bidSaleIdx", bidSaleIdx)
+                         intent.putExtra("productIdx", productIdx)
+                         Log.d(TAG, "onCreate: buy check에서 데이터 패스 $size, $price, $bidSaleIdx, $productIdx")
                          startActivity(intent)
                      }
 

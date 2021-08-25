@@ -13,7 +13,7 @@ import com.example.kream.kotlin.src.main.buy_now.BuyNowService
 import com.example.kream.kotlin.src.main.buy_now.BuyNowView
 import com.example.kream.kotlin.src.main.buy_now.models.AddressResponse
 
-class CheckoutActivity:BaseActivity<ActivitiyCheckoutBinding>(ActivitiyCheckoutBinding::inflate), BuyNowView {
+class CheckoutActivity:BaseActivity<ActivitiyCheckoutBinding>(ActivitiyCheckoutBinding::inflate) {
 
     private val TAG ="log"
     val userIdx = ApplicationClass.sSharedPreferences.getString(ApplicationClass.USER_IDX, null)
@@ -44,7 +44,8 @@ class CheckoutActivity:BaseActivity<ActivitiyCheckoutBinding>(ActivitiyCheckoutB
 //        val phoneNo = intent.getStringExtra("phoneNo")
 
         //get address data from api
-        BuyNowService(this).tryGetAddress(userIdx!!.toInt())
+        //상속 취소
+//        BuyNowService(this).tryGetAddress(userIdx!!.toInt())
 
 
 
@@ -62,16 +63,16 @@ class CheckoutActivity:BaseActivity<ActivitiyCheckoutBinding>(ActivitiyCheckoutB
                     binding.checkoutBtn.setBackgroundResource(R.drawable.login_button_clicked)
                     binding.checkoutBtn.isClickable = true
                     //다음 화면으로 이동
-//                    binding.checkoutBtn.setOnClickListener {
-//                        val intent = Intent(this, BuyNowActivity::class.java)
+                    binding.checkoutBtn.setOnClickListener {
+                        val intent = Intent(this, PurchaseDoneActivity::class.java)
 //                        intent.putExtra("size", size)
 //                        intent.putExtra("price", price)
 //                        intent.putExtra("prodName", prodName)
 //                        intent.putExtra("modelNo", modelNo)
 //                        intent.putExtra("imageUrl", imageUrl)
-////                         Log.d(TAG, "onCreate: buy check에서 데이터 패스 $size, $price, $prodName, $modelNo")
-//                        startActivity(intent)
-//                    }
+//                         Log.d(TAG, "onCreate: buy check에서 데이터 패스 $size, $price, $prodName, $modelNo")
+                        startActivity(intent)
+                    }
                 } else {
                     binding.checkoutBtn.setBackgroundResource(R.drawable.login_button)
                     binding.checkoutBtn.isClickable = false
@@ -86,22 +87,23 @@ class CheckoutActivity:BaseActivity<ActivitiyCheckoutBinding>(ActivitiyCheckoutB
         }
     }
 
-    override fun onGetAddressSuccess(response: AddressResponse) {
-        val result = response.result[0]
-        val name = result.name
-        val address = result.address
-        val address2 = result.addressDetail
-        val postcode = result.zipCode
-        val phoneNo = result.phone
-
-        Log.d(TAG, "onCreate: $phoneNo")
-        binding.shipTo.text = name
-        binding.address.text = "("+postcode+") "+address + address2
-        binding.phoneNo.text = phoneNo
-    }
-
-    override fun onGetAddressFailure(message: String) {
-        Log.d(TAG, "onGetAddressFailure: $message")
-
-    }
+    //buynowView 상속 취소함
+//    override fun onGetAddressSuccess(response: AddressResponse) {
+//        val result = response.result[0]
+//        val name = result.name
+//        val address = result.address
+//        val address2 = result.addressDetail
+//        val postcode = result.zipCode
+//        val phoneNo = result.phone
+//
+//        Log.d(TAG, "onCreate: $phoneNo")
+//        binding.shipTo.text = name
+//        binding.address.text = "("+postcode+") "+address + address2
+//        binding.phoneNo.text = phoneNo
+//    }
+//
+//    override fun onGetAddressFailure(message: String) {
+//        Log.d(TAG, "onGetAddressFailure: $message")
+//
+//    }
 }

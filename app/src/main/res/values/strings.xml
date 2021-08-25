@@ -142,6 +142,14 @@
     <string name="set_primary_address">기본 배송지 설정</string>
     <string name="save">저장하기</string>
 
+    <string name="done_purchase">즉시 구매가 완료되었습니다.</string>
+    <string name="done_purchase_notice">구매한 상품은 전문가 검수 완료 후,\n안전하게 배송될 예정입니다.</string>
+    <string name="see_detail">구매 내역 상세보기</string>
+    <string name="inspection_fee">검수비</string>
+    <string name="shipping_fee">배송비</string>
+    <string name="free">무료</string>
+    <string name="free_event">무료 이벤트</string>
+
 
     <!-- MyPage -->
     <string name="my_my_shopping">내 쇼핑</string>
@@ -174,4 +182,8 @@
     <string name="my_logout_no">아니오</string>
     <string name="my_logout_yes">네</string>
 
+
+<!--    style-->
+    <string name="style_trending">인기</string>
+    <string name="style_following">팔로잉</string>
 </resources>

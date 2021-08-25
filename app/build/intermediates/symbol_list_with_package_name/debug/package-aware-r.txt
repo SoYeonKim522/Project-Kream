@@ -1822,6 +1822,7 @@ drawable avd_hide_password
 drawable avd_show_password
 drawable back_icon
 drawable back_icon_icon
+drawable back_icon_transparent
 drawable bottom_nav_click
 drawable bottom_sheet_bg
 drawable btn_checkbox_checked_mtrl
@@ -1946,6 +1947,7 @@ drawable purchase_image
 drawable purchase_toggle
 drawable register_card_btn
 drawable regular_payment_options
+drawable search_icon
 drawable shop_banner1
 drawable shop_banner2
 drawable shop_banner3
@@ -1966,9 +1968,12 @@ drawable softsquared_logo
 drawable splash_logo
 drawable splash_logo2
 drawable splash_screen
+drawable style_comment_icon
 drawable style_icon
 drawable style_icon_clicked
 drawable style_icon_onclick
+drawable style_like_icon
+drawable style_test_image
 drawable test_custom_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -2167,6 +2172,8 @@ id clockwise
 id close_btn
 id closest
 id collapseActionView
+id comment_cnt
+id comment_icon
 id confirm_button
 id constraint
 id container
@@ -2198,6 +2205,7 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
+id detail_btn
 id dialog_button
 id dimensions
 id direct
@@ -2245,6 +2253,7 @@ id fitToContents
 id fixed
 id flip
 id floating
+id following_chip
 id forever
 id fragment_container_view_tag
 id frost
@@ -2299,6 +2308,7 @@ id image_container
 id immediateStop
 id included
 id info
+id inspection_fee
 id invisible
 id inward
 id italic
@@ -2317,6 +2327,8 @@ id leftToRight
 id legacy
 id lego
 id lego_kor
+id liked_cnt
+id liked_icon
 id line1
 id line3
 id linear
@@ -2497,9 +2509,11 @@ id product_name
 id product_name_kor
 id product_rec_recycler_view
 id product_size
+id profile_pic
 id progressBar
 id progress_circular
 id progress_horizontal
+id purchase_notice
 id radio
 id ratio
 id recommend_title
@@ -2572,6 +2586,7 @@ id set_primary_checkBox
 id sharedValueSet
 id sharedValueUnset
 id ship_to
+id shipping_fee
 id shipping_method
 id shop_cat_img
 id shop_cat_name
@@ -2635,6 +2650,7 @@ id street_wear
 id street_wear_kor
 id stretch
 id style_picks
+id style_recycler
 id submenuarrow
 id submit_area
 id supportScrollUp
@@ -2696,6 +2712,7 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id trending_chip
 id triangle
 id tv_add_wishlist
 id tv_address
@@ -2711,6 +2728,7 @@ id tv_buying_pending
 id tv_buying_total
 id tv_easy_pay
 id tv_final_info
+id tv_inspection_fee
 id tv_latest_price
 id tv_logout
 id tv_logout_check
@@ -2721,6 +2739,7 @@ id tv_phone_no
 id tv_portfolio
 id tv_post_code
 id tv_price
+id tv_purchase_done
 id tv_sell
 id tv_sell_now_price
 id tv_sell_price
@@ -2730,6 +2749,7 @@ id tv_selling_history
 id tv_selling_pending
 id tv_selling_total
 id tv_setting
+id tv_shipping_fee
 id tv_size
 id tv_total_pay
 id unchecked
@@ -2739,6 +2759,7 @@ id up
 id upcoming_release
 id upcoming_release_kor
 id useLogo
+id user_id
 id vertical_only
 id view_offset_helper
 id view_transition
@@ -2836,6 +2857,7 @@ layout activity_buy_check
 layout activity_buy_now
 layout activity_login
 layout activity_main
+layout activity_purchase_done
 layout activity_setting
 layout activity_shop_product
 layout activity_signup
@@ -2937,6 +2959,7 @@ layout select_dialog_singlechoice_material
 layout shop_product_viewpager
 layout shop_recycler_cat_item
 layout shop_recycler_item
+layout style_recycler_item
 layout support_simple_spinner_dropdown_item
 layout test_action_chip
 layout test_chip_zero_corner_radius
@@ -3007,12 +3030,16 @@ string clear_text_end_icon_content_description
 string continue_purchase
 string continue_purchase_now
 string define_roundedimageview
+string done_purchase
+string done_purchase_notice
 string easy_pay
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string final_order_info
+string free
+string free_event
 string hide_bottom_view_on_scroll_behavior
 string home_contemporary
 string home_grey_collection
@@ -3041,6 +3068,7 @@ string home_tab2
 string home_upcoming_release
 string home_upcoming_release_kor
 string icon_content_description
+string inspection_fee
 string item_view_role_description
 string library_roundedimageview_author
 string library_roundedimageview_authorWebsite
@@ -3163,8 +3191,10 @@ string prod_tv_buy_price
 string purchase_now
 string save
 string search_menu_title
+string see_detail
 string sell_now_price
 string set_primary_address
+string shipping_fee
 string shipping_method
 string shop_filter_acc
 string shop_filter_clothes
@@ -3206,6 +3236,8 @@ string sign_up_title
 string sign_up_tv_email
 string sign_up_tv_password
 string status_bar_notification_info_overflow
+string style_following
+string style_trending
 string total_pay
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light

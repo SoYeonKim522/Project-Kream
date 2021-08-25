@@ -49,6 +49,8 @@
 
         <activity android:name=".src.main.address.AddAddressActivity"/>
 
+        <activity android:name=".src.main.PurchaseDoneActivity"/>
+
     </application>
 
 </manifest>

@@ -24,7 +24,7 @@ class BuyPriceAdapter(private var sizeList:List<BuyPriceResult>, val context: Co
 
     //인터페이스 만들기
     interface OnSizeClickListener{
-        fun onSizeClick(view:View, size:String, price:Int)
+        fun onSizeClick(view:View, size:String, price:Int, bidSaleIdx:Any)
     }
     private var listener : OnSizeClickListener?=null
     fun setOnSizeClickListener(listener : OnSizeClickListener){
@@ -59,6 +59,8 @@ class BuyPriceAdapter(private var sizeList:List<BuyPriceResult>, val context: Co
             holder.price.setTextSize(12F)
         } else holder.price.text = priceBySize.toString() + "원"
 
+        val bidSaleIdx = sizeList[position].bidSaleIdx
+
         //이전에 선택된 것이 있다면
         if(position==clickedSize){
             Log.d(TAG, "onBindViewHolder: 선택되어있는 $position")
@@ -82,7 +84,7 @@ class BuyPriceAdapter(private var sizeList:List<BuyPriceResult>, val context: Co
             intent.putExtra("size", sizetxt)
             intent.putExtra("buyPrice", priceBySize.toString()+"원")
             //인터페이스
-            listener?.onSizeClick(holder.itemView, sizetxt, priceBySize)
+            listener?.onSizeClick(holder.itemView, sizetxt, priceBySize, bidSaleIdx)
         }
     }
 

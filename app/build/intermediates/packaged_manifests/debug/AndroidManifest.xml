@@ -44,6 +44,7 @@
         <activity android:name="com.example.kream.kotlin.src.main.buy_now.BuyNowActivity" />
         <activity android:name="com.example.kream.kotlin.src.main.CheckoutActivity" />
         <activity android:name="com.example.kream.kotlin.src.main.address.AddAddressActivity" />
+        <activity android:name="com.example.kream.kotlin.src.main.PurchaseDoneActivity" />
         <activity
             android:name="androidx.fragment.app.testing.FragmentScenario$EmptyFragmentActivity"
             android:exported="true"

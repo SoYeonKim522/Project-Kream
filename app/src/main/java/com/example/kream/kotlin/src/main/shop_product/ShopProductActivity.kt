@@ -63,6 +63,7 @@ class ShopProductActivity : BaseActivity<ActivityShopProductBinding> (ActivitySh
         supportFragmentManager.setFragmentResultListener("requestKey", this){requestKey, bundle ->
             val sizePassed = bundle.getString("chosenSize")
             val pricePassed = bundle.getInt("chosenPrice")
+            val bidSaleIdx = bundle.getInt("bidSaleIdx")
             binding.sizeButton.text = sizePassed.toString()
             if(pricePassed!=0){
                 binding.buyPrice.text = pricePassed.toString()
@@ -86,6 +87,8 @@ class ShopProductActivity : BaseActivity<ActivityShopProductBinding> (ActivitySh
                     intent.putExtra("modelNo", modelNo)
                     intent.putExtra("imageUrl", imageURl)
                     intent.putExtra("sellPrice", sellPrice)
+                    intent.putExtra("bidSaleIdx", bidSaleIdx)
+                    intent.putExtra("productIdx", productIdx)
                     Log.d(TAG, "onCreate: 인텐트에 넣을 때 $sellPrice")
 //                    Log.d(TAG, "onCreate: 데이터 패스 $sizePassed, $pricePassed, $prodName, $modelNo")
                     startActivity(intent)

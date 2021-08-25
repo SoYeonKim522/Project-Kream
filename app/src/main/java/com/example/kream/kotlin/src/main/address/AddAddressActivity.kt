@@ -147,6 +147,11 @@ class AddAddressActivity:BaseActivity<ActivityAddAddressBinding>(ActivityAddAddr
         Log.d(TAG, "onPostAddressSuccess 주소 api : $response")
         if(response.code==1000){
             showCustomToast("추가 완료")
+            val result = response.result
+            val intent = Intent(this, BuyNowActivity::class.java)
+            intent.putExtra("name", result.name)
+            intent.putExtra("addressIdx", result.idx)
+            Log.d(TAG, "onPostAddressSuccess이;름이랑 id: ${result.name}  ${result.idx}")
         }
 
     }
