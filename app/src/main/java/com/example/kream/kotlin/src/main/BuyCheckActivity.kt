@@ -28,10 +28,12 @@ class BuyCheckActivity : BaseActivity<ActivityBuyCheckBinding>(ActivityBuyCheckB
         val price= intent.getIntExtra("price", 0)
         val imageUrl = intent.getStringExtra("imageUrl")
         val sellPrice = intent.getStringExtra("sellPrice")
-        val bidSaleIdx = intent.getIntExtra("bidSaleIdx", 0)
+        val bidSaleIdx = intent.getStringExtra("bidSaleIdx")
         val productIdx = intent.getIntExtra("productIdx", 0)
+        val productSizeIdx = intent.getIntExtra("productSizeIdx", 0)
 
-        Log.d(TAG, "데이터 받기 $size, $price, $prodName, $modelNo")
+
+        Log.d(TAG, "구매전 확인 - 데이터 받기 $size, $price, $prodName, $modelNo $bidSaleIdx")
 
         binding.productModel.text = "새상품 • " +modelNo
         binding.productName.text = prodName
@@ -53,7 +55,7 @@ class BuyCheckActivity : BaseActivity<ActivityBuyCheckBinding>(ActivityBuyCheckB
                  if (checkCount.size == 4) {
                      binding.continueBuyBtn.setBackgroundResource(R.drawable.login_button_clicked)
                      binding.continueBuyBtn.isClickable = true
-                     //다음 화면으로 이동
+                     //다음 화면으로 이동. data pass to buy now activity
                      binding.continueBuyBtn.setOnClickListener {
                          val intent = Intent(this, BuyNowActivity::class.java)
                          intent.putExtra("size", size)
@@ -64,7 +66,8 @@ class BuyCheckActivity : BaseActivity<ActivityBuyCheckBinding>(ActivityBuyCheckB
                          intent.putExtra("sellPrice", sellPrice)
                          intent.putExtra("bidSaleIdx", bidSaleIdx)
                          intent.putExtra("productIdx", productIdx)
-                         Log.d(TAG, "onCreate: buy check에서 데이터 패스 $size, $price, $bidSaleIdx, $productIdx")
+                         intent.putExtra("productSizeIdx", productSizeIdx)
+                         Log.d(TAG, "onCreate: buy check에서 데이터 패스 $size, $price, $bidSaleIdx, $productIdx,, $productSizeIdx")
                          startActivity(intent)
                      }
 

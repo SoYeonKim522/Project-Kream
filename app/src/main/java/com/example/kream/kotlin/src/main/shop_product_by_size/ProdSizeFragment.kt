@@ -97,11 +97,18 @@ class ProdSizeFragment: BottomSheetDialogFragment(), ProdBySizeView{
 
         //여기에서 ProdSizeAdapter 의 인터페이스 호출!!
         buySizeAdapter.setOnSizeClickListener(object : BuyPriceAdapter.OnSizeClickListener{
-            override fun onSizeClick(view: View, size:String, price:Int, bidSaleIdx:Any) {
+//            override fun onSizeClick(view: View, size:String, price:Int, bidSaleIdx:Int, productSizeIdx:Int) {
+//                //bundle - 상품상세 activity로 변경할 정보 전달
+//                val bundle = bundleOf("chosenSize" to size, "chosenPrice" to price, "bidSaleIdx" to bidSaleIdx, "productSizeIdx" to productSizeIdx)
+//                setFragmentResult("requestKey", bundle)
+//                Log.d(TAG, "onSizeClick: 인터페이스 번들에 담은 정보 :  $size $price $bidSaleIdx")  //works
+//                dialog?.dismiss()
+//            }
+            override fun onSizeClick(view: View, size: String, price: Int, bidSaleIdx: Any, productSizeIdx: Int) {
                 //bundle - 상품상세 activity로 변경할 정보 전달
-                val bundle = bundleOf("chosenSize" to size, "chosenPrice" to price, "bidSaleIdx" to bidSaleIdx)
+                val bundle = bundleOf("chosenSize" to size, "chosenPrice" to price, "bidSaleIdx" to bidSaleIdx, "productSizeIdx" to productSizeIdx)
                 setFragmentResult("requestKey", bundle)
-                Log.d(TAG, "onSizeClick: 인터페이스!! $size $price")
+                Log.d(TAG, "onSizeClick: 인터페이스 번들에 담은 정보 :  $size $price $bidSaleIdx $productSizeIdx")  //works
                 dialog?.dismiss()
             }
         })

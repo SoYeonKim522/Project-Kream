@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class BuyNowRequest(
     @SerializedName("targetBidSaleIdx") val targetBidSaleIdx: Int,
-    @SerializedName("productSizeIdx") val productSizeIdx: String,
+    @SerializedName("productSizeIdx") val productSizeIdx: Int,
     @SerializedName("purchasePrice") val purchasePrice: Int,
     @SerializedName("point") val point: String,
     @SerializedName("inspectionFee") val inspectionFee: Int,

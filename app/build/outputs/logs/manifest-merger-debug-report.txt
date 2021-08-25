@@ -165,10 +165,10 @@ activity#com.example.kream.kotlin.src.main.buy_now.BuyNowActivity
 ADDED from D:\Kream\app\src\main\AndroidManifest.xml:46:9-68
 	android:name
 		ADDED from D:\Kream\app\src\main\AndroidManifest.xml:46:19-66
-activity#com.example.kream.kotlin.src.main.CheckoutActivity
-ADDED from D:\Kream\app\src\main\AndroidManifest.xml:48:9-62
+activity#com.example.kream.kotlin.src.main.checkout.CheckoutActivity
+ADDED from D:\Kream\app\src\main\AndroidManifest.xml:48:9-71
 	android:name
-		ADDED from D:\Kream\app\src\main\AndroidManifest.xml:48:19-60
+		ADDED from D:\Kream\app\src\main\AndroidManifest.xml:48:19-69
 activity#com.example.kream.kotlin.src.main.address.AddAddressActivity
 ADDED from D:\Kream\app\src\main\AndroidManifest.xml:50:9-72
 	android:name

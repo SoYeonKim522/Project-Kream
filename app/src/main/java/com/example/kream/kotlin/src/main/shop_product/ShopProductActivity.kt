@@ -59,11 +59,13 @@ class ShopProductActivity : BaseActivity<ActivityShopProductBinding> (ActivitySh
         }
 
 
-        //구매 사이즈 선택 시
+        //구매 사이즈 선택 시 - data from product size fragment
         supportFragmentManager.setFragmentResultListener("requestKey", this){requestKey, bundle ->
             val sizePassed = bundle.getString("chosenSize")
             val pricePassed = bundle.getInt("chosenPrice")
-            val bidSaleIdx = bundle.getInt("bidSaleIdx")
+            val bidSaleIdx = bundle.getInt("bidSaleIdx").toString()
+            val productSizeIdx = bundle.getInt("productSizeIdx")
+            Log.d(TAG, "onCreate:bidSaleIdx 아이디 $bidSaleIdx ")  //0
             binding.sizeButton.text = sizePassed.toString()
             if(pricePassed!=0){
                 binding.buyPrice.text = pricePassed.toString()
@@ -89,7 +91,8 @@ class ShopProductActivity : BaseActivity<ActivityShopProductBinding> (ActivitySh
                     intent.putExtra("sellPrice", sellPrice)
                     intent.putExtra("bidSaleIdx", bidSaleIdx)
                     intent.putExtra("productIdx", productIdx)
-                    Log.d(TAG, "onCreate: 인텐트에 넣을 때 $sellPrice")
+                    intent.putExtra("productSizeIdx", productSizeIdx)
+//                    Log.d(TAG, "onCreate: 인텐트에 넣을 때 $sellPrice")
 //                    Log.d(TAG, "onCreate: 데이터 패스 $sizePassed, $pricePassed, $prodName, $modelNo")
                     startActivity(intent)
                 }

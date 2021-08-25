@@ -1,7 +1,6 @@
 package com.example.kream.kotlin.src.main.buy_now
 
 import android.content.Intent
-import android.content.ServiceConnection
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
@@ -11,7 +10,7 @@ import com.example.kream.kotlin.R
 import com.example.kream.kotlin.config.ApplicationClass
 import com.example.kream.kotlin.config.BaseActivity
 import com.example.kream.kotlin.databinding.ActivityBuyNowBinding
-import com.example.kream.kotlin.src.main.CheckoutActivity
+import com.example.kream.kotlin.src.main.checkout.CheckoutActivity
 import com.example.kream.kotlin.src.main.address.AddAddressActivity
 import com.example.kream.kotlin.src.main.buy_now.models.AddressResponse
 import com.example.kream.kotlin.src.main.buy_now.models.BuyNowRequest
@@ -21,6 +20,7 @@ class BuyNowActivity:BaseActivity<ActivityBuyNowBinding> (ActivityBuyNowBinding:
     val TAG = "log"
     val userIdx = ApplicationClass.sSharedPreferences.getString(ApplicationClass.USER_IDX, null)
     private var addressAdded = false
+    private var addressIdx = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +32,9 @@ class BuyNowActivity:BaseActivity<ActivityBuyNowBinding> (ActivityBuyNowBinding:
         val price = intent.getIntExtra("price", 0)
         val imageUrl = intent.getStringExtra("imageUrl")
         val sellPrice = intent.getStringExtra("sellPrice")
-        val bidSaleIdx = intent.getIntExtra("bidSaleIdx", 0)
+        val bidSaleIdx = intent.getStringExtra("bidSaleIdx")
+        val productIdx = intent.getIntExtra("productIdx", 0)
+        val productSizeIdx = intent.getIntExtra("productSizeIdx", 0)
         Log.d(TAG, " 즉시구매액티비티에서 데이터 받기 $size, $price, $prodName, $modelNo")
 
         binding.productModel.text = "새상품 • " + modelNo
@@ -67,9 +69,10 @@ class BuyNowActivity:BaseActivity<ActivityBuyNowBinding> (ActivityBuyNowBinding:
             intent.putExtra("imageUrl", imageUrl)
             Log.d(TAG, "onCreate: buy now 에서 데이터 패스 $size, $price, $prodName, $modelNo")
 
-//            val postRequest = BuyNowRequest(targetBidSaleIdx = bidSaleIdx, purchasePrice = price, point = "FALSE", inspectionFee=0, shippingFee=0, totalPrice=price, addressIdx=)
-//            BuyNowService(this).tryPostBuyNowRequest(productIdx = productIdx, postRequest)
-
+            val postRequest = BuyNowRequest(targetBidSaleIdx = bidSaleIdx!!.toInt(),  purchasePrice = price, point = "FALSE", inspectionFee=0, shippingFee=0,
+            totalPrice=price, addressIdx=addressIdx, productSizeIdx=productSizeIdx)
+            Log.d(TAG, "postRequest - : $postRequest")//works
+            BuyNowService(this).tryPostBuyNowRequest(productIdx = productIdx, postRequest)
 
             startActivity(intent)
         }
@@ -106,7 +109,7 @@ class BuyNowActivity:BaseActivity<ActivityBuyNowBinding> (ActivityBuyNowBinding:
         Log.d(TAG, "onGetAddressSuccess: 결과 $result")
         val name = result.name
         val address = result.address
-        val addressIdx = result.idx
+        addressIdx = result.idx
         val address2 = result.addressDetail
         val postcode = result.zipCode
         val phoneNo = result.phone
@@ -143,11 +146,11 @@ class BuyNowActivity:BaseActivity<ActivityBuyNowBinding> (ActivityBuyNowBinding:
     }
 
     override fun onPostBuyNowSuccess(response: BuyNowResponse) {
-        TODO("Not yet implemented")
+        showCustomToast("구매 등록 완료. 결제로 이동")
     }
 
     override fun onPostBuyNowFailure(message: String) {
-        TODO("Not yet implemented")
+        Log.d(TAG, "onPostBuyNowFailure: $message")
     }
 
 

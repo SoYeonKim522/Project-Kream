@@ -80,9 +80,9 @@
 44        <activity android:name="com.example.kream.kotlin.src.main.buy_now.BuyNowActivity" />
 44-->D:\Kream\app\src\main\AndroidManifest.xml:46:9-68
 44-->D:\Kream\app\src\main\AndroidManifest.xml:46:19-66
-45        <activity android:name="com.example.kream.kotlin.src.main.CheckoutActivity" />
-45-->D:\Kream\app\src\main\AndroidManifest.xml:48:9-62
-45-->D:\Kream\app\src\main\AndroidManifest.xml:48:19-60
+45        <activity android:name="com.example.kream.kotlin.src.main.checkout.CheckoutActivity" />
+45-->D:\Kream\app\src\main\AndroidManifest.xml:48:9-71
+45-->D:\Kream\app\src\main\AndroidManifest.xml:48:19-69
 46        <activity android:name="com.example.kream.kotlin.src.main.address.AddAddressActivity" />
 46-->D:\Kream\app\src\main\AndroidManifest.xml:50:9-72
 46-->D:\Kream\app\src\main\AndroidManifest.xml:50:19-70

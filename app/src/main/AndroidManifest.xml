@@ -45,7 +45,7 @@
 
         <activity android:name=".src.main.buy_now.BuyNowActivity"/>
 
-        <activity android:name=".src.main.CheckoutActivity"/>
+        <activity android:name=".src.main.checkout.CheckoutActivity"/>
 
         <activity android:name=".src.main.address.AddAddressActivity"/>
 
