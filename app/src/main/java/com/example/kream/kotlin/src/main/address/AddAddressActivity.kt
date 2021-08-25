@@ -6,16 +6,14 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
-import android.widget.EditText
 import androidx.core.content.ContextCompat
 import com.example.kream.kotlin.R
 import com.example.kream.kotlin.config.ApplicationClass
 import com.example.kream.kotlin.config.BaseActivity
 import com.example.kream.kotlin.databinding.ActivityAddAddressBinding
-import com.example.kream.kotlin.src.main.BuyNowActivity
+import com.example.kream.kotlin.src.main.buy_now.BuyNowActivity
 import com.example.kream.kotlin.src.main.address.models.AddAddressResponse
 import com.example.kream.kotlin.src.main.address.models.PostAddressRequest
-import okhttp3.internal.notifyAll
 import java.util.regex.Pattern
 
 class AddAddressActivity:BaseActivity<ActivityAddAddressBinding>(ActivityAddAddressBinding::inflate), AddAddressActivityView {
@@ -122,7 +120,7 @@ class AddAddressActivity:BaseActivity<ActivityAddAddressBinding>(ActivityAddAddr
 
             //api 함수 호출
             AddAddressService(this).tryPostAddress(userIdx!!.toInt(), postRequest)
-            //데이터 전달
+            //데이터 전달 -- X  (api 통해 조회하는걸로 하기)
             val intent = Intent(this, BuyNowActivity::class.java)
 //            val intent = Intent()
 //            intent.putExtra("name", name)
@@ -155,7 +153,6 @@ class AddAddressActivity:BaseActivity<ActivityAddAddressBinding>(ActivityAddAddr
 
     override fun onPostAddressFailure(message: String) {
         Log.d(TAG, "onPostAddressFailure: $message")
-
     }
 
     private fun activateSaveBtn(phoneNoChecked: Boolean, restChecked : Boolean) {

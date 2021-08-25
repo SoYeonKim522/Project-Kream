@@ -2,19 +2,17 @@ package com.example.kream.kotlin.src.main
 
 import android.content.Intent
 import android.graphics.Color
-import android.graphics.Typeface
 import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
-import android.text.style.StyleSpan
 import android.util.Log
-import android.view.View
 import android.widget.CheckBox
 import com.bumptech.glide.Glide
 import com.example.kream.kotlin.R
 import com.example.kream.kotlin.config.BaseActivity
 import com.example.kream.kotlin.databinding.ActivityBuyCheckBinding
+import com.example.kream.kotlin.src.main.buy_now.BuyNowActivity
 
 class BuyCheckActivity : BaseActivity<ActivityBuyCheckBinding>(ActivityBuyCheckBinding::inflate) {
 

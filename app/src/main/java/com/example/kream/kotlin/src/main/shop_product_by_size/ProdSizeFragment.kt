@@ -44,7 +44,7 @@ class ProdSizeFragment: BottomSheetDialogFragment(), ProdBySizeView{
         Log.d(TAG, "onCreateView: 버튼 아이디 $buttonId")
 
         //사이즈 선택 버튼 눌렀을 때
-        if(buttonId==2131296834){
+        if(buttonId==2131296873){
             if (productIdx!=null || productIdx!=0){
                 ProdBySizeService(this).tryGetBuyPriceBySize(productIdx!!)
                 Log.d(TAG, "onCreateView:프래그먼트에서 아이디 $productIdx")
@@ -52,7 +52,7 @@ class ProdSizeFragment: BottomSheetDialogFragment(), ProdBySizeView{
         }
 
         //구매 버튼 눌렀을 때
-        if(buttonId==2131296395){
+        if(buttonId==2131296398){
             isSizeButton=false
             if (productIdx!=null || productIdx!=0){
                 ProdBySizeService(this).tryGetBuyPriceBySize(productIdx!!)
@@ -60,7 +60,7 @@ class ProdSizeFragment: BottomSheetDialogFragment(), ProdBySizeView{
         }
 
         //판매 버튼 눌렀을 때
-        if (buttonId==2131296795){
+        if (buttonId==2131296826){
             if (productIdx!=null || productIdx!=0){
                 ProdBySizeService(this).tryGetSellPriceBySize(productIdx!!)
                 binding.tvPrice.text="즉시 판매가(원)"

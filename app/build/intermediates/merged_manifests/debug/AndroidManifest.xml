@@ -41,7 +41,7 @@
         <activity android:name="com.example.kream.kotlin.src.main.shop_product.ShopProductActivity" />
         <activity android:name="com.example.kream.kotlin.src.main.SettingActivity" />
         <activity android:name="com.example.kream.kotlin.src.main.BuyCheckActivity" />
-        <activity android:name="com.example.kream.kotlin.src.main.BuyNowActivity" />
+        <activity android:name="com.example.kream.kotlin.src.main.buy_now.BuyNowActivity" />
         <activity android:name="com.example.kream.kotlin.src.main.CheckoutActivity" />
         <activity android:name="com.example.kream.kotlin.src.main.address.AddAddressActivity" />
         <activity

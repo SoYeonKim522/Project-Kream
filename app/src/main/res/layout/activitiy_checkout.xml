@@ -167,17 +167,17 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/tv_address" />
 
+
+
                     <TextView
                         android:id="@+id/address"
                         android:layout_width="250dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="5dp"
-                        android:text="(021654) 서울시 마포구 마포대로"
+                        android:text="(00000) 서울시 마포구 마포대로"
                         android:textColor="@color/black_text"
-                        android:textSize="13.5sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/ship_to" />
+                        android:textSize="13.5sp" />
 
                     <TextView
                         android:id="@+id/phone_no"
