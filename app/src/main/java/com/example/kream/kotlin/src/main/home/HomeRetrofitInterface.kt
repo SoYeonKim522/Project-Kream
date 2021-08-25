@@ -17,8 +17,4 @@ interface HomeRetrofitInterface {
     @GET("/api/products/ads")
     fun getAdImage() : Call<AdImageResponse>
 
-
-//    @GET("/users")  //실습
-//    fun getUserSearch(@Query ("word") word:String) : Call<UserSearchResponse>
-
 }

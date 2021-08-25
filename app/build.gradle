@@ -77,4 +77,8 @@ dependencies {
     //for setFragmentResult
     implementation 'androidx.fragment:fragment-ktx:1.3.0'
     debugImplementation 'androidx.fragment:fragment-testing:1.3.0'
+
+    //on activity result
+    def activity_version = "1.3.0-rc01"
+    implementation "androidx.activity:activity-ktx:$activity_version"
 }

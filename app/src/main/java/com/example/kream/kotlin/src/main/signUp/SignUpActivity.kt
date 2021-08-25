@@ -99,6 +99,7 @@ class SignUpActivity : BaseActivity<ActivitySignupBinding> (ActivitySignupBindin
                 return false
             }
         }
+
         binding.signUpEtPassword.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
                 binding.signUpEtPassword.backgroundTintList =

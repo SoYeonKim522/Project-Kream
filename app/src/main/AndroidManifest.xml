@@ -47,7 +47,7 @@
 
         <activity android:name=".src.main.CheckoutActivity"/>
 
-        <activity android:name=".src.main.AddAddressActivity"/>
+        <activity android:name=".src.main.address.AddAddressActivity"/>
 
     </application>
 

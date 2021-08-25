@@ -187,7 +187,7 @@
                 android:singleLine="true"/>
 
             <androidx.appcompat.widget.AppCompatCheckBox
-                android:id="@+id/checkBox"
+                android:id="@+id/set_primary_checkBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -201,9 +201,9 @@
                 android:layout_marginStart="16dp"
                 android:text="@string/set_primary_address"
                 android:textColor="@color/black_text"
-                app:layout_constraintBottom_toBottomOf="@+id/checkBox"
-                app:layout_constraintStart_toEndOf="@id/checkBox"
-                app:layout_constraintTop_toTopOf="@id/checkBox" />
+                app:layout_constraintBottom_toBottomOf="@+id/set_primary_checkBox"
+                app:layout_constraintStart_toEndOf="@id/set_primary_checkBox"
+                app:layout_constraintTop_toTopOf="@id/set_primary_checkBox" />
 
 
 
@@ -224,7 +224,7 @@
 
 
         <Button
-            android:id="@+id/continue_buy_btn"
+            android:id="@+id/save_address_btn"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginStart="16dp"

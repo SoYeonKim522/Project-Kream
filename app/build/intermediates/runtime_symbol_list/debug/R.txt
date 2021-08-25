@@ -2083,6 +2083,7 @@ int id add 0x7f090064
 int id add_wishlist_recycler 0x7f090065
 int id address 0x7f0902f4
 int id address_container 0x7f0902f5
+int id address_input 0x7f09030e
 int id agreement1 0x7f090066
 int id agreement2 0x7f090067
 int id alertTitle 0x7f090068
@@ -2139,7 +2140,6 @@ int id center_horizontal 0x7f090097
 int id center_vertical 0x7f090098
 int id chain 0x7f090099
 int id chains 0x7f09009a
-int id checkBox 0x7f090303
 int id checkBox1 0x7f09009b
 int id checkBox2 0x7f09009c
 int id checkBox3 0x7f0902db
@@ -2523,6 +2523,7 @@ int id sales_second_column 0x7f0901ff
 int id sales_second_column_header 0x7f090200
 int id sales_third_column 0x7f090201
 int id sales_third_column_header 0x7f090202
+int id save_address_btn 0x7f09030f
 int id save_non_transition_alpha 0x7f090203
 int id save_overlay_view 0x7f090204
 int id sawtooth 0x7f090205
@@ -2566,6 +2567,7 @@ int id separator_below_pin_bar 0x7f090224
 int id separator_below_selling_card 0x7f090225
 int id separator_below_table 0x7f090226
 int id separator_below_tv_portfolio 0x7f090227
+int id set_primary_checkBox 0x7f090310
 int id sharedValueSet 0x7f090228
 int id sharedValueUnset 0x7f090229
 int id ship_to 0x7f0902fa

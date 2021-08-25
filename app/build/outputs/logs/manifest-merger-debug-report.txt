@@ -169,10 +169,10 @@ activity#com.example.kream.kotlin.src.main.CheckoutActivity
 ADDED from D:\Kream\app\src\main\AndroidManifest.xml:48:9-62
 	android:name
 		ADDED from D:\Kream\app\src\main\AndroidManifest.xml:48:19-60
-activity#com.example.kream.kotlin.src.main.AddAddressActivity
-ADDED from D:\Kream\app\src\main\AndroidManifest.xml:50:9-64
+activity#com.example.kream.kotlin.src.main.address.AddAddressActivity
+ADDED from D:\Kream\app\src\main\AndroidManifest.xml:50:9-72
 	android:name
-		ADDED from D:\Kream\app\src\main\AndroidManifest.xml:50:19-62
+		ADDED from D:\Kream\app\src\main\AndroidManifest.xml:50:19-70
 uses-sdk
 INJECTED from D:\Kream\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\Kream\app\src\main\AndroidManifest.xml

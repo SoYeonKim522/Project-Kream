@@ -8,7 +8,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class SignUpService(val view: SignUpActivity) {
+class SignUpService(val view: SignUpView) {
     private val TAG = "log"
 
     fun tryPostSignUp(postSignUpRequest: PostSignUpRequest){
@@ -19,9 +19,6 @@ class SignUpService(val view: SignUpActivity) {
                 call: Call<SignUpResponse>,
                 response: Response<SignUpResponse>
             ) {
-                Log.d(TAG, "onResponse: 서비스")
-                Log.d(TAG, "onResponse2: ${response}")
-                Log.d(TAG, "onResponse2: ${response.body()}")
 
                 view.onPostSignUpSuccess(response.body() as SignUpResponse)
             }

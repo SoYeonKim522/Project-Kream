@@ -64,12 +64,12 @@
         "source": "D:\\Kream\\app\\src\\main\\res\\layout\\prod_size_recycler_item.xml"
     },
     {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\prod_add_wishlist_recycler_item.xml",
-        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\prod_add_wishlist_recycler_item.xml"
-    },
-    {
         "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_buy_check.xml",
         "source": "D:\\Kream\\app\\src\\main\\res\\layout\\activity_buy_check.xml"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\prod_add_wishlist_recycler_item.xml",
+        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\prod_add_wishlist_recycler_item.xml"
     },
     {
         "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\dialog_loading.xml",
