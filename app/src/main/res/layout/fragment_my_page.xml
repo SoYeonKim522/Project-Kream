@@ -137,7 +137,7 @@
                    android:layout_width="260dp"
                    android:layout_height="30dp"
                    android:layout_marginStart="16dp"
-                   android:layout_marginTop="4dp"
+                   android:layout_marginTop="10dp"
                    android:layout_marginBottom="24dp"
                    android:background="@drawable/prod_size_button"
                    app:layout_constraintBottom_toBottomOf="@+id/my_profile_pic"
@@ -160,6 +160,7 @@
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
                    android:layout_marginStart="16dp"
+                   android:layout_marginTop="4dp"
                    android:layout_marginEnd="16dp"
                    android:text="liali"
                    android:textColor="@color/black"
@@ -393,7 +394,6 @@
                    app:layout_constraintEnd_toEndOf="parent"
                    app:layout_constraintLeft_toRightOf="@id/tv_buying_pending"
                    app:layout_constraintTop_toTopOf="parent" />
-
 
                <TextView
                    android:id="@+id/my_buying_total_cnt"
@@ -643,20 +643,158 @@
                app:layout_constraintEnd_toEndOf="parent"/>
 
             <View
-                android:id="@+id/separator_below_tv_portfolio"
+                android:id="@+id/separator_below_my_portfolio"
                 android:layout_width="match_parent"
                 android:layout_height="0.8dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/my_page_separator"
+                app:layout_constraintTop_toBottomOf="@id/tv_portfolio"/>
+
+            <TextView
+                android:id="@+id/tv_market_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:text="@string/my_total_value"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/separator_below_my_portfolio" />
+
+            <TextView
+                android:id="@+id/market_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:text="-"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/separator_below_my_portfolio" />
+
+
+
+            <TextView
+                android:id="@+id/tv_my_items"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:text="@string/my_items_cnt"
+                android:textColor="@color/gray_text"
+                android:textSize="11sp"
+                app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@id/tv_market_value"/>
+
+            <TextView
+                android:id="@+id/market_value_cnt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="120dp"
+                android:text="-"
+                android:textColor="@color/gray_text"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_my_items"
+                app:layout_constraintStart_toEndOf="@+id/tv_my_items"
+                app:layout_constraintTop_toTopOf="@id/tv_my_items" />
+
+            <TextView
+                android:id="@+id/tv_total_purchase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/my_total_purchase"
+                android:textColor="@color/gray_text"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toBottomOf="@id/market_value_cnt"
+                app:layout_constraintStart_toEndOf="@+id/market_value_cnt"
+                app:layout_constraintTop_toTopOf="@id/market_value_cnt" />
+
+            <TextView
+                android:id="@+id/total_purchase_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="-"
+                android:textColor="@color/gray_text"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_total_purchase"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_total_purchase" />
+
+
+
+
+
+
+
+
+            <TextView
+                android:id="@+id/tv_earn_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:text="@string/my_total_earn_rate"
+                android:textColor="@color/gray_text"
+                android:textSize="11sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_my_items"/>
+
+            <TextView
+                android:id="@+id/earn_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="120dp"
+                android:text="-"
+                android:textColor="@color/gray_text"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_earn_rate"
+                app:layout_constraintStart_toEndOf="@+id/tv_earn_rate"
+                app:layout_constraintTop_toTopOf="@id/tv_earn_rate" />
+
+            <TextView
+                android:id="@+id/tv_gain_loss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/my_gain_loss"
+                android:textColor="@color/gray_text"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toBottomOf="@id/earn_rate"
+                app:layout_constraintStart_toEndOf="@+id/earn_rate"
+                app:layout_constraintTop_toTopOf="@id/earn_rate" />
+
+            <TextView
+                android:id="@+id/gain_loss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="-"
+                android:textColor="@color/gray_text"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_gain_loss"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_gain_loss" />
+
+
+            <View
+                android:id="@+id/separator_below_portfolio_container"
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:layout_marginTop="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_portfolio" />
+                app:layout_constraintTop_toBottomOf="@id/gain_loss" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/my_page_small_print"
                 android:adjustViewBounds="true"
-                app:layout_constraintTop_toBottomOf="@id/separator_below_tv_portfolio"
+                app:layout_constraintTop_toBottomOf="@id/separator_below_portfolio_container"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 

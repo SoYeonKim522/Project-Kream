@@ -1,5 +1,3 @@
-com/example/kream/kotlin/BuildConfig.java
- com.example.kream.kotlin.BuildConfig
 com/example/kream/kotlin/databinding/MyLogoutDialogBinding.java
  com.example.kream.kotlin.databinding.MyLogoutDialogBinding
 com/example/kream/kotlin/databinding/HomeStylePicksItemBinding.java
@@ -56,6 +54,8 @@ com/example/kream/kotlin/databinding/ProdRecRecyclerItemBinding.java
  com.example.kream.kotlin.databinding.ProdRecRecyclerItemBinding
 com/example/kream/kotlin/databinding/ActivitySettingBinding.java
  com.example.kream.kotlin.databinding.ActivitySettingBinding
+com/example/kream/kotlin/BuildConfig.java
+ com.example.kream.kotlin.BuildConfig
 com/example/kream/kotlin/databinding/ProdAddWishlistRecyclerItemBinding.java
  com.example.kream.kotlin.databinding.ProdAddWishlistRecyclerItemBinding
 com/example/kream/kotlin/databinding/ProdSalesRecyclerItemBinding.java

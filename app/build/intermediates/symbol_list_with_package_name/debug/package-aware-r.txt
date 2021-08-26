@@ -2225,6 +2225,7 @@ id dragRight
 id dragStart
 id dragUp
 id dropdown_menu
+id earn_rate
 id easeIn
 id easeInOut
 id easeOut
@@ -2259,6 +2260,7 @@ id following_chip
 id forever
 id fragment_container_view_tag
 id frost
+id gain_loss
 id ghost_view
 id ghost_view_holder
 id glide_custom_view_target_tag
@@ -2356,6 +2358,8 @@ id luxury_sneakers_kor
 id main_banner_viewpager
 id main_btm_nav
 id main_frm
+id market_value
+id market_value_cnt
 id masked
 id match_constraint
 id match_parent
@@ -2579,11 +2583,12 @@ id separator_below_2
 id separator_below_3
 id separator_below_4
 id separator_below_lowest_asks
+id separator_below_my_portfolio
 id separator_below_name
 id separator_below_pin_bar
+id separator_below_portfolio_container
 id separator_below_selling_card
 id separator_below_table
-id separator_below_tv_portfolio
 id set_primary_checkBox
 id sharedValueSet
 id sharedValueUnset
@@ -2707,6 +2712,7 @@ id top_bar
 id top_notice
 id total_pay_container
 id total_payment
+id total_purchase_amount
 id touch_outside
 id transitionToEnd
 id transitionToStart
@@ -2729,13 +2735,17 @@ id tv_buying_current
 id tv_buying_history
 id tv_buying_pending
 id tv_buying_total
+id tv_earn_rate
 id tv_easy_pay
 id tv_final_info
+id tv_gain_loss
 id tv_inspection_fee
 id tv_latest_price
 id tv_logout
 id tv_logout_check
 id tv_market_price
+id tv_market_value
+id tv_my_items
 id tv_name
 id tv_payment_method
 id tv_phone_no
@@ -2755,6 +2765,7 @@ id tv_setting
 id tv_shipping_fee
 id tv_size
 id tv_total_pay
+id tv_total_purchase
 id unchecked
 id uniform
 id unlabeled

@@ -26,7 +26,7 @@ import kotlin.properties.Delegates
 // 럭셔리, 스니커즈, 의류만 일단 일반버튼으로 바꿈
 // 이 버튼들에 대해 하나의 함수를 적용하는 방법을 모르겠음. 할수있는지도..
 
-class ShopFragment:BaseFragment<FragmentShopBinding> (FragmentShopBinding::bind, R.layout.fragment_shop), ShopView, ProdWishlistView{
+class ShopFragment:BaseFragment<FragmentShopBinding> (FragmentShopBinding::bind, R.layout.fragment_shop), ShopView{
 
     private val TAG = "log"
     lateinit var viewFlipper:ViewFlipper
@@ -169,7 +169,7 @@ class ShopFragment:BaseFragment<FragmentShopBinding> (FragmentShopBinding::bind,
         showLoadingDialog(requireContext())
 
         //관심상품 불러오기
-        ProdWishlistService(this).tryGetWishlist(userIdx=userIdx!!.toInt())
+//        ProdWishlistService(this).tryGetWishlist(userIdx=userIdx!!.toInt())
 
     }
 
@@ -254,30 +254,31 @@ class ShopFragment:BaseFragment<FragmentShopBinding> (FragmentShopBinding::bind,
     }
 
     //관심상품
-    override fun onGetWishlistSuccess(response: WishResponse) {
-        val resultSize = response.result.size
-        val wishAdded = setOf<Int>()
-        Log.d(TAG, "onGetWishlistSuccess: 결과 사아이즈 $resultSize")
-        for(i in 0..resultSize){
-            val result = response.result[i].productSizeIdx
+//    override fun onGetWishlistSuccess(response: WishResponse) {
+//        val resultSize = response.result.size
+//        val wishAdded = setOf<Int>()
+//        Log.d(TAG, "onGetWishlistSuccess: 결과 사아이즈 $resultSize")
+//        for (i in 0..resultSize) {
+//            val result = response.result[i].productSizeIdx
+//
+//        }
+//    }
 
-    }
-
-    override fun onGetWishlistFailure(message: String) {
-        Log.d(TAG, "onGetWishlistFailure 오류 : $message")
-    }
-
-    override fun onGetAllSizeListSuccess(response: SizeResponse) {
-    }
-
-    override fun onGetAllSizeListFailure(message: String) {
-    }
-
-    override fun onPostWishlistSuccess(response: AddWishResponse) {
-    }
-
-    override fun onPostWishlistFailure(message: String) {
-    }
+//    override fun onGetWishlistFailure(message: String) {
+//        Log.d(TAG, "onGetWishlistFailure 오류 : $message")
+//    }
+//
+//    override fun onGetAllSizeListSuccess(response: SizeResponse) {
+//    }
+//
+//    override fun onGetAllSizeListFailure(message: String) {
+//    }
+//
+//    override fun onPostWishlistSuccess(response: AddWishResponse) {
+//    }
+//
+//    override fun onPostWishlistFailure(message: String) {
+//    }
 
 
 
