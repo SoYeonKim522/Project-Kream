@@ -18,8 +18,12 @@ import com.example.kream.kotlin.R
 import com.example.kream.kotlin.config.BaseFragment
 import com.example.kream.kotlin.databinding.FragmentHomeBinding
 import com.example.kream.kotlin.src.main.home.models.*
+import com.example.kream.kotlin.src.main.style.StyleAdapter
+import com.example.kream.kotlin.src.main.style.StyleService
+import com.example.kream.kotlin.src.main.style.StyleView
+import com.example.kream.kotlin.src.main.style.models.StyleResponse
 
-class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind, R.layout.fragment_home) , HomeFragmentView {
+class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind, R.layout.fragment_home) , HomeFragmentView, StyleView {
 
     private val TAG = "log"
     private var currentPosition = 0
@@ -41,7 +45,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind
         binding.homeChipReleasedInfo.setChipBackgroundColorResource(R.color.white)
 
         //자동 슬라이드 배너
-        HomeService(this).tryGetMainBanner()
+        HomeService(this).tryGetMainBanner("HOME")
 
         //테마별 상품 추천
         HomeService(this).tryGetThemeProduct()
@@ -49,16 +53,19 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind
         //특정 상품 광고 이미지
         HomeService(this).tryGetAdImage()
 
+        //style picks
+        StyleService(this).tryGetStyle()
+
 
         //STYLE PICKS
-        val stylePicksList:List<SpData> = listOf(
-            SpData(R.drawable.home_style_1),
-            SpData(R.drawable.home_style_1),
-            SpData(R.drawable.home_style_1),
-        )
-        binding.homeStylePicksRecycler.layoutManager = LinearLayoutManager(requireContext()).also { it.orientation = LinearLayoutManager.HORIZONTAL }
-        binding.homeStylePicksRecycler.adapter = HomeStylePicksAdapter(stylePicksList)
-        binding.homeStylePicksRecycler.setHasFixedSize(true)
+//        val stylePicksList:List<SpData> = listOf(
+//            SpData(R.drawable.home_style_1),
+//            SpData(R.drawable.home_style_1),
+//            SpData(R.drawable.home_style_1),
+//        )
+//        binding.homeStylePicksRecycler.layoutManager = LinearLayoutManager(requireContext()).also { it.orientation = LinearLayoutManager.HORIZONTAL }
+//        binding.homeStylePicksRecycler.adapter = HomeStylePicksAdapter(stylePicksList)
+//        binding.homeStylePicksRecycler.setHasFixedSize(true)
     }
 
 
@@ -152,5 +159,19 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind
     override fun onPause() {
         super.onPause()
         viewPagerHandler.removeMessages(0)  //핸들러 중지
+    }
+
+    override fun onGetStyleSuccess(response: StyleResponse) {
+        val result = response.result.styleList
+        val stylePickAdapter = StylePickAdapter(result, context)
+        binding.homeStylePicksRecycler.layoutManager = LinearLayoutManager(requireContext()).also { it.orientation = LinearLayoutManager.HORIZONTAL }
+        binding.homeStylePicksRecycler.adapter = stylePickAdapter
+        binding.homeStylePicksRecycler.setHasFixedSize(true)
+        stylePickAdapter.notifyDataSetChanged()
+    }
+
+    override fun onGetStyleFailure(message: String) {
+        Log.d(TAG, "onGetStyleFailure: $message")
+
     }
 }

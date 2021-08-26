@@ -7,11 +7,55 @@
     android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+<!--    <com.google.android.material.appbar.AppBarLayout-->
+<!--        android:id="@+id/topBar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:fitsSystemWindows="true"-->
+<!--        app:elevation="0dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/topBar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/back_btn"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="16dp"
+                android:background="@color/transparent"
+                android:src="@drawable/back_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/add_icon"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<!--    </com.google.android.material.appbar.AppBarLayout>-->
+
+
+
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/coordinatorLayout"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/bottom_bar"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -21,44 +65,16 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:fitsSystemWindows="true"
+            app:elevation="0dp"
             app:layout_constraintBottom_toTopOf="@id/scrollView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <RelativeLayout
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical">
+                android:layout_height="wrap_content">
 
-                <ImageButton
-                    android:id="@+id/back_btn"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="2dp"
-                    android:background="@color/transparent"
-                    android:src="@drawable/back_icon" />
-
-                <ImageButton
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="18dp"
-                    android:layout_marginTop="6dp"
-                    android:background="@drawable/add_icon" />
-            </RelativeLayout>
-
-        </com.google.android.material.appbar.AppBarLayout>
-
-        <androidx.core.widget.NestedScrollView
-            android:id="@+id/scrollView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
 
                 <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/product_img_view_pager"
@@ -68,6 +84,24 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
 
                 <TextView
                     android:id="@+id/brand_name"
@@ -82,7 +116,7 @@
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/product_img_view_pager" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
                 <TextView

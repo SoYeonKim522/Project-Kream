@@ -1814,6 +1814,7 @@ int drawable abc_textfield_search_activated_mtrl_alpha 0x7f070051
 int drawable abc_textfield_search_default_mtrl_alpha 0x7f070052
 int drawable abc_textfield_search_material 0x7f070053
 int drawable abc_vector_test 0x7f070054
+int drawable add_icon 0x7f0700fd
 int drawable app_logo 0x7f070055
 int drawable app_logo_white 0x7f070056
 int drawable arrow_right_icon 0x7f070057
@@ -1868,6 +1869,7 @@ int drawable home_icon 0x7f070086
 int drawable home_icon_clicked 0x7f070087
 int drawable home_icon_onclick 0x7f070088
 int drawable home_style_1 0x7f070089
+int drawable home_style_picks_profile 0x7f0700fe
 int drawable ic_baseline_add_24 0x7f07008a
 int drawable ic_baseline_close_24 0x7f07008b
 int drawable ic_baseline_notifications_none_24 0x7f07008c
@@ -2698,6 +2700,7 @@ int id titleDividerNoCustom 0x7f0902bb
 int id title_template 0x7f0902bc
 int id toggle 0x7f0902bd
 int id top 0x7f0902be
+int id topBar 0x7f090320
 int id topPanel 0x7f0902bf
 int id top_bar 0x7f0902c0
 int id top_notice 0x7f0902c1
@@ -2780,6 +2783,7 @@ int id wrap_content_constrained 0x7f090308
 int id wrapper 0x7f090309
 int id wrong_email 0x7f09030a
 int id wrong_password 0x7f09030b
+int id wrong_phone 0x7f09031f
 int id x_left 0x7f09030c
 int id x_right 0x7f09030d
 int id zero_corner_chip 0x7f09030e
@@ -3238,6 +3242,7 @@ int string status_bar_notification_info_overflow 0x7f1000f9
 int string style_following 0x7f100102
 int string style_trending 0x7f100103
 int string total_pay 0x7f1000fa
+int string wrong_phone 0x7f100104
 int style AlertDialog_AppCompat 0x7f110000
 int style AlertDialog_AppCompat_Light 0x7f110001
 int style AndroidThemeColorAccentYellow 0x7f110002

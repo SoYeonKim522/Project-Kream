@@ -24,8 +24,8 @@ private val homeRetrofitInterface = ApplicationClass.sRetrofit.create(HomeRetrof
         })
     }
 
-    fun tryGetMainBanner(){
-        homeRetrofitInterface.getMainBanner().enqueue(object :Callback<MainBannerResponse>{
+    fun tryGetMainBanner(location:String){
+        homeRetrofitInterface.getMainBanner(location).enqueue(object :Callback<MainBannerResponse>{
             override fun onResponse(call: Call<MainBannerResponse>, response: Response<MainBannerResponse>) {
                 view.onGetMainBannerSuccess(response.body() as MainBannerResponse)
             }

@@ -1,5 +1,6 @@
 package com.example.kream.kotlin.src.main.shop
 
+import android.util.Log
 import com.example.kream.kotlin.config.ApplicationClass
 import com.example.kream.kotlin.src.main.shop.models.CategoryResponse
 import com.example.kream.kotlin.src.main.shop.models.DetailCategory
@@ -38,6 +39,7 @@ class ShopService (val view: ShopView){
                 call: Call<ProductResponse>,
                 response: Response<ProductResponse>
             ) {
+                Log.d("log", "onResponse: ${response.body()}")
                 view.onGetProductSuccess(response.body() as ProductResponse)
             }
 

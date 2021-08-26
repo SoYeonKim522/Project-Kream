@@ -4,5 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class MainBannerResult(
     @SerializedName("image") val image: String,
-    @SerializedName("position") val position: Int
+    @SerializedName("position") val position: Int,
+    @SerializedName("productIdx") val productIdx: Int
+
 )

@@ -13,7 +13,7 @@
    <androidx.constraintlayout.widget.ConstraintLayout
        android:id="@+id/top_bar"
        android:layout_width="match_parent"
-       android:layout_height="60dp"
+       android:layout_height="wrap_content"
        android:background="@color/white"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +48,7 @@
              android:text="@string/my_my_shopping"
              android:textColor="@color/white"
              android:textFontWeight="1000"
-             android:textSize="16sp"
+             android:textSize="17sp"
              android:textStyle="bold"
              app:chipEndPadding="8dp"
              app:chipMinHeight="35dp"
@@ -61,7 +61,7 @@
              android:clickable="false"
              android:text="@string/my_my_profile"
              android:textFontWeight="1000"
-             android:textSize="16sp"
+             android:textSize="17sp"
              android:textStyle="bold"
              app:chipMinHeight="40dp" />
 

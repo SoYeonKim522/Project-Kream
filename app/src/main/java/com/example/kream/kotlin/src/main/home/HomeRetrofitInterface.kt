@@ -12,7 +12,7 @@ interface HomeRetrofitInterface {
     fun getThemeProduct() : Call<ThemeProductResponse>
 
     @GET("/api/banners")
-    fun getMainBanner() : Call<MainBannerResponse>
+    fun getMainBanner(@Query ("location") location: String) : Call<MainBannerResponse>
 
     @GET("/api/products/ads")
     fun getAdImage() : Call<AdImageResponse>

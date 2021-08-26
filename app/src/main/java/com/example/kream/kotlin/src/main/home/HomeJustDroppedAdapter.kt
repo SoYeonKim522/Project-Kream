@@ -1,15 +1,18 @@
 package com.example.kream.kotlin.src.main.home
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.kream.kotlin.R
 import com.example.kream.kotlin.src.main.home.models.ThemeProductList
 import com.example.kream.kotlin.src.main.shop.ShopProductAdapter
+import com.example.kream.kotlin.src.main.shop_product.ShopProductActivity
 
 data class JdData (var productImg:Int, var brandLogo:Int, var productName:String, var price:Int)
 
@@ -35,10 +38,23 @@ class HomeJustDroppedAdapter (private val jdList: List<ThemeProductList>): Recyc
         }
         if (brandLogoUrl!=null){
             Glide.with(holder.itemView).load(brandLogoUrl).error(R.drawable.login_button).into(holder.brandLogo)
-        }
+        } else holder.brandLogo.setImageResource(R.drawable.logo_jordan)
 
         holder.productName.text = jdList[position].productName
-        holder.price.text = jdList[position].buyPrice.toString()
+        val price = jdList[position].buyPrice
+        if(price==0){
+            holder.price.text = "-"
+        } else holder.price.text = jdList[position].buyPrice.toString()
+
+        val productIdx = jdList[position].productIdx
+        holder.itemView.setOnClickListener {
+
+            val intent = Intent(holder.itemView.context, ShopProductActivity::class.java)
+            intent.putExtra("productIdx", productIdx)
+            ContextCompat.startActivity(holder.itemView.context, intent, null)
+
+        }
+
     }
 
     override fun getItemCount(): Int = jdList.size

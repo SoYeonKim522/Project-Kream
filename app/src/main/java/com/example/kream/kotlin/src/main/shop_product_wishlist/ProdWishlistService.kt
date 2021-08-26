@@ -4,6 +4,7 @@ import com.example.kream.kotlin.config.ApplicationClass
 import com.example.kream.kotlin.src.main.shop_product_wishlist.models.AddWishRequest
 import com.example.kream.kotlin.src.main.shop_product_wishlist.models.AddWishResponse
 import com.example.kream.kotlin.src.main.shop_product_wishlist.models.SizeResponse
+import com.example.kream.kotlin.src.main.shop_product_wishlist.models.WishResponse
 import retrofit2.Call
 import retrofit2.Response
 import javax.security.auth.callback.Callback
@@ -37,7 +38,19 @@ class ProdWishlistService (val view: ProdWishlistView) {
 
     }
 
+    fun tryGetWishlist(userIdx:Int){
+        wishlistInterface.getWishList(userIdx).enqueue(object :retrofit2.Callback<WishResponse>{
+            override fun onResponse(call: Call<WishResponse>, response: Response<WishResponse>) {
+                view.onGetWishlistSuccess(response.body() as WishResponse)
+            }
 
+            override fun onFailure(call: Call<WishResponse>, t: Throwable) {
+                view.onGetWishlistFailure(t.message ?: "통신 오류")
+
+            }
+
+        })
+    }
 
 
 

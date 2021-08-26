@@ -308,7 +308,7 @@
                  android:layout_height="wrap_content"
                  android:text="@string/home_street_wear"
                  style="@style/home_section_title"
-                 app:layout_constraintTop_toBottomOf="@+id/ad_image_4" />
+                 app:layout_constraintTop_toBottomOf="@+id/ad_image_5" />
             <TextView
                 android:id="@+id/small_leathers_kor"
                 android:layout_width="match_parent"

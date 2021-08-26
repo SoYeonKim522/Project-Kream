@@ -17,7 +17,7 @@ class StyleAdapter(private val styleList:List<StyleList>, val context: Context?)
 
     class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
         val image = itemView.findViewById<ImageView>(R.id.image)
-        val profilePic = itemView.findViewById<ImageView>(R.id.product_img)
+        val profilePic = itemView.findViewById<ImageView>(R.id.profile_pic)
         val userId = itemView.findViewById<TextView>(R.id.user_id)
         val content = itemView.findViewById<TextView>(R.id.content)
         val likedCnt = itemView.findViewById<TextView>(R.id.liked_cnt)
@@ -35,9 +35,9 @@ class StyleAdapter(private val styleList:List<StyleList>, val context: Context?)
             Glide.with(holder.itemView).load(imageUrl).error(R.drawable.login_button).into(holder.image)
         }
         val profileImgUrl= styleList[position].userProfileImage
-        if(profileImgUrl!=null){
+        if(profileImgUrl!=null && profileImgUrl.isNotEmpty()){
             Glide.with(holder.itemView).load(profileImgUrl).error(R.drawable.login_button).into(holder.profilePic)
-        }
+        } else holder.profilePic.setImageResource(R.drawable.my_default_profile_pic)
         holder.userId.text = styleList[position].userNickName
         holder.content.text = styleList[position].content
         holder.likedCnt.text = styleList[position].liked.toString()

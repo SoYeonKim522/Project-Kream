@@ -11,5 +11,5 @@ data class StyleList(
     @SerializedName("liked") val liked: Int,
     @SerializedName("products") val products: List<StyleProduct>,
     @SerializedName("userNickName") val userNickName: String,
-    @SerializedName("userProfileImage") val userProfileImage: Any
+    @SerializedName("userProfileImage") val userProfileImage: String
 )

@@ -1,7 +1,15 @@
 [
     {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_add_icon.png.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\add_icon.png"
+    },
+    {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_post_icon.png.flat",
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\post_icon.png"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_home_style_picks_profile.xml.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\home_style_picks_profile.xml"
     },
     {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shop_banner2.png.flat",
@@ -16,12 +24,12 @@
         "source": "D:\\Kream\\app\\src\\main\\res\\layout\\prod_info_recycler_item.xml"
     },
     {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_cat_scott.png.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\cat_scott.png"
-    },
-    {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_purchase_toggle.png.flat",
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\purchase_toggle.png"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_cat_scott.png.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\cat_scott.png"
     },
     {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_app_logo_white.png.flat",
@@ -56,20 +64,20 @@
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\cat_thom_browne.png"
     },
     {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_login_hide_password.png.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\login_hide_password.png"
-    },
-    {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_checkout_check1.png.flat",
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\checkout_check1.png"
     },
     {
-        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_my_page.xml.flat",
-        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\fragment_my_page.xml"
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_login_hide_password.png.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\login_hide_password.png"
     },
     {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_purchase_done.xml.flat",
         "source": "D:\\Kream\\app\\src\\main\\res\\layout\\activity_purchase_done.xml"
+    },
+    {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_my_page.xml.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\fragment_my_page.xml"
     },
     {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_main_btm_nav_item_color.xml.flat",

@@ -10,22 +10,31 @@ import android.widget.*
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kream.kotlin.R
+import com.example.kream.kotlin.config.ApplicationClass
 import com.example.kream.kotlin.config.BaseFragment
 import com.example.kream.kotlin.databinding.FragmentShopBinding
 import com.example.kream.kotlin.src.main.shop.models.*
 import com.example.kream.kotlin.src.main.shop_product.ShopProductActivity
+import com.example.kream.kotlin.src.main.shop_product_wishlist.ProdWishlistService
+import com.example.kream.kotlin.src.main.shop_product_wishlist.ProdWishlistView
+import com.example.kream.kotlin.src.main.shop_product_wishlist.models.AddWishResponse
+import com.example.kream.kotlin.src.main.shop_product_wishlist.models.SizeResponse
+import com.example.kream.kotlin.src.main.shop_product_wishlist.models.WishResponse
+import kotlin.properties.Delegates
 
 // 일단 토글버튼 -> 버튼으로 바꾸려고 함. 토글버튼에서 oncheckedlistener 랑 onclick리스너랑 같이 동작이 안되어서
 // 럭셔리, 스니커즈, 의류만 일단 일반버튼으로 바꿈
 // 이 버튼들에 대해 하나의 함수를 적용하는 방법을 모르겠음. 할수있는지도..
 
-class ShopFragment:BaseFragment<FragmentShopBinding> (FragmentShopBinding::bind, R.layout.fragment_shop), ShopView {
+class ShopFragment:BaseFragment<FragmentShopBinding> (FragmentShopBinding::bind, R.layout.fragment_shop), ShopView, ProdWishlistView{
 
     private val TAG = "log"
     lateinit var viewFlipper:ViewFlipper
+    val userIdx = ApplicationClass.sSharedPreferences.getString(ApplicationClass.USER_IDX, "")
+    var productIdx by Delegates.notNull<Int>()
 
 //    private val catBtnList:ArrayList<ToggleButton> = arrayListOf(binding.shopFilterSneakers, binding.shopFilterClothes, binding.shopFilterAcc, binding.shopFilterLife, binding.shopFilterTech)
-private var catBtnList: ArrayList<Button> = arrayListOf()
+//private var catBtnList: ArrayList<Button> = arrayListOf()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -50,33 +59,73 @@ private var catBtnList: ArrayList<Button> = arrayListOf()
             viewFlipper.setOutAnimation(requireContext(), android.R.anim.slide_out_right)
 
         }
-//        catBtnList= arrayListOf(binding.shopFilterSneakers, binding.shopFilterClothes, binding.shopFilterAcc, binding.shopFilterLife, binding.shopFilterTech)
-        catBtnList= arrayListOf(binding.shopFilterSneakers, binding.shopFilterClothes)
+        val catBtnList= arrayListOf(binding.shopFilterSneakers, binding.shopFilterClothes, binding.shopFilterAcc, binding.shopFilterLife, binding.shopFilterTech)
+        var clickedCatList = arrayListOf<ToggleButton>()
 
 
         //필터 버튼 토글 효과
+        for(btn in catBtnList){
+            btn.setOnClickListener {
+                for(btns in catBtnList){
+                    btns.setBackgroundResource(R.drawable.shop_filter_button_unclicked)
+                    btns.setTextColor(Color.BLACK)
+                    btns.isSelected=false
+                    clickedCatList.remove(btns)
+                    Log.d(TAG, "onViewCreated: 지운 다음 배열 갯수 ${clickedCatList.size}")
+                }
+                btn.isSelected=true
+                clickedCatList.add(btn)
+                Log.d(TAG, "onViewCreated: 배열 갯수 ${clickedCatList.size}")
+                btn.setBackgroundResource(R.drawable.shop_filter_button_clicked)
+                btn.setTextColor(Color.parseColor("#df614e"))
+                when(btn.id){
+                    R.id.shop_filter_sneakers -> ShopService(this).tryGetProductCategory("true", 0)
+                    R.id.shop_filter_clothes -> ShopService(this).tryGetProductCategory("true", 1)
+                    R.id.shop_filter_acc -> ShopService(this).tryGetProductCategory("true", 2)
+                    R.id.shop_filter_life -> ShopService(this).tryGetProductCategory("true", 3)
+                    R.id.shop_filter_tech -> ShopService(this).tryGetProductCategory("true", 4)
+                }
 
-//        for(btn in catBtnList){
-//            btn.setOnClickListener { filterBtnListener(btn) }
+                if (clickedCatList.size==0){
+                    ShopService(this).tryGetProductCategory("true", 0)
+                    binding.shopFilterIcon.setBackgroundResource(R.drawable.shop_filter_icon_unclicked)
+                } else {
+                    binding.shopFilterIcon.setBackgroundResource(R.drawable.shop_filter_icon_clicked)
+                }
+
+            }
+        }
+
+
+
+//        binding.shopFilterSneakers.setOnClickListener {
+//            for(btn in catBtnList){
+//                btn.setBackgroundResource(R.drawable.shop_filter_button_unclicked)
+//                btn.setTextColor(Color.BLACK)
+//                Log.d(TAG, "onViewCreated: 포문")
+//                Log.d(TAG, "onViewCreated: ${btn.isSelected}")
+//                Log.d(TAG, "onViewCreated: ${btn.isPressed}")
+//            }
+////            binding.shopFilterClothes.isPressed=false
+//            binding.shopFilterSneakers.isSelected=true
+//            binding.shopFilterSneakers.setBackgroundResource(R.drawable.shop_filter_button_clicked)
+//            binding.shopFilterSneakers.setTextColor(Color.parseColor("#df614e"))
+//            ShopService(this).tryGetProductCategory("true", 0)
 //        }
-        binding.shopFilterSneakers.setOnClickListener {
-            for(btn in catBtnList){
-                btn.isSelected=false
-            }
-            binding.shopFilterSneakers.isSelected=true
-            binding.shopFilterSneakers.setBackgroundResource(R.drawable.shop_filter_button_clicked)
-            binding.shopFilterSneakers.setTextColor(Color.parseColor("#df614e"))
-            ShopService(this).tryGetProductCategory("true", 1)
-        }
-        binding.shopFilterClothes.setOnClickListener {
-            for(btn in catBtnList){
-                btn.isSelected=false
-            }
-            binding.shopFilterClothes.isSelected=true
-            binding.shopFilterClothes.setBackgroundResource(R.drawable.shop_filter_button_clicked)
-            binding.shopFilterClothes.setTextColor(Color.parseColor("#df614e"))
-            ShopService(this).tryGetProductCategory("true", 2)
-        }
+//        binding.shopFilterClothes.setOnClickListener {
+//            for(btn in catBtnList){
+//                btn.setBackgroundResource(R.drawable.shop_filter_button_unclicked)
+//                btn.setTextColor(Color.BLACK)
+//                Log.d(TAG, "onViewCreated: 포문")
+//                Log.d(TAG, "onViewCreated: ${btn.isSelected}")
+//
+//            }
+////            binding.shopFilterSneakers.isPressed=false
+//            binding.shopFilterClothes.isSelected=true
+//            binding.shopFilterClothes.setBackgroundResource(R.drawable.shop_filter_button_clicked)
+//            binding.shopFilterClothes.setTextColor(Color.parseColor("#df614e"))
+//            ShopService(this).tryGetProductCategory("true", 1)
+//        }
 
 
 //        binding.shopFilterLuxury.setOnCheckedChangeListener(ToggleListener())
@@ -119,10 +168,8 @@ private var catBtnList: ArrayList<Button> = arrayListOf()
         ShopService(this).tryGetProducts()
         showLoadingDialog(requireContext())
 
-        binding.shopFilterIcon.setOnClickListener {
-            val intent = Intent(requireContext(), ShopProductActivity::class.java)
-            startActivity(intent)
-        }
+        //관심상품 불러오기
+        ProdWishlistService(this).tryGetWishlist(userIdx=userIdx!!.toInt())
 
     }
 
@@ -147,7 +194,7 @@ private var catBtnList: ArrayList<Button> = arrayListOf()
     inner class ToggleListener: CompoundButton.OnCheckedChangeListener{
         override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
             //catBtnList= arrayListOf(binding.shopFilterSneakers, binding.shopFilterClothes, binding.shopFilterAcc, binding.shopFilterLife, binding.shopFilterTech)
-            catBtnList= arrayListOf(binding.shopFilterSneakers, binding.shopFilterClothes)
+//            catBtnList= arrayListOf(binding.shopFilterSneakers, binding.shopFilterClothes)
 
             //아래껄 하면 토글이 안됨. 선택만 되고 안꺼짐
 //            for(btn in catBtnList){
@@ -197,12 +244,41 @@ private var catBtnList: ArrayList<Button> = arrayListOf()
         binding.shopRecyclerProduct.setHasFixedSize(true)
         prodAdapter.notifyDataSetChanged()
         dismissLoadingDialog()
+
+        productIdx = result[0].idx
     }
 
     override fun onGetProductFailure(message: String) {
         showCustomToast("오류 : $message")
         dismissLoadingDialog()
     }
+
+    //관심상품
+    override fun onGetWishlistSuccess(response: WishResponse) {
+        val resultSize = response.result.size
+        val wishAdded = setOf<Int>()
+        Log.d(TAG, "onGetWishlistSuccess: 결과 사아이즈 $resultSize")
+        for(i in 0..resultSize){
+            val result = response.result[i].productSizeIdx
+
+    }
+
+    override fun onGetWishlistFailure(message: String) {
+        Log.d(TAG, "onGetWishlistFailure 오류 : $message")
+    }
+
+    override fun onGetAllSizeListSuccess(response: SizeResponse) {
+    }
+
+    override fun onGetAllSizeListFailure(message: String) {
+    }
+
+    override fun onPostWishlistSuccess(response: AddWishResponse) {
+    }
+
+    override fun onPostWishlistFailure(message: String) {
+    }
+
 
 
 }

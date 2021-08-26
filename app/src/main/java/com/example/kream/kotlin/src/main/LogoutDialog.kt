@@ -25,7 +25,7 @@ class LogoutDialog(context:Context) {
 
     fun showLogoutDialog(){
         logoutDialog.setContentView(R.layout.my_logout_dialog)
-        logoutDialog.window!!.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT)
+//        logoutDialog.window!!.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT)
         logoutDialog.setCanceledOnTouchOutside(true)
         logoutDialog.setCancelable(true)
         logoutDialog.show()

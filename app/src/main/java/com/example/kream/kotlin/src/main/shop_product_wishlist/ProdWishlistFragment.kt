@@ -15,6 +15,7 @@ import com.example.kream.kotlin.src.main.shop_product_by_size.BuyPriceAdapter
 import com.example.kream.kotlin.src.main.shop_product_wishlist.models.AddWishRequest
 import com.example.kream.kotlin.src.main.shop_product_wishlist.models.AddWishResponse
 import com.example.kream.kotlin.src.main.shop_product_wishlist.models.SizeResponse
+import com.example.kream.kotlin.src.main.shop_product_wishlist.models.WishResponse
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class ProdWishlistFragment : BottomSheetDialogFragment(), ProdWishlistView {
@@ -66,6 +67,7 @@ class ProdWishlistFragment : BottomSheetDialogFragment(), ProdWishlistView {
                 setFragmentResult("wishKey", bundle)
                 val request = AddWishRequest(productSizeIdx)
                 ProdWishlistService(this@ProdWishlistFragment).tryPostWishlist(productSizeIdx, request)
+                Log.d(TAG, "onWishClick: $request")
             }
         })
 
@@ -81,6 +83,14 @@ class ProdWishlistFragment : BottomSheetDialogFragment(), ProdWishlistView {
 
     override fun onPostWishlistFailure(message: String) {
         Log.d(TAG, "onPostWishlistFailure: $message")
+    }
+
+    override fun onGetWishlistSuccess(response: WishResponse) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onGetWishlistFailure(message: String) {
+        TODO("Not yet implemented")
     }
 
 

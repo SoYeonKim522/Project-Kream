@@ -3,6 +3,7 @@ package com.example.kream.kotlin.src.main.shop_product_wishlist
 import com.example.kream.kotlin.src.main.shop_product_wishlist.models.AddWishRequest
 import com.example.kream.kotlin.src.main.shop_product_wishlist.models.AddWishResponse
 import com.example.kream.kotlin.src.main.shop_product_wishlist.models.SizeResponse
+import com.example.kream.kotlin.src.main.shop_product_wishlist.models.WishResponse
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -15,5 +16,8 @@ interface ProdWishlistInterface {
 
     @POST("/api/products/{productIdx}/like")
     fun postWishlist(@Path("productIdx") productIdx: Int, @Body params : AddWishRequest):Call<AddWishResponse>
+
+    @GET("/api/users/{userIdx}/likes")
+    fun getWishList(@Path("userIdx") userIdx:Int) : Call<WishResponse>
 
 }
