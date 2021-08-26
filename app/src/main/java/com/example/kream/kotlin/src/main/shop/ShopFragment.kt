@@ -117,6 +117,7 @@ private var catBtnList: ArrayList<Button> = arrayListOf()
         ShopService(this).tryGetProductCategory("true", 0)
         //초기화면 전체 상품 리스트 불러오기
         ShopService(this).tryGetProducts()
+        showLoadingDialog(requireContext())
 
         binding.shopFilterIcon.setOnClickListener {
             val intent = Intent(requireContext(), ShopProductActivity::class.java)
@@ -171,6 +172,7 @@ private var catBtnList: ArrayList<Button> = arrayListOf()
     //세부카테고리 API
     override fun onGetProdCategorySuccess(response: CategoryResponse, index:Int) {
         showCategoryData(response.result.categoryList[index].detailCategoryList)
+        dismissLoadingDialog()
     }
 
         private fun showCategoryData(result: List<DetailCategory>){
@@ -183,6 +185,7 @@ private var catBtnList: ArrayList<Button> = arrayListOf()
 
     override fun onGetProdCategoryFailure(message: String) {
         showCustomToast("오류 : $message")
+        dismissLoadingDialog()
     }
 
     //전체 상품 가져오기 API
@@ -193,10 +196,12 @@ private var catBtnList: ArrayList<Button> = arrayListOf()
         binding.shopRecyclerProduct.adapter = prodAdapter
         binding.shopRecyclerProduct.setHasFixedSize(true)
         prodAdapter.notifyDataSetChanged()
+        dismissLoadingDialog()
     }
 
     override fun onGetProductFailure(message: String) {
         showCustomToast("오류 : $message")
+        dismissLoadingDialog()
     }
 
 

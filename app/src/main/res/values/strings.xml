@@ -133,6 +133,7 @@
     <string name="name_ph">수령인의 이름</string>
     <string name="phone_no">휴대폰 번호</string>
     <string name="phone_no_ph">- 없이 입력</string>
+    <string name="wrong_phone">정확한 휴대폰 번호를 입력해주세요.</string>
     <string name="post_code">우편번호</string>
     <string name="post_code_ph">우편번호를 입력하세요</string>
     <string name="address_1">주소</string>

@@ -41,7 +41,6 @@ class BuyPriceAdapter(private var sizeList:List<BuyPriceResult>, val context: Co
         val view = LayoutInflater.from(parent.context).inflate(R.layout.prod_size_recycler_item, parent, false)
         Log.d(TAG, "onCreateViewHolder: 초기 $clickedSize")
         return ViewHolder(view)
-
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -73,7 +72,6 @@ class BuyPriceAdapter(private var sizeList:List<BuyPriceResult>, val context: Co
         } else {
             holder.size.setTypeface(null, Typeface.NORMAL)
             holder.price.setTypeface(null, Typeface.NORMAL)
-
         }
 
 
@@ -88,10 +86,10 @@ class BuyPriceAdapter(private var sizeList:List<BuyPriceResult>, val context: Co
             //인터페이스
             listener?.onSizeClick(holder.itemView, sizetxt, priceBySize, bidSaleIdx, productSizeIdx)
         }
+
     }
 
     override fun getItemCount(): Int  = sizeList.size
-
 
 
 }

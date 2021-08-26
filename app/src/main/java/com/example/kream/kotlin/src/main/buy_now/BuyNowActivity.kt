@@ -22,8 +22,10 @@ class BuyNowActivity:BaseActivity<ActivityBuyNowBinding> (ActivityBuyNowBinding:
     private var addressAdded = false
     private var addressIdx = 0
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+
+
+    override fun onResume() {
+        super.onResume()
 
         //'구매 전 체크' 액티비티에서 데이터 받기
         val prodName = intent.getStringExtra("prodName")
@@ -61,19 +63,19 @@ class BuyNowActivity:BaseActivity<ActivityBuyNowBinding> (ActivityBuyNowBinding:
 
         //결제 화면으로 이동 & api 호출
         binding.continueBuyBtn.setOnClickListener {
-            val intent = Intent(this, CheckoutActivity::class.java)
-            intent.putExtra("size", size)
-            intent.putExtra("price", price)
-            intent.putExtra("prodName", prodName)
-            intent.putExtra("modelNo", modelNo)
-            intent.putExtra("imageUrl", imageUrl)
-            Log.d(TAG, "onCreate: buy now 에서 데이터 패스 $size, $price, $prodName, $modelNo")
+            //여기서 말고 구매등록 api 응답값 통해서 전달 예정
+//            val intent = Intent(this, CheckoutActivity::class.java)
+//            intent.putExtra("size", size)
+//            intent.putExtra("price", price)
+//            intent.putExtra("prodName", prodName)
+//            intent.putExtra("modelNo", modelNo)
+//            intent.putExtra("imageUrl", imageUrl)
 
             val postRequest = BuyNowRequest(targetBidSaleIdx = bidSaleIdx!!.toInt(),  purchasePrice = price, point = "FALSE", inspectionFee=0, shippingFee=0,
             totalPrice=price, addressIdx=addressIdx, productSizeIdx=productSizeIdx)
             Log.d(TAG, "postRequest - : $postRequest")//works
             BuyNowService(this).tryPostBuyNowRequest(productIdx = productIdx, postRequest)
-
+            showLoadingDialog(this)
             startActivity(intent)
         }
 
@@ -95,21 +97,29 @@ class BuyNowActivity:BaseActivity<ActivityBuyNowBinding> (ActivityBuyNowBinding:
     override fun onRestart() {
         super.onRestart()
         Log.d(TAG, "onRestart: ")
-        val name = intent.getStringExtra("name")
-        val idx = intent.getStringExtra("addressIdx")
 
-//        val address = intent.getStringExtra("address1")
-        Log.d(TAG, "onCreate 받아온 주소 이름: $name $idx")
+//        val name = intent.getStringExtra("name")
+//        addressIdx = intent.getIntExtra("addressIdx",-1)
+        val name = ApplicationClass.sSharedPreferences.getString("addressName", null)
+        addressIdx = ApplicationClass.sSharedPreferences.getInt("addressIdx", -1)
 
-        BuyNowService(this).tryGetAddress(userIdx!!.toInt())
+        Log.d(TAG, "onRestart - sp 주소 이름: $name $addressIdx") //null
+
+        if (name!=null && addressIdx!=-1){
+            Log.d(TAG, "onRestart: 저장된 주소 불러오기 호출")
+            BuyNowService(this).tryGetAddress(userIdx!!.toInt())
+        }
+
     }
 
     override fun onGetAddressSuccess(response: AddressResponse) {
+        //result[i] 로 for 문 돌리면서 idx 같을 경우 찾는걸로 수정해야
         val result = response.result[0]
+
         Log.d(TAG, "onGetAddressSuccess: 결과 $result")
         val name = result.name
         val address = result.address
-        addressIdx = result.idx
+//        addressIdx = result.idx
         val address2 = result.addressDetail
         val postcode = result.zipCode
         val phoneNo = result.phone
@@ -125,32 +135,68 @@ class BuyNowActivity:BaseActivity<ActivityBuyNowBinding> (ActivityBuyNowBinding:
             binding.continueBuyBtn.isClickable = true
             binding.continueBuyBtn.isEnabled = true
 
-            //다음 화면으로 배송지 정보 전달
-//            intent.putExtra("name", name)
-//            intent.putExtra("address1", address)
-//            intent.putExtra("address2", address2)
-//            intent.putExtra("postcode", postcode)
-//            intent.putExtra("phoneNo", phoneNo)
-//            Log.d(TAG, "onGetAddressSuccess: 배송지 전달 $name $address")
 
         } else{
             binding.continueBuyBtn.setBackgroundResource(R.drawable.login_button)
             binding.continueBuyBtn.isClickable = false
             binding.continueBuyBtn.isEnabled = false
         }
-        
+
     }
 
     override fun onGetAddressFailure(message: String) {
         Log.d(TAG, "onGetAddressFailure: $message")
+
     }
 
     override fun onPostBuyNowSuccess(response: BuyNowResponse) {
+        val result = response.result
+        val bidPurchaseIdx = result.bidPurchaseIdx
+        val targetBidSaleIdx = result.targetBidSaleIdx
+        val productImg = result.productThumbnail
+        val modelNo = result.productModelNo
+        val productName = result.productName
+        val size = result.productSize
+        val addressName = result.addressName
+        val address1 = result.address
+        val address2 = result.addressDetail
+        val postcode = result.zipCode
+        val totalPrice = result.totalPrice
+        val buyNowPrice = result.buyPrice
+        val inspectionFee = result.inspectionFee
+        val shippingFee = result.shippingFee
+        val phoneNo = result.addressPhone
+
+        Log.d(TAG, "onPostBuyNowSuccess:등록 - 응답코드 ${response.code}")
+
+        intent = Intent(this, CheckoutActivity::class.java)
+        intent.putExtra("bidPurchaseIdx", bidPurchaseIdx)
+        intent.putExtra("targetBidSaleIdx", targetBidSaleIdx)
+        intent.putExtra("productImg", productImg)
+        intent.putExtra("modelNo", modelNo)
+        intent.putExtra("productName", productName)
+        intent.putExtra("size", size)
+        intent.putExtra("addressName", addressName)
+        intent.putExtra("address1", address1)
+        intent.putExtra("address2", address2)
+        intent.putExtra("postcode", postcode)
+        intent.putExtra("totalPrice", totalPrice)
+        intent.putExtra("buyNowPrice", buyNowPrice)
+        intent.putExtra("inspectionFee", inspectionFee)
+        intent.putExtra("shippingFee", shippingFee)
+        intent.putExtra("addressPhone", phoneNo)
+
+        startActivity(intent)
+
         showCustomToast("구매 등록 완료. 결제로 이동")
+        dismissLoadingDialog()
+
     }
 
     override fun onPostBuyNowFailure(message: String) {
         Log.d(TAG, "onPostBuyNowFailure: $message")
+        dismissLoadingDialog()
+
     }
 
 

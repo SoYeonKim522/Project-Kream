@@ -82,6 +82,12 @@ class ShopProductActivity : BaseActivity<ActivityShopProductBinding> (ActivitySh
             if(sizePassed!=null){ //사이즈 선택된 경우
                 Log.d(TAG, "onCreate: 사이즈 선택됨")
                 binding.buyButton.setOnClickListener {
+                    val jwt = ApplicationClass.sSharedPreferences.getString(ApplicationClass.X_ACCESS_TOKEN, "")
+                    if (jwt!!.isEmpty()){
+                        val intent = Intent(this, LoginActivity::class.java)
+                        startActivity(intent)
+                        Log.d(TAG, "onCreate: 로그인으로 이동")
+                    }
                     val intent = Intent(this, BuyCheckActivity::class.java)
                     intent.putExtra("size", sizePassed)
                     intent.putExtra("price", pricePassed)

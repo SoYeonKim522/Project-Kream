@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="220dp"
         android:layout_marginBottom="10dp"
-        android:src="@drawable/jordan_test"
+        android:src="@drawable/login_button"
         app:layout_constraintBottom_toTopOf="@id/brand_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

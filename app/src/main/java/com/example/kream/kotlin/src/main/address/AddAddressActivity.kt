@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.view.View
 import androidx.core.content.ContextCompat
 import com.example.kream.kotlin.R
 import com.example.kream.kotlin.config.ApplicationClass
@@ -25,11 +26,6 @@ class AddAddressActivity:BaseActivity<ActivityAddAddressBinding>(ActivityAddAddr
     private var restChecked = false
 
     private var primaryCheck = "FALSE"
-//    var name  : String = ""
-//    var phoneNo  : String= ""
-//    var postCode  : String= ""
-//    var address1  : String= ""
-//    var address2  : String= ""
     
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,8 +34,6 @@ class AddAddressActivity:BaseActivity<ActivityAddAddressBinding>(ActivityAddAddr
         activateSaveBtn(phoneNoChecked, restChecked)
 
         val phoneNoValidation = "\\d{11}"
-
-
 
         fun checkPhoneNo(): Boolean {
             var phoneNo = binding.etPhoneNo.text.toString()
@@ -50,6 +44,7 @@ class AddAddressActivity:BaseActivity<ActivityAddAddressBinding>(ActivityAddAddr
                     ContextCompat.getColorStateList(applicationContext, R.color.black)
                 if(validate && phoneNo.isNotEmpty()){
                     phoneNoChecked = true
+                    binding.wrongPhone.visibility= View.INVISIBLE
                 }
                 activateSaveBtn(phoneNoChecked, restChecked)
                 return true
@@ -58,6 +53,7 @@ class AddAddressActivity:BaseActivity<ActivityAddAddressBinding>(ActivityAddAddr
                 binding.etPhoneNo.backgroundTintList =
                     ContextCompat.getColorStateList(applicationContext, R.color.red_invalid)
                 phoneNoChecked = false
+                binding.wrongPhone.visibility= View.VISIBLE
                 activateSaveBtn(phoneNoChecked, restChecked)
                 return false
             }
@@ -116,12 +112,12 @@ class AddAddressActivity:BaseActivity<ActivityAddAddressBinding>(ActivityAddAddr
 
             Log.d(TAG, "onCreate: 클릭!!!")
             val postRequest = PostAddressRequest(address = address1, addressDetail = address2, defaultAddress = primaryCheck, name = name, phone = phoneNo, zipCode = postCode)
-            Log.d(TAG, "주소 저장 버튼 눌렀을때 :  $postRequest")
+            Log.d(TAG, "주소 저장 버튼 눌렀을때 :  $postRequest")  //works
 
             //api 함수 호출
             AddAddressService(this).tryPostAddress(userIdx!!.toInt(), postRequest)
             //데이터 전달 -- X  (api 통해 조회하는걸로 하기)
-            val intent = Intent(this, BuyNowActivity::class.java)
+//            val intent = Intent(this, BuyNowActivity::class.java)
 //            val intent = Intent()
 //            intent.putExtra("name", name)
 //            intent.putExtra("phoneNo", phoneNo)
@@ -134,7 +130,7 @@ class AddAddressActivity:BaseActivity<ActivityAddAddressBinding>(ActivityAddAddr
 //            startActivityForResult(intent, 1)
 
 
-            finish()  //-> 즉시구매하기 화면에서 주문상품 데이터 유지함
+            //finish()  //-> 즉시구매하기 화면에서 주문상품 데이터 유지함
 
         }
 
@@ -148,10 +144,15 @@ class AddAddressActivity:BaseActivity<ActivityAddAddressBinding>(ActivityAddAddr
         if(response.code==1000){
             showCustomToast("추가 완료")
             val result = response.result
-            val intent = Intent(this, BuyNowActivity::class.java)
-            intent.putExtra("name", result.name)
-            intent.putExtra("addressIdx", result.idx)
-            Log.d(TAG, "onPostAddressSuccess이;름이랑 id: ${result.name}  ${result.idx}")
+            ApplicationClass.editor.putString("addressName", result.name).apply()
+            ApplicationClass.editor.putInt("addressIdx", result.idx).apply()
+//            val intent = Intent(this, BuyNowActivity::class.java)
+//            intent.putExtra("name", result.name)
+//            intent.putExtra("addressIdx", result.idx)  //start activity 를 하는게 아니라서 intent로 전달 불가
+            Log.d(TAG, "onPostAddressSuccess 이름이랑 주소id: ${result.name}  ${result.idx}")  //works
+            super.finish()
+        } else if(response.code==3021){
+            showCustomToast("기본 배송지 등록이 필요합니다")
         }
 
     }

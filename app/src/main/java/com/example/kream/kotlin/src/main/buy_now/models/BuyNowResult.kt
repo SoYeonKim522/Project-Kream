@@ -17,5 +17,6 @@ data class BuyNowResult(
     @SerializedName("status") val status: String,
     @SerializedName("targetBidSaleIdx") val targetBidSaleIdx: Int,
     @SerializedName("totalPrice") val totalPrice: Int,
-    @SerializedName("zipCode") val zipCode: String
+    @SerializedName("zipCode") val zipCode: String,
+    @SerializedName("addressPhone") val addressPhone: String
 )
