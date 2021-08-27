@@ -31,10 +31,10 @@
         <item name="background">@color/transparent</item>
     </style>
 
-    <style name="bottomFragAnimation" parent="android:Animation">
-        <item name="android:windowEnterAnimation">@anim/slide_up</item>
-        <item name="android:windowExitAnimation">@anim/slide_down</item>
-    </style>
+<!--    <style name="bottomFragAnimation" parent="android:Animation">-->
+<!--        <item name="android:windowEnterAnimation">@anim/slide_up</item>-->
+<!--        <item name="android:windowExitAnimation">@anim/slide_down</item>-->
+<!--    </style>-->
 
 
     <style name="home_section_title" parent="TextAppearance.AppCompat">

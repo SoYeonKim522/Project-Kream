@@ -36,6 +36,18 @@ public final class FragmentMyPageBinding implements ViewBinding {
   public final ChipGroup chipGroup;
 
   @NonNull
+  public final TextView earnRate;
+
+  @NonNull
+  public final TextView gainLoss;
+
+  @NonNull
+  public final TextView marketValue;
+
+  @NonNull
+  public final TextView marketValueCnt;
+
+  @NonNull
   public final TextView myBio;
 
   @NonNull
@@ -120,19 +132,25 @@ public final class FragmentMyPageBinding implements ViewBinding {
   public final View sellingSeparator;
 
   @NonNull
+  public final View separatorBelowMyPortfolio;
+
+  @NonNull
   public final View separatorBelowName;
 
   @NonNull
   public final View separatorBelowPinBar;
 
   @NonNull
+  public final View separatorBelowPortfolioContainer;
+
+  @NonNull
   public final View separatorBelowSellingCard;
 
   @NonNull
-  public final View separatorBelowTvPortfolio;
+  public final ConstraintLayout topBar;
 
   @NonNull
-  public final ConstraintLayout topBar;
+  public final TextView totalPurchaseAmount;
 
   @NonNull
   public final TextView tvBuying;
@@ -148,6 +166,18 @@ public final class FragmentMyPageBinding implements ViewBinding {
 
   @NonNull
   public final TextView tvBuyingTotal;
+
+  @NonNull
+  public final TextView tvEarnRate;
+
+  @NonNull
+  public final TextView tvGainLoss;
+
+  @NonNull
+  public final TextView tvMarketValue;
+
+  @NonNull
+  public final TextView tvMyItems;
 
   @NonNull
   public final TextView tvPortfolio;
@@ -168,37 +198,48 @@ public final class FragmentMyPageBinding implements ViewBinding {
   public final TextView tvSellingTotal;
 
   @NonNull
+  public final TextView tvTotalPurchase;
+
+  @NonNull
   public final CoordinatorLayout wrapper;
 
   private FragmentMyPageBinding(@NonNull ConstraintLayout rootView,
       @NonNull AppBarLayout appBarLayout, @NonNull TextView buyingMore,
-      @NonNull View buyingSeparator, @NonNull ChipGroup chipGroup, @NonNull TextView myBio,
-      @NonNull ConstraintLayout myBuyingCard, @NonNull TextView myBuyingCurrentCnt,
-      @NonNull TextView myBuyingHistoryCnt, @NonNull TextView myBuyingPendingCnt,
-      @NonNull TextView myBuyingTotalCnt, @NonNull ImageView myCameraIcon,
-      @NonNull ImageView myEditProfileBtn, @NonNull TextView myMembershipLevel,
-      @NonNull TextView myName, @NonNull TextView myNickname, @NonNull TextView myPoints,
-      @NonNull Chip myProfileChip, @NonNull ImageView myProfilePic,
+      @NonNull View buyingSeparator, @NonNull ChipGroup chipGroup, @NonNull TextView earnRate,
+      @NonNull TextView gainLoss, @NonNull TextView marketValue, @NonNull TextView marketValueCnt,
+      @NonNull TextView myBio, @NonNull ConstraintLayout myBuyingCard,
+      @NonNull TextView myBuyingCurrentCnt, @NonNull TextView myBuyingHistoryCnt,
+      @NonNull TextView myBuyingPendingCnt, @NonNull TextView myBuyingTotalCnt,
+      @NonNull ImageView myCameraIcon, @NonNull ImageView myEditProfileBtn,
+      @NonNull TextView myMembershipLevel, @NonNull TextView myName, @NonNull TextView myNickname,
+      @NonNull TextView myPoints, @NonNull Chip myProfileChip, @NonNull ImageView myProfilePic,
       @NonNull ConstraintLayout mySellingCard, @NonNull TextView mySellingCurrentCnt,
       @NonNull TextView mySellingHistoryCnt, @NonNull TextView mySellingPendingCnt,
       @NonNull TextView mySellingTotalCnt, @NonNull ImageView mySettingIcon,
       @NonNull Chip myShoppingChip, @NonNull TextView myTvMembershipLevel,
       @NonNull TextView myTvPoints, @NonNull TextView myTvWishlist, @NonNull TextView myWishlistCnt,
       @NonNull TextView portfolioMore, @NonNull TextView sellingMore,
-      @NonNull View sellingSeparator, @NonNull View separatorBelowName,
-      @NonNull View separatorBelowPinBar, @NonNull View separatorBelowSellingCard,
-      @NonNull View separatorBelowTvPortfolio, @NonNull ConstraintLayout topBar,
+      @NonNull View sellingSeparator, @NonNull View separatorBelowMyPortfolio,
+      @NonNull View separatorBelowName, @NonNull View separatorBelowPinBar,
+      @NonNull View separatorBelowPortfolioContainer, @NonNull View separatorBelowSellingCard,
+      @NonNull ConstraintLayout topBar, @NonNull TextView totalPurchaseAmount,
       @NonNull TextView tvBuying, @NonNull TextView tvBuyingCurrent,
       @NonNull TextView tvBuyingHistory, @NonNull TextView tvBuyingPending,
-      @NonNull TextView tvBuyingTotal, @NonNull TextView tvPortfolio, @NonNull TextView tvSelling,
-      @NonNull TextView tvSellingCurrent, @NonNull TextView tvSellingHistory,
-      @NonNull TextView tvSellingPending, @NonNull TextView tvSellingTotal,
+      @NonNull TextView tvBuyingTotal, @NonNull TextView tvEarnRate, @NonNull TextView tvGainLoss,
+      @NonNull TextView tvMarketValue, @NonNull TextView tvMyItems, @NonNull TextView tvPortfolio,
+      @NonNull TextView tvSelling, @NonNull TextView tvSellingCurrent,
+      @NonNull TextView tvSellingHistory, @NonNull TextView tvSellingPending,
+      @NonNull TextView tvSellingTotal, @NonNull TextView tvTotalPurchase,
       @NonNull CoordinatorLayout wrapper) {
     this.rootView = rootView;
     this.appBarLayout = appBarLayout;
     this.buyingMore = buyingMore;
     this.buyingSeparator = buyingSeparator;
     this.chipGroup = chipGroup;
+    this.earnRate = earnRate;
+    this.gainLoss = gainLoss;
+    this.marketValue = marketValue;
+    this.marketValueCnt = marketValueCnt;
     this.myBio = myBio;
     this.myBuyingCard = myBuyingCard;
     this.myBuyingCurrentCnt = myBuyingCurrentCnt;
@@ -227,22 +268,29 @@ public final class FragmentMyPageBinding implements ViewBinding {
     this.portfolioMore = portfolioMore;
     this.sellingMore = sellingMore;
     this.sellingSeparator = sellingSeparator;
+    this.separatorBelowMyPortfolio = separatorBelowMyPortfolio;
     this.separatorBelowName = separatorBelowName;
     this.separatorBelowPinBar = separatorBelowPinBar;
+    this.separatorBelowPortfolioContainer = separatorBelowPortfolioContainer;
     this.separatorBelowSellingCard = separatorBelowSellingCard;
-    this.separatorBelowTvPortfolio = separatorBelowTvPortfolio;
     this.topBar = topBar;
+    this.totalPurchaseAmount = totalPurchaseAmount;
     this.tvBuying = tvBuying;
     this.tvBuyingCurrent = tvBuyingCurrent;
     this.tvBuyingHistory = tvBuyingHistory;
     this.tvBuyingPending = tvBuyingPending;
     this.tvBuyingTotal = tvBuyingTotal;
+    this.tvEarnRate = tvEarnRate;
+    this.tvGainLoss = tvGainLoss;
+    this.tvMarketValue = tvMarketValue;
+    this.tvMyItems = tvMyItems;
     this.tvPortfolio = tvPortfolio;
     this.tvSelling = tvSelling;
     this.tvSellingCurrent = tvSellingCurrent;
     this.tvSellingHistory = tvSellingHistory;
     this.tvSellingPending = tvSellingPending;
     this.tvSellingTotal = tvSellingTotal;
+    this.tvTotalPurchase = tvTotalPurchase;
     this.wrapper = wrapper;
   }
 
@@ -294,6 +342,30 @@ public final class FragmentMyPageBinding implements ViewBinding {
       id = R.id.chip_group;
       ChipGroup chipGroup = rootView.findViewById(id);
       if (chipGroup == null) {
+        break missingId;
+      }
+
+      id = R.id.earn_rate;
+      TextView earnRate = rootView.findViewById(id);
+      if (earnRate == null) {
+        break missingId;
+      }
+
+      id = R.id.gain_loss;
+      TextView gainLoss = rootView.findViewById(id);
+      if (gainLoss == null) {
+        break missingId;
+      }
+
+      id = R.id.market_value;
+      TextView marketValue = rootView.findViewById(id);
+      if (marketValue == null) {
+        break missingId;
+      }
+
+      id = R.id.market_value_cnt;
+      TextView marketValueCnt = rootView.findViewById(id);
+      if (marketValueCnt == null) {
         break missingId;
       }
 
@@ -465,6 +537,12 @@ public final class FragmentMyPageBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.separator_below_my_portfolio;
+      View separatorBelowMyPortfolio = rootView.findViewById(id);
+      if (separatorBelowMyPortfolio == null) {
+        break missingId;
+      }
+
       id = R.id.separator_below_name;
       View separatorBelowName = rootView.findViewById(id);
       if (separatorBelowName == null) {
@@ -477,21 +555,27 @@ public final class FragmentMyPageBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.separator_below_portfolio_container;
+      View separatorBelowPortfolioContainer = rootView.findViewById(id);
+      if (separatorBelowPortfolioContainer == null) {
+        break missingId;
+      }
+
       id = R.id.separator_below_selling_card;
       View separatorBelowSellingCard = rootView.findViewById(id);
       if (separatorBelowSellingCard == null) {
         break missingId;
       }
 
-      id = R.id.separator_below_tv_portfolio;
-      View separatorBelowTvPortfolio = rootView.findViewById(id);
-      if (separatorBelowTvPortfolio == null) {
-        break missingId;
-      }
-
       id = R.id.top_bar;
       ConstraintLayout topBar = rootView.findViewById(id);
       if (topBar == null) {
+        break missingId;
+      }
+
+      id = R.id.total_purchase_amount;
+      TextView totalPurchaseAmount = rootView.findViewById(id);
+      if (totalPurchaseAmount == null) {
         break missingId;
       }
 
@@ -522,6 +606,30 @@ public final class FragmentMyPageBinding implements ViewBinding {
       id = R.id.tv_buying_total;
       TextView tvBuyingTotal = rootView.findViewById(id);
       if (tvBuyingTotal == null) {
+        break missingId;
+      }
+
+      id = R.id.tv_earn_rate;
+      TextView tvEarnRate = rootView.findViewById(id);
+      if (tvEarnRate == null) {
+        break missingId;
+      }
+
+      id = R.id.tv_gain_loss;
+      TextView tvGainLoss = rootView.findViewById(id);
+      if (tvGainLoss == null) {
+        break missingId;
+      }
+
+      id = R.id.tv_market_value;
+      TextView tvMarketValue = rootView.findViewById(id);
+      if (tvMarketValue == null) {
+        break missingId;
+      }
+
+      id = R.id.tv_my_items;
+      TextView tvMyItems = rootView.findViewById(id);
+      if (tvMyItems == null) {
         break missingId;
       }
 
@@ -561,6 +669,12 @@ public final class FragmentMyPageBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tv_total_purchase;
+      TextView tvTotalPurchase = rootView.findViewById(id);
+      if (tvTotalPurchase == null) {
+        break missingId;
+      }
+
       id = R.id.wrapper;
       CoordinatorLayout wrapper = rootView.findViewById(id);
       if (wrapper == null) {
@@ -568,15 +682,18 @@ public final class FragmentMyPageBinding implements ViewBinding {
       }
 
       return new FragmentMyPageBinding((ConstraintLayout) rootView, appBarLayout, buyingMore,
-          buyingSeparator, chipGroup, myBio, myBuyingCard, myBuyingCurrentCnt, myBuyingHistoryCnt,
-          myBuyingPendingCnt, myBuyingTotalCnt, myCameraIcon, myEditProfileBtn, myMembershipLevel,
-          myName, myNickname, myPoints, myProfileChip, myProfilePic, mySellingCard,
-          mySellingCurrentCnt, mySellingHistoryCnt, mySellingPendingCnt, mySellingTotalCnt,
-          mySettingIcon, myShoppingChip, myTvMembershipLevel, myTvPoints, myTvWishlist,
-          myWishlistCnt, portfolioMore, sellingMore, sellingSeparator, separatorBelowName,
-          separatorBelowPinBar, separatorBelowSellingCard, separatorBelowTvPortfolio, topBar,
-          tvBuying, tvBuyingCurrent, tvBuyingHistory, tvBuyingPending, tvBuyingTotal, tvPortfolio,
-          tvSelling, tvSellingCurrent, tvSellingHistory, tvSellingPending, tvSellingTotal, wrapper);
+          buyingSeparator, chipGroup, earnRate, gainLoss, marketValue, marketValueCnt, myBio,
+          myBuyingCard, myBuyingCurrentCnt, myBuyingHistoryCnt, myBuyingPendingCnt,
+          myBuyingTotalCnt, myCameraIcon, myEditProfileBtn, myMembershipLevel, myName, myNickname,
+          myPoints, myProfileChip, myProfilePic, mySellingCard, mySellingCurrentCnt,
+          mySellingHistoryCnt, mySellingPendingCnt, mySellingTotalCnt, mySettingIcon,
+          myShoppingChip, myTvMembershipLevel, myTvPoints, myTvWishlist, myWishlistCnt,
+          portfolioMore, sellingMore, sellingSeparator, separatorBelowMyPortfolio,
+          separatorBelowName, separatorBelowPinBar, separatorBelowPortfolioContainer,
+          separatorBelowSellingCard, topBar, totalPurchaseAmount, tvBuying, tvBuyingCurrent,
+          tvBuyingHistory, tvBuyingPending, tvBuyingTotal, tvEarnRate, tvGainLoss, tvMarketValue,
+          tvMyItems, tvPortfolio, tvSelling, tvSellingCurrent, tvSellingHistory, tvSellingPending,
+          tvSellingTotal, tvTotalPurchase, wrapper);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

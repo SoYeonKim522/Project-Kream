@@ -142,7 +142,7 @@ class SignUpActivity : BaseActivity<ActivitySignupBinding> (ActivitySignupBindin
                 val password = binding.signUpEtPassword.text.toString()
                 val postRequest = PostSignUpRequest(
                     email = email, password = password,
-                    name = "테스트5", phone = "010-0817-0005"
+                    name = "리아리", phone = "01019000091"
                 )
                 showLoadingDialog(this)
                 SignUpService(this).tryPostSignUp(postRequest)

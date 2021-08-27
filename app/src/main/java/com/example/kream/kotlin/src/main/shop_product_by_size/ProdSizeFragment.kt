@@ -29,7 +29,7 @@ class ProdSizeFragment: BottomSheetDialogFragment(), ProdBySizeView{
     //슬라이드 애니메이션 -- doesn't work
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        getDialog()?.getWindow()?.getAttributes()?.windowAnimations = R.style.bottomFragAnimation
+//        getDialog()?.getWindow()?.getAttributes()?.windowAnimations = R.style.bottomFragAnimation
     }
 
     override fun onCreateView(
@@ -46,7 +46,7 @@ class ProdSizeFragment: BottomSheetDialogFragment(), ProdBySizeView{
         Log.d(TAG, "onCreateView: 버튼 아이디 $buttonId")
 
         //사이즈 선택 버튼 눌렀을 때
-        if(buttonId==2131296873){
+        if(buttonId==2131296891){
             if (productIdx!=null || productIdx!=0){
                 ProdBySizeService(this).tryGetBuyPriceBySize(productIdx!!)
                 Log.d(TAG, "onCreateView:프래그먼트에서 아이디 $productIdx")
@@ -62,7 +62,7 @@ class ProdSizeFragment: BottomSheetDialogFragment(), ProdBySizeView{
         }
 
         //판매 버튼 눌렀을 때
-        if (buttonId==2131296826){
+        if (buttonId==2131296842){
             if (productIdx!=null || productIdx!=0){
                 ProdBySizeService(this).tryGetSellPriceBySize(productIdx!!)
                 binding.tvPrice.text="즉시 판매가(원)"

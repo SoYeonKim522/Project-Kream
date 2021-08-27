@@ -26,7 +26,7 @@ class ShopProductAdapter (private val productList:List<ProductResult>, val conte
         val brandLogo = itemView.findViewById<ImageView>(R.id.brand_logo)
         val productName = itemView.findViewById<TextView>(R.id.product_name)
         val price = itemView.findViewById<TextView>(R.id.buy_now_price)
-        val wishlistCnt = itemView.findViewById<TextView>(R.id.wishlish_count)
+        val wishlistCnt = itemView.findViewById<TextView>(R.id.wishlist_count)
         val postingCnt = itemView.findViewById<TextView>(R.id.posting_count)
 
     }
@@ -48,9 +48,10 @@ class ShopProductAdapter (private val productList:List<ProductResult>, val conte
         val priceData = productList[position].buyPrice
         if(priceData==null || priceData==0){
             holder.price.text = "-"
-        } else holder.price.text = priceData.toString()
+        } else holder.price.text = priceData.toString()+"원"
 
-        holder.productName.text = productList[position].description
+        holder.productName.text = productList[position].name
+        Log.d(TAG, "onBindViewHolder: 아아아아아아ㅏ악 $position")
         holder.wishlistCnt.text = productList[position].liked.toString()
         holder.postingCnt.text = productList[position].tagged.toString()
 
@@ -61,6 +62,8 @@ class ShopProductAdapter (private val productList:List<ProductResult>, val conte
             intent.putExtra("productIdx", productIdx)
             ContextCompat.startActivity(holder.itemView.context, intent, null)
         }
+
+        holder.setIsRecyclable(false)
     }
 
     override fun getItemCount(): Int = productList.size

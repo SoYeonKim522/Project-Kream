@@ -1948,6 +1948,7 @@ drawable product_tab_selector
 drawable purchase_image
 drawable purchase_toggle
 drawable register_card_btn
+drawable registered_card
 drawable regular_payment_options
 drawable search_icon
 drawable shop_banner1
@@ -2142,6 +2143,7 @@ id buying_separator
 id cache_measures
 id cancel_action
 id cancel_button
+id card_brand
 id carryVelocity
 id center
 id center_horizontal
@@ -2273,6 +2275,8 @@ id group_divider
 id grouping
 id groups
 id guideline
+id guideline1
+id guideline2
 id header_title
 id hideable
 id highest_bids
@@ -2656,6 +2660,7 @@ id stop
 id street_wear
 id street_wear_kor
 id stretch
+id style_image
 id style_picks
 id style_recycler
 id submenuarrow
@@ -2706,7 +2711,6 @@ id titleDividerNoCustom
 id title_template
 id toggle
 id top
-id topBar
 id topPanel
 id top_bar
 id top_notice
@@ -2785,6 +2789,7 @@ id visible_removing_fragment_view_tag
 id west
 id wishlish_count
 id wishlish_icon
+id wishlist_count
 id wishlist_icon
 id wishlist_size_container
 id withText
@@ -4033,7 +4038,6 @@ style Widget_MaterialComponents_Toolbar_PrimarySurface
 style Widget_MaterialComponents_Toolbar_Surface
 style Widget_MaterialComponents_Tooltip
 style Widget_Support_CoordinatorLayout
-style bottomFragAnimation
 style home_section_subtitle
 style home_section_title
 style my_page_titles

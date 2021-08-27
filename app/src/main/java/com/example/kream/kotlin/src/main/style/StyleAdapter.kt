@@ -1,6 +1,7 @@
 package com.example.kream.kotlin.src.main.style
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,7 +17,7 @@ class StyleAdapter(private val styleList:List<StyleList>, val context: Context?)
     private val TAG ="log"
 
     class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
-        val image = itemView.findViewById<ImageView>(R.id.image)
+        val image = itemView.findViewById<ImageView>(R.id.style_image)
         val profilePic = itemView.findViewById<ImageView>(R.id.profile_pic)
         val userId = itemView.findViewById<TextView>(R.id.user_id)
         val content = itemView.findViewById<TextView>(R.id.content)
@@ -30,10 +31,17 @@ class StyleAdapter(private val styleList:List<StyleList>, val context: Context?)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val imageUrl:String = styleList[position].images[0].image
-        if(imageUrl.isNotEmpty()){
-            Glide.with(holder.itemView).load(imageUrl).error(R.drawable.login_button).into(holder.image)
-        }
+        Log.d(TAG, "onBindViewHolder 스타일 리스트: $styleList")
+        //styleList.size = 21
+//        val imageUrl = styleList[position].images[0].image
+//        Log.d(TAG, "onBindViewHolder: $imageUrl.size")
+//
+//        Log.d(TAG, "onBindViewHolder: 이미지 url $imageUrl")
+//        if(imageUrl.isNotEmpty() && imageUrl!=null){
+//            Log.d(TAG, "onBindViewHolder: yesyesyesyesyes")
+//            Glide.with(holder.itemView).load(imageUrl).error(R.drawable.login_button).into(holder.image)
+//        }
+
         val profileImgUrl= styleList[position].userProfileImage
         if(profileImgUrl!=null && profileImgUrl.isNotEmpty()){
             Glide.with(holder.itemView).load(profileImgUrl).error(R.drawable.login_button).into(holder.profilePic)

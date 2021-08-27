@@ -44,7 +44,7 @@ class HomeJustDroppedAdapter (private val jdList: List<ThemeProductList>): Recyc
         val price = jdList[position].buyPrice
         if(price==0){
             holder.price.text = "-"
-        } else holder.price.text = jdList[position].buyPrice.toString()
+        } else holder.price.text = jdList[position].buyPrice.toString() + "원"
 
         val productIdx = jdList[position].productIdx
         holder.itemView.setOnClickListener {
