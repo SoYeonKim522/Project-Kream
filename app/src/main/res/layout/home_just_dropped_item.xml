@@ -34,7 +34,7 @@
         app:layout_constraintTop_toBottomOf="@+id/product_img" />
 
     <ImageView
-        android:id="@+id/wishlish_icon"
+        android:id="@+id/wishlist_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"

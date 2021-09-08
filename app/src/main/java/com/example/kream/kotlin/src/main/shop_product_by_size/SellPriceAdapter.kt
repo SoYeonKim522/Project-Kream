@@ -34,12 +34,12 @@ class SellPriceAdapter(private var sizeList:List<SellPriceResult>, val context: 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.prod_size_recycler_item, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.prod_size_sell_recycler_item, parent, false)
         return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.price.setTextColor(R.color.prod_sell_price_by_size.toInt())
+//        holder.price.setTextColor(R.color.prod_sell_price_by_size.toInt())
         val sizetxt = sizeList[position].productSize
         if (sizetxt == "모든 사이즈") {
             holder.size.text = "모든 사이즈"

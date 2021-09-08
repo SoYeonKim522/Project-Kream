@@ -1,6 +1,8 @@
 package com.example.kream.kotlin.src.main.home
 
 import android.content.Intent
+import android.media.Image
+import android.speech.tts.TextToSpeech
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,6 +25,7 @@ class HomeJustDroppedAdapter (private val jdList: List<ThemeProductList>): Recyc
         val brandLogo = itemView.findViewById<ImageView>(R.id.brand_logo)
         val productName = itemView.findViewById<TextView>(R.id.product_name)
         val price = itemView.findViewById<TextView>(R.id.buy_now_price)
+        val wishlistIcon = itemView.findViewById<ImageView>(R.id.wishlist_icon)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -48,7 +51,7 @@ class HomeJustDroppedAdapter (private val jdList: List<ThemeProductList>): Recyc
 
         val productIdx = jdList[position].productIdx
         holder.itemView.setOnClickListener {
-
+            //상품상세페이지로 연결
             val intent = Intent(holder.itemView.context, ShopProductActivity::class.java)
             intent.putExtra("productIdx", productIdx)
             ContextCompat.startActivity(holder.itemView.context, intent, null)

@@ -83,7 +83,7 @@ class CheckoutActivity:BaseActivity<ActivitiyCheckoutBinding>(ActivitiyCheckoutB
         
         //결제 api 호출
         binding.checkoutBtn.setOnClickListener {
-            val postRequest = CheckoutRequest(targetBidSaleIdx = targetBidSaleIdx, cardIdx = 5)
+            val postRequest = CheckoutRequest(targetBidSaleIdx = targetBidSaleIdx, cardIdx = 7)
             CheckoutService(this).tryPostCheckout(bidPurchaseIdx, postRequest)
             Log.d(TAG, "onCreate 결제 액티비티: $postRequest")    //works
             showLoadingDialog(this)

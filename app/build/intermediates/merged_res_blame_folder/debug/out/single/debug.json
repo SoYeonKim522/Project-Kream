@@ -244,6 +244,10 @@
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\checkout_check3.png"
     },
     {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\layout_prod_size_sell_recycler_item.xml.flat",
+        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\prod_size_sell_recycler_item.xml"
+    },
+    {
         "merged": "D:\\Kream\\app\\build\\intermediates\\res\\merged\\debug\\drawable_login_button.xml.flat",
         "source": "D:\\Kream\\app\\src\\main\\res\\drawable\\login_button.xml"
     },

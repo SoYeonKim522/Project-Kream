@@ -142,7 +142,7 @@ class SignUpActivity : BaseActivity<ActivitySignupBinding> (ActivitySignupBindin
                 val password = binding.signUpEtPassword.text.toString()
                 val postRequest = PostSignUpRequest(
                     email = email, password = password,
-                    name = "리아리", phone = "01019000091"
+                    name = "김소연", phone = "01038901091"
                 )
                 showLoadingDialog(this)
                 SignUpService(this).tryPostSignUp(postRequest)
@@ -183,8 +183,9 @@ class SignUpActivity : BaseActivity<ActivitySignupBinding> (ActivitySignupBindin
     override fun onPostSignUpSuccess(signUpResponse: SignUpResponse) {
         Log.d(TAG, "onPostSignUpSuccess: ${signUpResponse.code}")
         when(signUpResponse.code){
-            1000->{showCustomToast("가입이 완료되었습니다")
-                super.finish()  //이전 화면으로 돌아가기!
+            1000->{
+//                showCustomToast("가입이 완료되었습니다")
+                super.finish()  //이전 화면으로 돌아가기
                 dismissLoadingDialog()
             }
             3013->{showCustomToast("이미 등록된 이메일입니다")

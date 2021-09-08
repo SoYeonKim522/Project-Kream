@@ -120,9 +120,9 @@ class BuyNowActivity:BaseActivity<ActivityBuyNowBinding> (ActivityBuyNowBinding:
         val name = result.name
         val address = result.address
 //        addressIdx = result.idx
-        val address2 = result.addressDetail
-        val postcode = result.zipCode
-        val phoneNo = result.phone
+//        val address2 = result.addressDetail
+//        val postcode = result.zipCode
+//        val phoneNo = result.phone
         if(name!=null && address!=null){
             binding.addressInput.text = name.toString() + "/" + address.toString()
             binding.addressInput.setTextColor(Color.parseColor("#000000"))
@@ -188,7 +188,7 @@ class BuyNowActivity:BaseActivity<ActivityBuyNowBinding> (ActivityBuyNowBinding:
 
         startActivity(intent)
 
-        showCustomToast("구매 등록 완료. 결제로 이동")
+//        showCustomToast("구매 등록 완료. 결제로 이동")
         dismissLoadingDialog()
 
     }

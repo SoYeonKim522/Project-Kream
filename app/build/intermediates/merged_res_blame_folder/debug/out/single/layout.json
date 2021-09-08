@@ -96,6 +96,10 @@
         "source": "D:\\Kream\\app\\src\\main\\res\\layout\\activity_buy_now.xml"
     },
     {
+        "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\prod_size_sell_recycler_item.xml",
+        "source": "D:\\Kream\\app\\src\\main\\res\\layout\\prod_size_sell_recycler_item.xml"
+    },
+    {
         "merged": "D:\\Kream\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activitiy_checkout.xml",
         "source": "D:\\Kream\\app\\src\\main\\res\\layout\\activitiy_checkout.xml"
     },

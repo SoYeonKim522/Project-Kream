@@ -27,9 +27,11 @@ class BuyPriceAdapter(private var sizeList:List<BuyPriceResult>, val context: Co
         fun onSizeClick(view:View, size:String, price:Int, bidSaleIdx:Any, productSizeIdx:Int)
     }
     private var listener : OnSizeClickListener?=null
+
     fun setOnSizeClickListener(listener : OnSizeClickListener){
-        this.listener = listener
+        this.listener = listener  //이 어댑터의 리스너 지정
     }
+
 
     class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
         val size = itemView.findViewById<TextView>(R.id.size)
@@ -44,10 +46,16 @@ class BuyPriceAdapter(private var sizeList:List<BuyPriceResult>, val context: Co
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val clickedBtn = arrayListOf<ViewHolder>()  // 클릭한 사이즈 담는 빈배열
+
         val sizetxt = sizeList[position].productSize
         if(sizetxt=="모든 사이즈"){
             holder.size.text = "모든 사이즈"
             holder.size.setTextSize(13F)
+            //기본으로 선택되어있는 효과
+            holder.container.setImageResource(R.drawable.prod_size_button_clicked)
+            holder.size.setTypeface(null, Typeface.BOLD)
+            holder.price.setTypeface(null, Typeface.BOLD)
         } else holder.size.text = sizetxt
 
         val priceBySize = sizeList[position].buyPrice
@@ -63,7 +71,8 @@ class BuyPriceAdapter(private var sizeList:List<BuyPriceResult>, val context: Co
         Log.d(TAG, "onBindViewHolder: 매애애애ㅐ앵ㄴ 처음 $bidSaleIdx, productSizeIdx-$productSizeIdx")
 
         //이전에 선택된 것이 있다면
-        if(position==clickedSize){
+//        if(position==clickedSize)
+        if(clickedBtn.contains(holder)){
             Log.d(TAG, "onBindViewHolder: 선택되어있는 $position")
             //뷰 스타일 변경
             holder.size.setTypeface(null, Typeface.BOLD)
@@ -77,12 +86,16 @@ class BuyPriceAdapter(private var sizeList:List<BuyPriceResult>, val context: Co
 
         //각 사이즈 별 클릭 리스너
         holder.itemView.setOnClickListener {
-            clickedSize=position
-            Log.d(TAG, "onBindViewHolder: 선택지금함 $clickedSize")
+//            clickedSize=position
+            clickedBtn.clear()
+            clickedBtn.add(holder)  // 클릭 시 배열에 담기
+
+            Log.d(TAG, "onBindViewHolder: 지금 선택 $clickedSize")
             //데이터 전달
             val intent = Intent(holder.itemView.context, ShopProductActivity::class.java)
             intent.putExtra("size", sizetxt)
             intent.putExtra("buyPrice", priceBySize.toString()+"원")
+
             //인터페이스
             listener?.onSizeClick(holder.itemView, sizetxt, priceBySize, bidSaleIdx, productSizeIdx)
         }

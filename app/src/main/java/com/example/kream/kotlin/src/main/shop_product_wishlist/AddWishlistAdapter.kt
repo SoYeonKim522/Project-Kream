@@ -81,8 +81,6 @@ class AddWishlistAdapter(private var sizeList:List<SizeList>, val context: Conte
 
 
 
-
-
 //        어댑터.notifyDataSetChanged()
 
 //        val intent = Intent(holder.itemView.context, ShopProductActivity::class.java)

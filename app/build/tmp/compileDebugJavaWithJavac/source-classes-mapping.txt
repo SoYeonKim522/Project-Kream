@@ -38,6 +38,8 @@ com/example/kream/kotlin/databinding/ActivitySignupBinding.java
  com.example.kream.kotlin.databinding.ActivitySignupBinding
 com/example/kream/kotlin/databinding/DialogLoadingBinding.java
  com.example.kream.kotlin.databinding.DialogLoadingBinding
+com/example/kream/kotlin/databinding/ProdSizeSellRecyclerItemBinding.java
+ com.example.kream.kotlin.databinding.ProdSizeSellRecyclerItemBinding
 com/example/kream/kotlin/databinding/FragmentShopBinding.java
  com.example.kream.kotlin.databinding.FragmentShopBinding
 com/example/kream/kotlin/databinding/ShopProductViewpagerBinding.java

@@ -78,7 +78,7 @@ class ProdWishlistFragment : BottomSheetDialogFragment(), ProdWishlistView {
     }
 
     override fun onPostWishlistSuccess(response: AddWishResponse) {
-        Toast.makeText(context, "관심상품 추가", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(context, "관심상품 추가", Toast.LENGTH_SHORT).show()
     }
 
     override fun onPostWishlistFailure(message: String) {

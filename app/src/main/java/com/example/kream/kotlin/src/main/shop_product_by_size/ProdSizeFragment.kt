@@ -98,7 +98,7 @@ class ProdSizeFragment: BottomSheetDialogFragment(), ProdBySizeView{
         buySizeAdapter.notifyDataSetChanged()
         isSizeButton=true
 
-        //여기에서 ProdSizeAdapter 의 인터페이스 호출!!
+        //여기에서 ProdSizeAdapter 의 인터페이스 구현!
         buySizeAdapter.setOnSizeClickListener(object : BuyPriceAdapter.OnSizeClickListener{
             override fun onSizeClick(view: View, size: String, price: Int, bidSaleIdx: Any, productSizeIdx: Int) {
                 //bundle - 상품상세 activity로 변경할 정보 전달

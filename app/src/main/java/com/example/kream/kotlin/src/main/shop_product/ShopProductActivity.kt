@@ -105,18 +105,13 @@ class ShopProductActivity : BaseActivity<ActivityShopProductBinding> (ActivitySh
             }
         }
 
-        //관심상품 추가 시
+        //관심상품 추가 시 (bundle from. prodWishlistFrag)
         supportFragmentManager.setFragmentResultListener("wishKey", this){requestKey, bundle ->
             val isWishAdded = bundle.getString("isWishAdded")
             if(isWishAdded=="added"){
                 binding.wishlistIcon.setImageResource(R.drawable.wishlist_icon_clicked)
             }
         }
-
-        //관심상품 추가 후
-//        if(isWishlistAdded){
-//            binding.wishlistIcon.setImageResource(R.drawable.wishlist_icon_clicked)
-//        } else binding.wishlistIcon.setImageResource(R.drawable.wishlist_icon_black)
 
 
         //뒤로가기

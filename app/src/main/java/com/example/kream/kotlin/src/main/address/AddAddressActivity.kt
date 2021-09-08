@@ -142,7 +142,7 @@ class AddAddressActivity:BaseActivity<ActivityAddAddressBinding>(ActivityAddAddr
     override fun onPostAddressSuccess(response: AddAddressResponse) {
         Log.d(TAG, "onPostAddressSuccess 주소 api : $response")
         if(response.code==1000){
-            showCustomToast("추가 완료")
+//            showCustomToast("추가 완료")
             val result = response.result
             ApplicationClass.editor.putString("addressName", result.name).apply()
             ApplicationClass.editor.putInt("addressIdx", result.idx).apply()
